@@ -15,29 +15,34 @@ class Song
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     * @Groups({"song_browse"})
      * @Groups({"album_browse"})
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups({"song_browse"})
      * @Groups({"album_browse"})
      */
     private $title;
 
     /**
      * @ORM\Column(type="integer")
+     * @Groups({"song_browse"})
      * @Groups({"album_browse"})
      */
     private $duration;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Groups({"song_browse"})
      */
     private $preview;
 
     /**
      * @ORM\ManyToOne(targetEntity=Album::class, inversedBy="songs")
+     * @Groups({"song_browse"})
      */
     private $album;
 

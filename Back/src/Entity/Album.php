@@ -26,7 +26,7 @@ class Album
 
     /**
      * @ORM\Column(type="string", length=255)
-     * 
+     * @Groups({"song_browse"})
      * @Groups({"album_browse"})
      */
     private $name;
