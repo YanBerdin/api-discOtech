@@ -32,6 +32,11 @@ class Song
      */
     private $preview;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Album::class, inversedBy="songs")
+     */
+    private $album;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -69,6 +74,18 @@ class Song
     public function setPreview(?string $preview): self
     {
         $this->preview = $preview;
+
+        return $this;
+    }
+
+    public function getAlbum(): ?Album
+    {
+        return $this->album;
+    }
+
+    public function setAlbum(?Album $album): self
+    {
+        $this->album = $album;
 
         return $this;
     }
