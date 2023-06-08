@@ -17,70 +17,103 @@ class Album
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     * 
+     * @Groups({"album_browse"})
+     * 
+     * 
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255)
      * @Groups({"song_browse"})
+     * @Groups({"album_browse"})
      */
     private $name;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * 
+     * @Groups({"album_browse"})
      */
     private $edition;
 
     /**
      * @ORM\Column(type="date")
      * 
+     * @Groups({"album_browse"})
      */
     private $releaseDate;
 
     /**
      * @ORM\Column(type="datetime")
+     * 
+     * @Groups({"album_browse"})
      */
     private $createdAt;
 
     /**
      * @ORM\Column(type="datetime", nullable=true)
+     * 
+     * @Groups({"album_browse"})
      */
     private $updatedAt;
 
     /**
      * @ORM\ManyToMany(targetEntity=Style::class, inversedBy="albums")
+     * 
+     * @Groups({"album_browse"})
      */
     private $style;
 
     /**
      * @ORM\ManyToMany(targetEntity=Support::class, inversedBy="albums")
+     * 
+     * @Groups({"album_browse"})
      */
     private $support;
 
     /**
      * @ORM\OneToMany(targetEntity=Song::class, mappedBy="album")
+     * 
+     * @Groups({"album_browse"})
      */
     private $songs;
 
     /**
      * @ORM\ManyToOne(targetEntity=Artist::class, inversedBy="albums")
+     * 
+     * @Groups({"album_browse"})
      */
     private $artist;
 
     /**
      * @ORM\ManyToOne(targetEntity=User::class, inversedBy="albums")
+     * 
+     * @Groups({"album_read"})
      */
     private $user;
 
     /**
      * @ORM\OneToMany(targetEntity=Favorites::class, mappedBy="album")
+     * 
+     * @Groups({"album_read"})
      */
     private $favorites;
 
     /**
      * @ORM\OneToMany(targetEntity=Review::class, mappedBy="album")
+     * 
+     * @Groups({"album_read"})
      */
     private $reviews;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     * 
+     * @Groups({"album_browse"})
+     */
+    private $image;
 
     public function __construct()
     {
@@ -315,6 +348,18 @@ class Album
                 $review->setAlbum(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getImage(): ?string
+    {
+        return $this->image;
+    }
+
+    public function setImage(string $image): self
+    {
+        $this->image = $image;
 
         return $this;
     }

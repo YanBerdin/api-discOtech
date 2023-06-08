@@ -16,18 +16,21 @@ class Song
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      * @Groups({"song_browse"})
+     * @Groups({"album_browse"})
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255)
      * @Groups({"song_browse"})
+     * @Groups({"album_browse"})
      */
     private $title;
 
     /**
      * @ORM\Column(type="integer")
      * @Groups({"song_browse"})
+     * @Groups({"album_browse"})
      */
     private $duration;
 
