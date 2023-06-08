@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\FavoritesRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ORM\Entity(repositoryClass=FavoritesRepository::class)
@@ -14,11 +15,15 @@ class Favorites
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     * 
+     * @Groups({"album_read"})
      */
     private $id;
 
     /**
      * @ORM\ManyToOne(targetEntity=User::class, inversedBy="favorites")
+     * 
+     * @Groups({"album_read"})
      */
     private $user;
 
@@ -29,6 +34,8 @@ class Favorites
 
     /**
      * @ORM\Column(type="datetime")
+     * 
+     * @Groups({"album_read"})
      */
     private $createdAt;
 
