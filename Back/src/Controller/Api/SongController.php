@@ -3,10 +3,7 @@
 namespace App\Controller\Api;
 
 use App\Entity\Song;
-use App\Repository\AlbumRepository;
 use App\Repository\SongRepository;
-use Doctrine\ORM\EntityNotFoundException;
-use Exception;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -14,7 +11,6 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Serializer\Normalizer\AbstractNormalizer;
 use Symfony\Component\Serializer\SerializerInterface;
-use Symfony\Component\Validator\Validator\ValidatorInterface;
 
 class SongController extends AbstractController
 {
@@ -57,13 +53,12 @@ class SongController extends AbstractController
      * @Route("api/songs/{id}",name="app_api_song_read", requirements={"id"="\d+"}, methods={"GET"})
      */
 
-    public function read($id,SongRepository $SongRepository): JsonResponse
+    public function read($id,SongRepository $songRepository): JsonResponse
     {
-        $song = $SongRepository->find($id);
+        $song = $songRepository->find($id);
         // 404 Managment
         if ($song === null){
-            // ! on est dans une API donc pas de HTML
-            // throw $this->createNotFoundException();
+
             return $this->json(
                 // error message
                 [
@@ -138,9 +133,9 @@ class SongController extends AbstractController
     }
 
     /**
-     * Add new Album
+     * Add new song
      * 
-     * @param Request $request la requete
+     * @param Request $request 
      * @param SerializerInterface $serializerInterface
      * @param SongRepository $songRepository
      * @return JsonResponse
