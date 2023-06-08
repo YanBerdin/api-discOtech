@@ -18,17 +18,20 @@ class Artist
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      * @Groups({"album_browse"})
+     * @Groups({"artist_browse"})
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255)
      * @Groups({"album_browse"})
+     * @Groups({"artist_browse"})
      */
     private $fullname;
 
     /**
      * @ORM\OneToMany(targetEntity=Album::class, mappedBy="artist")
+     * @Groups({"artist_browse"})
      */
     private $albums;
 

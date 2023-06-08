@@ -62,8 +62,7 @@ class SongController extends AbstractController
         $song = $SongRepository->find($id);
         // 404 Managment
         if ($song === null){
-            // ! on est dans une API donc pas de HTML
-            // throw $this->createNotFoundException();
+            
             return $this->json(
                 // error message
                 [
