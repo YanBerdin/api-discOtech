@@ -46,6 +46,11 @@ class Song
      */
     private $album;
 
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $trackNb;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -95,6 +100,18 @@ class Song
     public function setAlbum(?Album $album): self
     {
         $this->album = $album;
+
+        return $this;
+    }
+
+    public function getTrackNb(): ?int
+    {
+        return $this->trackNb;
+    }
+
+    public function setTrackNb(int $trackNb): self
+    {
+        $this->trackNb = $trackNb;
 
         return $this;
     }
