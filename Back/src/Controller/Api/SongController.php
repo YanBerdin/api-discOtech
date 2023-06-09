@@ -180,7 +180,7 @@ class SongController extends AbstractController
      * @param int $id
      * @param SongRepository $songRepository
      * 
-     * @Route("api/songs/{id}",name="app_api_song_edit", requirements={"id"="\d+"}, methods={"DELETE"})
+     * @Route("api/songs/{id}",name="app_api_song_delete", requirements={"id"="\d+"}, methods={"DELETE"})
      */
 
      public function delete ($id, SongRepository $songRepository)
