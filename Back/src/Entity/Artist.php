@@ -25,6 +25,7 @@ class Artist
     /**
      * @ORM\Column(type="string", length=255)
      * @Groups({"album_browse"})
+     * @Groups({"favorite_browse"})
      * @Groups({"artist_browse"})
      */
     private $fullname;
