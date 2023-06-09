@@ -57,13 +57,12 @@ class SongController extends AbstractController
      * @Route("api/songs/{id}",name="app_api_song_read", requirements={"id"="\d+"}, methods={"GET"})
      */
 
-    public function read($id,SongRepository $SongRepository): JsonResponse
+    public function read($id,SongRepository $songRepository): JsonResponse
     {
-        $song = $SongRepository->find($id);
+        $song = $songRepository->find($id);
         // 404 Managment
         if ($song === null){
-            // ! on est dans une API donc pas de HTML
-            // throw $this->createNotFoundException();
+            
             return $this->json(
                 // error message
                 [
@@ -185,7 +184,7 @@ class SongController extends AbstractController
      * @param int $id
      * @param SongRepository $songRepository
      * 
-     * @Route("api/songs/{id}",name="app_api_song_edit", requirements={"id"="\d+"}, methods={"DELETE"})
+     * @Route("api/songs/{id}",name="app_api_song_delete", requirements={"id"="\d+"}, methods={"DELETE"})
      */
 
      public function delete ($id, SongRepository $songRepository)
