@@ -160,8 +160,7 @@ class AlbumController extends AbstractController
             [
                 "groups" =>
                 [
-                    "album_read",
-                    "genre_browse"
+                    "album_read"
                 ]
             ]
 
