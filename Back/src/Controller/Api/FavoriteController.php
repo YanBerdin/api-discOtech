@@ -87,7 +87,7 @@ class FavoriteController extends AbstractController
      * 
      * @param Request $request 
      * @param SerializerInterface $serializerInterface
-     * @param FAvoritesRepository $favoriteRepository
+     * @param FavoritesRepository $favoriteRepository
      * @return JsonResponse
      * 
      * @Route("/api/favorites", name="app_api_favorite_add", methods={"POST"})

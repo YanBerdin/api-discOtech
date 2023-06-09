@@ -45,6 +45,7 @@ class User
      * @ORM\Column(type="string", length=255)
      * @Groups({"user_browse"})
      * @Groups({"album_read"})
+     * @Groups({"review_read"})
      */
     private $firstname;
 
@@ -52,6 +53,7 @@ class User
      * @ORM\Column(type="string", length=255)
      * @Groups({"user_browse"})
      * @Groups({"album_read"})
+     * @Groups({"review_read"})
      */
     private $lastname;
 
@@ -59,6 +61,7 @@ class User
      * @ORM\Column(type="string", length=255, nullable=true)
      * @Groups({"user_browse"})
      * @Groups({"album_read"})
+     * @Groups({"review_read"})
      */
     private $avatar;
 

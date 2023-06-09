@@ -29,6 +29,7 @@ class Album
      * @Groups({"favorite_browse"})
      * @Groups({"artist_browse"})
      * @Groups({"style_read"})
+     * @Groups({"review_read"})
      */
     private $name;
 
