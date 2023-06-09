@@ -20,7 +20,6 @@ class Album
      * 
      * @Groups({"album_browse"})
      * 
-     * 
      */
     private $id;
 
@@ -28,6 +27,7 @@ class Album
      * @ORM\Column(type="string", length=255)
      * @Groups({"song_browse"})
      * @Groups({"album_browse"})
+     * @Groups({"favorite_browse"})
      * @Groups({"artist_browse"})
      */
     private $name;
@@ -41,6 +41,7 @@ class Album
     /**
      * @ORM\Column(type="date")
      * @Groups({"album_browse"})
+     * @Groups({"favorites_browse"})
      */
     private $releaseDate;
 
@@ -101,6 +102,8 @@ class Album
     /**
      * @ORM\Column(type="string", length=255)
      * @Groups({"album_browse"})
+     * @Groups({"song_browse"})
+     * @Groups({"favorites_browse"})
      */
     private $image;
 

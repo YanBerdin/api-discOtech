@@ -20,6 +20,7 @@ class User
      * @ORM\Column(type="integer")
      * 
      * @Groups({"album_read"})
+     * @Groups({"favorite_browse"})
      */
     private $id;
 
@@ -73,6 +74,7 @@ class User
 
     /**
      * @ORM\OneToMany(targetEntity=Review::class, mappedBy="user")
+     * @Groups({"favorite_browse"})
      */
     private $reviews;
 
