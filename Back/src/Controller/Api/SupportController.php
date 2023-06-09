@@ -2,6 +2,7 @@
 
 namespace App\Controller\Api;
 
+use App\Entity\Support;
 use App\Repository\SupportRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -14,7 +15,7 @@ use Symfony\Component\Serializer\SerializerInterface;
 class SupportController extends AbstractController
 {
     /**
-     * @Route("/api/supports", name="app_api_support_browse")
+     * @Route("/api/supports", name="app_api_support_browse", methods={"GET"})
      */
     public function browse(SupportRepository $supportRepository): JsonResponse
     {
