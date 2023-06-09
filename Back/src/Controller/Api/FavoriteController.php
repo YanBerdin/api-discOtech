@@ -59,7 +59,7 @@ class FavoriteController extends AbstractController
              return $this->json(
                  // error message
                  [
-                     "message" => "Cette musique n'existe pas"
+                     "message" => "Ce favoris n'existe pas"
                  ],
                  // status code : 404
                  Response::HTTP_NOT_FOUND
@@ -77,15 +77,15 @@ class FavoriteController extends AbstractController
                  "groups" => 
                  [
                      "favorite_browse",
-                     "favorite_read" 
+                    
                  ]
              ]);
      }
 
       /**
-     * Add new Album
+     * Add new favorites
      * 
-     * @param Request $request la requete
+     * @param Request $request 
      * @param SerializerInterface $serializerInterface
      * @param FAvoritesRepository $favoriteRepository
      * @return JsonResponse
@@ -118,7 +118,7 @@ class FavoriteController extends AbstractController
             [
                 "groups"=>
                 [
-                    "favorite_read"
+                    "favorite_browse"
                 ]
             ]
         );
@@ -130,7 +130,7 @@ class FavoriteController extends AbstractController
      * @param int $id
      * @param FavoritesRepository $favoriteRepository
      * 
-     * @Route("api/favorites/{id}",name="app_api_favorite_edit", requirements={"id"="\d+"}, methods={"DELETE"})
+     * @Route("api/favorites/{id}",name="app_api_favorite_delete", requirements={"id"="\d+"}, methods={"DELETE"})
      */
 
      public function delete ($id, FavoritesRepository $favoriteRepository)
