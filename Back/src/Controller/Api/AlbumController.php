@@ -53,7 +53,7 @@ class AlbumController extends AbstractController
      */
     public function read($id, AlbumRepository $albumRepository): JsonResponse
     {
-        // find all album
+        // find specific album
         $album = $albumRepository->find($id);
 
         // 404 management
