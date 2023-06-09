@@ -43,22 +43,22 @@ class User
 
     /**
      * @ORM\Column(type="string", length=255)
-     * 
      * @Groups({"album_read"})
+     * @Groups({"review_read"})
      */
     private $firstname;
 
     /**
      * @ORM\Column(type="string", length=255)
-     * 
      * @Groups({"album_read"})
+     * @Groups({"review_read"})
      */
     private $lastname;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
-     * 
      * @Groups({"album_read"})
+     * @Groups({"review_read"})
      */
     private $avatar;
 

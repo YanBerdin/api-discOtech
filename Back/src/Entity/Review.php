@@ -15,34 +15,35 @@ class Review
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
-     * 
      * @Groups({"album_read"})
+     * @Groups({"review_read"})
      */
     private $id;
 
     /**
      * @ORM\ManyToOne(targetEntity=User::class, inversedBy="reviews")
-     * 
      * @Groups({"album_read"})
+     * @Groups({"review_read"})
      */
     private $user;
 
     /**
      * @ORM\ManyToOne(targetEntity=Album::class, inversedBy="reviews")
+     * @Groups({"review_read"})
      */
     private $album;
 
     /**
      * @ORM\Column(type="text")
-     * 
      * @Groups({"album_read"})
+     * @Groups({"review_read"})
      */
     private $content;
 
     /**
      * @ORM\Column(type="datetime")
-     * 
      * @Groups({"album_read"})
+     * @Groups({"review_read"})
      */
     private $createdAt;
 
