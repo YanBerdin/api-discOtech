@@ -18,22 +18,26 @@ class Style
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      * @Groups({"album_browse"})
+     * @Groups({"style_browse"})
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255)
      * @Groups({"album_browse"})
+     * @Groups({"style_browse"})
      */
     private $name;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Groups({"style_browse"})
      */
     private $image;
 
     /**
      * @ORM\ManyToMany(targetEntity=Album::class, mappedBy="style")
+     * @Groups({"style_read"})
      */
     private $albums;
 

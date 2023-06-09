@@ -65,7 +65,7 @@ class StyleController extends AbstractController
             // Headers
             [],
             // Serialisation contexts
-            ["groups" =>["style_read"]]
+            ["groups" =>["style_browse", "style_read"]]
         );
     }
 

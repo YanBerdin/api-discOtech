@@ -29,24 +29,28 @@ class Album
      * @Groups({"song_browse"})
      * @Groups({"album_browse"})
      * @Groups({"artist_browse"})
+     * @Groups({"style_read"})
      */
     private $name;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      * @Groups({"album_browse"})
+     * @Groups({"style_read"})
      */
     private $edition;
 
     /**
      * @ORM\Column(type="date")
      * @Groups({"album_browse"})
+     * @Groups({"style_read"})
      */
     private $releaseDate;
 
     /**
      * @ORM\Column(type="datetime")
      * @Groups({"album_browse"})
+     * @Groups({"style_read"})
      */
     private $createdAt;
 
@@ -65,6 +69,7 @@ class Album
     /**
      * @ORM\ManyToMany(targetEntity=Support::class, inversedBy="albums")
      * @Groups({"album_browse"})
+     * 
      */
     private $support;
 
