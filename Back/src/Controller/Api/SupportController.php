@@ -2,8 +2,8 @@
 
 namespace App\Controller\Api;
 
-use App\Entity\Album;
-use App\Repository\AlbumRepository;
+use App\Entity\Support;
+use App\Repository\SupportRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -12,21 +12,19 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Serializer\Normalizer\AbstractNormalizer;
 use Symfony\Component\Serializer\SerializerInterface;
 
-class AlbumController extends AbstractController
+class SupportController extends AbstractController
 {
     /**
-     * Liste all albums
-     * 
-     * @Route("/api/albums", name="app_api_album_browse", methods={"GET"})
+     * @Route("/api/supports", name="app_api_support_browse", methods={"GET"})
      */
-    public function browse(AlbumRepository $albumRepository): JsonResponse
+    public function browse(SupportRepository $supportRepository): JsonResponse
     {
-        // List all albums
-        $allAlbums = $albumRepository->findAll();
+        // List all support
+        $allSupports = $supportRepository->findAll();
 
         return $this->json(
             // Data
-            $allAlbums,
+            $allSupports,
             // Status code
             200,
             // HTTP headers
@@ -35,73 +33,72 @@ class AlbumController extends AbstractController
             [
                 "groups" =>
                 [
-                    "album_browse"
+                    "support_browse"
                 ]
             ]
-
         );     
     }
 
     /**
-     * Select specific album
+     * Select specific support
      *
      * @param int $id
-     * @param AlbumRepository $albumRepository
+     * @param SupportRepository $supportRepository
      * @return JsonResponse
      * 
-     * @Route("api/albums/{id}",name="app_api_album_read", requirements={"id"="\d+"}, methods={"GET"})
+     * @Route("api/supports/{id}",name="app_api_support_read", requirements={"id"="\d+"}, methods={"GET"})
      */
-    public function read($id, AlbumRepository $albumRepository): JsonResponse
+    public function read($id, SupportRepository $supportRepository): JsonResponse
     {
-        // find all album
-        $album = $albumRepository->find($id);
+        // find all support
+        $support = $supportRepository->find($id);
 
         // 404 management
-        if ($album === null){
-            return $this->json(["message"=>"Cet album n'existe pas"], Response::HTTP_NOT_FOUND);
+        if ($support === null){
+            return $this->json(["message"=>"Ce support n'existe pas"], Response::HTTP_NOT_FOUND);
         }
 
-        return $this->json($album,200,[],[
+        return $this->json($support,200,[],[
                 "groups" =>
                 [
-                    "album_browse",
-                    "album_read"
+                    "support_browse",
+                    "support_read"
                 ]
             ]
         );
     }
 
     /**
-     * Add new Album
+     * Add new Support
      *
      * @param Request $request
      * @param SerializerInterface $serializerInterface
-     * @param AlbumRepository $albumRepository
+     * @param SupportRepository $supportRepository
      * @return JsonResponse
      * 
-     * @Route("/api/albums", name="app_api_album_add", methods={"POST"})
+     * @Route("/api/supports", name="app_api_support_add", methods={"POST"})
      */
-    public function add (Request $request, SerializerInterface $serializerInterface, AlbumRepository $albumRepository )
+    public function add (Request $request, SerializerInterface $serializerInterface, SupportRepository $supportRepository )
     {
         // Select Json content
         $jsonContent = $request->getContent();
 
         //
-        $newAlbum = $serializerInterface->deserialize(
+        $newSupport = $serializerInterface->deserialize(
             // data to transform
             $jsonContent,
             // Type of object we want to deserialize
-            Album::class,
+            Support::class,
             // Format
             "json"
             
         );
 
-        $albumRepository->add($newAlbum, true);
+        $supportRepository->add($newSupport, true);
 
         return $this->json(
             // data
-            $newAlbum,
+            $newSupport,
             // status code
             Response::HTTP_CREATED,
             // headers
@@ -110,48 +107,48 @@ class AlbumController extends AbstractController
             [
                 "groups" =>
                 [
-                    "album_read"
+                    "support_read"
                 ]
             ]
         );     
     }
 
     /**
-     * Edit specific album
+     * Edit specific support
      *
      * @param int $id
      * @param Request $request
-     * @param AlbumRepository $albumRepository
+     * @param SupportRepository $supportRepository
      * @param SerializerInterface $serializerInterface
      * @return JsonResponse
      * 
-     * @Route("api/albums/{id}",name="app_api_album_edit", requirements={"id"="\d+"}, methods={"PUT", "PATCH"})
+     * @Route("api/supports/{id}",name="app_api_support_edit", requirements={"id"="\d+"}, methods={"PUT", "PATCH"})
      */
-    public function edit($id, Request $request, AlbumRepository $albumRepository, SerializerInterface $serializerInterface)
+    public function edit($id, Request $request, SupportRepository $supportRepository, SerializerInterface $serializerInterface)
     {
         // 1. Select Json content
         $jsonContent = $request->getContent();
 
-        // 2. Find album on Database
-        $album = $albumRepository->find($id);
+        // 2. Find support on Database
+        $support = $supportRepository->find($id);
 
         // 3. deserialize and update
         $serializerInterface->deserialize( 
             // data
             $jsonContent,
             // type
-            Album::class, 
+            Support::class, 
             // Format
             "json",
             // context
-            [AbstractNormalizer::OBJECT_TO_POPULATE => $album]
+            [AbstractNormalizer::OBJECT_TO_POPULATE => $support]
         );
 
-        $albumRepository->add($album,true);
+        $supportRepository->add($support,true);
 
         return $this->json(
             // data
-            $album,
+            $support,
             // code status
             Response::HTTP_OK,
             // headers
@@ -160,7 +157,8 @@ class AlbumController extends AbstractController
             [
                 "groups" =>
                 [
-                    "album_read"
+                    "support_read",
+                    
                 ]
             ]
 
@@ -169,23 +167,20 @@ class AlbumController extends AbstractController
     }
 
     /**
-     * Delete specific album
+     * Delete specific support
      *
      * @param int $id
-     * @param AlbumRepository $albumRepository
+     * @param SupportRepository $supportRepository
      * 
-     * @Route("api/albums/{id}",name="app_api_album_delete", requirements={"id"="\d+"}, methods={"DELETE"})
+     * @Route("api/supports/{id}",name="app_api_support_delete", requirements={"id"="\d+"}, methods={"DELETE"})
      */
-    public function delete($id, AlbumRepository $albumRepository)
+    public function delete($id, SupportRepository $supportRepository)
     {
-        $album = $albumRepository->find($id);
-        $albumRepository->remove($album,true);
+        $support = $supportRepository->find($id);
+        $supportRepository->remove($support,true);
 
         return $this->json(null, Response::HTTP_NO_CONTENT);
 
     }
-
-
-
 
 }
