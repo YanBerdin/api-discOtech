@@ -52,9 +52,9 @@ class ArtistController extends AbstractController
      * 
      * @Route("api/artists/{id}",name="app_api_artist_read", requirements={"id"="\d+"}, methods={"GET"})
      */
-     public function read($id,ArtistRepository $ArtistRepository): JsonResponse
+     public function read($id,ArtistRepository $artistRepository): JsonResponse
      {
-         $artist = $ArtistRepository->find($id);
+         $artist = $artistRepository->find($id);
          // 404 Managment
          if ($artist === null){
              
@@ -177,7 +177,7 @@ class ArtistController extends AbstractController
      * @param int $id
      * @param ArtistRepository $artistRepository
      * 
-     * @Route("api/artists/{id}",name="app_api_artist_edit", requirements={"id"="\d+"}, methods={"DELETE"})
+     * @Route("api/artists/{id}",name="app_api_artist_delete", requirements={"id"="\d+"}, methods={"DELETE"})
      */
 
      public function delete ($id, ArtistRepository $artistRepository)
