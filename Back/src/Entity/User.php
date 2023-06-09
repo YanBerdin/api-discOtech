@@ -26,7 +26,7 @@ class User
 
     /**
      * @ORM\Column(type="string", length=180)
-     * 
+     * @Groups({"user_browse"})
      * @Groups({"album_read"})
      */
     private $email;
@@ -43,32 +43,34 @@ class User
 
     /**
      * @ORM\Column(type="string", length=255)
-     * 
+     * @Groups({"user_browse"})
      * @Groups({"album_read"})
      */
     private $firstname;
 
     /**
      * @ORM\Column(type="string", length=255)
-     * 
+     * @Groups({"user_browse"})
      * @Groups({"album_read"})
      */
     private $lastname;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
-     * 
+     * @Groups({"user_browse"})
      * @Groups({"album_read"})
      */
     private $avatar;
 
     /**
      * @ORM\OneToMany(targetEntity=Album::class, mappedBy="user")
+     * 
      */
     private $albums;
 
     /**
      * @ORM\OneToMany(targetEntity=Favorites::class, mappedBy="user")
+     * 
      */
     private $favorites;
 
