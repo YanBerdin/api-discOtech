@@ -17,7 +17,6 @@ class Album
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
-     * 
      * @Groups({"album_browse"})
      * 
      */
@@ -29,18 +28,21 @@ class Album
      * @Groups({"album_browse"})
      * @Groups({"favorite_browse"})
      * @Groups({"artist_browse"})
+     * @Groups({"style_read"})
      */
     private $name;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      * @Groups({"album_browse"})
+     * @Groups({"style_read"})
      */
     private $edition;
 
     /**
      * @ORM\Column(type="date")
      * @Groups({"album_browse"})
+     * @Groups({"style_read"})
      * @Groups({"favorites_browse"})
      */
     private $releaseDate;
@@ -48,6 +50,7 @@ class Album
     /**
      * @ORM\Column(type="datetime")
      * @Groups({"album_browse"})
+     * @Groups({"style_read"})
      */
     private $createdAt;
 
@@ -66,6 +69,7 @@ class Album
     /**
      * @ORM\ManyToMany(targetEntity=Support::class, inversedBy="albums")
      * @Groups({"album_browse"})
+     * 
      */
     private $support;
 
