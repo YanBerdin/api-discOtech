@@ -1,10 +1,10 @@
 
   <div class="card text-center card text-dark card border-dark mb-5" style="width: 20rem">
     <div class="card-body">
-      <h5 class="card-title text-decoration-underline">{{entity}}</h5>
+      <h5 class="card-title text-decoration-underline">{{entity|capitalize}}</h5>
           <p class="card-text">Modifier, ajouter ou supprimer un élément de "{{entity}}".</p>
-          <a href="{{ path('app_back_user_new')}}" class="btn btn-success">Ajouter</a>
-          <a href="{{ path('app_back_user_index')}}" class="btn btn-primary">Liste</a>
+          <a href="{{ path('app_back_' ~ entity ~ '_new')}}" class="btn btn-success">Ajouter</a>
+          <a href="{{ path('app_back_' ~ entity ~ '_index')}}" class="btn btn-primary">Liste</a>
     </div>
   </div>
 
