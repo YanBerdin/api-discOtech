@@ -31,23 +31,28 @@ class Song
      * @ORM\Column(type="integer")
      * @Groups({"song_browse"})
      * @Groups({"album_browse"})
+     * @Groups({"song_read"})
      */
     private $duration;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      * @Groups({"song_browse"})
+     * @Groups({"song_read"})
      */
     private $preview;
 
     /**
      * @ORM\ManyToOne(targetEntity=Album::class, inversedBy="songs")
      * @Groups({"song_browse"})
+     * @Groups({"song_read"})
      */
     private $album;
 
     /**
      * @ORM\Column(type="integer")
+     * @Groups({"song_browse"})
+     * @Groups({"song_read"})
      */
     private $trackNb;
 

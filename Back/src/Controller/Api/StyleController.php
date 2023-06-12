@@ -103,7 +103,7 @@ class StyleController extends AbstractController
             // Headers
             [],
             // Serialization contexts
-            ["groups"=>["style_read"]]
+            ["groups"=>["style_browse", "style_read"]]
         );
     }
 
@@ -149,20 +149,19 @@ class StyleController extends AbstractController
             // Headers
             [],
             // Context
-            ["groups" => ["style_read"]]
+            ["groups" => ["style_browse", "style_read"]]
         );
-
-
 
     }
 
+    
     /**
      * Delete specific style
      *
      * @param int $id
      * @param StyleRepository $StyleRepository
      * 
-     * @Route("api/styles/{id}",name="app_api_album_delete", requirements={"id"="\d+"}, methods={"DELETE"})
+     * @Route("api/styles/{id}",name="app_api_style_delete", requirements={"id"="\d+"}, methods={"DELETE"})
      */
     public function delete($id, StyleRepository $styleRepository)
     {

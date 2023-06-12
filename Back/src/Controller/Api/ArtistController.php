@@ -165,7 +165,7 @@ class ArtistController extends AbstractController
             [
                 "groups"=>
                 [
-                    "artist_read"
+                    "artist_browse"
                 ]
             ]
         );
