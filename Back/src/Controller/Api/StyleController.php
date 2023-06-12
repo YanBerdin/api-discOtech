@@ -103,7 +103,7 @@ class StyleController extends AbstractController
             // Headers
             [],
             // Serialization contexts
-            ["groups"=>["style_read"]]
+            ["groups"=>["style_browse", "style_read"]]
         );
     }
 
@@ -149,7 +149,7 @@ class StyleController extends AbstractController
             // Headers
             [],
             // Context
-            ["groups" => ["style_read"]]
+            ["groups" => ["style_browse", "style_read"]]
         );
 
 

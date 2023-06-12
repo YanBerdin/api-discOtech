@@ -130,6 +130,7 @@ class AlbumController extends AbstractController
             [
                 "groups" =>
                 [
+                    "album_browse",
                     "album_read"
                 ]
             ]
@@ -180,6 +181,7 @@ class AlbumController extends AbstractController
             [
                 "groups" =>
                 [
+                    "album_browse",
                     "album_read"
                 ]
             ]
@@ -196,10 +198,12 @@ class AlbumController extends AbstractController
      * 
      * @Route("/api/albums/{id}",name="app_api_album_delete", requirements={"id"="\d+"}, methods={"DELETE"})
      */
-    public function delete($id, AlbumRepository $albumRepository)
+    public function delete($id, AlbumRepository $albumRepository, EntityManagerInterface $entityManagerInterface): JsonResponse
     {
         $album = $albumRepository->find($id);
-        $albumRepository->remove($album,true);
+
+        $entityManagerInterface->remove($album);
+        $entityManagerInterface->flush();
 
         return $this->json(null, Response::HTTP_NO_CONTENT);
 
