@@ -126,8 +126,8 @@ class SongController extends AbstractController
             [
                 "groups" => 
                 [
-                    "song_browse",
-                    "song_read"
+                    "song_browse"
+                    
                 ]
             ]);
     }
@@ -168,7 +168,7 @@ class SongController extends AbstractController
             [
                 "groups"=>
                 [
-                    "song_read"
+                    "song_browse"
                 ]
             ]
         );

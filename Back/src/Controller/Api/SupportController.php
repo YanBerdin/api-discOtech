@@ -62,7 +62,6 @@ class SupportController extends AbstractController
                 "groups" =>
                 [
                     "support_browse",
-                    "support_read"
                 ]
             ]
         );
@@ -107,7 +106,7 @@ class SupportController extends AbstractController
             [
                 "groups" =>
                 [
-                    "support_read"
+                    "support_browse"
                 ]
             ]
         );     
@@ -157,7 +156,7 @@ class SupportController extends AbstractController
             [
                 "groups" =>
                 [
-                    "support_read",
+                    "support_browse",
                     
                 ]
             ]
