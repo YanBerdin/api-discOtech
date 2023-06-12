@@ -1,0 +1,53 @@
+http://localhost:8000/api/albums/1
+
+{
+    "id": 1,
+    "name": "album 1",
+    "edition": "edition 1",
+    "releaseDate": "1973-03-24T00:00:00+01:00",
+    "createdAt": "2023-06-12T19:24:20+02:00",
+    "updatedAt": null,
+    "style": [
+      {
+        "id": 1,
+        "name": "Rock"
+      }
+    ],
+    "support": [
+      {
+        "id": 1,
+        "name": "CD"
+      }
+    ],
+    "songs": [
+      {
+        "id": 1,
+        "title": "titre 11",
+        "duration": 60000
+      },
+      {
+        "id": 2,
+        "title": "titre 12",
+        "duration": 51430
+      },
+      {
+        "id": 3,
+        "title": "titre 13",
+        "duration": 30000
+      },
+      {
+        "id": 4,
+        "title": "titre 14",
+        "duration": 30000
+      },
+      {
+        "id": 5,
+        "title": "titre 15",
+        "duration": 30000
+      }
+    ],
+    "artist": {
+      "id": 1,
+      "fullname": "Artist 1"
+    },
+    "image": "https://media.senscritique.com/media/000004795486/300/the_dark_side_of_the_moon.jpg"
