@@ -1,0 +1,452 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "DiscOtech",
+    "dateExported": "2023-06-12T10:16:58.006Z",
+    "version": "1.1",
+    "folders": [
+        {
+            "_id": "7bc6be96-ca5d-46fe-9f1a-2361c2b8e9d6",
+            "name": "ALBUM",
+            "containerId": "",
+            "created": "2023-06-09T13:03:11.604Z",
+            "sortNum": 10000
+        },
+        {
+            "_id": "c345ec7b-9d4d-496a-9cdf-264231241f31",
+            "name": "SONG => OK",
+            "containerId": "",
+            "created": "2023-06-09T13:03:20.320Z",
+            "sortNum": 20000
+        },
+        {
+            "_id": "67233384-c35b-4dd7-a6e0-060488d6ab1a",
+            "name": "ARTIST => OK",
+            "containerId": "",
+            "created": "2023-06-09T13:03:36.145Z",
+            "sortNum": 40000
+        },
+        {
+            "_id": "ac03e4a7-48f4-4d89-8fcf-133a1c058e41",
+            "name": "STYLE => OK",
+            "containerId": "",
+            "created": "2023-06-09T13:03:55.873Z",
+            "sortNum": 50000
+        },
+        {
+            "_id": "7c243369-318b-445d-9978-b18d51e676b6",
+            "name": "SUPPORT => OK",
+            "containerId": "",
+            "created": "2023-06-09T13:04:07.853Z",
+            "sortNum": 60000
+        },
+        {
+            "_id": "41be3570-cbf6-4eea-b435-e89f82370e33",
+            "name": "REVIEW",
+            "containerId": "",
+            "created": "2023-06-09T13:04:14.848Z",
+            "sortNum": 70000
+        },
+        {
+            "_id": "460ba0e7-9f6b-462d-bc44-69302d2391f2",
+            "name": "FAVORITES",
+            "containerId": "",
+            "created": "2023-06-09T13:04:36.324Z",
+            "sortNum": 80000
+        },
+        {
+            "_id": "7eada6e8-9001-49d7-88ee-167e6dcade32",
+            "name": "USER",
+            "containerId": "",
+            "created": "2023-06-09T13:04:41.504Z",
+            "sortNum": 90000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "5e253739-e9cc-4aea-b18d-a9a759b9a5f9",
+            "colId": "0c8aa6ad-59c3-42fb-96ac-5c535223a637",
+            "containerId": "7bc6be96-ca5d-46fe-9f1a-2361c2b8e9d6",
+            "name": "/api/albums",
+            "url": "http://www.localhost:8000/api/albums",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-06-09T13:05:28.352Z",
+            "modified": "2023-06-09T13:05:28.352Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "38313bdb-76de-4cc4-8bda-c89aa2ef2d49",
+            "colId": "0c8aa6ad-59c3-42fb-96ac-5c535223a637",
+            "containerId": "7bc6be96-ca5d-46fe-9f1a-2361c2b8e9d6",
+            "name": "/api/albums/1",
+            "url": "http://www.localhost:8000/api/albums/1",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2023-06-09T13:07:05.452Z",
+            "modified": "2023-06-09T13:07:05.452Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "c911aa98-7ac7-4b03-909c-06edfae26985",
+            "colId": "0c8aa6ad-59c3-42fb-96ac-5c535223a637",
+            "containerId": "c345ec7b-9d4d-496a-9cdf-264231241f31",
+            "name": "api/songs",
+            "url": "http://www.localhost:8000/api/songs",
+            "method": "GET",
+            "sortNum": 25000,
+            "created": "2023-06-12T08:55:30.848Z",
+            "modified": "2023-06-12T08:59:02.850Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "56f2b195-907b-434b-a5cd-0e6176067999",
+            "colId": "0c8aa6ad-59c3-42fb-96ac-5c535223a637",
+            "containerId": "7bc6be96-ca5d-46fe-9f1a-2361c2b8e9d6",
+            "name": "api/albums",
+            "url": "http://www.localhost:8000/api/albums",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2023-06-12T07:08:40.411Z",
+            "modified": "2023-06-12T07:08:40.411Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n\n  \"name\": \"album Add 1\",\n  \"edition\": \"edition Add 1\",\n  \"releaseDate\": \"2000-01-01T00:00:00+01:00\",\n  \"createdAt\": \"now\",\n  \"updatedAt\": null,\n  \"style\": [1],\n  \"support\": [1],\n  \"songs\": [],\n  \"artist\": 1,\n  \"user\": 1,\n  \"image\": \"https://d1csarkz8obe9u.cloudfront.net/posterpreviews/opening-soon%2C-coming-soon-design-template-2ad6ecb3bfc0d528a9999c00a642d447_screen.jpg?ts=1593776133\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "6b2871b3-26ff-4326-901f-d2b9521e8f43",
+            "colId": "0c8aa6ad-59c3-42fb-96ac-5c535223a637",
+            "containerId": "c345ec7b-9d4d-496a-9cdf-264231241f31",
+            "name": "api/songs/1",
+            "url": "http://www.localhost:8000/api/songs/1",
+            "method": "GET",
+            "sortNum": 37500,
+            "created": "2023-06-12T08:55:53.134Z",
+            "modified": "2023-06-12T08:59:04.905Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "4faa357a-560c-4792-b89a-b81325e12a73",
+            "colId": "0c8aa6ad-59c3-42fb-96ac-5c535223a637",
+            "containerId": "7bc6be96-ca5d-46fe-9f1a-2361c2b8e9d6",
+            "name": "api/albums/12",
+            "url": "http://www.localhost:8000/api/albums/12",
+            "method": "PUT",
+            "sortNum": 40000,
+            "created": "2023-06-12T07:09:05.551Z",
+            "modified": "2023-06-12T07:09:05.551Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"album Add Update3\",\n  \"updatedAt\": \"now\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "d4433172-b4dc-474e-9c34-3e79952ee17d",
+            "colId": "0c8aa6ad-59c3-42fb-96ac-5c535223a637",
+            "containerId": "c345ec7b-9d4d-496a-9cdf-264231241f31",
+            "name": "api/songs",
+            "url": "http://www.localhost:8000/api/songs",
+            "method": "POST",
+            "sortNum": 43750,
+            "created": "2023-06-12T08:58:55.223Z",
+            "modified": "2023-06-12T08:59:06.550Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"title\": \"titre 1\",\n  \"duration\": 3000,\n  \"preview\": null,\n  \"trackNb\": 1\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "221153f9-a05a-4966-b9d7-ad9e08468a5e",
+            "colId": "0c8aa6ad-59c3-42fb-96ac-5c535223a637",
+            "containerId": "c345ec7b-9d4d-496a-9cdf-264231241f31",
+            "name": "api/songs/9",
+            "url": "http://www.localhost:8000/api/songs/9",
+            "method": "PUT",
+            "sortNum": 60000,
+            "created": "2023-06-12T09:00:48.114Z",
+            "modified": "2023-06-12T09:00:48.114Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"title\": \"titre d'eva\",\n  \"duration\": 3000,\n  \"preview\": null,\n  \"trackNb\": 3\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "48a1989d-0b5c-4d32-9ba1-6ee201144675",
+            "colId": "0c8aa6ad-59c3-42fb-96ac-5c535223a637",
+            "containerId": "c345ec7b-9d4d-496a-9cdf-264231241f31",
+            "name": "api/songs/8",
+            "url": "http://www.localhost:8000/api/songs/8",
+            "method": "DELETE",
+            "sortNum": 70000,
+            "created": "2023-06-12T08:48:36.389Z",
+            "modified": "2023-06-12T09:01:32.878Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "f126c0a5-4d1e-4453-b994-f58d52864b01",
+            "colId": "0c8aa6ad-59c3-42fb-96ac-5c535223a637",
+            "containerId": "67233384-c35b-4dd7-a6e0-060488d6ab1a",
+            "name": "api/artists",
+            "url": "http://www.localhost:8000/api/artists",
+            "method": "GET",
+            "sortNum": 80000,
+            "created": "2023-06-12T09:14:55.552Z",
+            "modified": "2023-06-12T09:14:55.552Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "040acfc2-b510-4892-99c6-2569c576bbe8",
+            "colId": "0c8aa6ad-59c3-42fb-96ac-5c535223a637",
+            "containerId": "67233384-c35b-4dd7-a6e0-060488d6ab1a",
+            "name": "api/artists/1",
+            "url": "http://www.localhost:8000/api/artists/1",
+            "method": "GET",
+            "sortNum": 90000,
+            "created": "2023-06-12T09:15:17.425Z",
+            "modified": "2023-06-12T09:15:17.425Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "f76448e5-ca6a-4de2-968b-ac236f2895a7",
+            "colId": "0c8aa6ad-59c3-42fb-96ac-5c535223a637",
+            "containerId": "67233384-c35b-4dd7-a6e0-060488d6ab1a",
+            "name": "api/artists",
+            "url": "http://www.localhost:8000/api/artists",
+            "method": "POST",
+            "sortNum": 100000,
+            "created": "2023-06-12T09:16:23.764Z",
+            "modified": "2023-06-12T09:16:23.764Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n\"fullname\": \"artist test\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "cfbbd4a5-5e9c-4198-a7fc-029a625b4d88",
+            "colId": "0c8aa6ad-59c3-42fb-96ac-5c535223a637",
+            "containerId": "67233384-c35b-4dd7-a6e0-060488d6ab1a",
+            "name": "api/artists/4",
+            "url": "http://www.localhost:8000/api/artists/4",
+            "method": "PUT",
+            "sortNum": 110000,
+            "created": "2023-06-12T09:17:16.829Z",
+            "modified": "2023-06-12T09:17:16.829Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n\"fullname\": \"artist test2\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "7cc3389a-b656-4ad8-a3ae-bd1bd1deb1bd",
+            "colId": "0c8aa6ad-59c3-42fb-96ac-5c535223a637",
+            "containerId": "67233384-c35b-4dd7-a6e0-060488d6ab1a",
+            "name": "api/artists/4",
+            "url": "http://www.localhost:8000/api/artists/4",
+            "method": "DELETE",
+            "sortNum": 120000,
+            "created": "2023-06-12T09:17:46.041Z",
+            "modified": "2023-06-12T09:17:46.041Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "cddb9d27-634b-4f26-bae3-2a6e2968daa5",
+            "colId": "0c8aa6ad-59c3-42fb-96ac-5c535223a637",
+            "containerId": "ac03e4a7-48f4-4d89-8fcf-133a1c058e41",
+            "name": "api/styles",
+            "url": "http://www.localhost:8000/api/styles",
+            "method": "GET",
+            "sortNum": 130000,
+            "created": "2023-06-12T09:20:01.221Z",
+            "modified": "2023-06-12T09:20:01.221Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "9977f9bd-2bb6-40e4-b892-fcb0aa98f2f6",
+            "colId": "0c8aa6ad-59c3-42fb-96ac-5c535223a637",
+            "containerId": "ac03e4a7-48f4-4d89-8fcf-133a1c058e41",
+            "name": "api/styles/2",
+            "url": "http://www.localhost:8000/api/styles/2",
+            "method": "GET",
+            "sortNum": 140000,
+            "created": "2023-06-12T09:20:38.720Z",
+            "modified": "2023-06-12T09:20:38.720Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "1c19ce62-ef3d-4699-b34f-414473c32e05",
+            "colId": "0c8aa6ad-59c3-42fb-96ac-5c535223a637",
+            "containerId": "ac03e4a7-48f4-4d89-8fcf-133a1c058e41",
+            "name": "api/styles",
+            "url": "http://www.localhost:8000/api/styles",
+            "method": "POST",
+            "sortNum": 150000,
+            "created": "2023-06-12T09:21:58.115Z",
+            "modified": "2023-06-12T09:21:58.115Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"Chill\",\n  \"image\": null,\n  \"albums\": []\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "5cc62d21-9dd9-483f-83b8-7bb8c684cde6",
+            "colId": "0c8aa6ad-59c3-42fb-96ac-5c535223a637",
+            "containerId": "ac03e4a7-48f4-4d89-8fcf-133a1c058e41",
+            "name": "api/styles/5",
+            "url": "http://www.localhost:8000/api/styles/5",
+            "method": "PUT",
+            "sortNum": 160000,
+            "created": "2023-06-12T09:23:19.911Z",
+            "modified": "2023-06-12T09:23:19.911Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"Hip-Hop\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "0fac8a62-6fea-430c-ba72-b9b941e71756",
+            "colId": "0c8aa6ad-59c3-42fb-96ac-5c535223a637",
+            "containerId": "ac03e4a7-48f4-4d89-8fcf-133a1c058e41",
+            "name": "api/styles/6",
+            "url": "http://www.localhost:8000/api/styles/6",
+            "method": "DELETE",
+            "sortNum": 170000,
+            "created": "2023-06-12T09:24:12.501Z",
+            "modified": "2023-06-12T09:24:12.501Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "697e658a-9fcf-4d7c-bf8d-66295467f563",
+            "colId": "0c8aa6ad-59c3-42fb-96ac-5c535223a637",
+            "containerId": "7c243369-318b-445d-9978-b18d51e676b6",
+            "name": "api/supports",
+            "url": "http://www.localhost:8000/api/supports",
+            "method": "GET",
+            "sortNum": 180000,
+            "created": "2023-06-12T09:27:39.229Z",
+            "modified": "2023-06-12T09:27:39.229Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "163f42c2-5240-4d52-9ed2-49c41291b26f",
+            "colId": "0c8aa6ad-59c3-42fb-96ac-5c535223a637",
+            "containerId": "7c243369-318b-445d-9978-b18d51e676b6",
+            "name": "api/supports/1",
+            "url": "http://www.localhost:8000/api/supports/1",
+            "method": "GET",
+            "sortNum": 190000,
+            "created": "2023-06-12T09:28:03.514Z",
+            "modified": "2023-06-12T09:28:03.514Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "0d08e9b2-85cf-4e81-b4ae-dbb67fd99253",
+            "colId": "0c8aa6ad-59c3-42fb-96ac-5c535223a637",
+            "containerId": "7c243369-318b-445d-9978-b18d51e676b6",
+            "name": "api/supports",
+            "url": "http://www.localhost:8000/api/supports",
+            "method": "POST",
+            "sortNum": 200000,
+            "created": "2023-06-12T09:29:42.243Z",
+            "modified": "2023-06-12T09:29:42.243Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"DEMATTest\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "32937e4d-515d-412a-aa1b-e4141770361f",
+            "colId": "0c8aa6ad-59c3-42fb-96ac-5c535223a637",
+            "containerId": "7c243369-318b-445d-9978-b18d51e676b6",
+            "name": "api/supports/5",
+            "url": "http://www.localhost:8000/api/supports/5",
+            "method": "PUT",
+            "sortNum": 210000,
+            "created": "2023-06-12T09:31:19.922Z",
+            "modified": "2023-06-12T09:31:19.922Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"DEMATTestupdate\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "86021cdf-0671-464f-9cf0-3a073b376203",
+            "colId": "0c8aa6ad-59c3-42fb-96ac-5c535223a637",
+            "containerId": "7c243369-318b-445d-9978-b18d51e676b6",
+            "name": "api/supports/4",
+            "url": "http://www.localhost:8000/api/supports/4",
+            "method": "DELETE",
+            "sortNum": 220000,
+            "created": "2023-06-12T09:32:16.478Z",
+            "modified": "2023-06-12T09:32:16.478Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        }
+    ]
+}

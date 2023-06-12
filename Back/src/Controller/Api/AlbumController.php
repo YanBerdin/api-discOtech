@@ -198,12 +198,10 @@ class AlbumController extends AbstractController
      * 
      * @Route("/api/albums/{id}",name="app_api_album_delete", requirements={"id"="\d+"}, methods={"DELETE"})
      */
-    public function delete($id, AlbumRepository $albumRepository, EntityManagerInterface $entityManagerInterface): JsonResponse
+    public function delete($id, AlbumRepository $albumRepository, EntityManagerInterface $entityManagerInterface): Response
     {
         $album = $albumRepository->find($id);
-
-        $entityManagerInterface->remove($album);
-        $entityManagerInterface->flush();
+        $albumRepository->remove($album,true);
 
         return $this->json(null, Response::HTTP_NO_CONTENT);
 
