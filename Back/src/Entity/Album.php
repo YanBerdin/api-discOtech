@@ -88,7 +88,7 @@ class Album
 
     /**
      * @ORM\ManyToOne(targetEntity=User::class, inversedBy="albums")
-     * @Groups({"album_browse"})
+     * @Groups({"album_read"})
      */
     private $user;
 
