@@ -3,5 +3,19 @@
 {% block title %}Welcome Backoffice{% endblock %}
 
 {% block body %}
-    
+
+<h1 class="text-decoration-underline" style="padding-top: 2rem">
+    Bienvenue sur le BackOffice
+</h1>
+
+<div class="container row justify-content-between col" style="margin-top: 5rem">
+ {# {% if is_granted('#') %} #}
+    {% include 'back/partials/_card_link.html.twig' with { 'entity' : 'Utilisateur' }%}
+{# {% endif %} #}
+    {% include 'back/partials/_card_link.html.twig' with { 'entity' : 'Albums' } %}
+    {% include 'back/partials/_card_link.html.twig' with { 'entity' : 'Artistes' } %}
+    {% include 'back/partials/_card_link.html.twig' with { 'entity' : 'Musique' } %}
+    {% include 'back/partials/_card_link.html.twig' with { 'entity' : 'Style' } %}
+    {% include 'back/partials/_card_link.html.twig' with { 'entity' : 'Support' } %}
+</div>
 {% endblock %}
