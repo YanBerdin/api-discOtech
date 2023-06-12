@@ -48,7 +48,7 @@ security:
         # Login first road ! very important
         - { path: ^/api/login, roles: PUBLIC_ACCESS }
         # only the admin profile has access to related URLs starting by "back"
-        - { path: ^\/back, roles: ROLE_ADMIN }
+        - { path: ^\/back, roles: PUBLIC_ACCESS}
         # - { path: ^/profile, roles: ROLE_USER }
 
     role_hierarchy:
