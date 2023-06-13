@@ -39,6 +39,19 @@ class AlbumRepository extends ServiceEntityRepository
         }
     }
 
+    public function findBySearch($search)
+    {
+        // Alias 'a' for 'Album'
+        return $this->createQueryBuilder('a')
+            // Where name like <search>
+            ->where('a.name LIKE :search')
+            ->setParameter('search','%' . $search . '%')
+            ->orderBy("a.name", "ASC")
+            ->getQuery()
+            ->getResult();
+    }
+
+
 //    /**
 //     * @return Album[] Returns an array of Album objects
 //     */
