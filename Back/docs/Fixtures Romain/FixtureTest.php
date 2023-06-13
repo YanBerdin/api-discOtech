@@ -51,18 +51,33 @@ class AppFixtures extends Fixture
         // =======================================================
         // TODO : make STYLES
         // =======================================================
-        $styles = ["Rock", "Rap", "Electro", "House", "Classique", "pop"];
-        // $stylesImage = ["https://images7.alphacoders.com/436/436860.jpg", "https://www.shutterstock.com/image-vector/vector-logo-rap-music-hand-260nw-1365427319.jpg", "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZWxlY3RybyUyMG11c2ljfGVufDB8fDB8fHww&w=1000&q=80", "https://i.scdn.co/image/ab67706c0000bebbed4f4edd01cfb81857eff52d", "https://media.istockphoto.com/id/1131760814/fr/photo/femme-effectuant-sur-un-violon.jpg?s=612x612&w=0&k=20&c=rBMuY9ldE5fuqPP5SFozjMm3I4rv0YMS-zr5--VMeuQ=", "https://toutelaculture.com/wp-content/uploads/2013/06/decoratzia.com_-600x600.jpg"];
+        $styles = [
+            "Rock", 
+            "Rap", 
+            "Electro", 
+            "House", 
+            "Classique", 
+            "pop"
+        ];
+
+        $stylesImage = [
+            "https://images7.alphacoders.com/436/436860.jpg", 
+            "https://www.shutterstock.com/image-vector/vector-logo-rap-music-hand-260nw-1365427319.jpg", 
+            "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZWxlY3RybyUyMG11c2ljfGVufDB8fDB8fHww&w=1000&q=80", 
+            "https://i.scdn.co/image/ab67706c0000bebbed4f4edd01cfb81857eff52d", 
+            "https://media.istockphoto.com/id/1131760814/fr/photo/femme-effectuant-sur-un-violon.jpg?s=612x612&w=0&k=20&c=rBMuY9ldE5fuqPP5SFozjMm3I4rv0YMS-zr5--VMeuQ=", 
+            "https://toutelaculture.com/wp-content/uploads/2013/06/decoratzia.com_-600x600.jpg"
+        ];
 
         /** @var Style[] $allStyle */
         $allStyle = [];
 
-        foreach($styles as $styleName){
+        for($i=0 ; $i < count($styles); $i++){
 
             $newStyle = new Style();
 
-            $newStyle->setName($styleName);
-            $newStyle->setImage("");
+            $newStyle->setName($styles[$i]);
+            $newStyle->setImage($stylesImage[$i]);
 
             $manager->persist($newStyle);
 
@@ -72,7 +87,11 @@ class AppFixtures extends Fixture
         // =======================================================
         // TODO : make SUPPORT
         // =======================================================
-        $support = ["CD", "Cassette", "Vinyl"];
+        $support = [
+            "CD", 
+            "Cassette", 
+            "Vinyl"
+        ];
 
         /** @var Support $allSupport */
         $allSupport = [];
@@ -92,7 +111,10 @@ class AppFixtures extends Fixture
         // TODO : make ARTIST (10 Artists)
         // =======================================================
 
-        // $artistName = ["Pink Floyd", "Radiohead", "Daft-Punk", "Nirvana", "David Bowie", "The doors", "the Beatles", "IAM", "Led Zeppelin", "Michael Jackson" ];
+        $artistName = [
+            "Pink Floyd", 
+            
+        ];
 
         /** @var Artist $allArtist */
         $allArtist = [];
@@ -158,6 +180,8 @@ class AppFixtures extends Fixture
             $newSong->setTitle("title $i");
             $newSong->setDuration(30000);
             $newSong->setTrackNb(1);
+            
+            $manager->persist($newSong);
         }
 
         // =======================================================
