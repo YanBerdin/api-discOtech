@@ -1,0 +1,63 @@
+http://localhost:8000/api/artists
+
+[
+    {
+      "id": 1,
+      "fullname": "Artist 1",
+      "albums": [
+        {
+          "name": "album 1"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "fullname": "Artist 2",
+      "albums": [
+        {
+          "name": "album 2"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "fullname": "Artist 3",
+      "albums": [
+        {
+          "name": "album 3 "
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "fullname": "Artist 4",
+      "albums": [
+        {
+          "name": "album 4"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "fullname": "Artist 5",
+      "albums": [
+        {
+          "name": "album 5"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "fullname": "Artist 6",
+      "albums": [
+        
+      ]
+    },
+    {
+      "id": 7,
+      "fullname": "Artist 7",
+      "albums": [
+        
+      ]
+    }
+  ]
