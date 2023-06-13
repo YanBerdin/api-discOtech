@@ -9,13 +9,14 @@
 </h1>
 
 <div class="container row justify-content-between col" style="margin-top: 5rem">
- {# {% if is_granted('#') %} #}
-    {% include 'back/partials/_card_link.html.twig' with { 'entity' : 'Utilisateur' }%}
+ 
+    {% include 'back/partials/_card_link.html.twig' with { 'entity' : 'album' } %}
+    {% include 'back/partials/_card_link.html.twig' with { 'entity' : 'artist' } %}
+    {% include 'back/partials/_card_link.html.twig' with { 'entity' : 'song' } %}
+    {% include 'back/partials/_card_link.html.twig' with { 'entity' : 'style' } %}
+    {% include 'back/partials/_card_link.html.twig' with { 'entity' : 'support' } %}
+{# {% if is_granted('#') %} #}
+    {% include 'back/partials/_card_link.html.twig' with { 'entity' : 'user' }%}
 {# {% endif %} #}
-    {% include 'back/partials/_card_link.html.twig' with { 'entity' : 'Albums' } %}
-    {% include 'back/partials/_card_link.html.twig' with { 'entity' : 'Artistes' } %}
-    {% include 'back/partials/_card_link.html.twig' with { 'entity' : 'Musique' } %}
-    {% include 'back/partials/_card_link.html.twig' with { 'entity' : 'Style' } %}
-    {% include 'back/partials/_card_link.html.twig' with { 'entity' : 'Support' } %}
 </div>
 {% endblock %}

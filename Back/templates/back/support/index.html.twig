@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Support index{% endblock %}
+
+{% block body %}
+    <h1>Support index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for support in supports %}
+            <tr>
+                <td>{{ support.id }}</td>
+                <td>{{ support.name }}</td>
+                <td>
+                    <a href="{{ path('app_back_support_show', {'id': support.id}) }}">show</a>
+                    <a href="{{ path('app_back_support_edit', {'id': support.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_back_support_new') }}">Create new</a>
+{% endblock %}
