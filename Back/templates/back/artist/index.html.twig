@@ -3,32 +3,29 @@
 {% block title %}liste Artistes{% endblock %}
 
 {% block body %}
-    <h1>Liste des artistes</h1>
-
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Nom/Pseudo:</th>
-                
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for artist in artists %}
-            <tr>
-                <td>{{ artist.fullname }}</td>
-                
-                <td>
-                    <a href="{{ path('app_back_artist_show', {'id': artist.id}) }}">Voir plus</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="3">Aucun ariste de disponible</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <a href="{{ path('app_back_artist_new') }}">Créer</a>
+    <h1>Liste des artistes</h1>  
+        <a class="btn btn-success me-2" href="{{ path('app_back_artist_new') }}">Créer</a>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Nom/Pseudo:</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for artist in artists %}
+                <tr>
+                    <td>{{ artist.fullname }}</td>
+                    
+                    <td>
+                        <a class="btn btn-info me-1" href="{{ path('app_back_artist_show', {'id': artist.id}) }}">Voir plus</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="3">Aucun ariste de disponible</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
 {% endblock %}

@@ -7,6 +7,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Validator\Constraints\NotBlank;
 
 class ArtistType extends AbstractType
 {
@@ -16,8 +17,8 @@ class ArtistType extends AbstractType
         ->add('fullname', TextType::class, [
             "label" => "Nom Prénom ou Pseudo:",
             "attr" => [
-                "placeholder" => "Nom Prénom ou Pseudo:"
-            ]
+                "placeholder" => "Nom Prénom ou Pseudo:"],
+                "constraints" => [new NotBlank()]
         ])
         ;
     }

@@ -47,7 +47,7 @@ class StyleController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="app_back_styles_show", methods={"GET"})
+     * @Route("/{id}", name="app_back_style_show", methods={"GET"})
      */
     public function show(Style $style): Response
     {

@@ -33,6 +33,7 @@ class SongType extends AbstractType
             ->add('duration', TimeType::class, [
                 'input'  => 'timestamp',
                 'widget' => 'choice',
+                "constraints" => [new NotBlank()]
             ])
  
             ->add('preview', TextType::class, [
@@ -57,6 +58,7 @@ class SongType extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => Song::class,
+            "attr" => ["novalidate" => 'novalidate']
         ]);
     }
 }

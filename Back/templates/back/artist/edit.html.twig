@@ -3,11 +3,11 @@
 {% block title %}Edition Artiste{% endblock %}
 
 {% block body %}
-    <h1>Editer un artiste</h1>
+    <h1>Modifier un artiste</h1>
 
-    {{ include('back/artist/_form.html.twig', {'button_label': 'Update'}) }}
+    {{ include('back/artist/_form.html.twig', {'button_label': 'Modifier'}) }}
 
-    <a href="{{ path('app_back_artist_index') }}">Retour à la liste</a>
+    <a class="btn btn-secondary me-2" href="{{ path('app_back_artist_index') }}">Retour à la liste</a>
 
     {{ include('back/artist/_delete_form.html.twig') }}
 {% endblock %}

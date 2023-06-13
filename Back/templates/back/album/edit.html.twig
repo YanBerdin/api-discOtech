@@ -1,13 +1,13 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit Album{% endblock %}
+{% block title %}Edition Album{% endblock %}
 
 {% block body %}
-    <h1>Edit Album</h1>
+    <h1>Modifier un  Album</h1>
 
-    {{ include('back/album/_form.html.twig', {'button_label': 'Update'}) }}
+    {{ include('back/album/_form.html.twig', {'button_label': 'Modifier'}) }}
 
-    <a href="{{ path('app_back_album_index') }}">back to list</a>
+    <a class="btn btn-secondary me-2" href="{{ path('app_back_album_index') }}">back to list</a>
 
     {{ include('back/album/_delete_form.html.twig') }}
 {% endblock %}
