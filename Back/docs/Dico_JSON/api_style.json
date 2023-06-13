@@ -1,0 +1,24 @@
+http://localhost:8000/api/styles
+
+[
+    {
+      "id": 1,
+      "name": "Rock",
+      "image": "https://images7.alphacoders.com/436/436860.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Rap",
+      "image": "https://www.shutterstock.com/image-vector/vector-logo-rap-music-hand-260nw-1365427319.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Electro",
+      "image": "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZWxlY3RybyUyMG11c2ljfGVufDB8fDB8fHww&w=1000&q=80"
+    },
+    {
+      "id": 4,
+      "name": "Classic",
+      "image": "https://media.istockphoto.com/id/1131760814/fr/photo/femme-effectuant-sur-un-violon.jpg?s=612x612&w=0&k=20&c=rBMuY9ldE5fuqPP5SFozjMm3I4rv0YMS-zr5--VMeuQ="
+    }
+  ]

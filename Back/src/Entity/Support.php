@@ -17,7 +17,6 @@ class Support
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
-     * @Groups({"album_browse"})
      * @Groups({"support_browse"})
      */
     private $id;
@@ -31,6 +30,7 @@ class Support
 
     /**
      * @ORM\ManyToMany(targetEntity=Album::class, mappedBy="support")
+     * @Groups({"support_read"})
      */
     private $albums;
 
