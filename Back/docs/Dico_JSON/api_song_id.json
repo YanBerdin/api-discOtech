@@ -1,0 +1,14 @@
+http://localhost:8000/api/songs/1
+
+{
+    "id": 1,
+    "title": "titre 11",
+    "duration": 60000,
+    "preview": null,
+    "album": {
+      "id": 1,
+      "name": "album 1",
+      "image": "https://media.senscritique.com/media/000004795486/300/the_dark_side_of_the_moon.jpg"
+    },
+    "trackNb": 1
+  }

@@ -1,0 +1,11 @@
+http://localhost:8000/api/artists/1
+
+{
+    "id": 1,
+    "fullname": "Artist 1",
+    "albums": [
+      {
+        "name": "album 1"
+      }
+    ]
+  }

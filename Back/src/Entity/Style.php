@@ -17,7 +17,6 @@ class Style
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
-     * @Groups({"album_browse"})
      * @Groups({"style_browse"})
      */
     private $id;

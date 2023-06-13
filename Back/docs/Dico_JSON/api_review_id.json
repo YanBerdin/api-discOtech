@@ -1,0 +1,17 @@
+http://localhost:8000/api/reviews/1
+
+{
+  "id": 1,
+  "user": {
+    "id": 2,
+    "email": "user@user.com",
+    "firstname": "user",
+    "lastname": "user"
+  },
+  "album": {
+    "id": 1,
+    "name": "album 1"
+  },
+  "content": "très bien",
+  "createdAt": "2023-06-13T08:22:10+02:00"
+}

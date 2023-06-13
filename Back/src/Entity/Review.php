@@ -15,7 +15,6 @@ class Review
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
-     * @Groups({"album_read"})
      * @Groups({"review_read"})
      */
     private $id;
