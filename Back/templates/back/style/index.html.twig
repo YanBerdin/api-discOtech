@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Style index{% endblock %}
+
+{% block body %}
+    <h1>Style index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Image</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for style in styles %}
+            <tr>
+                <td>{{ style.id }}</td>
+                <td>{{ style.name }}</td>
+                <td>{{ style.image }}</td>
+                <td>
+                    <a href="{{ path('app_back_style_show', {'id': style.id}) }}">show</a>
+                    <a href="{{ path('app_back_style_edit', {'id': style.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_back_style_new') }}">Create new</a>
+{% endblock %}
