@@ -34,9 +34,9 @@
         </tbody>
     </table>
 
-    <a href="{{ path('app_back_user_index') }}">Retour a la liste</a>
+    <a class="btn btn-secondary me-2" href="{{ path('app_back_user_index') }}">Retour a la liste</a>
 
-    <a href="{{ path('app_back_user_edit', {'id': user.id}) }}">Modifier</a>
+    <a class="btn btn-warning me-2" href="{{ path('app_back_user_edit', {'id': user.id}) }}">Modifier</a>
 
     {{ include('back/user/_delete_form.html.twig') }}
 {% endblock %}

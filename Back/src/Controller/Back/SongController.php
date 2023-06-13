@@ -16,7 +16,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class SongController extends AbstractController
 {
     /**
-     * @Route("/", name="app_back_songs_index", methods={"GET"})
+     * @Route("/", name="app_back_song_index", methods={"GET"})
      */
     public function index(SongRepository $songRepository): Response
     {
@@ -26,7 +26,7 @@ class SongController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="app_back_songs_new", methods={"GET", "POST"})
+     * @Route("/new", name="app_back_song_new", methods={"GET", "POST"})
      */
     public function new(Request $request, SongRepository $songRepository): Response
     {
@@ -47,7 +47,7 @@ class SongController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="app_back_songs_show", methods={"GET"})
+     * @Route("/{id}", name="app_back_song_show", methods={"GET"})
      */
     public function show(Song $song): Response
     {

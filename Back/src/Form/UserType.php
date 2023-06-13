@@ -19,8 +19,24 @@ class UserType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
+
+        ->add('firstname', TextType::class, [
+            "label" => "Nom:",
+            "attr" => ["placeholder" => "Nom ..."],
+            "constraints" => [new NotBlank()]
+        ])
+
+        ->add('lastname', TextType::class, [
+            "label" => "Prénom:",
+            "attr" => [
+                "placeholder" => "Prénom ..."],
+                "constraints" => [new NotBlank()]
+        ])
+
+
             ->add('email', EmailType::class,[
-                "label" => "Identification par Email"
+                "label" => "Identification par Email",
+                "constraints" => [new NotBlank()]
             ])
             // on utilise l'event avant de mettre les données dans le formulaire
             ->addEventListener(FormEvents::PRE_SET_DATA, function(FormEvent $event) {
@@ -75,28 +91,13 @@ class UserType extends AbstractType
                 "multiple" => true,
                 "choices" => [
                     "ADMIN" => "ROLE_ADMIN",
-                    "MANAGER" => "ROLE_MANAGER",
+                    // "MANAGER" => "ROLE_MANAGER",
                     "USER" => "ROLE_USER",
                 ]
             ])
 
-            ->add('firstname', TextType::class, [
-                "label" => "Nom:",
-                "attr" => [
-                    "placeholder" => "Nom ..."
-                ]
-            ])
-
-            ->add('lastname', TextType::class, [
-                "label" => "Prénom:",
-                "attr" => [
-                    "placeholder" => "Prénom ..."
-                ]
-            ])
-
             //TODO Why out an Image?
-            ->add('avatar')
-        ;
+            ->add('avatar');
     }
 
     public function configureOptions(OptionsResolver $resolver): void

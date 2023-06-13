@@ -15,14 +15,14 @@
                         <a class="nav-link active ms-5" href="#"> Accueil Site </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active ms-5" href="{{ path('app_back_default')}}"> Accueil Administration </a>
+                        <a class="nav-link active ms-5" href="{{ path('default')}}"> Accueil Administration </a>
                     </li>
                 </ul>
 
                 {% if is_granted("IS_AUTHENTICATED_FULLY")%}
-                    <a href="#"><button type="button" class="btn btn-danger me-2">Deconnexion</button></a>
+                    <a href="{{path('app_logout')}}"><button type="button" class="btn btn-danger me-2">Deconnexion</button></a>
                 {% else %}
-                {# TODO redirect to discotech.fr/ #}
+                
                 {% endif %}
                 
 

@@ -16,7 +16,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class SupportController extends AbstractController
 {
     /**
-     * @Route("/", name="app_back_supports_index", methods={"GET"})
+     * @Route("/", name="app_back_support_index", methods={"GET"})
      */
     public function index(SupportRepository $supportRepository): Response
     {
@@ -26,7 +26,7 @@ class SupportController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="app_back_supports_new", methods={"GET", "POST"})
+     * @Route("/new", name="app_back_support_new", methods={"GET", "POST"})
      */
     public function new(Request $request, SupportRepository $supportRepository): Response
     {
@@ -47,7 +47,7 @@ class SupportController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="app_back_supports_show", methods={"GET"})
+     * @Route("/{id}", name="app_back_support_show", methods={"GET"})
      */
     public function show(Support $support): Response
     {
@@ -57,7 +57,7 @@ class SupportController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="app_back_supports_edit", methods={"GET", "POST"})
+     * @Route("/{id}/edit", name="app_back_support_edit", methods={"GET", "POST"})
      */
     public function edit(Request $request, Support $support, SupportRepository $supportRepository): Response
     {
@@ -77,7 +77,7 @@ class SupportController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="app_back_supports_delete", methods={"POST"})
+     * @Route("/{id}", name="app_back_support_delete", methods={"POST"})
      */
     public function delete(Request $request, Support $support, SupportRepository $supportRepository): Response
     {

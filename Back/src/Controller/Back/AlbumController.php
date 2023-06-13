@@ -11,12 +11,12 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/back/albums")
+ * @Route("/back/album")
  */
 class AlbumController extends AbstractController
 {
     /**
-     * @Route("/", name="app_back_albums_index", methods={"GET"})
+     * @Route("/", name="app_back_album_index", methods={"GET"})
      */
     public function index(AlbumRepository $albumRepository): Response
     {
@@ -26,7 +26,7 @@ class AlbumController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="app_back_albums_new", methods={"GET", "POST"})
+     * @Route("/new", name="app_back_album_new", methods={"GET", "POST"})
      */
     public function new(Request $request, AlbumRepository $albumRepository): Response
     {
@@ -47,7 +47,7 @@ class AlbumController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="app_back_albums_show", methods={"GET"})
+     * @Route("/{id}", name="app_back_album_show", methods={"GET"})
      */
     public function show(Album $album): Response
     {
@@ -57,7 +57,7 @@ class AlbumController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="app_back_albums_edit", methods={"GET", "POST"})
+     * @Route("/{id}/edit", name="app_back_album_edit", methods={"GET", "POST"})
      */
     public function edit(Request $request, Album $album, AlbumRepository $albumRepository): Response
     {
@@ -77,7 +77,7 @@ class AlbumController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="app_back_albums_delete", methods={"POST"})
+     * @Route("/{id}", name="app_back_album_delete", methods={"POST"})
      */
     public function delete(Request $request, Album $album, AlbumRepository $albumRepository): Response
     {
