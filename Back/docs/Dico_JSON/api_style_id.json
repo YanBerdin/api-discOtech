@@ -1,0 +1,23 @@
+http://localhost:8000/api/styles/1
+
+{
+  "id": 1,
+  "name": "Rock",
+  "image": "https://images7.alphacoders.com/436/436860.jpg",
+  "albums": [
+    {
+      "id": 1,
+      "name": "album 1",
+      "edition": "edition 1",
+      "releaseDate": "1973-03-24T00:00:00+01:00",
+      "createdAt": "2023-06-12T19:24:20+02:00"
+    },
+    {
+      "id": 5,
+      "name": "album 5",
+      "edition": "edition 5",
+      "releaseDate": "2002-02-02T00:00:00+01:00",
+      "createdAt": "2023-06-12T17:25:41+02:00"
+    }
+  ]
+}

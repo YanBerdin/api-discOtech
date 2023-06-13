@@ -1,0 +1,16 @@
+http://localhost:8000/api/supports
+
+[
+  {
+    "id": 1,
+    "name": "CD"
+  },
+  {
+    "id": 2,
+    "name": "Vinyl"
+  },
+  {
+    "id": 3,
+    "name": "Cassette"
+  }
+]
