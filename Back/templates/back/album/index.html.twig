@@ -9,6 +9,7 @@
                 <thead>
                     <tr>
                         <th>Nom</th>
+                        <th>Album</th>
                         <th>Edition</th>
                         <th>Date de sorti</th>
                         <th>Mise en ligne</th>
@@ -20,6 +21,7 @@
                 {% for album in albums %}
                     <tr>
                         <td>{{ album.name }}</td>
+                        <td>{# <td>{{app.artist.getArtistIdentifier()}}</td> #}</td>
                         <td>{{ album.edition }}</td>
                         <td>{{ album.releaseDate ? album.releaseDate|date('d-m-Y') : '' }}</td>
                         <td>{{ album.createdAt ? album.createdAt|date('d-m-Y H:i:s') : '' }}</td>
