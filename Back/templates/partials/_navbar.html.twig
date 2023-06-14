@@ -22,7 +22,6 @@
                     <input class="form-control form-control-sm me-2" name="search" type="search" placeholder="Rechercher...">
                     <button class="btn btn-outline-danger" type="submit"><i class="bi bi-search"></i></button> 
                 </form
-
                 {% if is_granted("IS_AUTHENTICATED_FULLY")%}
                     <div class="mb-3">
                         <a href="{{ path('app_logout') }}"><button type="button" class="btn btn-danger text-right ms-4">Deconnexion</button></a>

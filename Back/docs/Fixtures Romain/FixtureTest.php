@@ -111,10 +111,10 @@ class AppFixtures extends Fixture
         // TODO : make ARTIST (10 Artists)
         // =======================================================
 
-        $artistName = [
-            "Pink Floyd", 
+        // $artistName = [
+        //     "Pink Floyd", 
             
-        ];
+        // ];
 
         /** @var Artist $allArtist */
         $allArtist = [];
@@ -132,23 +132,23 @@ class AppFixtures extends Fixture
         // TODO : make ALBUM (10 albums)
         // =======================================================
 
-        $albumName =[
-            "The Dark Side of the Moon"
+        // $albumName =[
+        //     "The Dark Side of the Moon"
             
-        ];
+        // ];
 
-        $albumEdition = [
-            "Harvest"
+        // $albumEdition = [
+        //     "Harvest"
 
-        ];
-        $albumRelease = [
-            "1973-03-24",
+        // ];
+        // $albumRelease = [
+        //     "1973-03-24",
 
-        ];
-        $albumImage = [
-            "https://media.senscritique.com/media/000004795486/300/the_dark_side_of_the_moon.jpg", 
+        // ];
+        // $albumImage = [
+        //     "https://media.senscritique.com/media/000004795486/300/the_dark_side_of_the_moon.jpg", 
 
-        ];
+        // ];
 
         /** @var Album $allAlbum */
         $allAlbum = [];
