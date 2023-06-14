@@ -146,6 +146,10 @@ class AppFixtures extends Fixture
             $newAlbum->setCreatedAt(new DateTime("now"));
             $newAlbum->setImage($faker->imageUrl(500,500,true));
 
+            $newAlbum->setArtist($allArtist[mt_rand(0,count($allArtist)-1)]);
+
+
+
             $manager->persist($newAlbum);
 
             $allAlbum[] = $newAlbum;
@@ -166,6 +170,8 @@ class AppFixtures extends Fixture
                     $newSong->setDuration($faker->numberBetween(180000, 300000));
                     $newSong->setTrackNb($j);
 
+                    $newSong->setAlbum($allAlbum[mt_rand(0,count($allAlbum)-1)]);
+
                     $manager->persist($newSong);
 
 
@@ -178,26 +184,25 @@ class AppFixtures extends Fixture
         // TODO : Associate ALBUM with ARTIST
         // =======================================================
 
-        foreach ($allArtist as $artist)
-        {
-            $randomAlbum = $allAlbum[mt_rand(0,count($allAlbum)-1)];
-            $artist->addAlbum($randomAlbum);
-        }
+        // foreach ($allArtist as $artist)
+        // {
+        //     $randomAlbum = $allAlbum[mt_rand(0,count($allAlbum)-1)];
+        //     $artist->addAlbum($randomAlbum);
+        // }
             
         // =======================================================
         // TODO : Associate 1 ALBUM with 10 SONG
         // =======================================================
 
-        foreach ($allAlbum as $album)
-        {
-            for ($i=0 ; $i <10 ; $i++)
-            {
-                $randomSong = $allSong[mt_rand(0,count($allSong)-1)];
-                $album->addSong($randomSong);
-            }
-        }
+        // foreach ($allAlbum as $album)
+        // {
+        //     for ($i=0 ; $i <10 ; $i++)
+        //     {
+        //         $randomSong = $allSong[mt_rand(0,count($allSong)-1)];
+        //         $album->addSong($randomSong);
+        //     }
+        // }
         
-
         // =======================================================
         // TODO : Associate ALBUM with STYLE
         // =======================================================
