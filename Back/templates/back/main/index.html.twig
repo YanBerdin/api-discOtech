@@ -5,7 +5,7 @@
 {% block body %}
 
 <h1 class="text-decoration-underline" style="padding-top: 2rem">
-    Bienvenue sur le BackOffice
+    Bienvenue {{app.user.getUserFirstnameInterface()}} 
 </h1>
 
 <div class="container row justify-content-between col" style="margin-top: 5rem">

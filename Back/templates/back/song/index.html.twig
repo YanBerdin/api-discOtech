@@ -1,41 +1,39 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Song index{% endblock %}
+{% block title %}Liste musique{% endblock %}
 
 {% block body %}
-    <h1>Song index</h1>
-
+        <div class= text-aligne-between>
+            <h1>Liste des musiques</h1>
+            <a class="btn btn-success me-2" style= "justify-content-end" href="{{ path('app_back_song_new') }}">Créer</a>
+        </div>
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Title</th>
-                <th>Duration</th>
-                <th>Preview</th>
-                <th>TrackNb</th>
-                <th>actions</th>
+                <th>N° de piste</th>
+                <th>Titre</th>
+                <th>Durée</th>
+                <th>Ecoute</th>
+                
+                <th></th>
             </tr>
         </thead>
         <tbody>
         {% for song in songs %}
             <tr>
-                <td>{{ song.id }}</td>
+                <td>{{ song.trackNb }}</td>
                 <td>{{ song.title }}</td>
                 <td>{{ song.duration }}</td>
                 <td>{{ song.preview }}</td>
-                <td>{{ song.trackNb }}</td>
                 <td>
-                    <a href="{{ path('app_back_song_show', {'id': song.id}) }}">show</a>
-                    <a href="{{ path('app_back_song_edit', {'id': song.id}) }}">edit</a>
+                    <a class="btn btn-info me-1" href="{{ path('app_back_song_show', {'id': song.id}) }}">voir plus</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="6">no records found</td>
+                <td colspan="6">Aucune musique de disponible</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
-
-    <a href="{{ path('app_back_song_new') }}">Create new</a>
 {% endblock %}

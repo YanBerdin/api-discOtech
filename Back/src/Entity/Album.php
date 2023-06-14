@@ -114,7 +114,7 @@ class Album
     private $reviews;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255,)
      * @Groups({"album_browse"})
      * @Groups({"song_browse"})
      * @Groups({"support_read"})
@@ -124,6 +124,7 @@ class Album
 
     public function __construct()
     {
+        $this->createdAt =new \DateTime();
         $this->style = new ArrayCollection();
         $this->support = new ArrayCollection();
         $this->songs = new ArrayCollection();
@@ -175,11 +176,13 @@ class Album
 
     public function getCreatedAt(): ?\DateTimeInterface
     {
+        $this->createdAt = new \DateTime("now");
         return $this->createdAt;
     }
 
     public function setCreatedAt(\DateTimeInterface $createdAt): self
     {
+        $this->createdAt = new \DateTime("now");
         $this->createdAt = $createdAt;
 
         return $this;

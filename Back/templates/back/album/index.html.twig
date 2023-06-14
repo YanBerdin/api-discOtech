@@ -1,45 +1,40 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Album index{% endblock %}
+{% block title %}liste Album{% endblock %}
 
 {% block body %}
-    <h1>Album index</h1>
-
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Edition</th>
-                <th>ReleaseDate</th>
-                <th>CreatedAt</th>
-                <th>UpdatedAt</th>
-                <th>Image</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for album in albums %}
-            <tr>
-                <td>{{ album.id }}</td>
-                <td>{{ album.name }}</td>
-                <td>{{ album.edition }}</td>
-                <td>{{ album.releaseDate ? album.releaseDate|date('Y-m-d') : '' }}</td>
-                <td>{{ album.createdAt ? album.createdAt|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ album.updatedAt ? album.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ album.image }}</td>
-                <td>
-                    <a href="{{ path('app_back_album_show', {'id': album.id}) }}">show</a>
-                    <a href="{{ path('app_back_album_edit', {'id': album.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="8">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <a href="{{ path('app_back_album_new') }}">Create new</a>
+    <h1>Liste des album</h1>
+        <a class="btn btn-success me-2" href="{{ path('app_back_album_new') }}">Créer</a>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Nom</th>
+                        <th>Album</th>
+                        <th>Edition</th>
+                        <th>Date de sorti</th>
+                        <th>Mise en ligne</th>
+                        <th>Pochette</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for album in albums %}
+                    <tr>
+                        <td>{{ album.name }}</td>
+                        <td>{# <td>{{app.artist.getArtistIdentifier()}}</td> #}</td>
+                        <td>{{ album.edition }}</td>
+                        <td>{{ album.releaseDate ? album.releaseDate|date('d-m-Y') : '' }}</td>
+                        <td>{{ album.createdAt ? album.createdAt|date('d-m-Y H:i:s') : '' }}</td>
+                        <td>{{ album.image }}</td>
+                        <td>
+                            <a class="btn btn-info me-1" href="{{ path('app_back_album_show', {'id': album.id}) }}">voir plus</a>
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="8">Aucun album disponible</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
 {% endblock %}

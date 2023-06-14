@@ -46,6 +46,8 @@ class Artist
         return $this->id;
     }
 
+
+   
     public function getFullname(): ?string
     {
         return $this->fullname;
@@ -56,6 +58,24 @@ class Artist
         $this->fullname = $fullname;
 
         return $this;
+    }
+
+    /**
+     * A visual identifier that represents this user.
+     *
+     * @see ArtistInterface
+     */
+    public function getArtistIdentifier(): string
+    {
+        return (string) $this->fullname;
+    }
+
+    /**
+     * @deprecated since Symfony 5.3, use getUserIdentifier instead
+     */
+    public function getArtistFullname(): string
+    {
+        return (string) $this->fullname;
     }
 
     /**

@@ -39,7 +39,6 @@ class UserEditType extends AbstractType
             ->add('password', PasswordType::class, [
                 // je ne veux pas que le formulaire mettes automatiquement à jour la valeur
                 // je désactive la mise à jour automatique de mon objet par le formulaire
-                "mapped" => false,
                 "label" => "le mot de passe",
                 "attr" => [
                     "placeholder" => "laisser vide pour ne pas modifier ..."
@@ -54,11 +53,11 @@ class UserEditType extends AbstractType
             ])
 
             ->add('roles', ChoiceType::class, [
+                "mapped" => false,
                 "expanded" => false,
-                "multiple" => true,
+                "multiple" => false,
                 "choices" => [
                     "ADMIN" => "ROLE_ADMIN",
-                    "MANAGER" => "ROLE_MANAGER",
                     "USER" => "ROLE_USER",
                 ]
             ])

@@ -149,6 +149,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         // $this->plainPassword = null;
     }
 
+    
     public function getFirstname(): ?string
     {
         return $this->firstname;
@@ -159,6 +160,24 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         $this->firstname = $firstname;
 
         return $this;
+    }
+
+    /**
+     * A visual identifier that represents this user.
+     *
+     * @see UserInterface
+     */
+    public function getUserFirstnameInterface(): string
+    {
+        return (string) $this->firstname;
+    }
+
+    /**
+     * @deprecated since Symfony 5.3, use getUserIdentifier instead
+     */
+    public function getUserFirstname(): string
+    {
+        return (string) $this->firstname;
     }
 
     public function getLastname(): ?string
