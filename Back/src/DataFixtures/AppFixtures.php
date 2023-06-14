@@ -11,7 +11,7 @@ use App\Entity\User;
 use DateTime;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
-use Faker\Factory;
+
 
 class AppFixtures extends Fixture
 {
@@ -24,6 +24,7 @@ class AppFixtures extends Fixture
     {
 
         $faker = \Faker\Factory::create();
+        $faker->addProvider(new \Bluemmb\Faker\PicsumPhotosProvider($faker));
 
         // =======================================================
         // TODO : Make 2 users (ADMIN + USER profile)
@@ -76,7 +77,7 @@ class AppFixtures extends Fixture
         /** @var Style[] $allStyle */
         $allStyle = [];
 
-        for($i=1 ; $i < count($styles)+1; $i++){
+        for($i=0 ; $i < count($styles)-1; $i++){
 
             $newStyle = new Style();
 
@@ -94,10 +95,11 @@ class AppFixtures extends Fixture
         $support = [
             "CD", 
             "Cassette", 
-            "Vinyl"
+            "Vinyl 33 tours",
+            "Vinyl 45 tours"
         ];
 
-        /** @var Support $allSupport */
+        /** @var Support[] $allSupport */
         $allSupport = [];
 
         foreach ($support as $supportName) {
@@ -112,15 +114,16 @@ class AppFixtures extends Fixture
         }
 
         // =======================================================
-        // TODO : make ARTIST (50 Artists)
+        // TODO : make ARTIST (100 Artists)
         // =======================================================
 
-        /** @var Artist $allArtist */
+        /** @var Artist[] $allArtist */
         $allArtist = [];
 
-        for ($i=1; $i <= 30 ; $i+1) {
+        for ($i=0; $i < 100 ; $i++) {
             $newArtist = new Artist();
-            $newArtist->setFullname($faker->name);
+
+            $newArtist->setFullname($faker->name());
 
             $manager->persist($newArtist);
 
@@ -131,17 +134,17 @@ class AppFixtures extends Fixture
         // TODO : make ALBUM (50 albums)
         // =======================================================
 
-        /** @var Album $allAlbum */
+        /** @var Album[] $allAlbum */
         $allAlbum = [];
 
-        for($i=1; $i <= 50 ; $i++){
+        for($i=0; $i < 50 ; $i++){
             $newAlbum = new Album();
 
             $newAlbum->setName($faker->sentence(3));
             $newAlbum->setEdition($faker->sentence(1));
             $newAlbum->setReleaseDate(new DateTime($faker->date("Y-m-d")));
             $newAlbum->setCreatedAt(new DateTime("now"));
-            $newAlbum->setImage($faker->imageUrl(300, 300, "music"));
+            $newAlbum->setImage($faker->imageUrl(500,500,true));
 
             $manager->persist($newAlbum);
 
@@ -152,42 +155,68 @@ class AppFixtures extends Fixture
         // TODO : make SONG (500 songs)
         // =======================================================
 
-        /** @var Song $allSong */
-        $allsong = [];
+        /** @var Song[] $allSong */
+        $allSong = [];
 
-        foreach($allAlbum as $album) {
+            for ($i=1; $i <= 50 ; $i++) {
+                for ($j=1; $j <= 10; $j++) {
+                    $newSong = new Song();
 
-            for ($i=1; $i <= 10 ; $i++) {
-                $newSong = new Song();
+                    $newSong->setTitle($faker->sentence(6,true));
+                    $newSong->setDuration($faker->numberBetween(180000, 300000));
+                    $newSong->setTrackNb($j);
 
-                $newSong->setTitle($faker->sentence(min(2), max(6)));
-                $newSong->setDuration($faker->numberBetween(180000, 300000));
-                $newSong->setTrackNb($i);
+                    $manager->persist($newSong);
 
-                $manager->persist($newSong);
 
-            };
-        }
+                    $allSong[] = $newSong;
+                }
+
+            }
 
         // =======================================================
         // TODO : Associate ALBUM with ARTIST
         // =======================================================
+
+        foreach ($allArtist as $artist)
+        {
+            $randomAlbum = $allAlbum[mt_rand(0,count($allAlbum)-1)];
+            $artist->addAlbum($randomAlbum);
+        }
             
         // =======================================================
-        // TODO : Associate ALBUM with SONG
+        // TODO : Associate 1 ALBUM with 10 SONG
         // =======================================================
+
+        foreach ($allAlbum as $album)
+        {
+            for ($i=0 ; $i <10 ; $i++)
+            {
+                $randomSong = $allSong[mt_rand(0,count($allSong)-1)];
+                $album->addSong($randomSong);
+            }
+        }
+        
 
         // =======================================================
         // TODO : Associate ALBUM with STYLE
         // =======================================================
 
+        foreach ($allAlbum as $album)
+        {
+            $randomStyle = $allStyle[mt_rand(0, count($allStyle)-1)];
+            $album->addStyle($randomStyle);
+        }
+
         // =======================================================
         // TODO : Associate ALBUM with SUPPORT
         // =======================================================
 
-
-
-
+        foreach ($allAlbum as $album)
+        {
+            $randomSupport = $allSupport[mt_rand(0, count($allSupport)-1)];
+            $album->addSupport($randomSupport);
+        }
 
         $manager->flush();
     }
