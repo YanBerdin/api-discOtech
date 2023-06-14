@@ -6,6 +6,7 @@ use App\Entity\Album;
 use App\Entity\Artist;
 use App\Entity\Style;
 use App\Entity\Support;
+use DateTime;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
@@ -46,8 +47,8 @@ class AlbumType extends AbstractType
 
 
             ->add('style', EntityType::class, [
-                "mapped" => false,
-                "multiple" => false,
+               
+                "multiple" => true,
                 "expanded" => false, 
                 "class" => Style::class,
                 'choice_label' => 'name',
@@ -55,8 +56,8 @@ class AlbumType extends AbstractType
             ])
 
             ->add('support', EntityType::class, [
-                "mapped"=> false,
-                "multiple" => false,
+                
+                "multiple" => true,
                 "expanded" => false, 
                 "class" => Support::class,
                 'choice_label' => 'name',

@@ -44,6 +44,7 @@ class AlbumController extends AbstractController
             'album' => $album,
             'form' => $form,
         ]);
+        dd($album);
     }
 
     /**
