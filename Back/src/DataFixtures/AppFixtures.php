@@ -214,13 +214,16 @@ class AppFixtures extends Fixture
         }
 
         // =======================================================
-        // TODO : Associate ALBUM with SUPPORT
+        // TODO : Associate ALBUM with 1 or 2 SUPPORT
         // =======================================================
 
         foreach ($allAlbum as $album)
         {
-            $randomSupport = $allSupport[mt_rand(0, count($allSupport)-1)];
-            $album->addSupport($randomSupport);
+            $randomNbSupport = mt_rand(1,3);
+            for ($i=0; $i <= $randomNbSupport; $i++) {
+                $randomSupport = $allSupport[mt_rand(0, count($allSupport)-1)];
+                $album->addSupport($randomSupport);
+            }
         }
 
         $manager->flush();
