@@ -23,14 +23,9 @@ class SongController extends AbstractController
     {
         $allSongs = $songRepository->findAll();
 
-        $allSongs = $paginator->paginate(
-            $allSongs, 
-            $request->query->getInt('page', 1),20
-        );
+        $allSongs = $paginator->paginate($allSongs, $request->query->getInt('page', 1),20);
 
-        return $this->render('back/song/index.html.twig', [
-            'songs'=>$allSongs
-        ]);
+        return $this->render('back/song/index.html.twig', ['songs'=>$allSongs]);
     }
 
     /**

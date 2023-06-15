@@ -21,7 +21,6 @@ class Style
      * @Groups({"style_browse"})
      * @Groups({"album_browse"})
      * @Groups({"album_read"})
-     * @Assert\NotBlank
      */
     private $id;
 
@@ -36,7 +35,7 @@ class Style
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      * @Groups({"style_browse"})
-     * 
+     * @Assert\NotBlank
      */
     private $image;
 
@@ -50,6 +49,8 @@ class Style
     {
         $this->albums = new ArrayCollection();
     }
+
+    
 
     public function getId(): ?int
     {

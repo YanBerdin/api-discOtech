@@ -21,41 +21,46 @@ class AlbumType extends AbstractType
     {
         $builder
             ->add('name', TextType::class, [
-                "label" => "Nom de l'album:",
+                "label" => "Nom de l'album :",
                 "attr" => ["placeholder" => "Nevermind, fantom..."]
             ])
 
             ->add('edition', TextType::class, [
-                "label" => "Edition:",
+                "label" => "Edition :",
                 "attr" => ["placeholder" => "Warner, Polydor, Sony..."]
             ])
 
             ->add('releaseDate', DateType::class, [
+                "label" => "Date de création :",
                 "widget" => "single_text",
                 "input" => "datetime"
                 
             ])
 
             ->add('image', TextType::class, [
-                "label" => "lien de l'image",
+                "label" => "Pochette de l'album :",
                 "attr" => ["placeholder" => "www.google.com/url?sa=i&url=https%3A%2F%2Ftwitter.com%2FOclock_io&"]
             ])
 
 
             ->add('style', EntityType::class, [
+                'constraints' => [new NotBlank()],
+                "label" => "Style :",
                 "multiple" => true,
-                "expanded" => false, 
+                "expanded" => true, 
                 "class" => Style::class,
                 'choice_label' => 'name'
             ])
 
             ->add('support', EntityType::class, [
+                "label" => "Support :",
                 "multiple" => true,
-                "expanded" => false, 
+                "expanded" => true, 
                 "class" => Support::class,
                 'choice_label' => 'name'
             ])
             ->add('artist', EntityType::class, [
+                "label" => "Date de création :",
                 "multiple" => false,
                 "expanded" => false, 
                 "class" => Artist::class,

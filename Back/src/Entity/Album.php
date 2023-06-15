@@ -85,7 +85,6 @@ class Album
      * @ORM\ManyToMany(targetEntity=Support::class, inversedBy="albums")
      * @Groups({"album_browse"})
      * @Assert\NotBlank
-     * 
      */
     private $support;
 
@@ -232,6 +231,8 @@ class Album
 
         return $this;
     }
+
+    
 
     /**
      * @return Collection<int, Support>
