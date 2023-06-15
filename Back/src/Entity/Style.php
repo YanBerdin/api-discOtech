@@ -19,6 +19,8 @@ class Style
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      * @Groups({"style_browse"})
+     * @Groups({"album_browse"})
+     * @Groups({"album_read"})
      * @Assert\NotBlank
      */
     private $id;

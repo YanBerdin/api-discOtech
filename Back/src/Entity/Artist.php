@@ -19,6 +19,8 @@ class Artist
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      * @Groups({"artist_browse"})
+     * @Groups({"album_browse"})
+     * @Groups({"album_read"})
      */
     private $id;
 
