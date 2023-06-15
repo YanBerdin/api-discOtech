@@ -5,6 +5,7 @@ namespace App\Controller\Back;
 use App\Entity\Style;
 use App\Form\StyleType;
 use App\Repository\StyleRepository;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -18,10 +19,17 @@ class StyleController extends AbstractController
     /**
      * @Route("/", name="app_back_style_index", methods={"GET"})
      */
-    public function index(StyleRepository $styleRepository): Response
+    public function index(StyleRepository $styleRepository, PaginatorInterface $paginator, Request $request): Response
     {
+        $allStyles = $styleRepository->findAll();
+
+        $allStyles = $paginator->paginate(
+            $allStyles, 
+            $request->query->getInt('page', 1),20
+        );
+
         return $this->render('back/style/index.html.twig', [
-            'styles' => $styleRepository->findAll(),
+            'styles'=>$allStyles
         ]);
     }
 

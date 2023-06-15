@@ -22,21 +22,17 @@ class AlbumType extends AbstractType
         $builder
             ->add('name', TextType::class, [
                 "label" => "Nom de l'album:",
-                "attr" => ["placeholder" => "Nevermind, fantom..."],
-                "constraints" => [new NotBlank()]
+                "attr" => ["placeholder" => "Nevermind, fantom..."]
             ])
 
             ->add('edition', TextType::class, [
-                "constraints" => [new NotBlank()],
                 "label" => "Edition:",
-                "attr" => ["placeholder" => "Warner, Polydor, Sony..."],
-                "constraints" => [new NotBlank()]
+                "attr" => ["placeholder" => "Warner, Polydor, Sony..."]
             ])
 
             ->add('releaseDate', DateType::class, [
                 "widget" => "single_text",
-                "input" => "datetime",
-                "constraints" => [new NotBlank()]
+                "input" => "datetime"
                 
             ])
 
@@ -50,23 +46,20 @@ class AlbumType extends AbstractType
                 "multiple" => true,
                 "expanded" => false, 
                 "class" => Style::class,
-                'choice_label' => 'name',
-                "constraints" => [new NotBlank()]
+                'choice_label' => 'name'
             ])
 
             ->add('support', EntityType::class, [
                 "multiple" => true,
                 "expanded" => false, 
                 "class" => Support::class,
-                'choice_label' => 'name',
-                "constraints" => [new NotBlank()],
+                'choice_label' => 'name'
             ])
             ->add('artist', EntityType::class, [
                 "multiple" => false,
                 "expanded" => false, 
                 "class" => Artist::class,
-                'choice_label' => 'fullname',
-                "constraints" => [new NotBlank()],
+                'choice_label' => 'fullname'
             ])
         ;
     }

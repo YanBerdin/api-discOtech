@@ -19,8 +19,8 @@
         <tbody>
         {% for user in users %}
             <tr>
-                <td>{{ user.firstname }}</td>
                 <td>{{ user.lastname }}</td>
+                <td>{{ user.firstname }}</td>
                 <td>{{ user.email }}</td>
                 <td>{{ user.password }}</td>
                 <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
@@ -35,4 +35,7 @@
         {% endfor %}
         </tbody>
     </table>
+        <div class="navigation d-flex justify-content-center">
+            {{ knp_pagination_render(users) }}
+        </div>
 {% endblock %}
