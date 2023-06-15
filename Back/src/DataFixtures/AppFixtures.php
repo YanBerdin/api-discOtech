@@ -62,16 +62,31 @@ class AppFixtures extends Fixture
             "Electro", 
             "House", 
             "Classique", 
-            "pop"
+            "Pop",
+            "Latino",
+            "Techno",
+            "Trance",
+            "chill",
+            "Dub",
+            "Blues",
+            "Jazz",
+            "Afro",
+            "Opera",
+            "Indie",
+            "RnB",
+            "Country",
+            "Punk",
+            "Reggae",
+            "Metal",
+            "Soul",
+            "Funk",
+            "K-pop"
         ];
 
         $stylesImage = [
-            "https://images7.alphacoders.com/436/436860.jpg", 
-            "https://www.shutterstock.com/image-vector/vector-logo-rap-music-hand-260nw-1365427319.jpg", 
-            "https://musictech.com/wp-content/uploads/2019/10/tutorial-create-edm-free-header@1400x1050.jpg", 
-            "https://is4-ssl.mzstatic.com/image/thumb/Music124/v4/40/73/12/40731213-66d3-a7f3-b0ce-e536dea3fafe/cover.jpg/486x486bb.png", 
-            "https://static.qobuz.com/images/covers/2a/ps/hptdkdul6ps2a_600.jpg", 
-            "https://toutelaculture.com/wp-content/uploads/2013/06/decoratzia.com_-600x600.jpg"
+            "https://www.wplounge.nl/wp-content/uploads/2014/03/coming-soon.png", 
+     
+
         ];
 
         /** @var Style[] $allStyle */
@@ -82,7 +97,7 @@ class AppFixtures extends Fixture
             $newStyle = new Style();
 
             $newStyle->setName($styles[$i]);
-            $newStyle->setImage($stylesImage[$i]);
+            $newStyle->setImage($stylesImage[0]);
 
             $manager->persist($newStyle);
 
@@ -114,13 +129,13 @@ class AppFixtures extends Fixture
         }
 
         // =======================================================
-        // TODO : make ARTIST (100 Artists)
+        // TODO : make ARTIST (200 Artists)
         // =======================================================
 
         /** @var Artist[] $allArtist */
         $allArtist = [];
 
-        for ($i=0; $i < 100 ; $i++) {
+        for ($i=0; $i < 200 ; $i++) {
             $newArtist = new Artist();
 
             $newArtist->setFullname($faker->name());
@@ -131,13 +146,13 @@ class AppFixtures extends Fixture
         }
 
         // =======================================================
-        // TODO : make ALBUM (50 albums)
+        // TODO : make ALBUM (200 albums)
         // =======================================================
 
         /** @var Album[] $allAlbum */
         $allAlbum = [];
 
-        for($i=0; $i < 50 ; $i++){
+        for($i=0; $i < 200 ; $i++){
             $newAlbum = new Album();
 
             $newAlbum->setName($faker->sentence(3));
@@ -156,17 +171,17 @@ class AppFixtures extends Fixture
         }
 
         // =======================================================
-        // TODO : make SONG (500 songs)
+        // TODO : make SONG (2000 songs)
         // =======================================================
 
         /** @var Song[] $allSong */
         $allSong = [];
 
-            for ($i=1; $i <= 50 ; $i++) {
+            for ($i=1; $i <= 200 ; $i++) {
                 for ($j=1; $j <= 10; $j++) {
                     $newSong = new Song();
 
-                    $newSong->setTitle($faker->sentence(6,true));
+                    $newSong->setTitle($faker->sentence(4,true));
                     $newSong->setDuration($faker->numberBetween(180000, 300000));
                     $newSong->setTrackNb($j);
 
@@ -209,8 +224,12 @@ class AppFixtures extends Fixture
 
         foreach ($allAlbum as $album)
         {
-            $randomStyle = $allStyle[mt_rand(0, count($allStyle)-1)];
-            $album->addStyle($randomStyle);
+            $randomNbStyle = mt_rand(1,3);
+            for ($i=0; $i <= $randomNbStyle; $i++) {
+
+                $randomStyle = $allStyle[mt_rand(0, count($allStyle)-1)];
+                $album->addStyle($randomStyle);
+            }
         }
 
         // =======================================================
