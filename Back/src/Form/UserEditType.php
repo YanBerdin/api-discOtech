@@ -18,40 +18,38 @@ class UserEditType extends AbstractType
     {
         $builder
 
-        ->add('firstname', TextType::class, [
+        ->add('lastname', TextType::class, [
             "label" => "Nom:",
             "attr" => [
-                "placeholder" => "Nom ..."
-            ]
+                "placeholder" => "Nom ..."],
         ])
 
-        ->add('lastname', TextType::class, [
+        ->add('firstname', TextType::class, [
             "label" => "Prénom:",
-            "attr" => [
-                "placeholder" => "Prénom ..."
-            ]
+            "attr" => ["placeholder" => "Prénom ..."],
         ])
 
             ->add('email', EmailType::class, [
                 "label" => "Identification par Email"
 
-            ])
-            ->add('password', PasswordType::class, [
-                // je ne veux pas que le formulaire mettes automatiquement à jour la valeur
-                // je désactive la mise à jour automatique de mon objet par le formulaire
-                "label" => "le mot de passe",
-                "attr" => [
-                    "placeholder" => "laisser vide pour ne pas modifier ..."
-                ],
-                // On déplace les contraintes de l'entité vers le form d'ajout
-                'constraints' => [
-                    new Regex(
-                        "/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/",
-                        "Le mot de passe doit contenir au minimum 8 caractères, une majuscule, un chiffre et un caractère spécial"
-                    ),
-                ],
-            ])
-
+                ])
+                ->add('password', PasswordType::class, [
+                    // je ne veux pas que le formulaire mettes automatiquement à jour la valeur
+                    // je désactive la mise à jour automatique de mon objet par le formulaire
+                    "mapped" => false,
+                    "label" => "le mot de passe",
+                    "attr" => [
+                        "placeholder" => "laisser vide pour ne pas modifier ..."
+                    ],
+                    // On déplace les contraintes de l'entité vers le form d'ajout
+                    'constraints' => [
+                        new Regex(
+                            "/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/",
+                            "Le mot de passe doit contenir au minimum 8 caractères, une majuscule, un chiffre et un caractère spécial"
+                        ),
+                    ],
+                ])
+                
             ->add('roles', ChoiceType::class, [
                 "mapped" => false,
                 "expanded" => false,

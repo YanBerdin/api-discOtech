@@ -20,21 +20,21 @@ class UserType extends AbstractType
     {
         $builder
 
-        ->add('firstname', TextType::class, [
-            "label" => "Nom:",
-            "attr" => ["placeholder" => "Nom ..."],
-        ])
-
         ->add('lastname', TextType::class, [
-            "label" => "Prénom:",
+            "label" => "Nom:",
             "attr" => [
-                "placeholder" => "Prénom ..."],
+                "placeholder" => "Nom ..."],
         ])
 
+        ->add('firstname', TextType::class, [
+            "label" => "Prénom:",
+            "attr" => ["placeholder" => "Prénom ..."],
+        ])
 
             ->add('email', EmailType::class,[
                 "label" => "Identification par Email"
-            ])
+        ])
+
             // on utilise l'event avant de mettre les données dans le formulaire
             ->addEventListener(FormEvents::PRE_SET_DATA, function(FormEvent $event) {
                 // On récupère le form depuis l'event (pour travailler avec)
