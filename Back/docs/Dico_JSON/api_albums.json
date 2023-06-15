@@ -1,12 +1,294 @@
-http://localhost:8000/api/albums
-
 [
   {
-    "id": 1,
-    "name": "album 1",
-    "edition": "edition 1",
-    "releaseDate": "1973-03-24T00:00:00+01:00",
-    "createdAt": "2023-06-12T19:24:20+02:00",
+    "id": 759,
+    "name": "A dolor.",
+    "edition": "Aut.",
+    "releaseDate": "1977-01-13T00:00:00+01:00",
+    "createdAt": "2023-06-14T16:15:07+02:00",
+    "updatedAt": null,
+    "style": [
+      {
+        "name": "Rap"
+      }
+    ],
+    "support": [
+      {
+        "name": "Cassette"
+      }
+    ],
+    "songs": [
+      {
+        "title": "Aspernatur porro autem quibusdam fugiat.",
+        "duration": 281010,
+        "trackNb": 7
+      },
+      {
+        "title": "Expedita et eveniet nobis ab dignissimos odio esse.",
+        "duration": 209502,
+        "trackNb": 2
+      },
+      {
+        "title": "Sit delectus maxime error suscipit cum occaecati.",
+        "duration": 247157,
+        "trackNb": 1
+      },
+      {
+        "title": "Eos eum molestiae doloribus tenetur voluptatibus omnis eum voluptates.",
+        "duration": 222265,
+        "trackNb": 2
+      }
+    ],
+    "artist": {
+      "fullname": "King Towne MD"
+    },
+    "image": "https://picsum.photos/id/72/500/500"
+  },
+  {
+    "id": 760,
+    "name": "Dolorum perferendis quasi quia.",
+    "edition": "Impedit rerum.",
+    "releaseDate": "1989-03-04T00:00:00+01:00",
+    "createdAt": "2023-06-14T16:15:07+02:00",
+    "updatedAt": null,
+    "style": [
+      {
+        "name": "Rap"
+      }
+    ],
+    "support": [
+      {
+        "name": "Cassette"
+      }
+    ],
+    "songs": [
+      {
+        "title": "Quas sit alias laudantium illum quod natus.",
+        "duration": 207520,
+        "trackNb": 1
+      },
+      {
+        "title": "Inventore eos non modi nesciunt dolor accusantium.",
+        "duration": 292266,
+        "trackNb": 8
+      },
+      {
+        "title": "Voluptate quibusdam rerum blanditiis molestiae nihil nesciunt officiis.",
+        "duration": 194030,
+        "trackNb": 1
+      },
+      {
+        "title": "Quos dolores voluptas autem consectetur deserunt molestiae nulla non.",
+        "duration": 190599,
+        "trackNb": 6
+      }
+    ],
+    "artist": {
+      "fullname": "Dr. Alexane Mann"
+    },
+    "image": "https://picsum.photos/id/423/500/500"
+  },
+  {
+    "id": 761,
+    "name": "Dolore quos vitae molestiae ipsum.",
+    "edition": "Sint ut.",
+    "releaseDate": "1998-12-26T00:00:00+01:00",
+    "createdAt": "2023-06-14T16:15:07+02:00",
+    "updatedAt": null,
+    "style": [
+      {
+        "name": "House"
+      }
+    ],
+    "support": [
+      {
+        "name": "Vinyl 45 tours"
+      }
+    ],
+    "songs": [
+      {
+        "title": "Qui esse alias eum alias sed maxime molestiae.",
+        "duration": 252902,
+        "trackNb": 5
+      },
+      {
+        "title": "Sit rerum rem labore rem eveniet et neque.",
+        "duration": 211233,
+        "trackNb": 3
+      },
+      {
+        "title": "Consectetur nihil dolorum et quo.",
+        "duration": 182677,
+        "trackNb": 4
+      },
+      {
+        "title": "Quo porro quo ut temporibus rerum dolorum.",
+        "duration": 227437,
+        "trackNb": 6
+      },
+      {
+        "title": "Minus quia voluptas nulla.",
+        "duration": 202449,
+        "trackNb": 5
+      }
+    ],
+    "artist": {
+      "fullname": "Adrien Marks"
+    },
+    "image": "https://picsum.photos/id/610/500/500"
+  },
+  {
+    "id": 762,
+    "name": "Libero esse quod nostrum.",
+    "edition": "Soluta rem.",
+    "releaseDate": "1989-10-16T00:00:00+01:00",
+    "createdAt": "2023-06-14T16:15:07+02:00",
+    "updatedAt": null,
+    "style": [
+      {
+        "name": "Classique"
+      }
+    ],
+    "support": [
+      {
+        "name": "CD"
+      }
+    ],
+    "songs": [
+      {
+        "title": "Ut laudantium libero quas laudantium similique sapiente ut quaerat.",
+        "duration": 285137,
+        "trackNb": 6
+      },
+      {
+        "title": "Magnam autem neque illum aspernatur ea voluptatem tempora est.",
+        "duration": 288307,
+        "trackNb": 6
+      },
+      {
+        "title": "Tempore voluptatem aut veritatis et culpa sed occaecati.",
+        "duration": 293129,
+        "trackNb": 8
+      }
+    ],
+    "artist": {
+      "fullname": "Adelia Greenfelder"
+    },
+    "image": "https://picsum.photos/id/352/500/500"
+  },
+  {
+    "id": 763,
+    "name": "Eaque quae saepe a.",
+    "edition": "Incidunt.",
+    "releaseDate": "1995-06-29T00:00:00+02:00",
+    "createdAt": "2023-06-14T16:15:07+02:00",
+    "updatedAt": null,
+    "style": [
+      {
+        "name": "House"
+      }
+    ],
+    "support": [
+      {
+        "name": "CD"
+      }
+    ],
+    "songs": [
+      {
+        "title": "Ad aliquid nostrum magnam recusandae quas.",
+        "duration": 246262,
+        "trackNb": 8
+      },
+      {
+        "title": "Sit illo non culpa autem.",
+        "duration": 291118,
+        "trackNb": 2
+      },
+      {
+        "title": "Qui facere animi ad minus excepturi consequuntur id.",
+        "duration": 204201,
+        "trackNb": 8
+      },
+      {
+        "title": "Repudiandae dolores laborum non.",
+        "duration": 220370,
+        "trackNb": 7
+      },
+      {
+        "title": "Earum mollitia omnis quia sint est ut sint.",
+        "duration": 299275,
+        "trackNb": 4
+      },
+      {
+        "title": "Dolor qui provident soluta illum autem.",
+        "duration": 261077,
+        "trackNb": 4
+      },
+      {
+        "title": "Sint officiis recusandae nihil corporis eum ipsam dolores voluptates.",
+        "duration": 187825,
+        "trackNb": 1
+      }
+    ],
+    "artist": {
+      "fullname": "Alvena Gerlach"
+    },
+    "image": "https://picsum.photos/id/778/500/500"
+  },
+  {
+    "id": 764,
+    "name": "Eligendi fugit et accusamus.",
+    "edition": "Earum.",
+    "releaseDate": "1988-08-11T00:00:00+02:00",
+    "createdAt": "2023-06-14T16:15:07+02:00",
+    "updatedAt": null,
+    "style": [
+      {
+        "name": "Electro"
+      }
+    ],
+    "support": [
+      {
+        "name": "Vinyl 45 tours"
+      }
+    ],
+    "songs": [
+      {
+        "title": "Aut aut dolorum minus sint.",
+        "duration": 232361,
+        "trackNb": 1
+      },
+      {
+        "title": "Fuga voluptatem voluptas molestiae autem rerum vero.",
+        "duration": 246639,
+        "trackNb": 10
+      },
+      {
+        "title": "Unde aut aut velit voluptatibus.",
+        "duration": 193514,
+        "trackNb": 8
+      },
+      {
+        "title": "Necessitatibus assumenda recusandae necessitatibus consequatur ut recusandae nostrum.",
+        "duration": 278069,
+        "trackNb": 6
+      },
+      {
+        "title": "Aut ducimus voluptatum temporibus rerum sed ipsa.",
+        "duration": 226059,
+        "trackNb": 10
+      }
+    ],
+    "artist": {
+      "fullname": "Miss Katelin Nader"
+    },
+    "image": "https://picsum.photos/id/130/500/500"
+  },
+  {
+    "id": 765,
+    "name": "Et atque maiores voluptatum omnis.",
+    "edition": "Officia voluptatibus.",
+    "releaseDate": "1978-06-02T00:00:00+01:00",
+    "createdAt": "2023-06-14T16:15:07+02:00",
     "updatedAt": null,
     "style": [
       {
@@ -20,42 +302,32 @@ http://localhost:8000/api/albums
     ],
     "songs": [
       {
-        "title": "titre 11",
-        "duration": 60000,
-        "trackNb": 1
+        "title": "Aut culpa nemo earum ut ut facere delectus.",
+        "duration": 202488,
+        "trackNb": 10
       },
       {
-        "title": "titre 12",
-        "duration": 51430,
+        "title": "Quia deleniti distinctio voluptate.",
+        "duration": 257112,
+        "trackNb": 10
+      },
+      {
+        "title": "Molestiae dicta ea ut corrupti quaerat blanditiis.",
+        "duration": 190407,
         "trackNb": 2
-      },
-      {
-        "title": "titre 13",
-        "duration": 30000,
-        "trackNb": 3
-      },
-      {
-        "title": "titre 14",
-        "duration": 30000,
-        "trackNb": 4
-      },
-      {
-        "title": "titre 15",
-        "duration": 30000,
-        "trackNb": 5
       }
     ],
     "artist": {
-      "fullname": "Artist 1"
+      "fullname": "Alvena Gerlach"
     },
-    "image": "https://media.senscritique.com/media/000004795486/300/the_dark_side_of_the_moon.jpg"
+    "image": "https://picsum.photos/id/959/500/500"
   },
   {
-    "id": 2,
-    "name": "album 2",
-    "edition": "edition 2",
-    "releaseDate": "1999-01-01T00:00:00+01:00",
-    "createdAt": "2023-06-12T17:24:10+02:00",
+    "id": 766,
+    "name": "Nemo dolore delectus molestias.",
+    "edition": "Nihil laudantium.",
+    "releaseDate": "1976-04-20T00:00:00+01:00",
+    "createdAt": "2023-06-14T16:15:07+02:00",
     "updatedAt": null,
     "style": [
       {
@@ -64,37 +336,47 @@ http://localhost:8000/api/albums
     ],
     "support": [
       {
-        "name": "Vinyl"
+        "name": "Vinyl 45 tours"
       }
     ],
     "songs": [
       {
-        "title": "titre 21",
-        "duration": 30000,
+        "title": "Unde corporis sit autem eius aut.",
+        "duration": 293895,
         "trackNb": 1
       },
       {
-        "title": "titre 22",
-        "duration": 30000,
+        "title": "Qui culpa cupiditate nesciunt architecto est nostrum.",
+        "duration": 230392,
         "trackNb": 2
       },
       {
-        "title": "titre 23",
-        "duration": 30000,
-        "trackNb": 3
+        "title": "Ducimus et deserunt maiores in.",
+        "duration": 289050,
+        "trackNb": 5
+      },
+      {
+        "title": "Vero sequi consequuntur voluptatibus quia voluptas eaque a.",
+        "duration": 255658,
+        "trackNb": 1
+      },
+      {
+        "title": "Est saepe velit quisquam quae.",
+        "duration": 207166,
+        "trackNb": 8
       }
     ],
     "artist": {
-      "fullname": "Artist 2"
+      "fullname": "Rylee Bechtelar"
     },
-    "image": "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/opening-soon%2C-coming-soon-design-template-2ad6ecb3bfc0d528a9999c00a642d447_screen.jpg?ts=1593776133"
+    "image": "https://picsum.photos/id/343/500/500"
   },
   {
-    "id": 3,
-    "name": "album 3 ",
-    "edition": "edition 3",
-    "releaseDate": "2000-01-01T00:00:00+01:00",
-    "createdAt": "2023-06-12T17:24:34+02:00",
+    "id": 767,
+    "name": "Quis eaque officiis rerum.",
+    "edition": "Consequatur.",
+    "releaseDate": "1980-03-26T00:00:00+01:00",
+    "createdAt": "2023-06-14T16:15:07+02:00",
     "updatedAt": null,
     "style": [
       {
@@ -108,36 +390,168 @@ http://localhost:8000/api/albums
     ],
     "songs": [
       {
-        "title": "titre 31",
-        "duration": 3300000,
+        "title": "Cumque dolorum sit tempore repellat id.",
+        "duration": 227943,
         "trackNb": 1
       },
       {
-        "title": "titre 32",
-        "duration": 330000,
+        "title": "Voluptas vel reprehenderit perferendis harum ipsum.",
+        "duration": 242198,
+        "trackNb": 9
+      },
+      {
+        "title": "Qui autem velit suscipit laborum magni sequi expedita id.",
+        "duration": 287843,
         "trackNb": 2
       },
       {
-        "title": "titre 33",
-        "duration": 3000000,
-        "trackNb": 3
+        "title": "Nobis occaecati vitae velit fugiat eum sint.",
+        "duration": 248897,
+        "trackNb": 2
       }
     ],
     "artist": {
-      "fullname": "Artist 3"
+      "fullname": "Estelle Marks"
     },
-    "image": "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/opening-soon%2C-coming-soon-design-template-2ad6ecb3bfc0d528a9999c00a642d447_screen.jpg?ts=1593776133"
+    "image": "https://picsum.photos/id/17/500/500"
   },
   {
-    "id": 4,
-    "name": "album 4",
-    "edition": "edition 4",
-    "releaseDate": "2001-01-01T00:00:00+01:00",
-    "createdAt": "2023-06-12T17:24:57+02:00",
+    "id": 768,
+    "name": "Magnam repellendus voluptate dolor.",
+    "edition": "Aspernatur saepe.",
+    "releaseDate": "2018-07-02T00:00:00+02:00",
+    "createdAt": "2023-06-14T16:15:07+02:00",
     "updatedAt": null,
     "style": [
       {
-        "name": "Classic"
+        "name": "Rap"
+      }
+    ],
+    "support": [
+      {
+        "name": "Vinyl 45 tours"
+      }
+    ],
+    "songs": [
+      {
+        "title": "Ut sint eos aut velit.",
+        "duration": 186495,
+        "trackNb": 5
+      },
+      {
+        "title": "Neque eligendi atque dignissimos porro laborum inventore.",
+        "duration": 233425,
+        "trackNb": 10
+      },
+      {
+        "title": "Aspernatur et nesciunt repellendus in iste aliquid labore illo.",
+        "duration": 294144,
+        "trackNb": 4
+      },
+      {
+        "title": "Possimus non et quia laboriosam dicta qui.",
+        "duration": 236616,
+        "trackNb": 10
+      }
+    ],
+    "artist": {
+      "fullname": "Miss Frederique Klocko Sr."
+    },
+    "image": "https://picsum.photos/id/440/500/500"
+  },
+  {
+    "id": 769,
+    "name": "Asperiores in quia exercitationem.",
+    "edition": "Assumenda.",
+    "releaseDate": "2013-09-04T00:00:00+02:00",
+    "createdAt": "2023-06-14T16:15:07+02:00",
+    "updatedAt": null,
+    "style": [
+      {
+        "name": "Rock"
+      }
+    ],
+    "support": [
+      {
+        "name": "Cassette"
+      }
+    ],
+    "songs": [
+      {
+        "title": "Velit consequatur nisi totam autem et excepturi qui.",
+        "duration": 292046,
+        "trackNb": 10
+      },
+      {
+        "title": "Numquam maiores ea nulla quis.",
+        "duration": 248139,
+        "trackNb": 5
+      }
+    ],
+    "artist": {
+      "fullname": "Misty Streich"
+    },
+    "image": "https://picsum.photos/id/67/500/500"
+  },
+  {
+    "id": 770,
+    "name": "Ullam sequi provident sit.",
+    "edition": "Dolore.",
+    "releaseDate": "1987-05-16T00:00:00+02:00",
+    "createdAt": "2023-06-14T16:15:07+02:00",
+    "updatedAt": null,
+    "style": [
+      {
+        "name": "Rock"
+      }
+    ],
+    "support": [
+      {
+        "name": "Cassette"
+      }
+    ],
+    "songs": [
+      {
+        "title": "Voluptatem optio quae eligendi sed consequatur suscipit voluptatem.",
+        "duration": 270466,
+        "trackNb": 6
+      },
+      {
+        "title": "Aliquid autem expedita natus debitis consequatur.",
+        "duration": 279072,
+        "trackNb": 2
+      },
+      {
+        "title": "Assumenda quasi iste molestiae fuga et consequatur qui.",
+        "duration": 231403,
+        "trackNb": 2
+      },
+      {
+        "title": "Facilis unde praesentium voluptas pariatur odio repudiandae.",
+        "duration": 220276,
+        "trackNb": 5
+      },
+      {
+        "title": "Qui quis est occaecati deserunt.",
+        "duration": 180718,
+        "trackNb": 9
+      }
+    ],
+    "artist": {
+      "fullname": "Alvena Gerlach"
+    },
+    "image": "https://picsum.photos/id/889/500/500"
+  },
+  {
+    "id": 771,
+    "name": "Vel dolorum temporibus.",
+    "edition": "Sed.",
+    "releaseDate": "2013-08-27T00:00:00+02:00",
+    "createdAt": "2023-06-14T16:15:07+02:00",
+    "updatedAt": null,
+    "style": [
+      {
+        "name": "Classique"
       }
     ],
     "support": [
@@ -147,27 +561,532 @@ http://localhost:8000/api/albums
     ],
     "songs": [
       {
-        "title": "titre 41",
-        "duration": 300000,
-        "trackNb": 1
+        "title": "Explicabo sit pariatur et pariatur.",
+        "duration": 252910,
+        "trackNb": 3
       },
       {
-        "title": "titre 42",
-        "duration": 4200000,
-        "trackNb": 2
+        "title": "Fugiat enim placeat eos eaque repellat pariatur.",
+        "duration": 223385,
+        "trackNb": 4
+      },
+      {
+        "title": "Eum voluptatem sapiente magni culpa ipsam culpa ea.",
+        "duration": 244105,
+        "trackNb": 6
+      },
+      {
+        "title": "Mollitia dolore beatae laboriosam aut et aliquid nihil.",
+        "duration": 183215,
+        "trackNb": 10
       }
     ],
     "artist": {
-      "fullname": "Artist 4"
+      "fullname": "Misty Streich"
     },
-    "image": "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/opening-soon%2C-coming-soon-design-template-2ad6ecb3bfc0d528a9999c00a642d447_screen.jpg?ts=1593776133"
+    "image": "https://picsum.photos/id/779/500/500"
   },
   {
-    "id": 5,
-    "name": "album 5",
-    "edition": "edition 5",
-    "releaseDate": "2002-02-02T00:00:00+01:00",
-    "createdAt": "2023-06-12T17:25:41+02:00",
+    "id": 772,
+    "name": "Rerum provident quas.",
+    "edition": "Dicta corporis.",
+    "releaseDate": "1977-07-15T00:00:00+01:00",
+    "createdAt": "2023-06-14T16:15:07+02:00",
+    "updatedAt": null,
+    "style": [
+      {
+        "name": "Classique"
+      }
+    ],
+    "support": [
+      {
+        "name": "Vinyl 33 tours"
+      }
+    ],
+    "songs": [
+      {
+        "title": "Iste delectus aperiam eveniet praesentium quia a et.",
+        "duration": 241265,
+        "trackNb": 5
+      },
+      {
+        "title": "A consequatur consequatur veniam eligendi cumque quibusdam sapiente.",
+        "duration": 281599,
+        "trackNb": 6
+      },
+      {
+        "title": "Consequatur eum quaerat omnis ut ea ullam maxime.",
+        "duration": 285293,
+        "trackNb": 9
+      },
+      {
+        "title": "Quidem doloribus ut nulla et accusamus.",
+        "duration": 223527,
+        "trackNb": 3
+      },
+      {
+        "title": "Doloribus est ea maiores harum mollitia.",
+        "duration": 211873,
+        "trackNb": 7
+      }
+    ],
+    "artist": {
+      "fullname": "Mr. Braeden Paucek IV"
+    },
+    "image": "https://picsum.photos/id/197/500/500"
+  },
+  {
+    "id": 773,
+    "name": "Sapiente illum quaerat expedita.",
+    "edition": "Numquam voluptatem.",
+    "releaseDate": "2016-05-27T00:00:00+02:00",
+    "createdAt": "2023-06-14T16:15:07+02:00",
+    "updatedAt": null,
+    "style": [
+      {
+        "name": "Rap"
+      }
+    ],
+    "support": [
+      {
+        "name": "CD"
+      }
+    ],
+    "songs": [
+      {
+        "title": "Deleniti blanditiis occaecati et sint quisquam.",
+        "duration": 222635,
+        "trackNb": 9
+      },
+      {
+        "title": "Aut expedita vitae culpa saepe molestiae mollitia.",
+        "duration": 292746,
+        "trackNb": 5
+      },
+      {
+        "title": "Maiores eius quos a optio.",
+        "duration": 292435,
+        "trackNb": 10
+      },
+      {
+        "title": "Rem enim magni omnis quo.",
+        "duration": 288904,
+        "trackNb": 7
+      },
+      {
+        "title": "Rerum molestias corrupti et.",
+        "duration": 193709,
+        "trackNb": 8
+      },
+      {
+        "title": "Rerum non sunt praesentium omnis vel.",
+        "duration": 254692,
+        "trackNb": 4
+      }
+    ],
+    "artist": {
+      "fullname": "Keely Conroy"
+    },
+    "image": "https://picsum.photos/id/307/500/500"
+  },
+  {
+    "id": 774,
+    "name": "Necessitatibus et nostrum neque culpa.",
+    "edition": "Consectetur non.",
+    "releaseDate": "1971-10-08T00:00:00+01:00",
+    "createdAt": "2023-06-14T16:15:07+02:00",
+    "updatedAt": null,
+    "style": [
+      {
+        "name": "Electro"
+      }
+    ],
+    "support": [
+      {
+        "name": "CD"
+      }
+    ],
+    "songs": [
+      {
+        "title": "Nostrum fugiat eaque ducimus.",
+        "duration": 257640,
+        "trackNb": 8
+      },
+      {
+        "title": "Iste sit consequatur fugiat explicabo.",
+        "duration": 289250,
+        "trackNb": 5
+      },
+      {
+        "title": "Esse sed aut amet alias dolores aut sunt.",
+        "duration": 225370,
+        "trackNb": 3
+      },
+      {
+        "title": "Qui enim laudantium quaerat hic sapiente facilis voluptatem.",
+        "duration": 250045,
+        "trackNb": 2
+      },
+      {
+        "title": "Est minus tenetur ratione in iusto praesentium tempore deleniti.",
+        "duration": 233157,
+        "trackNb": 8
+      },
+      {
+        "title": "Ipsam aut qui veritatis dolores.",
+        "duration": 216959,
+        "trackNb": 7
+      }
+    ],
+    "artist": {
+      "fullname": "Keira Kutch"
+    },
+    "image": "https://picsum.photos/id/1044/500/500"
+  },
+  {
+    "id": 775,
+    "name": "Sit consequatur doloremque.",
+    "edition": "Consequuntur.",
+    "releaseDate": "1987-11-10T00:00:00+01:00",
+    "createdAt": "2023-06-14T16:15:07+02:00",
+    "updatedAt": null,
+    "style": [
+      {
+        "name": "House"
+      }
+    ],
+    "support": [
+      {
+        "name": "Vinyl 45 tours"
+      }
+    ],
+    "songs": [
+      {
+        "title": "Iusto ea temporibus hic labore.",
+        "duration": 209271,
+        "trackNb": 1
+      },
+      {
+        "title": "Illum ea soluta voluptatem in corrupti et cumque nihil.",
+        "duration": 198337,
+        "trackNb": 3
+      },
+      {
+        "title": "Totam dolorum et enim molestias.",
+        "duration": 235725,
+        "trackNb": 7
+      },
+      {
+        "title": "Ipsam asperiores molestiae eaque molestiae ut itaque.",
+        "duration": 261885,
+        "trackNb": 9
+      }
+    ],
+    "artist": {
+      "fullname": "Reynold Auer"
+    },
+    "image": "https://picsum.photos/id/484/500/500"
+  },
+  {
+    "id": 776,
+    "name": "Aspernatur inventore neque rerum.",
+    "edition": "Necessitatibus.",
+    "releaseDate": "1990-06-10T00:00:00+02:00",
+    "createdAt": "2023-06-14T16:15:07+02:00",
+    "updatedAt": null,
+    "style": [
+      {
+        "name": "House"
+      }
+    ],
+    "support": [
+      {
+        "name": "CD"
+      }
+    ],
+    "songs": [
+      {
+        "title": "Impedit dolor ut dignissimos sint.",
+        "duration": 180356,
+        "trackNb": 3
+      },
+      {
+        "title": "Aspernatur ut aspernatur ratione aut nihil.",
+        "duration": 200929,
+        "trackNb": 5
+      },
+      {
+        "title": "Quam porro tempora expedita quia dolorem quia.",
+        "duration": 214624,
+        "trackNb": 1
+      },
+      {
+        "title": "Ad recusandae voluptatem excepturi.",
+        "duration": 289803,
+        "trackNb": 5
+      },
+      {
+        "title": "Rerum magnam est rerum et delectus.",
+        "duration": 229749,
+        "trackNb": 4
+      },
+      {
+        "title": "Voluptatem ea non dolorem minus.",
+        "duration": 286490,
+        "trackNb": 5
+      },
+      {
+        "title": "Et omnis voluptatem vel est beatae.",
+        "duration": 285615,
+        "trackNb": 1
+      }
+    ],
+    "artist": {
+      "fullname": "Zackery Gerhold"
+    },
+    "image": "https://picsum.photos/id/795/500/500"
+  },
+  {
+    "id": 777,
+    "name": "Veritatis aut dolorem.",
+    "edition": "Deleniti.",
+    "releaseDate": "1991-09-25T00:00:00+02:00",
+    "createdAt": "2023-06-14T16:15:07+02:00",
+    "updatedAt": null,
+    "style": [
+      {
+        "name": "House"
+      }
+    ],
+    "support": [
+      {
+        "name": "CD"
+      }
+    ],
+    "songs": [
+      {
+        "title": "Et soluta amet minima et expedita ullam.",
+        "duration": 275813,
+        "trackNb": 1
+      },
+      {
+        "title": "Nobis eligendi culpa blanditiis nihil sit facere repudiandae.",
+        "duration": 219939,
+        "trackNb": 10
+      },
+      {
+        "title": "Illo velit quam quia accusantium ad quos.",
+        "duration": 193455,
+        "trackNb": 3
+      },
+      {
+        "title": "Quos excepturi accusamus in repellendus aspernatur vitae ullam id.",
+        "duration": 281221,
+        "trackNb": 8
+      },
+      {
+        "title": "Nihil voluptatem quasi non est corporis earum.",
+        "duration": 192463,
+        "trackNb": 8
+      },
+      {
+        "title": "Repellat nulla culpa expedita veniam eaque.",
+        "duration": 231862,
+        "trackNb": 4
+      }
+    ],
+    "artist": {
+      "fullname": "Zackery Gerhold"
+    },
+    "image": "https://picsum.photos/id/962/500/500"
+  },
+  {
+    "id": 778,
+    "name": "Dignissimos dolore quaerat voluptas.",
+    "edition": "Consectetur voluptatibus.",
+    "releaseDate": "2000-12-31T00:00:00+01:00",
+    "createdAt": "2023-06-14T16:15:07+02:00",
+    "updatedAt": null,
+    "style": [
+      {
+        "name": "Electro"
+      }
+    ],
+    "support": [
+      {
+        "name": "CD"
+      }
+    ],
+    "songs": [
+      {
+        "title": "Eum sit sunt et non.",
+        "duration": 203270,
+        "trackNb": 2
+      },
+      {
+        "title": "Saepe facilis nemo iusto nam.",
+        "duration": 277894,
+        "trackNb": 6
+      },
+      {
+        "title": "Et delectus quo id ut natus dolorem.",
+        "duration": 260317,
+        "trackNb": 6
+      },
+      {
+        "title": "Tempore aperiam eos cum ad.",
+        "duration": 215038,
+        "trackNb": 1
+      },
+      {
+        "title": "Tempora qui incidunt maiores ut.",
+        "duration": 259015,
+        "trackNb": 3
+      },
+      {
+        "title": "Doloribus vero quo esse voluptatibus inventore eum.",
+        "duration": 239430,
+        "trackNb": 8
+      }
+    ],
+    "artist": {
+      "fullname": "Stefan Kassulke"
+    },
+    "image": "https://picsum.photos/id/409/500/500"
+  },
+  {
+    "id": 779,
+    "name": "Repellendus qui distinctio.",
+    "edition": "Totam.",
+    "releaseDate": "1986-04-18T00:00:00+02:00",
+    "createdAt": "2023-06-14T16:15:07+02:00",
+    "updatedAt": null,
+    "style": [
+      {
+        "name": "Rap"
+      }
+    ],
+    "support": [
+      {
+        "name": "Vinyl 33 tours"
+      }
+    ],
+    "songs": [
+      {
+        "title": "Accusamus laborum quas est tenetur aut eius voluptatem.",
+        "duration": 279718,
+        "trackNb": 10
+      },
+      {
+        "title": "Laudantium enim in repellat labore.",
+        "duration": 266340,
+        "trackNb": 9
+      },
+      {
+        "title": "Necessitatibus optio delectus perferendis quia illum.",
+        "duration": 257795,
+        "trackNb": 4
+      },
+      {
+        "title": "Nemo voluptatum harum veritatis culpa natus aut cumque.",
+        "duration": 284193,
+        "trackNb": 9
+      }
+    ],
+    "artist": {
+      "fullname": "Buford Nienow"
+    },
+    "image": "https://picsum.photos/id/610/500/500"
+  },
+  {
+    "id": 780,
+    "name": "Sit ut optio est.",
+    "edition": "A vel.",
+    "releaseDate": "2018-11-17T00:00:00+01:00",
+    "createdAt": "2023-06-14T16:15:07+02:00",
+    "updatedAt": null,
+    "style": [
+      {
+        "name": "Rap"
+      }
+    ],
+    "support": [
+      {
+        "name": "Cassette"
+      }
+    ],
+    "songs": [
+      {
+        "title": "Occaecati omnis optio velit sapiente ducimus fugit.",
+        "duration": 293848,
+        "trackNb": 4
+      },
+      {
+        "title": "Autem sunt aut ea et et.",
+        "duration": 201221,
+        "trackNb": 7
+      },
+      {
+        "title": "Unde dolores commodi pariatur vero sint saepe.",
+        "duration": 190911,
+        "trackNb": 5
+      },
+      {
+        "title": "Aliquam quod soluta fuga.",
+        "duration": 189622,
+        "trackNb": 7
+      }
+    ],
+    "artist": {
+      "fullname": "Dr. Harmony Kuhic"
+    },
+    "image": "https://picsum.photos/id/840/500/500"
+  },
+  {
+    "id": 781,
+    "name": "Voluptas vel placeat sit.",
+    "edition": "Odio.",
+    "releaseDate": "1991-12-11T00:00:00+01:00",
+    "createdAt": "2023-06-14T16:15:07+02:00",
+    "updatedAt": null,
+    "style": [
+      {
+        "name": "Rap"
+      }
+    ],
+    "support": [
+      {
+        "name": "Vinyl 33 tours"
+      }
+    ],
+    "songs": [
+      {
+        "title": "Voluptatum ad tenetur iste similique ut omnis soluta.",
+        "duration": 266551,
+        "trackNb": 7
+      },
+      {
+        "title": "Delectus voluptatem placeat eligendi facilis facilis.",
+        "duration": 184531,
+        "trackNb": 6
+      },
+      {
+        "title": "Dolores illo maxime ipsum mollitia non neque assumenda.",
+        "duration": 267642,
+        "trackNb": 9
+      }
+    ],
+    "artist": {
+      "fullname": "Gus Christiansen"
+    },
+    "image": "https://picsum.photos/id/702/500/500"
+  },
+  {
+    "id": 782,
+    "name": "Ea sit repudiandae.",
+    "edition": "Et pariatur.",
+    "releaseDate": "2009-05-16T00:00:00+02:00",
+    "createdAt": "2023-06-14T16:15:07+02:00",
     "updatedAt": null,
     "style": [
       {
@@ -176,24 +1095,1723 @@ http://localhost:8000/api/albums
     ],
     "support": [
       {
-        "name": "Vinyl"
+        "name": "Vinyl 45 tours"
       }
     ],
     "songs": [
       {
-        "title": "titre 51",
-        "duration": 30000,
+        "title": "Voluptates ea nemo et tenetur impedit et.",
+        "duration": 260097,
         "trackNb": 1
       },
       {
-        "title": "titre 52",
-        "duration": 400000,
+        "title": "Cumque tempora dolores iure quia recusandae provident molestiae voluptatem.",
+        "duration": 213379,
+        "trackNb": 3
+      },
+      {
+        "title": "Itaque ea quia quia quasi nobis ut.",
+        "duration": 278562,
+        "trackNb": 1
+      },
+      {
+        "title": "Quia fuga iure voluptas veniam dolores.",
+        "duration": 195801,
+        "trackNb": 4
+      },
+      {
+        "title": "Hic animi possimus animi ut.",
+        "duration": 245026,
+        "trackNb": 1
+      },
+      {
+        "title": "Sint et harum culpa eligendi et autem asperiores accusantium.",
+        "duration": 220749,
+        "trackNb": 3
+      }
+    ],
+    "artist": {
+      "fullname": "Peggie Zboncak"
+    },
+    "image": "https://picsum.photos/id/808/500/500"
+  },
+  {
+    "id": 783,
+    "name": "Eveniet velit vel aperiam.",
+    "edition": "Nam voluptatem.",
+    "releaseDate": "1987-02-02T00:00:00+01:00",
+    "createdAt": "2023-06-14T16:15:07+02:00",
+    "updatedAt": null,
+    "style": [
+      {
+        "name": "Classique"
+      }
+    ],
+    "support": [
+      {
+        "name": "Cassette"
+      }
+    ],
+    "songs": [
+      {
+        "title": "Corporis repudiandae quisquam vel.",
+        "duration": 283100,
+        "trackNb": 9
+      },
+      {
+        "title": "Deserunt beatae rerum facere aperiam.",
+        "duration": 195030,
+        "trackNb": 6
+      },
+      {
+        "title": "Rerum id suscipit deserunt aperiam.",
+        "duration": 255599,
+        "trackNb": 3
+      },
+      {
+        "title": "Voluptatem ut doloribus hic tempore.",
+        "duration": 231495,
+        "trackNb": 2
+      },
+      {
+        "title": "Repellendus doloremque hic reiciendis reprehenderit facere quae harum.",
+        "duration": 293878,
+        "trackNb": 3
+      }
+    ],
+    "artist": {
+      "fullname": "Ms. Maxie Rowe"
+    },
+    "image": "https://picsum.photos/id/1020/500/500"
+  },
+  {
+    "id": 784,
+    "name": "Ex rerum molestiae dolores.",
+    "edition": "Et.",
+    "releaseDate": "2011-01-31T00:00:00+01:00",
+    "createdAt": "2023-06-14T16:15:07+02:00",
+    "updatedAt": null,
+    "style": [
+      {
+        "name": "House"
+      }
+    ],
+    "support": [
+      {
+        "name": "Cassette"
+      }
+    ],
+    "songs": [
+      {
+        "title": "Earum officiis reprehenderit nulla sunt aperiam voluptas necessitatibus.",
+        "duration": 252056,
+        "trackNb": 2
+      },
+      {
+        "title": "Sit nobis et nobis beatae corrupti ipsum.",
+        "duration": 254754,
+        "trackNb": 9
+      },
+      {
+        "title": "Nemo reiciendis quos sint nesciunt vero.",
+        "duration": 279735,
+        "trackNb": 7
+      },
+      {
+        "title": "Dolor ratione aut facilis fugiat.",
+        "duration": 260721,
+        "trackNb": 6
+      },
+      {
+        "title": "Quis dicta odio ut explicabo sed vel.",
+        "duration": 293924,
+        "trackNb": 2
+      },
+      {
+        "title": "Repellendus occaecati aliquam repellendus aut optio qui.",
+        "duration": 217350,
+        "trackNb": 5
+      }
+    ],
+    "artist": {
+      "fullname": "Mr. Nash Jerde V"
+    },
+    "image": "https://picsum.photos/id/39/500/500"
+  },
+  {
+    "id": 785,
+    "name": "Quam quia voluptates.",
+    "edition": "Consequuntur harum.",
+    "releaseDate": "2003-05-11T00:00:00+02:00",
+    "createdAt": "2023-06-14T16:15:07+02:00",
+    "updatedAt": null,
+    "style": [
+      {
+        "name": "Electro"
+      }
+    ],
+    "support": [
+      {
+        "name": "Vinyl 33 tours"
+      }
+    ],
+    "songs": [
+      {
+        "title": "Nostrum itaque dolorum illum optio.",
+        "duration": 252137,
+        "trackNb": 1
+      },
+      {
+        "title": "Rem omnis modi eum.",
+        "duration": 210460,
+        "trackNb": 7
+      },
+      {
+        "title": "Omnis nam velit nobis quod tempore perferendis.",
+        "duration": 201846,
+        "trackNb": 9
+      },
+      {
+        "title": "Quaerat porro a sit nobis vero qui.",
+        "duration": 284415,
+        "trackNb": 6
+      },
+      {
+        "title": "Repellat doloremque eveniet et et dicta voluptas.",
+        "duration": 270803,
+        "trackNb": 5
+      },
+      {
+        "title": "Voluptatem molestiae adipisci qui unde est.",
+        "duration": 278468,
+        "trackNb": 1
+      },
+      {
+        "title": "Praesentium labore fugit amet sit omnis mollitia.",
+        "duration": 271291,
+        "trackNb": 4
+      }
+    ],
+    "artist": {
+      "fullname": "Prof. Lucas Hirthe"
+    },
+    "image": "https://picsum.photos/id/324/500/500"
+  },
+  {
+    "id": 786,
+    "name": "Minus sint ut.",
+    "edition": "Dolorem voluptatem.",
+    "releaseDate": "1995-11-19T00:00:00+01:00",
+    "createdAt": "2023-06-14T16:15:07+02:00",
+    "updatedAt": null,
+    "style": [
+      {
+        "name": "House"
+      }
+    ],
+    "support": [
+      {
+        "name": "Cassette"
+      }
+    ],
+    "songs": [
+      {
+        "title": "Tenetur non facilis reprehenderit voluptatibus.",
+        "duration": 249433,
+        "trackNb": 9
+      },
+      {
+        "title": "Ullam non qui earum eligendi.",
+        "duration": 228098,
+        "trackNb": 6
+      },
+      {
+        "title": "Dicta dolorem beatae ut facilis.",
+        "duration": 267958,
+        "trackNb": 8
+      },
+      {
+        "title": "Enim ipsum ut ut commodi veniam ut distinctio.",
+        "duration": 227915,
+        "trackNb": 9
+      },
+      {
+        "title": "Et officiis quibusdam eaque et.",
+        "duration": 206400,
+        "trackNb": 5
+      },
+      {
+        "title": "Sunt esse delectus placeat porro.",
+        "duration": 290530,
+        "trackNb": 10
+      }
+    ],
+    "artist": {
+      "fullname": "Prof. Lucas Hirthe"
+    },
+    "image": "https://picsum.photos/id/992/500/500"
+  },
+  {
+    "id": 787,
+    "name": "Nostrum ipsum aliquam accusamus.",
+    "edition": "Modi dolor.",
+    "releaseDate": "1998-09-18T00:00:00+02:00",
+    "createdAt": "2023-06-14T16:15:07+02:00",
+    "updatedAt": null,
+    "style": [
+      {
+        "name": "Rap"
+      }
+    ],
+    "support": [
+      {
+        "name": "Vinyl 45 tours"
+      }
+    ],
+    "songs": [
+      {
+        "title": "Voluptate ratione sit quam neque sed modi et.",
+        "duration": 281537,
+        "trackNb": 2
+      },
+      {
+        "title": "Aut sequi reprehenderit repellat dolorum.",
+        "duration": 239993,
+        "trackNb": 10
+      },
+      {
+        "title": "Voluptatem ratione autem et cumque illo beatae.",
+        "duration": 292492,
+        "trackNb": 1
+      },
+      {
+        "title": "Voluptas et ea ipsam inventore assumenda.",
+        "duration": 295202,
+        "trackNb": 6
+      },
+      {
+        "title": "Id aut velit quia velit.",
+        "duration": 209602,
+        "trackNb": 10
+      },
+      {
+        "title": "Quibusdam rerum in enim adipisci.",
+        "duration": 257420,
+        "trackNb": 1
+      },
+      {
+        "title": "Perferendis iste modi rerum optio aut voluptatum soluta.",
+        "duration": 291842,
+        "trackNb": 6
+      },
+      {
+        "title": "Laboriosam accusantium similique inventore est aliquam odio.",
+        "duration": 211309,
+        "trackNb": 10
+      }
+    ],
+    "artist": {
+      "fullname": "Prof. Chance Stroman III"
+    },
+    "image": "https://picsum.photos/id/495/500/500"
+  },
+  {
+    "id": 788,
+    "name": "Facere qui id sed.",
+    "edition": "Quia.",
+    "releaseDate": "1975-12-22T00:00:00+01:00",
+    "createdAt": "2023-06-14T16:15:07+02:00",
+    "updatedAt": null,
+    "style": [
+      {
+        "name": "Rap"
+      }
+    ],
+    "support": [
+      {
+        "name": "Cassette"
+      }
+    ],
+    "songs": [
+      {
+        "title": "Quaerat inventore quos inventore laudantium.",
+        "duration": 184296,
+        "trackNb": 3
+      },
+      {
+        "title": "Quo sint laboriosam laboriosam.",
+        "duration": 261994,
+        "trackNb": 1
+      },
+      {
+        "title": "Veritatis possimus et aut sed et ut vel.",
+        "duration": 249319,
+        "trackNb": 2
+      },
+      {
+        "title": "Soluta ab voluptatem repellendus omnis iusto quibusdam hic.",
+        "duration": 277422,
+        "trackNb": 7
+      },
+      {
+        "title": "Id dignissimos explicabo magnam minima dicta natus.",
+        "duration": 251965,
+        "trackNb": 4
+      }
+    ],
+    "artist": {
+      "fullname": "Prof. Chance Stroman III"
+    },
+    "image": "https://picsum.photos/id/991/500/500"
+  },
+  {
+    "id": 789,
+    "name": "Ratione sequi veritatis magni.",
+    "edition": "Aperiam.",
+    "releaseDate": "1987-09-27T00:00:00+02:00",
+    "createdAt": "2023-06-14T16:15:07+02:00",
+    "updatedAt": null,
+    "style": [
+      {
+        "name": "Rock"
+      }
+    ],
+    "support": [
+      {
+        "name": "Vinyl 33 tours"
+      }
+    ],
+    "songs": [
+      {
+        "title": "Dolorem est aspernatur voluptatem odio alias modi.",
+        "duration": 271424,
+        "trackNb": 2
+      },
+      {
+        "title": "Quos laborum repudiandae cupiditate ea iste quod facilis.",
+        "duration": 283470,
+        "trackNb": 1
+      },
+      {
+        "title": "Non molestiae itaque rerum.",
+        "duration": 225499,
+        "trackNb": 8
+      },
+      {
+        "title": "Repellendus quos natus quod reiciendis qui dolore.",
+        "duration": 213612,
+        "trackNb": 4
+      },
+      {
+        "title": "Placeat exercitationem voluptatem quasi dolor et deleniti est.",
+        "duration": 234762,
+        "trackNb": 10
+      },
+      {
+        "title": "Eius incidunt illum vitae facere.",
+        "duration": 197366,
+        "trackNb": 7
+      },
+      {
+        "title": "Quis quam voluptas dignissimos molestiae.",
+        "duration": 277049,
+        "trackNb": 2
+      },
+      {
+        "title": "Ut itaque et est nihil placeat sapiente dolores.",
+        "duration": 246081,
+        "trackNb": 10
+      }
+    ],
+    "artist": {
+      "fullname": "Prof. Chance Stroman III"
+    },
+    "image": "https://picsum.photos/id/479/500/500"
+  },
+  {
+    "id": 790,
+    "name": "Soluta aspernatur cupiditate.",
+    "edition": "Aut.",
+    "releaseDate": "1994-07-12T00:00:00+02:00",
+    "createdAt": "2023-06-14T16:15:07+02:00",
+    "updatedAt": null,
+    "style": [
+      {
+        "name": "House"
+      }
+    ],
+    "support": [
+      {
+        "name": "Vinyl 33 tours"
+      }
+    ],
+    "songs": [
+      {
+        "title": "Perspiciatis qui sint est.",
+        "duration": 245594,
+        "trackNb": 2
+      },
+      {
+        "title": "Veritatis omnis quasi provident aut saepe et dolores nemo.",
+        "duration": 200948,
+        "trackNb": 8
+      },
+      {
+        "title": "Sit modi iusto velit ducimus perferendis sit sit assumenda.",
+        "duration": 254972,
+        "trackNb": 3
+      },
+      {
+        "title": "Quia in nesciunt nihil veritatis voluptatem.",
+        "duration": 234216,
+        "trackNb": 9
+      },
+      {
+        "title": "Sit quia laudantium recusandae vitae.",
+        "duration": 251155,
+        "trackNb": 5
+      },
+      {
+        "title": "Qui quia velit quis temporibus.",
+        "duration": 288850,
+        "trackNb": 1
+      },
+      {
+        "title": "Blanditiis voluptas dolor aut quo.",
+        "duration": 230884,
+        "trackNb": 10
+      },
+      {
+        "title": "Distinctio sunt saepe dolorem totam quibusdam.",
+        "duration": 187506,
+        "trackNb": 1
+      }
+    ],
+    "artist": {
+      "fullname": "Lizzie Quitzon"
+    },
+    "image": "https://picsum.photos/id/14/500/500"
+  },
+  {
+    "id": 791,
+    "name": "Nihil ducimus dolor est.",
+    "edition": "Neque magnam.",
+    "releaseDate": "1995-02-18T00:00:00+01:00",
+    "createdAt": "2023-06-14T16:15:07+02:00",
+    "updatedAt": null,
+    "style": [
+      {
+        "name": "Classique"
+      }
+    ],
+    "support": [
+      {
+        "name": "Vinyl 33 tours"
+      }
+    ],
+    "songs": [
+      {
+        "title": "Aut soluta commodi officiis rerum.",
+        "duration": 281320,
+        "trackNb": 9
+      },
+      {
+        "title": "Occaecati ut ducimus qui quia in ratione.",
+        "duration": 189766,
+        "trackNb": 3
+      },
+      {
+        "title": "Hic corporis quos eligendi dicta iste ad maxime.",
+        "duration": 286513,
+        "trackNb": 9
+      },
+      {
+        "title": "At quia et nesciunt sunt possimus ut voluptatem quo.",
+        "duration": 292975,
+        "trackNb": 2
+      },
+      {
+        "title": "Eos illo rerum necessitatibus sequi ut reprehenderit.",
+        "duration": 203875,
+        "trackNb": 9
+      },
+      {
+        "title": "Est placeat illo rerum.",
+        "duration": 272651,
+        "trackNb": 7
+      },
+      {
+        "title": "Quaerat tenetur itaque dolores necessitatibus placeat autem quia.",
+        "duration": 261569,
+        "trackNb": 6
+      },
+      {
+        "title": "Cum illum ut magni quis temporibus qui.",
+        "duration": 219966,
+        "trackNb": 3
+      }
+    ],
+    "artist": {
+      "fullname": "Josiane Weber"
+    },
+    "image": "https://picsum.photos/id/231/500/500"
+  },
+  {
+    "id": 792,
+    "name": "Accusamus eveniet corrupti odio.",
+    "edition": "Vitae explicabo.",
+    "releaseDate": "1975-05-16T00:00:00+01:00",
+    "createdAt": "2023-06-14T16:15:07+02:00",
+    "updatedAt": null,
+    "style": [
+      {
+        "name": "Rock"
+      }
+    ],
+    "support": [
+      {
+        "name": "Cassette"
+      }
+    ],
+    "songs": [
+      {
+        "title": "Ut esse maiores officiis ab deserunt.",
+        "duration": 235621,
+        "trackNb": 5
+      },
+      {
+        "title": "Eos distinctio doloribus aut laboriosam.",
+        "duration": 252782,
+        "trackNb": 10
+      },
+      {
+        "title": "Minima qui quos quaerat qui optio.",
+        "duration": 266658,
+        "trackNb": 2
+      },
+      {
+        "title": "Alias quisquam repellendus esse id numquam qui.",
+        "duration": 289566,
+        "trackNb": 4
+      },
+      {
+        "title": "Et error eveniet officia eos et ea est.",
+        "duration": 297021,
+        "trackNb": 6
+      },
+      {
+        "title": "Tempora quos qui aliquid pariatur.",
+        "duration": 183711,
+        "trackNb": 2
+      },
+      {
+        "title": "Dicta aut qui cupiditate atque.",
+        "duration": 280550,
+        "trackNb": 8
+      },
+      {
+        "title": "Explicabo nihil omnis totam sunt voluptates qui aut qui.",
+        "duration": 279024,
+        "trackNb": 9
+      },
+      {
+        "title": "Enim aliquid in aut neque eaque et.",
+        "duration": 240006,
+        "trackNb": 7
+      }
+    ],
+    "artist": {
+      "fullname": "Prof. Darian Veum"
+    },
+    "image": "https://picsum.photos/id/143/500/500"
+  },
+  {
+    "id": 793,
+    "name": "Esse qui numquam.",
+    "edition": "Illum.",
+    "releaseDate": "2004-10-30T00:00:00+02:00",
+    "createdAt": "2023-06-14T16:15:07+02:00",
+    "updatedAt": null,
+    "style": [
+      {
+        "name": "House"
+      }
+    ],
+    "support": [
+      {
+        "name": "Cassette"
+      }
+    ],
+    "songs": [
+      {
+        "title": "Et consequuntur reiciendis voluptas sunt.",
+        "duration": 228248,
+        "trackNb": 5
+      },
+      {
+        "title": "Error autem tenetur voluptatibus perspiciatis repellat delectus officia.",
+        "duration": 283467,
+        "trackNb": 7
+      },
+      {
+        "title": "Dolorem asperiores provident sed nemo nemo.",
+        "duration": 255629,
+        "trackNb": 2
+      },
+      {
+        "title": "Culpa sit cupiditate iste provident voluptatem ut soluta.",
+        "duration": 296066,
+        "trackNb": 2
+      },
+      {
+        "title": "Voluptatem quibusdam qui inventore non ut aut aut assumenda.",
+        "duration": 273174,
+        "trackNb": 2
+      },
+      {
+        "title": "Et nihil omnis dolor consequatur architecto odit.",
+        "duration": 246298,
+        "trackNb": 7
+      }
+    ],
+    "artist": {
+      "fullname": "Josiane Weber"
+    },
+    "image": "https://picsum.photos/id/1084/500/500"
+  },
+  {
+    "id": 794,
+    "name": "Facilis neque aut non aut.",
+    "edition": "Non.",
+    "releaseDate": "1991-06-16T00:00:00+02:00",
+    "createdAt": "2023-06-14T16:15:07+02:00",
+    "updatedAt": null,
+    "style": [
+      {
+        "name": "Classique"
+      }
+    ],
+    "support": [
+      {
+        "name": "Cassette"
+      }
+    ],
+    "songs": [
+      {
+        "title": "Aut molestias dolores dolorem placeat ullam voluptate.",
+        "duration": 209995,
+        "trackNb": 6
+      },
+      {
+        "title": "Sunt veniam rerum modi rem laboriosam sed laboriosam.",
+        "duration": 215082,
+        "trackNb": 2
+      },
+      {
+        "title": "Tempore sit iure ducimus sed ut veniam.",
+        "duration": 195265,
+        "trackNb": 4
+      },
+      {
+        "title": "Inventore a quos enim fugit.",
+        "duration": 189780,
+        "trackNb": 1
+      },
+      {
+        "title": "Natus omnis consectetur sunt iste perspiciatis et tempore.",
+        "duration": 272610,
+        "trackNb": 5
+      },
+      {
+        "title": "Quia similique omnis hic et vitae deleniti culpa illum.",
+        "duration": 259245,
+        "trackNb": 8
+      },
+      {
+        "title": "Qui nihil aut et reprehenderit rerum unde.",
+        "duration": 246626,
+        "trackNb": 6
+      }
+    ],
+    "artist": {
+      "fullname": "Brenda Bergstrom DDS"
+    },
+    "image": "https://picsum.photos/id/982/500/500"
+  },
+  {
+    "id": 795,
+    "name": "Eaque aliquid nisi.",
+    "edition": "Sit consequatur.",
+    "releaseDate": "2023-02-26T00:00:00+01:00",
+    "createdAt": "2023-06-14T16:15:07+02:00",
+    "updatedAt": null,
+    "style": [
+      {
+        "name": "Classique"
+      }
+    ],
+    "support": [
+      {
+        "name": "CD"
+      }
+    ],
+    "songs": [
+      {
+        "title": "Rerum cumque doloribus est non maiores culpa quis.",
+        "duration": 185846,
+        "trackNb": 5
+      },
+      {
+        "title": "Cum qui debitis consequatur sunt possimus.",
+        "duration": 262481,
+        "trackNb": 9
+      },
+      {
+        "title": "Et est corporis maxime eligendi sit possimus.",
+        "duration": 230041,
+        "trackNb": 4
+      },
+      {
+        "title": "Et nihil consequatur atque aut qui magni aut molestiae.",
+        "duration": 200146,
+        "trackNb": 5
+      },
+      {
+        "title": "Perspiciatis magni non aliquam dolore.",
+        "duration": 270795,
+        "trackNb": 9
+      },
+      {
+        "title": "Ipsam est sunt ab quo.",
+        "duration": 272392,
+        "trackNb": 9
+      },
+      {
+        "title": "Dolor eum repellat quibusdam tempora.",
+        "duration": 275058,
+        "trackNb": 10
+      },
+      {
+        "title": "Dolores nisi facilis dignissimos.",
+        "duration": 270320,
+        "trackNb": 5
+      },
+      {
+        "title": "Velit reprehenderit ea corrupti itaque.",
+        "duration": 270173,
+        "trackNb": 6
+      }
+    ],
+    "artist": {
+      "fullname": "Marlen Ankunding"
+    },
+    "image": "https://picsum.photos/id/326/500/500"
+  },
+  {
+    "id": 796,
+    "name": "Ratione impedit a.",
+    "edition": "Deleniti facere.",
+    "releaseDate": "2002-12-28T00:00:00+01:00",
+    "createdAt": "2023-06-14T16:15:07+02:00",
+    "updatedAt": null,
+    "style": [
+      {
+        "name": "Electro"
+      }
+    ],
+    "support": [
+      {
+        "name": "Cassette"
+      }
+    ],
+    "songs": [
+      {
+        "title": "Facere eum explicabo sed sequi rerum.",
+        "duration": 228776,
+        "trackNb": 8
+      },
+      {
+        "title": "Nesciunt incidunt sapiente consequatur.",
+        "duration": 246569,
+        "trackNb": 10
+      },
+      {
+        "title": "Eius et eos tempore vel voluptate earum odio mollitia.",
+        "duration": 241060,
+        "trackNb": 8
+      },
+      {
+        "title": "Qui omnis quos sed ex.",
+        "duration": 283612,
+        "trackNb": 6
+      },
+      {
+        "title": "Perspiciatis dolor molestias quibusdam suscipit ullam velit.",
+        "duration": 241025,
+        "trackNb": 5
+      },
+      {
+        "title": "Officia odit voluptatum quae eos tempore est.",
+        "duration": 264027,
+        "trackNb": 3
+      },
+      {
+        "title": "Iste in nostrum qui neque.",
+        "duration": 293502,
+        "trackNb": 3
+      },
+      {
+        "title": "Quia eos fugit delectus qui dolorem.",
+        "duration": 250173,
+        "trackNb": 10
+      },
+      {
+        "title": "Nobis quo id officia vero provident.",
+        "duration": 290668,
         "trackNb": 2
       }
     ],
     "artist": {
-      "fullname": "Artist 5"
+      "fullname": "Taya Mann"
     },
-    "image": "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/opening-soon%2C-coming-soon-design-template-2ad6ecb3bfc0d528a9999c00a642d447_screen.jpg?ts=1593776133"
+    "image": "https://picsum.photos/id/356/500/500"
+  },
+  {
+    "id": 797,
+    "name": "Nihil autem totam nihil ipsum.",
+    "edition": "Dolor.",
+    "releaseDate": "1994-12-07T00:00:00+01:00",
+    "createdAt": "2023-06-14T16:15:07+02:00",
+    "updatedAt": null,
+    "style": [
+      {
+        "name": "House"
+      }
+    ],
+    "support": [
+      {
+        "name": "Cassette"
+      }
+    ],
+    "songs": [
+      {
+        "title": "Numquam sed enim totam dicta ea id.",
+        "duration": 286572,
+        "trackNb": 6
+      },
+      {
+        "title": "Voluptas et modi nam eum.",
+        "duration": 278447,
+        "trackNb": 2
+      },
+      {
+        "title": "Perspiciatis vel eos rerum ab repellat.",
+        "duration": 271201,
+        "trackNb": 2
+      },
+      {
+        "title": "Odio est alias officia doloremque odit eveniet.",
+        "duration": 218403,
+        "trackNb": 2
+      },
+      {
+        "title": "Iusto cumque incidunt commodi.",
+        "duration": 183393,
+        "trackNb": 6
+      },
+      {
+        "title": "Molestias ea exercitationem et rerum alias.",
+        "duration": 216586,
+        "trackNb": 6
+      },
+      {
+        "title": "Non sed inventore doloribus quos accusamus ducimus.",
+        "duration": 246669,
+        "trackNb": 8
+      }
+    ],
+    "artist": {
+      "fullname": "Mrs. Oleta Mayer"
+    },
+    "image": "https://picsum.photos/id/979/500/500"
+  },
+  {
+    "id": 798,
+    "name": "Doloribus minus quos.",
+    "edition": "Deleniti.",
+    "releaseDate": "1971-05-05T00:00:00+01:00",
+    "createdAt": "2023-06-14T16:15:07+02:00",
+    "updatedAt": null,
+    "style": [
+      {
+        "name": "Rock"
+      }
+    ],
+    "support": [
+      {
+        "name": "CD"
+      }
+    ],
+    "songs": [
+      {
+        "title": "Ex dolorem ea veniam omnis.",
+        "duration": 277277,
+        "trackNb": 4
+      },
+      {
+        "title": "Minus autem nulla est quo.",
+        "duration": 255748,
+        "trackNb": 10
+      },
+      {
+        "title": "Aut facilis ut temporibus consequuntur officiis ut veritatis omnis.",
+        "duration": 243352,
+        "trackNb": 1
+      },
+      {
+        "title": "Pariatur similique accusantium natus voluptates deleniti.",
+        "duration": 233322,
+        "trackNb": 9
+      },
+      {
+        "title": "Rerum ut omnis ut atque.",
+        "duration": 211593,
+        "trackNb": 6
+      },
+      {
+        "title": "Accusamus officiis minima sed velit.",
+        "duration": 210651,
+        "trackNb": 3
+      },
+      {
+        "title": "Ipsum a dignissimos deleniti cum exercitationem.",
+        "duration": 199276,
+        "trackNb": 9
+      },
+      {
+        "title": "Aut ad sint odio unde.",
+        "duration": 282616,
+        "trackNb": 8
+      },
+      {
+        "title": "Voluptatem illo ex amet qui aut voluptatem.",
+        "duration": 202579,
+        "trackNb": 9
+      },
+      {
+        "title": "Sapiente voluptatum officia natus.",
+        "duration": 209153,
+        "trackNb": 10
+      }
+    ],
+    "artist": {
+      "fullname": "Mr. Cody Muller"
+    },
+    "image": "https://picsum.photos/id/452/500/500"
+  },
+  {
+    "id": 799,
+    "name": "Ut pariatur est nemo.",
+    "edition": "Ab voluptatem.",
+    "releaseDate": "2007-07-25T00:00:00+02:00",
+    "createdAt": "2023-06-14T16:15:07+02:00",
+    "updatedAt": null,
+    "style": [
+      {
+        "name": "Rock"
+      }
+    ],
+    "support": [
+      {
+        "name": "Vinyl 45 tours"
+      }
+    ],
+    "songs": [
+      {
+        "title": "Consequuntur quo voluptas iure pariatur eum.",
+        "duration": 267636,
+        "trackNb": 3
+      },
+      {
+        "title": "Est officiis id quis voluptas ut non doloribus.",
+        "duration": 279471,
+        "trackNb": 5
+      },
+      {
+        "title": "Et provident quisquam et officia repudiandae.",
+        "duration": 266798,
+        "trackNb": 6
+      },
+      {
+        "title": "Repudiandae aliquam est voluptate nobis ut esse laudantium quaerat.",
+        "duration": 202417,
+        "trackNb": 6
+      },
+      {
+        "title": "Cumque rem numquam enim ut rerum commodi.",
+        "duration": 205978,
+        "trackNb": 10
+      },
+      {
+        "title": "Et dicta est commodi vel vitae id officiis.",
+        "duration": 281740,
+        "trackNb": 10
+      },
+      {
+        "title": "Eos nemo facere sapiente.",
+        "duration": 288069,
+        "trackNb": 5
+      },
+      {
+        "title": "Omnis vel libero est adipisci rerum eveniet optio.",
+        "duration": 213750,
+        "trackNb": 2
+      },
+      {
+        "title": "Itaque omnis excepturi voluptatem et dolorum eum.",
+        "duration": 294099,
+        "trackNb": 1
+      }
+    ],
+    "artist": {
+      "fullname": "Billy Daniel"
+    },
+    "image": "https://picsum.photos/id/392/500/500"
+  },
+  {
+    "id": 800,
+    "name": "Totam quia consequatur deserunt praesentium.",
+    "edition": "Unde.",
+    "releaseDate": "2016-04-03T00:00:00+02:00",
+    "createdAt": "2023-06-14T16:15:07+02:00",
+    "updatedAt": null,
+    "style": [
+      {
+        "name": "Rock"
+      }
+    ],
+    "support": [
+      {
+        "name": "Cassette"
+      }
+    ],
+    "songs": [
+      {
+        "title": "Est error veniam qui amet et rerum.",
+        "duration": 259166,
+        "trackNb": 7
+      },
+      {
+        "title": "Autem quia molestiae est aut.",
+        "duration": 263799,
+        "trackNb": 1
+      },
+      {
+        "title": "Architecto molestiae maxime reprehenderit id dolore non.",
+        "duration": 281889,
+        "trackNb": 6
+      },
+      {
+        "title": "Nostrum deserunt soluta laudantium dolorum.",
+        "duration": 272018,
+        "trackNb": 3
+      },
+      {
+        "title": "Voluptates dolorem ea magni rerum.",
+        "duration": 297997,
+        "trackNb": 8
+      },
+      {
+        "title": "Necessitatibus impedit et est rerum et alias qui explicabo.",
+        "duration": 280553,
+        "trackNb": 7
+      },
+      {
+        "title": "Dolores facilis mollitia aspernatur maxime quaerat.",
+        "duration": 197189,
+        "trackNb": 8
+      },
+      {
+        "title": "Est illo dolorem totam pariatur non.",
+        "duration": 239138,
+        "trackNb": 8
+      }
+    ],
+    "artist": {
+      "fullname": "Jane Vandervort"
+    },
+    "image": "https://picsum.photos/id/265/500/500"
+  },
+  {
+    "id": 801,
+    "name": "Minima corrupti dolorem nisi.",
+    "edition": "Assumenda quas.",
+    "releaseDate": "2017-01-22T00:00:00+01:00",
+    "createdAt": "2023-06-14T16:15:07+02:00",
+    "updatedAt": null,
+    "style": [
+      {
+        "name": "Electro"
+      }
+    ],
+    "support": [
+      {
+        "name": "CD"
+      }
+    ],
+    "songs": [
+      {
+        "title": "Doloremque voluptatem ab qui quam aut optio eos et.",
+        "duration": 217923,
+        "trackNb": 7
+      },
+      {
+        "title": "Veritatis nihil porro suscipit rem.",
+        "duration": 195755,
+        "trackNb": 8
+      },
+      {
+        "title": "Et ipsam laudantium consequatur nam.",
+        "duration": 250483,
+        "trackNb": 4
+      },
+      {
+        "title": "Et consequatur sed consequuntur dignissimos delectus.",
+        "duration": 286664,
+        "trackNb": 4
+      },
+      {
+        "title": "Deserunt porro nesciunt sed.",
+        "duration": 293278,
+        "trackNb": 5
+      },
+      {
+        "title": "Alias similique veniam vero aperiam quidem.",
+        "duration": 202105,
+        "trackNb": 4
+      },
+      {
+        "title": "Est blanditiis ut maxime voluptatem est aliquam provident.",
+        "duration": 256404,
+        "trackNb": 5
+      },
+      {
+        "title": "Sed deleniti occaecati similique vel aperiam sapiente voluptate rerum.",
+        "duration": 250556,
+        "trackNb": 3
+      }
+    ],
+    "artist": {
+      "fullname": "Beth Orn IV"
+    },
+    "image": "https://picsum.photos/id/65/500/500"
+  },
+  {
+    "id": 802,
+    "name": "Omnis cumque aliquid alias.",
+    "edition": "Aut corporis.",
+    "releaseDate": "2001-09-13T00:00:00+02:00",
+    "createdAt": "2023-06-14T16:15:07+02:00",
+    "updatedAt": null,
+    "style": [
+      {
+        "name": "Rock"
+      }
+    ],
+    "support": [
+      {
+        "name": "Vinyl 45 tours"
+      }
+    ],
+    "songs": [
+      {
+        "title": "Enim sunt et ut.",
+        "duration": 288445,
+        "trackNb": 9
+      },
+      {
+        "title": "Corporis dolor at delectus aliquid consectetur molestiae.",
+        "duration": 270248,
+        "trackNb": 2
+      },
+      {
+        "title": "Nostrum aperiam et quas ut ea provident a.",
+        "duration": 217862,
+        "trackNb": 8
+      },
+      {
+        "title": "Voluptas eum officiis autem amet.",
+        "duration": 223700,
+        "trackNb": 7
+      },
+      {
+        "title": "Temporibus fugit est saepe dolor.",
+        "duration": 187143,
+        "trackNb": 9
+      },
+      {
+        "title": "Aut praesentium dolor fuga a magnam esse.",
+        "duration": 259497,
+        "trackNb": 10
+      },
+      {
+        "title": "Est consequatur dignissimos fuga praesentium fugit.",
+        "duration": 282239,
+        "trackNb": 1
+      },
+      {
+        "title": "Nulla est voluptatem ratione cupiditate nam voluptatibus commodi.",
+        "duration": 280502,
+        "trackNb": 7
+      },
+      {
+        "title": "Libero excepturi nemo dolores animi.",
+        "duration": 188301,
+        "trackNb": 1
+      }
+    ],
+    "artist": {
+      "fullname": "Casey Hammes"
+    },
+    "image": "https://picsum.photos/id/606/500/500"
+  },
+  {
+    "id": 803,
+    "name": "Laudantium assumenda.",
+    "edition": "Dicta perferendis.",
+    "releaseDate": "2004-02-18T00:00:00+01:00",
+    "createdAt": "2023-06-14T16:15:07+02:00",
+    "updatedAt": null,
+    "style": [
+      {
+        "name": "Classique"
+      }
+    ],
+    "support": [
+      {
+        "name": "Cassette"
+      }
+    ],
+    "songs": [
+      {
+        "title": "Amet possimus expedita ut aliquid ut asperiores.",
+        "duration": 220939,
+        "trackNb": 3
+      },
+      {
+        "title": "Distinctio vitae veniam libero sapiente ad beatae.",
+        "duration": 233908,
+        "trackNb": 7
+      },
+      {
+        "title": "Et consequatur et sapiente veniam minima suscipit.",
+        "duration": 207879,
+        "trackNb": 1
+      },
+      {
+        "title": "Eos ut vero tempora facilis adipisci ut.",
+        "duration": 205729,
+        "trackNb": 1
+      },
+      {
+        "title": "Atque rem rerum iure quia commodi.",
+        "duration": 227897,
+        "trackNb": 8
+      },
+      {
+        "title": "Praesentium amet harum sint minima et.",
+        "duration": 224551,
+        "trackNb": 5
+      },
+      {
+        "title": "Iusto repudiandae maxime quasi voluptates provident id voluptatem.",
+        "duration": 236182,
+        "trackNb": 10
+      },
+      {
+        "title": "Non exercitationem aut consequatur nesciunt accusamus dignissimos.",
+        "duration": 216935,
+        "trackNb": 7
+      },
+      {
+        "title": "Occaecati provident repellat occaecati et quis.",
+        "duration": 276189,
+        "trackNb": 1
+      }
+    ],
+    "artist": {
+      "fullname": "Prof. Darwin Renner DVM"
+    },
+    "image": "https://picsum.photos/id/685/500/500"
+  },
+  {
+    "id": 804,
+    "name": "Nihil dolor voluptatem est.",
+    "edition": "Nostrum.",
+    "releaseDate": "2012-08-21T00:00:00+02:00",
+    "createdAt": "2023-06-14T16:15:07+02:00",
+    "updatedAt": null,
+    "style": [
+      {
+        "name": "Rap"
+      }
+    ],
+    "support": [
+      {
+        "name": "Cassette"
+      }
+    ],
+    "songs": [
+      {
+        "title": "Deleniti corrupti excepturi molestias nesciunt omnis sunt.",
+        "duration": 225646,
+        "trackNb": 8
+      },
+      {
+        "title": "Commodi quo esse dolor assumenda.",
+        "duration": 254330,
+        "trackNb": 1
+      },
+      {
+        "title": "Modi impedit qui molestiae nihil temporibus quo officia.",
+        "duration": 232332,
+        "trackNb": 10
+      },
+      {
+        "title": "Aut veniam adipisci doloribus nisi qui omnis qui.",
+        "duration": 219269,
+        "trackNb": 5
+      },
+      {
+        "title": "Laudantium aut est mollitia.",
+        "duration": 205286,
+        "trackNb": 3
+      },
+      {
+        "title": "Distinctio pariatur ipsa sit culpa.",
+        "duration": 205226,
+        "trackNb": 2
+      },
+      {
+        "title": "Hic vel dolor quam velit voluptatem.",
+        "duration": 280767,
+        "trackNb": 9
+      },
+      {
+        "title": "Commodi eos hic quaerat quis ratione ea et qui.",
+        "duration": 190539,
+        "trackNb": 1
+      },
+      {
+        "title": "Voluptate similique non sit fugit at a.",
+        "duration": 180823,
+        "trackNb": 7
+      },
+      {
+        "title": "Necessitatibus repudiandae et voluptatem ex est quo.",
+        "duration": 273295,
+        "trackNb": 6
+      }
+    ],
+    "artist": {
+      "fullname": "Miss Maritza Fadel"
+    },
+    "image": "https://picsum.photos/id/206/500/500"
+  },
+  {
+    "id": 805,
+    "name": "Ea repellat tenetur quas.",
+    "edition": "Rerum molestias.",
+    "releaseDate": "1988-07-15T00:00:00+02:00",
+    "createdAt": "2023-06-14T16:15:07+02:00",
+    "updatedAt": null,
+    "style": [
+      {
+        "name": "Rock"
+      }
+    ],
+    "support": [
+      {
+        "name": "Vinyl 45 tours"
+      }
+    ],
+    "songs": [
+      {
+        "title": "Et aperiam ut sunt necessitatibus.",
+        "duration": 284203,
+        "trackNb": 6
+      },
+      {
+        "title": "Laboriosam qui esse aut aspernatur nam.",
+        "duration": 232603,
+        "trackNb": 1
+      },
+      {
+        "title": "Qui animi eum quis doloremque sit rem delectus cumque.",
+        "duration": 199194,
+        "trackNb": 4
+      },
+      {
+        "title": "Quas illum illo tempora reiciendis sed aut sunt.",
+        "duration": 232512,
+        "trackNb": 5
+      },
+      {
+        "title": "Qui doloremque consequatur mollitia aliquid et nihil.",
+        "duration": 205012,
+        "trackNb": 7
+      },
+      {
+        "title": "Iste iste laudantium voluptatibus qui accusantium nisi rerum.",
+        "duration": 278344,
+        "trackNb": 4
+      },
+      {
+        "title": "Vitae voluptatem et cupiditate.",
+        "duration": 252558,
+        "trackNb": 6
+      },
+      {
+        "title": "Eaque et nobis accusantium officiis earum consequuntur.",
+        "duration": 293723,
+        "trackNb": 4
+      },
+      {
+        "title": "Exercitationem laudantium explicabo eius in quis.",
+        "duration": 286674,
+        "trackNb": 6
+      },
+      {
+        "title": "Sunt enim ab molestias sit est distinctio non expedita.",
+        "duration": 221405,
+        "trackNb": 8
+      }
+    ],
+    "artist": {
+      "fullname": "Miss Maritza Fadel"
+    },
+    "image": "https://picsum.photos/id/528/500/500"
+  },
+  {
+    "id": 806,
+    "name": "Tenetur corrupti expedita.",
+    "edition": "Aut.",
+    "releaseDate": "2000-01-03T00:00:00+01:00",
+    "createdAt": "2023-06-14T16:15:07+02:00",
+    "updatedAt": null,
+    "style": [
+      {
+        "name": "House"
+      }
+    ],
+    "support": [
+      {
+        "name": "Vinyl 45 tours"
+      }
+    ],
+    "songs": [
+      {
+        "title": "Neque numquam tenetur sint quas dolores.",
+        "duration": 281044,
+        "trackNb": 6
+      },
+      {
+        "title": "Voluptates est est reiciendis.",
+        "duration": 229999,
+        "trackNb": 1
+      },
+      {
+        "title": "Et consequuntur eos totam tempore qui.",
+        "duration": 268253,
+        "trackNb": 1
+      },
+      {
+        "title": "Provident tenetur hic vel est.",
+        "duration": 215800,
+        "trackNb": 2
+      },
+      {
+        "title": "Blanditiis aliquid eum laboriosam aut qui qui.",
+        "duration": 270166,
+        "trackNb": 1
+      },
+      {
+        "title": "Recusandae accusamus porro dolore non.",
+        "duration": 287684,
+        "trackNb": 3
+      },
+      {
+        "title": "Quia quibusdam error et officiis aliquid magnam explicabo vitae.",
+        "duration": 237361,
+        "trackNb": 10
+      },
+      {
+        "title": "Sit aut cum error doloribus velit quisquam tenetur.",
+        "duration": 224377,
+        "trackNb": 5
+      },
+      {
+        "title": "Dolores ipsam voluptas accusantium aut.",
+        "duration": 296738,
+        "trackNb": 7
+      },
+      {
+        "title": "Maxime quo iste non omnis.",
+        "duration": 231768,
+        "trackNb": 6
+      }
+    ],
+    "artist": {
+      "fullname": "Caroline Haley"
+    },
+    "image": "https://picsum.photos/id/168/500/500"
+  },
+  {
+    "id": 807,
+    "name": "Delectus est minima.",
+    "edition": "Illum esse.",
+    "releaseDate": "1987-02-08T00:00:00+01:00",
+    "createdAt": "2023-06-14T16:15:07+02:00",
+    "updatedAt": null,
+    "style": [
+      {
+        "name": "Rap"
+      }
+    ],
+    "support": [
+      {
+        "name": "Cassette"
+      }
+    ],
+    "songs": [
+      {
+        "title": "Est consequatur ut excepturi.",
+        "duration": 218702,
+        "trackNb": 7
+      },
+      {
+        "title": "Earum ut excepturi rem nihil.",
+        "duration": 194818,
+        "trackNb": 1
+      },
+      {
+        "title": "Maiores est sequi quam officiis eos.",
+        "duration": 197922,
+        "trackNb": 4
+      },
+      {
+        "title": "Delectus omnis quisquam ex eveniet explicabo.",
+        "duration": 244416,
+        "trackNb": 6
+      },
+      {
+        "title": "Facere amet ex praesentium qui itaque optio autem.",
+        "duration": 188403,
+        "trackNb": 3
+      },
+      {
+        "title": "Est corrupti delectus a expedita ipsum.",
+        "duration": 213278,
+        "trackNb": 4
+      },
+      {
+        "title": "Ipsam quam molestiae voluptatibus voluptatem repellendus quidem.",
+        "duration": 247975,
+        "trackNb": 2
+      },
+      {
+        "title": "Reiciendis velit consectetur corrupti veniam reprehenderit.",
+        "duration": 293925,
+        "trackNb": 3
+      },
+      {
+        "title": "Deserunt dignissimos alias voluptatem accusamus dolor velit impedit.",
+        "duration": 221522,
+        "trackNb": 5
+      },
+      {
+        "title": "Aperiam dolorum rem id corrupti dolore.",
+        "duration": 282124,
+        "trackNb": 9
+      }
+    ],
+    "artist": {
+      "fullname": "Tabitha Reynolds"
+    },
+    "image": "https://picsum.photos/id/659/500/500"
+  },
+  {
+    "id": 808,
+    "name": "Aliquam sit voluptas fugit.",
+    "edition": "Facere beatae.",
+    "releaseDate": "2023-04-16T00:00:00+02:00",
+    "createdAt": "2023-06-14T16:15:07+02:00",
+    "updatedAt": null,
+    "style": [
+      {
+        "name": "Rock"
+      }
+    ],
+    "support": [
+      {
+        "name": "CD"
+      }
+    ],
+    "songs": [
+      {
+        "title": "Incidunt voluptas voluptatem maiores quam perferendis beatae a.",
+        "duration": 189234,
+        "trackNb": 9
+      },
+      {
+        "title": "Laudantium nobis pariatur sit et temporibus dolor eligendi.",
+        "duration": 262842,
+        "trackNb": 1
+      },
+      {
+        "title": "Cumque saepe quibusdam dolores voluptatum voluptatibus.",
+        "duration": 250631,
+        "trackNb": 6
+      },
+      {
+        "title": "Vel omnis magnam pariatur explicabo libero culpa.",
+        "duration": 200259,
+        "trackNb": 6
+      },
+      {
+        "title": "Eveniet doloremque dolor veniam nesciunt.",
+        "duration": 195011,
+        "trackNb": 7
+      },
+      {
+        "title": "Ut doloribus dolores et qui laborum et illo ut.",
+        "duration": 213629,
+        "trackNb": 4
+      },
+      {
+        "title": "In qui dicta deleniti eius quibusdam.",
+        "duration": 239135,
+        "trackNb": 10
+      },
+      {
+        "title": "Inventore culpa minima totam.",
+        "duration": 256367,
+        "trackNb": 3
+      },
+      {
+        "title": "Dolorum sit id nisi vel.",
+        "duration": 211195,
+        "trackNb": 7
+      },
+      {
+        "title": "Aut reiciendis quis eum eveniet quos sit perferendis consectetur.",
+        "duration": 233509,
+        "trackNb": 9
+      }
+    ],
+    "artist": {
+      "fullname": "Brandy Paucek DVM"
+    },
+    "image": "https://picsum.photos/id/1055/500/500"
   }
 ]

@@ -42,7 +42,6 @@ class AlbumController extends AbstractController
                     "album_browse"
                 ]
             ]
-
         );     
     }
 
