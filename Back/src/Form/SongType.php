@@ -31,6 +31,7 @@ class SongType extends AbstractType
 
             ->add('duration', TimeType::class, [
                 'input'  => 'timestamp',
+                'input_format' => 'Y-m-d',
                 'widget' => 'choice',
             ])
  

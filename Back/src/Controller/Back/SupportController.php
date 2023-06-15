@@ -5,6 +5,7 @@ namespace App\Controller\Back;
 use App\Entity\Support;
 use App\Form\SupportType;
 use App\Repository\SupportRepository;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -18,11 +19,13 @@ class SupportController extends AbstractController
     /**
      * @Route("/", name="app_back_support_index", methods={"GET"})
      */
-    public function index(SupportRepository $supportRepository): Response
+    public function index(SupportRepository $supportRepository, PaginatorInterface $paginator, Request $request): Response
     {
-        return $this->render('back/support/index.html.twig', [
-            'supports' => $supportRepository->findAll(),
-        ]);
+        $allSupports = $supportRepository->findAll();
+
+        $allSupports = $paginator->paginate($allSupports, $request->query->getInt('page', 1),20);
+
+        return $this->render('back/song/index.html.twig', ['songs'=>$allSupports]);
     }
 
     /**
