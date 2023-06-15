@@ -61,6 +61,24 @@ class Artist
     }
 
     /**
+     * A visual identifier that represents this artist.
+     *
+     * @see ArtistInterface
+     */
+    public function getArtistFullnameInterface(): string
+    {
+        return (string) $this->fullname;
+    }
+
+    /**
+     * @deprecated since Symfony 5.3, use getArtistIdentifier instead
+     */
+    public function getArtistFullname(): string
+    {
+        return (string) $this->fullname;
+    }
+
+    /**
      * @return Collection<int, Album>
      */
     public function getAlbums(): Collection
