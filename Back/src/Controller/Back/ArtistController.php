@@ -5,6 +5,7 @@ namespace App\Controller\Back;
 use App\Entity\Artist;
 use App\Form\ArtistType;
 use App\Repository\ArtistRepository;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -18,10 +19,14 @@ class ArtistController extends AbstractController
     /**
      * @Route("/", name="app_back_artist_index", methods={"GET"})
      */
-    public function index(ArtistRepository $artistRepository): Response
+    public function index(ArtistRepository $artistRepository, PaginatorInterface $paginator, Request $request): Response
     {
+        $allArtists = $artistRepository->findAll();
+
+        $allArtists = $paginator->paginate($allArtists, $request->query->getInt('page', 1),20);
+
         return $this->render('back/artist/index.html.twig', [
-            'artists' => $artistRepository->findAll(),
+            'artists'=> $allArtists
         ]);
     }
 

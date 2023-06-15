@@ -5,6 +5,7 @@ namespace App\Controller\Back;
 use App\Entity\Song;
 use App\Form\SongType;
 use App\Repository\SongRepository;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -18,10 +19,17 @@ class SongController extends AbstractController
     /**
      * @Route("/", name="app_back_song_index", methods={"GET"})
      */
-    public function index(SongRepository $songRepository): Response
+    public function index(SongRepository $songRepository, PaginatorInterface $paginator, Request $request): Response
     {
+        $allSongs = $songRepository->findAll();
+
+        $allSongs = $paginator->paginate(
+            $allSongs, 
+            $request->query->getInt('page', 1),20
+        );
+
         return $this->render('back/song/index.html.twig', [
-            'songs' => $songRepository->findAll(),
+            'songs'=>$allSongs
         ]);
     }
 
