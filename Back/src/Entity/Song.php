@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Repository\SongRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=SongRepository::class)
@@ -31,6 +32,7 @@ class Song
      * @Groups({"song_browse"})
      * @Groups({"album_browse"})
      * @Groups({"song_read"})
+     * @Assert\NotBlank
      */
     private $duration;
 
@@ -45,6 +47,7 @@ class Song
      * @ORM\ManyToOne(targetEntity=Album::class, inversedBy="songs")
      * @Groups({"song_browse"})
      * @Groups({"song_read"})
+     * @Assert\NotBlank
      */
     private $album;
 
@@ -53,6 +56,7 @@ class Song
      * @Groups({"album_browse"})
      * @Groups({"song_browse"})
      * @Groups({"song_read"})
+     * @Assert\NotBlank
      */
     private $trackNb;
 

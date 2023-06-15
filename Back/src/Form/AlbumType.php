@@ -47,7 +47,6 @@ class AlbumType extends AbstractType
 
 
             ->add('style', EntityType::class, [
-               
                 "multiple" => true,
                 "expanded" => false, 
                 "class" => Style::class,
@@ -56,16 +55,13 @@ class AlbumType extends AbstractType
             ])
 
             ->add('support', EntityType::class, [
-                
                 "multiple" => true,
                 "expanded" => false, 
                 "class" => Support::class,
                 'choice_label' => 'name',
                 "constraints" => [new NotBlank()],
             ])
-
             ->add('artist', EntityType::class, [
-                "mapped"=> false,
                 "multiple" => false,
                 "expanded" => false, 
                 "class" => Artist::class,

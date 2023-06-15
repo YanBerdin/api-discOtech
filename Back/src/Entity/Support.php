@@ -7,6 +7,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=SupportRepository::class)
@@ -18,6 +19,7 @@ class Support
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      * @Groups({"support_browse"})
+     * 
      */
     private $id;
 
@@ -25,6 +27,7 @@ class Support
      * @ORM\Column(type="string", length=255)
      * @Groups({"album_browse"})
      * @Groups({"support_browse"})
+     * @Assert\NotBlank
      */
     private $name;
 

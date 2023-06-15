@@ -20,20 +20,18 @@ class SongType extends AbstractType
     {
         $builder
             ->add('trackNb', IntegerType::class,[
-            "constraints" => [new NotBlank()]
+            "label" => "N° de Piste",
+            "attr" => ["placeholder" => "1"],
             ])
             
             ->add('title', TextType::class, [
                 "label" => "Titre de la musique:",
-                "attr" => [
-                    "placeholder" => "Si Tu Te Vas"],
-                    "constraints" => [new NotBlank()]
+                "attr" => ["placeholder" => "Si Tu Te Vas"],
             ])
 
             ->add('duration', TimeType::class, [
                 'input'  => 'timestamp',
                 'widget' => 'choice',
-                "constraints" => [new NotBlank()]
             ])
  
             ->add('preview', TextType::class, [
