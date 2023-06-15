@@ -63,7 +63,10 @@ class UserEditType extends AbstractType
             ])
             
             //TODO Why out an Image?
-            ->add('avatar');
+            ->add('avatar', TextType::class, [
+                "label" => "Photo de profil",
+                "attr" => ["placeholder" => "www.google.com/url?sa=i&url=https%3A%2F%2Ftwitter.com%2FOclock_io&"],
+                ]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void

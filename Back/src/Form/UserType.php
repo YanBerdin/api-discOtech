@@ -23,20 +23,17 @@ class UserType extends AbstractType
         ->add('firstname', TextType::class, [
             "label" => "Nom:",
             "attr" => ["placeholder" => "Nom ..."],
-            "constraints" => [new NotBlank()]
         ])
 
         ->add('lastname', TextType::class, [
             "label" => "Prénom:",
             "attr" => [
                 "placeholder" => "Prénom ..."],
-                "constraints" => [new NotBlank()]
         ])
 
 
             ->add('email', EmailType::class,[
-                "label" => "Identification par Email",
-                "constraints" => [new NotBlank()]
+                "label" => "Identification par Email"
             ])
             // on utilise l'event avant de mettre les données dans le formulaire
             ->addEventListener(FormEvents::PRE_SET_DATA, function(FormEvent $event) {
@@ -76,7 +73,6 @@ class UserType extends AbstractType
                         'empty_data' => '',
                         // On déplace les contraintes de l'entité vers le form d'ajout
                         'constraints' => [
-                            new NotBlank(),
                             new Regex(
                                 "/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/",
                                 "Le mot de passe doit contenir au minimum 8 caractères, une majuscule, un chiffre et un caractère spécial"
@@ -98,7 +94,10 @@ class UserType extends AbstractType
             ])
 
             //TODO Why out an Image?
-            ->add('avatar');
+            ->add('avatar', TextType::class, [
+            "label" => "Photo de profil",
+            "attr" => ["placeholder" => "www.google.com/url?sa=i&url=https%3A%2F%2Ftwitter.com%2FOclock_io&"],
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void

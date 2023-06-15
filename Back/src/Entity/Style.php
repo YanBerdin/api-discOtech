@@ -7,6 +7,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=StyleRepository::class)
@@ -18,6 +19,7 @@ class Style
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      * @Groups({"style_browse"})
+     * @Assert\NotBlank
      */
     private $id;
 
@@ -25,12 +27,14 @@ class Style
      * @ORM\Column(type="string", length=255)
      * @Groups({"album_browse"})
      * @Groups({"style_browse"})
+     * 
      */
     private $name;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      * @Groups({"style_browse"})
+     * 
      */
     private $image;
 

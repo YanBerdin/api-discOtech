@@ -7,6 +7,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=AlbumRepository::class)
@@ -23,6 +24,7 @@ class Album
      * @Groups({"style_read"})
      * @Groups({"support_read"})
      * @Groups({"review_read"})
+     * @Groups({"artist_read"})
      * 
      */
     private $id;
@@ -36,6 +38,7 @@ class Album
      * @Groups({"style_read"})
      * @Groups({"review_read"})
      * @Groups({"support_read"})
+     * @Assert\NotBlank
      */
     private $name;
 
@@ -44,6 +47,7 @@ class Album
      * @Groups({"album_browse"})
      * @Groups({"style_read"})
      * @Groups({"support_read"})
+     * @Assert\NotBlank
      */
     private $edition;
 
@@ -53,6 +57,7 @@ class Album
      * @Groups({"style_read"})
      * @Groups({"favorites_browse"})
      * @Groups({"support_read"})
+     * @Assert\NotBlank
      */
     private $releaseDate;
 
@@ -72,18 +77,20 @@ class Album
     /**
      * @ORM\ManyToMany(targetEntity=Style::class, inversedBy="albums")
      * @Groups({"album_browse"})
+     * @Assert\NotBlank
      */
     private $style;
 
     /**
      * @ORM\ManyToMany(targetEntity=Support::class, inversedBy="albums")
      * @Groups({"album_browse"})
+     * @Assert\NotBlank
      * 
      */
     private $support;
 
     /**
-     * @ORM\OneToMany(targetEntity=Song::class, mappedBy="album")
+     * @ORM\OneToMany(targetEntity=Song::class, mappedBy="album",orphanRemoval=true)
      * @Groups({"album_browse"})
      */
     private $songs;
@@ -92,6 +99,7 @@ class Album
      * @ORM\ManyToOne(targetEntity=Artist::class, inversedBy="albums")
      * @Groups({"album_browse"})
      * @Groups({"support_read"})
+     * @Assert\NotBlank
      */
     private $artist;
 
@@ -119,6 +127,7 @@ class Album
      * @Groups({"song_browse"})
      * @Groups({"support_read"})
      * @Groups({"favorites_browse"})
+     * @Assert\NotBlank
      */
     private $image;
 
@@ -290,6 +299,7 @@ class Album
         return $this;
     }
 
+    
     public function getUser(): ?User
     {
         return $this->user;

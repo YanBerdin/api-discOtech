@@ -7,6 +7,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=ArtistRepository::class)
@@ -27,6 +28,7 @@ class Artist
      * @Groups({"favorite_browse"})
      * @Groups({"artist_browse"})
      * @Groups({"support_read"})
+     * @Assert\NotBlank
      */
     private $fullname;
 
@@ -46,8 +48,6 @@ class Artist
         return $this->id;
     }
 
-
-   
     public function getFullname(): ?string
     {
         return $this->fullname;
@@ -58,24 +58,6 @@ class Artist
         $this->fullname = $fullname;
 
         return $this;
-    }
-
-    /**
-     * A visual identifier that represents this user.
-     *
-     * @see ArtistInterface
-     */
-    public function getArtistIdentifier(): string
-    {
-        return (string) $this->fullname;
-    }
-
-    /**
-     * @deprecated since Symfony 5.3, use getUserIdentifier instead
-     */
-    public function getArtistFullname(): string
-    {
-        return (string) $this->fullname;
     }
 
     /**

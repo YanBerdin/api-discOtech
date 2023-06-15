@@ -18,7 +18,6 @@ class ArtistType extends AbstractType
             "label" => "Nom Prénom ou Pseudo:",
             "attr" => [
                 "placeholder" => "Nom Prénom ou Pseudo:"],
-                "constraints" => [new NotBlank()]
         ])
         ;
     }
@@ -27,6 +26,7 @@ class ArtistType extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => Artist::class,
+            "attr" => ["novalidate" => 'novalidate']
         ]);
     }
 }

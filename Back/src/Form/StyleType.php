@@ -17,7 +17,6 @@ class StyleType extends AbstractType
             ->add('name', TextType::class, [
                 "label" => "Nom du Style",
                 "attr" => ["placeholder" => "Rock, Rap, Punk, Electro"],
-                "constraints" => [new NotBlank()]
             ])
 
             ->add('image', TextType::class, [
@@ -31,6 +30,7 @@ class StyleType extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => Style::class,
+            "attr" => ["novalidate" => 'novalidate']
         ]);
     }
 }
