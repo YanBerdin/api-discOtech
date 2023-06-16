@@ -3,6 +3,7 @@
 namespace App\Form;
 
 use App\Entity\User;
+use Doctrine\ORM\EntityRepository;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
@@ -57,6 +58,10 @@ class UserEditType extends AbstractType
                 "choices" => [
                     "ADMIN" => "ROLE_ADMIN",
                     "USER" => "ROLE_USER",
+                    "query_builder" => function(EntityRepository $entityrepository){
+                        return $entityrepository->createQueryBuilder('user')
+                            ->orderBy('user.role', 'ASC');
+                        }
                 ]
             ])
             

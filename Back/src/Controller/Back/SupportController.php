@@ -25,7 +25,7 @@ class SupportController extends AbstractController
 
         $allSupports = $paginator->paginate($allSupports, $request->query->getInt('page', 1),20);
 
-        return $this->render('back/song/index.html.twig', ['songs'=>$allSupports]);
+        return $this->render('back/support/index.html.twig', ['supports'=>$allSupports]);
     }
 
     /**
