@@ -61,7 +61,11 @@ class AlbumController extends AbstractController
 
         // 404 management
         if ($album === null){
-            return $this->json(["message"=>"Cet album n'existe pas"], Response::HTTP_NOT_FOUND);
+            return $this->json(
+                // data
+                ["message"=>"Cet album n'existe pas"], 
+                // status code
+                Response::HTTP_NOT_FOUND);
         }
 
         return $this->json($album,200,[],[
