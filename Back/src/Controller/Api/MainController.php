@@ -3,7 +3,6 @@
 namespace App\Controller\Api;
 
 use App\Repository\AlbumRepository;
-use Doctrine\Common\Collections\Expr\Value;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;

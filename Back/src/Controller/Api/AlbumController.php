@@ -30,7 +30,7 @@ class AlbumController extends AbstractController
 
         return $this->json(
             // Data
-            ["album" => $allAlbums],
+            $allAlbums,
             // Status code
             200,
             // HTTP headers
@@ -68,7 +68,7 @@ class AlbumController extends AbstractController
                 Response::HTTP_NOT_FOUND);
         }
 
-        return $this->json(["album"=> $album],200,[],[
+        return $this->json($album,200,[],[
                 "groups" =>
                 [
                     "album_browse",
