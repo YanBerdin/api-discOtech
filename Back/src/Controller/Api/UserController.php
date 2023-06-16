@@ -22,13 +22,13 @@ class UserController extends AbstractController
 
         // TODO : Voir comment on va recevoir les information du Front pour setter les infos en BDD
 
-        $email = $request->query->get("email");
-        $password = $request->query->get("password");
-        $firstname = $request->query->get("firstname");
-        $lastname = $request->query->get("lastname");
-        $avatar =$request->query->get("avatar");
+        $email = $request->get("email");
+        $password = $request->get("password");
+        $firstname = $request->get("firstname");
+        $lastname = $request->get("lastname");
+        $avatar =$request->get("avatar");
         
-        $existingUser = $userRepository->findByEmail($email);
+        //$existingUser = $userRepository->findByEmail($email);
 
         // if ($existingUser !== null) {
         //     return $this->json(
@@ -39,6 +39,7 @@ class UserController extends AbstractController
         // }
         // else{
             $user = new User();
+            
             $user->setEmail($email);
 
             $user->setRoles(["ROLE_USER"]); //* Normalement OK 
