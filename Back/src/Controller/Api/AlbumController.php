@@ -30,7 +30,7 @@ class AlbumController extends AbstractController
 
         return $this->json(
             // Data
-            $allAlbums,
+            ["album" => $allAlbums],
             // Status code
             200,
             // HTTP headers
@@ -61,10 +61,14 @@ class AlbumController extends AbstractController
 
         // 404 management
         if ($album === null){
-            return $this->json(["message"=>"Cet album n'existe pas"], Response::HTTP_NOT_FOUND);
+            return $this->json(
+                // data
+                ["message"=>"Cet album n'existe pas"], 
+                // status code
+                Response::HTTP_NOT_FOUND);
         }
 
-        return $this->json($album,200,[],[
+        return $this->json(["album"=> $album],200,[],[
                 "groups" =>
                 [
                     "album_browse",
