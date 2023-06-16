@@ -23,9 +23,10 @@ class Song
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      * @Groups({"song_browse"})
      * @Groups({"album_browse"})
+     * @Assert\NotBlank
      */
     private $title;
 
@@ -42,6 +43,7 @@ class Song
      * @ORM\Column(type="string", length=255, nullable=true)
      * @Groups({"song_browse"})
      * @Groups({"song_read"})
+     * @Assert\NotBlank
      */
     private $preview;
 

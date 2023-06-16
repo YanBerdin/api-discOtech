@@ -6,14 +6,14 @@ use App\Entity\Album;
 use App\Entity\Artist;
 use App\Entity\Style;
 use App\Entity\Support;
-use DateTime;
+use Doctrine\ORM\EntityRepository;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\Validator\Constraints\NotBlank;
+use Symfony\Component\Validator\Constraints\Count;
 
 class AlbumType extends AbstractType
 {
@@ -44,12 +44,21 @@ class AlbumType extends AbstractType
 
 
             ->add('style', EntityType::class, [
-                'constraints' => [new NotBlank()],
+                'constraints' => array(
+                    new Count(array(
+                        'min' => 1,
+                        'minMessage' => "Should not be blank"
+                    ))
+                 ),
                 "label" => "Style :",
                 "multiple" => true,
                 "expanded" => true, 
                 "class" => Style::class,
-                'choice_label' => 'name'
+                'choice_label' => 'name',
+                "query_builder" => function(EntityRepository $entityrepository){
+                    return $entityrepository->createQueryBuilder('style')
+                        ->orderBy('style.name', 'ASC');
+                    }
             ])
 
             ->add('support', EntityType::class, [
@@ -57,14 +66,23 @@ class AlbumType extends AbstractType
                 "multiple" => true,
                 "expanded" => true, 
                 "class" => Support::class,
-                'choice_label' => 'name'
+                'choice_label' => 'name',
+                "query_builder" => function(EntityRepository $entityrepository){
+                    return $entityrepository->createQueryBuilder('support')
+                        ->orderBy('support.name', 'ASC');
+                    }
             ])
+
             ->add('artist', EntityType::class, [
                 "label" => "Date de création :",
                 "multiple" => false,
                 "expanded" => false, 
                 "class" => Artist::class,
-                'choice_label' => 'fullname'
+                'choice_label' => 'fullname',
+                "query_builder" => function(EntityRepository $entityrepository){
+                    return $entityrepository->createQueryBuilder('artist')
+                        ->orderBy('artist.fullname', 'ASC');
+                    }
             ])
         ;
     }

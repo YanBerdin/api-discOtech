@@ -13,7 +13,7 @@
             </tr>
             <tr>
                 <th>Artiste</th>
-                <td>{{ album.artist.getArtistFullnameInterface() }}</td>
+                <td>{{ album.artist.fullname}}</td>
             </tr>
             <tr>
                 <th>Edition</th>
@@ -23,13 +23,24 @@
                 <th>Date de sorti</th>
                 <td>{{ album.releaseDate ? album.releaseDate|date('d-m-Y') : '' }}</td>
             </tr>
+            
             <tr>
                 <th>Styles</th>
-                {# <td>{{ style.name }}</td> #}
-            </tr>
+                <td>
+                {% for style in album.style %}
+                    {% if loop.index != 1 %},{% endif %}
+                    {{ style.name}}
+                {% endfor %}</td>  
+            </tr> 
+            
             <tr>
                 <th>Support</th>
-                <td>{{ support.name }}</td>
+                <td>
+                {% for support in album.support %}
+                    {% if loop.index !=1 %},{% endif %}
+                    {{support.name }}
+                {% endfor %}
+                </td>
             </tr>
             <tr>
                 <th>mise en ligne</th>

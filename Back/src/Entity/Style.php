@@ -69,6 +69,24 @@ class Style
         return $this;
     }
 
+    /**
+     * A visual identifier that represents this style.
+     *
+     * @see StyleInterface
+     */
+    public function getStylenameInterface(): string
+    {
+        return (string) $this->name;
+    }
+
+    /**
+     * @deprecated since Symfony 5.3, use getStyleIdentifier instead
+     */
+    public function getStylename(): string
+    {
+        return (string) $this->name;
+    }
+
     public function getImage(): ?string
     {
         return $this->image;

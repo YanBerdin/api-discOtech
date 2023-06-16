@@ -12,7 +12,6 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\TimeType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\Validator\Constraints\NotBlank;
 
 class SongType extends AbstractType
 {
@@ -31,8 +30,8 @@ class SongType extends AbstractType
 
             ->add('duration', TimeType::class, [
                 'input'  => 'timestamp',
-                'input_format' => 'Y-m-d',
-                'widget' => 'choice',
+                'widget' => 'single_text',
+                'with_seconds' => true
             ])
  
             ->add('preview', TextType::class, [
