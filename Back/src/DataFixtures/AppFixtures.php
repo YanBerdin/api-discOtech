@@ -57,35 +57,57 @@ class AppFixtures extends Fixture
         // TODO : make STYLES
         // =======================================================
         $styles = [
-            "Rock", 
-            "Rap", 
-            "Electro", 
-            "House", 
-            "Classique", 
+            "Country",
             "Pop",
-            "Latino",
-            "Techno",
-            "Trance",
-            "chill",
-            "Dub",
-            "Blues",
-            "Jazz",
-            "Afro",
-            "Opera",
+            "Classique", 
+            "House", 
+            "Rap", 
+            "Rock", 
+            "K-pop",
+            "Funk",
+            "Lofi",
+            "Soul",
+            "Metal",
             "Indie",
             "RnB",
-            "Country",
-            "Punk",
+            "Opera",
+            "Jazz",
+            "Techno",
+            "Electro", 
+            "Afro",
             "Reggae",
-            "Metal",
-            "Soul",
-            "Funk",
-            "K-pop"
+            "Blues",
+            "Dub",
+            "chill",
+            "Trance",
+            "Latino",
         ];
 
         $stylesImage = [
-            "https://www.wplounge.nl/wp-content/uploads/2014/03/coming-soon.png", 
-     
+        
+            "https://cdn.discordapp.com/attachments/1113101484519866380/1118923701296058399/country.png",
+            "https://cdn.discordapp.com/attachments/1113101484519866380/1118923701757423737/pop.png",
+            "https://cdn.discordapp.com/attachments/1113101484519866380/1118923702181044394/classique2.png",
+            "https://cdn.discordapp.com/attachments/1113101484519866380/1118923703296733194/house.png",
+            "https://cdn.discordapp.com/attachments/1113101484519866380/1118923703829405778/rap3.png",
+            "https://cdn.discordapp.com/attachments/1113101484519866380/1118923705284829214/rock3.png",
+            "https://cdn.discordapp.com/attachments/1113101484519866380/1118923730488410234/kpop.png",
+            "https://cdn.discordapp.com/attachments/1113101484519866380/1118923730886864896/funk.png",
+            "https://cdn.discordapp.com/attachments/1113101484519866380/1118923731281121381/lofi2.png",
+            "https://cdn.discordapp.com/attachments/1113101484519866380/1118923731654426714/soul.png",
+            "https://cdn.discordapp.com/attachments/1113101484519866380/1118923732367446107/metal.png",
+            "https://cdn.discordapp.com/attachments/1113101484519866380/1118923733084680293/indie.png",
+            "https://cdn.discordapp.com/attachments/1113101484519866380/1118923733579599982/RnB.png",
+            "https://cdn.discordapp.com/attachments/1113101484519866380/1118923734242312243/opera2.png",
+            "https://cdn.discordapp.com/attachments/1113101484519866380/1118923739388727437/jazz.png",
+            "https://cdn.discordapp.com/attachments/1113101484519866380/1118923739745239170/techno.png",
+            "https://cdn.discordapp.com/attachments/1113101484519866380/1118923750939824138/afro2.png",
+            "https://cdn.discordapp.com/attachments/1113101484519866380/1118923751866773559/reggae.png",
+            "https://cdn.discordapp.com/attachments/1113101484519866380/1118923752277807237/blues_2.png",
+            "https://cdn.discordapp.com/attachments/1113101484519866380/1118923753125064795/dub.png",
+            "https://cdn.discordapp.com/attachments/1113101484519866380/1118923753594818590/chill.png",
+            "https://cdn.discordapp.com/attachments/1113101484519866380/1118923753976496218/trance.png",
+            "https://cdn.discordapp.com/attachments/1113101484519866380/1118923754744057908/latino.png",
 
         ];
 
@@ -194,29 +216,6 @@ class AppFixtures extends Fixture
                 }
 
             }
-
-        // =======================================================
-        // TODO : Associate ALBUM with ARTIST
-        // =======================================================
-
-        // foreach ($allArtist as $artist)
-        // {
-        //     $randomAlbum = $allAlbum[mt_rand(0,count($allAlbum)-1)];
-        //     $artist->addAlbum($randomAlbum);
-        // }
-            
-        // =======================================================
-        // TODO : Associate 1 ALBUM with 10 SONG
-        // =======================================================
-
-        // foreach ($allAlbum as $album)
-        // {
-        //     for ($i=0 ; $i <10 ; $i++)
-        //     {
-        //         $randomSong = $allSong[mt_rand(0,count($allSong)-1)];
-        //         $album->addSong($randomSong);
-        //     }
-        // }
         
         // =======================================================
         // TODO : Associate ALBUM with STYLE
