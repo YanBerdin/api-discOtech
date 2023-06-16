@@ -3,6 +3,7 @@
 namespace App\Controller\Api;
 
 use App\Repository\AlbumRepository;
+use Doctrine\Common\Collections\Expr\Value;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -16,13 +17,21 @@ class MainController extends AbstractController
      */
     public function searchAlbum(Request $request, AlbumRepository $albumRepository ): JsonResponse
     {
+        // ========== Methode 1==================
+        // $data = json_decode($request->getContent(), true);
+        // dd($data);
+        // $search = $data["search"];
+        // $albumSearch = $albumRepository->findBySearch($search);
 
-        $search = $request->get("search", "");
-        $albumSearch = $albumRepository->findBySearch($search);
+        // ========== Methode 2==================
+        $data = json_decode($request->getContent(), false);
+        //dd($data);
+        $albumSearch = $albumRepository->findBySearch($data->search);
+        // ======================================
 
         return $this->json(
             // Data
-            ["search" => $albumSearch],
+            $albumSearch,
             // Status code
             200,
             // HTTP headers

@@ -48,6 +48,7 @@ class AlbumRepository extends ServiceEntityRepository
     public function findBySearch($search): array
     {
         // Alias 'a' for 'Album'
+        //dd($search);
         return $this->createQueryBuilder('a')
             // Where name like <search>
             ->andWhere('a.name LIKE :search')
@@ -55,6 +56,7 @@ class AlbumRepository extends ServiceEntityRepository
             ->orderBy("a.name", "ASC")
             ->getQuery()
             ->getResult();
+            
     }
 
 
