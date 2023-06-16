@@ -119,7 +119,7 @@ class AppFixtures extends Fixture
             $newStyle = new Style();
 
             $newStyle->setName($styles[$i]);
-            $newStyle->setImage($stylesImage[0]);
+            $newStyle->setImage($stylesImage[$i]);
 
             $manager->persist($newStyle);
 
