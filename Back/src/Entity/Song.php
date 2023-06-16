@@ -31,7 +31,7 @@ class Song
     private $title;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="integer", nullable=true)
      * @Groups({"song_browse"})
      * @Groups({"album_browse"})
      * @Groups({"song_read"})
@@ -86,7 +86,7 @@ class Song
         return $this->duration;
     }
 
-    public function setDuration(int $duration): self
+    public function setDuration(int $duration = null): self
     {
         $this->duration = $duration;
 

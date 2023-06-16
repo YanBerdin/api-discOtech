@@ -52,7 +52,7 @@ class Album
     private $edition;
 
     /**
-     * @ORM\Column(type="date")
+     * @ORM\Column(type="date", nullable=true)
      * @Groups({"album_browse"})
      * @Groups({"style_read"})
      * @Groups({"favorites_browse"})
@@ -175,7 +175,7 @@ class Album
         return $this->releaseDate;
     }
 
-    public function setReleaseDate(\DateTimeInterface $releaseDate): self
+    public function setReleaseDate(\DateTimeInterface $releaseDate = null): self
     {
         $this->releaseDate = $releaseDate;
 
