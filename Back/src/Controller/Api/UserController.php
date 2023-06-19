@@ -88,11 +88,11 @@ class UserController extends AbstractController
      public function read(UserRepository $userRepository): JsonResponse
      {
         /** @var User $user */
-        //$user = $this->getUser();
+        $user = $this->getUser();
 
-        // ! For test Only (use current id: check DB) =================
-        $user = $userRepository->find(19);
-        // ! ==========================================================
+        // * For test Only (use an existing id: check DB) =================
+        //$user = $userRepository->find(19);
+        // * ==========================================================
 
          return $this->json(
              // Alone user data
@@ -122,12 +122,13 @@ class UserController extends AbstractController
      */
     public function editFirstname (UserRepository $userRepository, Request $request)
     {
-        /** @var User $user */
-        //$user = $this->getUser();
 
-        // ! For test Only (use current id: check DB) =================
-        $user = $userRepository->find(19);
-        // ! ==========================================================
+        /** @var User $user */
+        $user = $this->getUser();
+
+        // * For test Only (use an existing id: check DB) =================
+        //$user = $userRepository->find(19);
+        // * ==========================================================
      
         $data = json_decode($request->getContent(), true);
         //dd($data);
@@ -175,11 +176,11 @@ class UserController extends AbstractController
     public function editLastname (UserRepository $userRepository, Request $request)
     {
         /** @var User $user */
-        //$user = $this->getUser();
+        $user = $this->getUser();
 
-        // ! For test Only (use current id: check DB) =================
-        $user = $userRepository->find(19);
-        // ! ==========================================================
+        // * For test Only (use an existing id: check DB) =================
+        //$user = $userRepository->find(19);
+        // * ==========================================================
      
         $data = json_decode($request->getContent(), true);
         //dd($data);
@@ -227,11 +228,11 @@ class UserController extends AbstractController
     public function editEmail (UserRepository $userRepository, Request $request)
     {
         /** @var User $user */
-        //$user = $this->getUser();
+        $user = $this->getUser();
 
-        // ! For test Only (use current id: check DB) =================
-        $user = $userRepository->find(19);
-        // ! ==========================================================
+        // * For test Only (use an existing id: check DB) =================
+        //$user = $userRepository->find(19);
+        // * ==========================================================
      
         $data = json_decode($request->getContent(), true);
         //dd($data);
@@ -279,11 +280,11 @@ class UserController extends AbstractController
     public function editAvatar (UserRepository $userRepository, Request $request)
     {
         /** @var User $user */
-        //$user = $this->getUser();
+        $user = $this->getUser();
 
-        // ! For test Only (use current id: check DB) =================
-        $user = $userRepository->find(19);
-        // ! ==========================================================
+        // * For test Only (use an existing id: check DB) =================
+        //$user = $userRepository->find(19);
+        // * ==========================================================
      
         $data = json_decode($request->getContent(), true);
         //dd($data);
@@ -316,7 +317,6 @@ class UserController extends AbstractController
             // status code
             Response::HTTP_OK,
         );
-
     }
 
     /**
@@ -333,11 +333,11 @@ class UserController extends AbstractController
     public function editPassword (UserRepository $userRepository, Request $request, UserPasswordHasherInterface $passwordHasher)
     {
         /** @var User $user */
-        //$user = $this->getUser();
+        $user = $this->getUser();
 
-        // ! For test Only (use current id: check DB) =================
-        $user = $userRepository->find(19);
-        // ! ==========================================================
+        // * For test Only (use an existing id: check DB) =================
+        //$user = $userRepository->find(19);
+        // * ==========================================================
      
         $data = json_decode($request->getContent(), true);
         //dd($data);
@@ -375,11 +375,11 @@ class UserController extends AbstractController
     public function delete (UserRepository $userRepository)
     {
         /** @var User $user */
-        //$user = $this->getUser();
+        $user = $this->getUser();
 
-        // ! For test Only (use current id: check DB) =================
-        $user = $userRepository->find(19);
-        // !  ==========================================================
+        // * For test Only (use an existing id: check DB) =================
+        // $user = $userRepository->find(19);
+        // *  ==========================================================
 
         $userRepository->remove($user,true);
 
