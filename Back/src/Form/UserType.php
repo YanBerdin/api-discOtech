@@ -3,6 +3,7 @@
 namespace App\Form;
 
 use App\Entity\User;
+use Doctrine\ORM\EntityRepository;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
@@ -83,16 +84,14 @@ class UserType extends AbstractType
             })
 
             ->add('roles', ChoiceType::class, [
-                "mapped" => false,
-                "expanded" => false,
-                "multiple" => false,
+                "multiple" => true,
+                "expanded" => true,
                 "choices" => [
                     "ADMIN" => "ROLE_ADMIN",
-                    // "MANAGER" => "ROLE_MANAGER",
                     "USER" => "ROLE_USER",
-                ]
+                ],
             ])
-
+            
             //TODO Why out an Image?
             ->add('avatar', TextType::class, [
             "label" => "Photo de profil",

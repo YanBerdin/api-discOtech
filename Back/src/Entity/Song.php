@@ -26,7 +26,7 @@ class Song
      * @ORM\Column(type="string", length=255, nullable=true)
      * @Groups({"song_browse"})
      * @Groups({"album_browse"})
-     * @Assert\NotBlank
+     * @Assert\NotBlank(message= "Ce champs ne peut pas être vide")
      */
     private $title;
 
@@ -35,7 +35,7 @@ class Song
      * @Groups({"song_browse"})
      * @Groups({"album_browse"})
      * @Groups({"song_read"})
-     * @Assert\NotBlank
+     * @Assert\NotBlank(message= "Ce champs ne peut pas être vide")
      */
     private $duration;
 
@@ -43,7 +43,7 @@ class Song
      * @ORM\Column(type="string", length=255, nullable=true)
      * @Groups({"song_browse"})
      * @Groups({"song_read"})
-     * @Assert\NotBlank
+     * @Assert\NotBlank(message= "Ce champs ne peut pas être vide")
      */
     private $preview;
 
@@ -51,7 +51,7 @@ class Song
      * @ORM\ManyToOne(targetEntity=Album::class, inversedBy="songs")
      * @Groups({"song_browse"})
      * @Groups({"song_read"})
-     * @Assert\NotBlank
+     * @Assert\NotBlank(message= "Ce champs ne peut pas être vide")
      */
     private $album;
 
@@ -60,7 +60,7 @@ class Song
      * @Groups({"album_browse"})
      * @Groups({"song_browse"})
      * @Groups({"song_read"})
-     * @Assert\NotBlank
+     * @Assert\NotBlank(message= "Ce champs ne peut pas être vide")
      */
     private $trackNb;
 

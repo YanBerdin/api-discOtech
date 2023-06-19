@@ -30,7 +30,7 @@ class Artist
      * @Groups({"favorite_browse"})
      * @Groups({"artist_browse"})
      * @Groups({"support_read"})
-     * @Assert\NotBlank
+     * @Assert\NotBlank(message= "Ce champs ne peut pas être vide")
      */
     private $fullname;
 
