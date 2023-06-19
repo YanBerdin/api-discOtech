@@ -29,6 +29,7 @@ class SongType extends AbstractType
             ])
 
             ->add('duration', TimeType::class, [
+                "label" => "Durée: Heures, Minutes, Secondes",
                 'input'  => 'timestamp',
                 'widget' => 'single_text',
                 'with_seconds' => true

@@ -21,7 +21,7 @@ class Support
      * @Groups({"support_browse"})
      * @Groups({"album_browse"})
      * @Groups({"album_read"})
-     * 
+     * @Assert\NotBlank(message= "Ce champs ne peut pas être vide")
      */
     private $id;
 

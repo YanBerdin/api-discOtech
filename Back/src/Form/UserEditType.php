@@ -52,25 +52,20 @@ class UserEditType extends AbstractType
                 ])
                 
             ->add('roles', ChoiceType::class, [
-                "mapped" => false,
-                "expanded" => false,
-                "multiple" => false,
+                "multiple" => true,
+                "expanded" => true,
                 "choices" => [
                     "ADMIN" => "ROLE_ADMIN",
                     "USER" => "ROLE_USER",
-                    "query_builder" => function(EntityRepository $entityrepository){
-                        return $entityrepository->createQueryBuilder('user')
-                            ->orderBy('user.role', 'ASC');
-                        }
-                ]
+                ],
             ])
-            
-            //TODO Why out an Image?
-            ->add('avatar', TextType::class, [
-                "label" => "Photo de profil",
-                "attr" => ["placeholder" => "www.google.com/url?sa=i&url=https%3A%2F%2Ftwitter.com%2FOclock_io&"],
-                ]);
-    }
+        
+        //TODO Why out an Image?
+        ->add('avatar', TextType::class, [
+            "label" => "Photo de profil",
+            "attr" => ["placeholder" => "www.google.com/url?sa=i&url=https%3A%2F%2Ftwitter.com%2FOclock_io&"],
+            ]);
+}
 
     public function configureOptions(OptionsResolver $resolver): void
     {

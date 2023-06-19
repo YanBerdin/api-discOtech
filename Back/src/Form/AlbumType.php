@@ -47,7 +47,7 @@ class AlbumType extends AbstractType
                 'constraints' => array(
                     new Count(array(
                         'min' => 1,
-                        'minMessage' => "Should not be blank"
+                        'minMessage' => "Ces champs ne peuvent pas être vide"
                     ))
                  ),
                 "label" => "Style :",
@@ -62,6 +62,12 @@ class AlbumType extends AbstractType
             ])
 
             ->add('support', EntityType::class, [
+                'constraints' => array(
+                    new Count(array(
+                        'min' => 1,
+                        'minMessage' => "Ces champs ne peuvent pas être vide"
+                    ))
+                 ),
                 "label" => "Support :",
                 "multiple" => true,
                 "expanded" => true, 
@@ -74,7 +80,7 @@ class AlbumType extends AbstractType
             ])
 
             ->add('artist', EntityType::class, [
-                "label" => "Date de création :",
+                "label" => "Artiste :",
                 "multiple" => false,
                 "expanded" => false, 
                 "class" => Artist::class,
