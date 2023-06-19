@@ -9,9 +9,7 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
-use Symfony\Component\PasswordHasher\PasswordHasherInterface;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\Security\Core\User\UserInterface;
 
 class UserController extends AbstractController
 {
@@ -93,7 +91,7 @@ class UserController extends AbstractController
         //$user = $this->getUser();
 
         // ! For test Only (use current id: check DB) =================
-        $user = $userRepository->find(18);
+        $user = $userRepository->find(19);
         // ! ==========================================================
 
          return $this->json(
@@ -128,7 +126,7 @@ class UserController extends AbstractController
         //$user = $this->getUser();
 
         // ! For test Only (use current id: check DB) =================
-        $user = $userRepository->find(18);
+        $user = $userRepository->find(19);
         // ! ==========================================================
      
         $data = json_decode($request->getContent(), true);
@@ -180,7 +178,7 @@ class UserController extends AbstractController
         //$user = $this->getUser();
 
         // ! For test Only (use current id: check DB) =================
-        $user = $userRepository->find(18);
+        $user = $userRepository->find(19);
         // ! ==========================================================
      
         $data = json_decode($request->getContent(), true);
@@ -232,7 +230,7 @@ class UserController extends AbstractController
         //$user = $this->getUser();
 
         // ! For test Only (use current id: check DB) =================
-        $user = $userRepository->find(18);
+        $user = $userRepository->find(19);
         // ! ==========================================================
      
         $data = json_decode($request->getContent(), true);
@@ -284,7 +282,7 @@ class UserController extends AbstractController
         //$user = $this->getUser();
 
         // ! For test Only (use current id: check DB) =================
-        $user = $userRepository->find(18);
+        $user = $userRepository->find(19);
         // ! ==========================================================
      
         $data = json_decode($request->getContent(), true);
@@ -338,7 +336,7 @@ class UserController extends AbstractController
         //$user = $this->getUser();
 
         // ! For test Only (use current id: check DB) =================
-        $user = $userRepository->find(18);
+        $user = $userRepository->find(19);
         // ! ==========================================================
      
         $data = json_decode($request->getContent(), true);
@@ -380,7 +378,7 @@ class UserController extends AbstractController
         //$user = $this->getUser();
 
         // ! For test Only (use current id: check DB) =================
-        $user = $userRepository->find(18);
+        $user = $userRepository->find(19);
         // !  ==========================================================
 
         $userRepository->remove($user,true);
