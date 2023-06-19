@@ -11,6 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\PasswordHasher\PasswordHasherInterface;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 class UserController extends AbstractController
 {
@@ -57,7 +58,7 @@ class UserController extends AbstractController
 
             $user->setRoles(["ROLE_USER"]); // Set ROLE_USER by default.
 
-            // MAnage password with hash
+            // Manage password with hash
             $plaintextPassword =  $password;
             $passwordHashed = $passwordHasher->hashPassword($user, $plaintextPassword);
             $user->setPassword($passwordHashed);
@@ -148,7 +149,7 @@ class UserController extends AbstractController
             ); 
         }
         else {
-            // Set newFirstname
+            // Set new Firstname
             $user->setFirstname($newFirstname);
 
             // Confirm and flush
@@ -161,7 +162,6 @@ class UserController extends AbstractController
             // status code
             Response::HTTP_OK,
         );
-
     }
 
     /**
@@ -214,7 +214,6 @@ class UserController extends AbstractController
             // status code
             Response::HTTP_OK,
         );
-
     }
 
     /**
@@ -254,7 +253,7 @@ class UserController extends AbstractController
             ); 
         }
         else {
-            // Set newlastname
+            // Set new Email
             $user->setEmail($newEmail);
 
             // Confirm and flush
@@ -267,9 +266,7 @@ class UserController extends AbstractController
             // status code
             Response::HTTP_OK,
         );
-
     }
-
 
     /**
      * Function for editing user avatar
@@ -308,7 +305,7 @@ class UserController extends AbstractController
             ); 
         }
         else {
-            // Set newlastname
+            // Set new Avatar
             $user->setAvatar($newAvatar);
 
             // Confirm and flush
@@ -324,15 +321,48 @@ class UserController extends AbstractController
 
     }
 
+    /**
+     * Function for editing user password
+     *
+     * @param User $user
+     * @param UserRepository $userRepository
+     * @param Request $request
+     * @param UserPasswordHasherInterface $passwordHasher
+     * @return void
+     * 
+     * @Route("/api/users/edit/password", name="app_api_user_edit_password", methods={"PUT", "PATCH"})
+     */
+    public function editPassword (UserRepository $userRepository, Request $request, UserPasswordHasherInterface $passwordHasher)
+    {
+        /** @var User $user */
+        //$user = $this->getUser();
 
+        // ! For test Only (use current id: check DB) =================
+        $user = $userRepository->find(18);
+        // ! ==========================================================
+     
+        $data = json_decode($request->getContent(), true);
+        //dd($data);
 
+        // get new password
+        $plaintextNewPassword =  $data["password"];
 
+        // Manage password with hash
+        $NewPasswordHashed = $passwordHasher->hashPassword($user, $plaintextNewPassword);
 
+        // Set new Password
+        $user->setPassword($NewPasswordHashed);
 
+        // Confirm and flush
+        $userRepository->add($user,true);
 
-
-
-
+        return $this->json(
+            // data
+            ["message" => "Votre mot de passe a bien été modifiée"],
+            // status code
+            Response::HTTP_OK,
+        );
+    }
 
     /**
      * Remove User account by User directly
@@ -344,14 +374,14 @@ class UserController extends AbstractController
      * 
      * @Route("/api/users/delete", name="app_api_user_delete", methods={"DELETE"})
      */
-    public function delete (User $user, UserRepository $userRepository)
+    public function delete (UserRepository $userRepository)
     {
         /** @var User $user */
         //$user = $this->getUser();
 
-        // For test Only (use current id: check DB) =================
+        // ! For test Only (use current id: check DB) =================
         $user = $userRepository->find(18);
-        // ==========================================================
+        // !  ==========================================================
 
         $userRepository->remove($user,true);
 
