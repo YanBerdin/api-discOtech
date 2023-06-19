@@ -15,12 +15,20 @@ use Symfony\Component\Routing\Annotation\Route;
 class UserController extends AbstractController
 {
     /**
-     * @Route("/api/user/signUp", name="app_api_user_signUp", methods={"POST"})
+     * Create User account from FrontOffice by visitor
+     *
+     * @param User $user
+     * @param UserRepository $userRepository
+     * @param Request $request
+     * @param UserPasswordHasherInterface $passwordHasher
+     * @return void
+     * 
+     * @Route("/api/users/signup", name="app_api_user_signUp", methods={"POST"})
      */
     public function SignUp(Request $request, UserRepository $userRepository, UserPasswordHasherInterface $passwordHasher)
     {
 
-        // TODO : Voir comment on va recevoir les information du Front pour setter les infos en BDD
+        // Select data from Front form
         $data = json_decode($request->getContent(), true);
         //dd($data);
      
@@ -42,13 +50,15 @@ class UserController extends AbstractController
                 Response::HTTP_OK);
         }
         else{
+            // Create new User
             $user = new User();
             
             $user->setEmail($email);
 
-            $user->setRoles(["ROLE_USER"]); //* Normalement OK 
+            $user->setRoles(["ROLE_USER"]); // Set ROLE_USER by default.
 
-            $plaintextPassword =  $password; //TODO : Récupération du password depuis le front
+            // MAnage password with hash
+            $plaintextPassword =  $password;
             $passwordHashed = $passwordHasher->hashPassword($user, $plaintextPassword);
             $user->setPassword($passwordHashed);
 
@@ -56,8 +66,8 @@ class UserController extends AbstractController
             $user->setLastname($lastname);
             $user->setAvatar($avatar);
 
+            // Flush (Confirm add) new user into Database
             $userRepository->add($user,true);
-            
         }
 
         return $this->json(
@@ -68,59 +78,286 @@ class UserController extends AbstractController
         );
     }
 
+    /**
+     * Select current user
+     *
+     * @return JsonResponse
+     * 
+     * @Route("api/users/detail",name="app_api_user_read", methods={"GET"})
+     */
+
+     public function read(UserRepository $userRepository): JsonResponse
+     {
+        /** @var User $user */
+        //$user = $this->getUser();
+
+        // ! For test Only (use current id: check DB) =================
+        $user = $userRepository->find(18);
+        // ! ==========================================================
+
+         return $this->json(
+             // Alone user data
+             $user, 
+             //code return
+             200, 
+             //header HTTP
+             [], 
+             //context of serialization
+             [
+                 "groups" => 
+                 [
+                     "user_detail" 
+                 ]
+             ]);
+     }
 
     /**
-     * Undocumented function
+     * Function for editing user firstname
      *
      * @param User $user
      * @param UserRepository $userRepository
      * @param Request $request
-     * @param UserPasswordHasherInterface $passwordHasher
      * @return void
      * 
-     * @Route("/api/user/edit", name="app_api_user_edit", methods={"PUT", "PATCH"})
+     * @Route("/api/users/edit/firstname", name="app_api_user_edit_firstname", methods={"PUT", "PATCH"})
      */
-    public function edit (UserRepository $userRepository, Request $request, UserPasswordHasherInterface $passwordHasher)
+    public function editFirstname (UserRepository $userRepository, Request $request)
     {
         /** @var User $user */
-        $user = $this->getUser();
+        //$user = $this->getUser();
+
+        // ! For test Only (use current id: check DB) =================
+        $user = $userRepository->find(18);
+        // ! ==========================================================
      
-        $email = $request->query->get("email");
-        $password = $request->query->get("password");
-        $firstname = $request->query->get("firstname");
-        $lastname = $request->query->get("lastname");
-        $avatar =$request->query->get("avatar");
+        $data = json_decode($request->getContent(), true);
+        //dd($data);
 
-        $user->setEmail($email); //! A confirmer 
+        // get new firstname
+        $newFirstname = $data["firstname"];
 
-        $plaintextPassword =  $password; //TODO : Récupération du password depuis le front
-        $passwordHashed = $passwordHasher->hashPassword($user, $plaintextPassword);
-        $user->setPassword($passwordHashed);
+        // get current firstname
+        $currentFirstname = $user->getFirstname();
 
-        $user->setFirstname($firstname);
-        $user->setLastname($lastname);
-        $user->setAvatar($avatar);
+        if ($newFirstname == $currentFirstname){
+            return $this->json(
+                // data
+                ["message" => "Prénom identique"],
+                // status code
+                Response::HTTP_OK,
+            ); 
+        }
+        else {
+            // Set newFirstname
+            $user->setFirstname($newFirstname);
 
-        $userRepository->add($user,true);
+            // Confirm and flush
+            $userRepository->add($user,true);
+        }
 
         return $this->json(
             // data
-            ["message" => "Votre compte à bien été modifié"],
+            ["message" => "Votre prénom a bien été modifié"],
             // status code
             Response::HTTP_OK,
         );
 
     }
 
-    public function delete (User $user, Request $request, UserRepository $userRepository)
+    /**
+     * Function for editing user lastname
+     *
+     * @param User $user
+     * @param UserRepository $userRepository
+     * @param Request $request
+     * @return void
+     * 
+     * @Route("/api/users/edit/lastname", name="app_api_user_edit_lastname", methods={"PUT", "PATCH"})
+     */
+    public function editLastname (UserRepository $userRepository, Request $request)
     {
-        if ($this->isCsrfTokenValid("edit".$user->getId(), $request->request->get("_token")))
-        {
-            $userRepository->remove($user,true);
+        /** @var User $user */
+        //$user = $this->getUser();
+
+        // ! For test Only (use current id: check DB) =================
+        $user = $userRepository->find(18);
+        // ! ==========================================================
+     
+        $data = json_decode($request->getContent(), true);
+        //dd($data);
+
+        // get new lastname
+        $newLastname = $data["lastname"];
+
+        // get current lastname
+        $currentLastname = $user->getLastname();
+
+        if ($newLastname == $currentLastname){
+            return $this->json(
+                // data
+                ["message" => "Nom identique"],
+                // status code
+                Response::HTTP_OK,
+            ); 
         }
+        else {
+            // Set newlastname
+            $user->setLastname($newLastname);
+
+            // Confirm and flush
+            $userRepository->add($user,true);
+        }
+
         return $this->json(
             // data
-            ["message" => "Votre compte à bien été modifié"],
+            ["message" => "Votre nom a bien été modifié"],
+            // status code
+            Response::HTTP_OK,
+        );
+
+    }
+
+    /**
+     * Function for editing user email
+     *
+     * @param User $user
+     * @param UserRepository $userRepository
+     * @param Request $request
+     * @return void
+     * 
+     * @Route("/api/users/edit/email", name="app_api_user_edit_email", methods={"PUT", "PATCH"})
+     */
+    public function editEmail (UserRepository $userRepository, Request $request)
+    {
+        /** @var User $user */
+        //$user = $this->getUser();
+
+        // ! For test Only (use current id: check DB) =================
+        $user = $userRepository->find(18);
+        // ! ==========================================================
+     
+        $data = json_decode($request->getContent(), true);
+        //dd($data);
+
+        // get new email
+        $newEmail = $data["email"];
+
+        // get current email
+        $currentEmail = $user->getEmail();
+
+        if ($newEmail == $currentEmail){
+            return $this->json(
+                // data
+                ["message" => "Email identique"],
+                // status code
+                Response::HTTP_OK,
+            ); 
+        }
+        else {
+            // Set newlastname
+            $user->setEmail($newEmail);
+
+            // Confirm and flush
+            $userRepository->add($user,true);
+        }
+
+        return $this->json(
+            // data
+            ["message" => "Votre Email a bien été modifié"],
+            // status code
+            Response::HTTP_OK,
+        );
+
+    }
+
+
+    /**
+     * Function for editing user avatar
+     *
+     * @param User $user
+     * @param UserRepository $userRepository
+     * @param Request $request
+     * @return void
+     * 
+     * @Route("/api/users/edit/avatar", name="app_api_user_edit_avatar", methods={"PUT", "PATCH"})
+     */
+    public function editAvatar (UserRepository $userRepository, Request $request)
+    {
+        /** @var User $user */
+        //$user = $this->getUser();
+
+        // ! For test Only (use current id: check DB) =================
+        $user = $userRepository->find(18);
+        // ! ==========================================================
+     
+        $data = json_decode($request->getContent(), true);
+        //dd($data);
+
+        // get new avatar
+        $newAvatar = $data["avatar"];
+
+        // get current avatar
+        $currentAvatar = $user->getAvatar();
+
+        if ($newAvatar == $currentAvatar){
+            return $this->json(
+                // data
+                ["message" => "Image de profil identique"],
+                // status code
+                Response::HTTP_OK,
+            ); 
+        }
+        else {
+            // Set newlastname
+            $user->setAvatar($newAvatar);
+
+            // Confirm and flush
+            $userRepository->add($user,true);
+        }
+
+        return $this->json(
+            // data
+            ["message" => "Votre image de profil a bien été modifiée"],
+            // status code
+            Response::HTTP_OK,
+        );
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * Remove User account by User directly
+     *
+     * @param User $user
+     * @param Request $request
+     * @param UserRepository $userRepository
+     * @return void
+     * 
+     * @Route("/api/users/delete", name="app_api_user_delete", methods={"DELETE"})
+     */
+    public function delete (User $user, UserRepository $userRepository)
+    {
+        /** @var User $user */
+        //$user = $this->getUser();
+
+        // For test Only (use current id: check DB) =================
+        $user = $userRepository->find(18);
+        // ==========================================================
+
+        $userRepository->remove($user,true);
+
+        return $this->json(
+            // data
+            ["message" => "Votre compte à bien été supprimé"],
             // status code
             Response::HTTP_NO_CONTENT,
         );

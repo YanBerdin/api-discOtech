@@ -22,6 +22,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * @ORM\Column(type="integer")
      * @Groups({"review_read"})
      * @Groups({"album_read"})
+     * @Groups({"user_detail"})
      */
     private $id;
 
@@ -29,6 +30,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * @ORM\Column(type="string", length=180, unique=true)
      * @Groups({"album_read"})
      * @Groups({"review_read"})
+     * @Groups({"user_detail"})
      * Assert\NotBlank
      */
     private $email;
@@ -49,6 +51,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * @ORM\Column(type="string", length=255)
      * @Groups({"album_read"})
      * @Groups({"review_read"})
+     * @Groups({"user_detail"})
      * Assert\NotBlank
      */
     private $firstname;
@@ -57,6 +60,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * @ORM\Column(type="string", length=255)
      * @Groups({"album_read"})
      * @Groups({"review_read"})
+     * @Groups({"user_detail"})
      * Assert\NotBlank
      */
     private $lastname;
@@ -65,17 +69,20 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * @ORM\Column(type="string", length=255, nullable=true)
      * @Groups({"album_read"})
      * @Groups({"support_read"})
+     * @Groups({"user_detail"})
      */
     private $avatar;
 
         /**
      * @ORM\OneToMany(targetEntity=Album::class, mappedBy="user")
+     * @Groups({"user_detail"})
      * 
      */
     private $albums;
 
     /**
      * @ORM\OneToMany(targetEntity=Favorites::class, mappedBy="user")
+     * @Groups({"user_detail"})
      * 
      */
     private $favorites;

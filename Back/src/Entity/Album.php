@@ -25,6 +25,7 @@ class Album
      * @Groups({"support_read"})
      * @Groups({"review_read"})
      * @Groups({"artist_read"})
+     * @Groups({"user_detail"})
      * 
      */
     private $id;
@@ -38,6 +39,7 @@ class Album
      * @Groups({"style_read"})
      * @Groups({"review_read"})
      * @Groups({"support_read"})
+     * @Groups({"user_detail"})
      * @Assert\NotBlank
      */
     private $name;
@@ -47,6 +49,7 @@ class Album
      * @Groups({"album_browse"})
      * @Groups({"style_read"})
      * @Groups({"support_read"})
+     * @Groups({"user_detail"})
      * @Assert\NotBlank
      */
     private $edition;
@@ -65,18 +68,21 @@ class Album
      * @ORM\Column(type="datetime")
      * @Groups({"album_browse"})
      * @Groups({"style_read"})
+     * @Groups({"user_detail"})
      */
     private $createdAt;
 
     /**
      * @ORM\Column(type="datetime", nullable=true)
      * @Groups({"album_browse"})
+     * @Groups({"user_detail"})
      */
     private $updatedAt;
 
     /**
      * @ORM\ManyToMany(targetEntity=Style::class, inversedBy="albums")
      * @Groups({"album_browse"})
+     * @Groups({"user_detail"})
      * @Assert\NotBlank
      */
     private $style;
@@ -84,6 +90,7 @@ class Album
     /**
      * @ORM\ManyToMany(targetEntity=Support::class, inversedBy="albums")
      * @Groups({"album_browse"})
+     * @Groups({"user_detail"})
      * @Assert\NotBlank
      */
     private $support;
@@ -98,6 +105,7 @@ class Album
      * @ORM\ManyToOne(targetEntity=Artist::class, inversedBy="albums")
      * @Groups({"album_browse"})
      * @Groups({"support_read"})
+     * @Groups({"user_detail"})
      * @Assert\NotBlank
      */
     private $artist;

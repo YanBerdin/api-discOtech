@@ -21,6 +21,7 @@ class Artist
      * @Groups({"artist_browse"})
      * @Groups({"album_browse"})
      * @Groups({"album_read"})
+     * @Groups({"user_detail"})
      */
     private $id;
 
@@ -30,6 +31,7 @@ class Artist
      * @Groups({"favorite_browse"})
      * @Groups({"artist_browse"})
      * @Groups({"support_read"})
+     * @Groups({"user_detail"})
      * @Assert\NotBlank
      */
     private $fullname;
