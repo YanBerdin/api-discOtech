@@ -28,14 +28,14 @@ class Style
      * @ORM\Column(type="string", length=255)
      * @Groups({"album_browse"})
      * @Groups({"style_browse"})
-     * 
+     * @Assert\NotBlank(message= "Ce champs ne peut pas être vide")
      */
     private $name;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      * @Groups({"style_browse"})
-     * @Assert\NotBlank
+     * @Assert\NotBlank(message= "Ce champs ne peut pas être vide")
      */
     private $image;
 

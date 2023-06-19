@@ -31,19 +31,21 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * @Groups({"album_read"})
      * @Groups({"review_read"})
      * @Groups({"user_detail"})
-     * Assert\NotBlank
+     * @Assert\NotBlank(message= "Ce champs ne peut pas être vide")
+     * @Assert\Email(message = "l'Email '{{ value }}' n'est pas valide.")
      */
     private $email;
 
     /**
      * @ORM\Column(type="json")
-     * Assert\NotBlank
+     * @Assert\NotBlank(message= "Ce champs ne peut pas être vide")
      */
     private $roles = [];
 
     /**
      * @var string The hashed password
      * @ORM\Column(type="string")
+     * @Assert\NotBlank(message= "Ce champs ne peut pas être vide")
      */
     private $password;
 
@@ -53,6 +55,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * @Groups({"review_read"})
      * @Groups({"user_detail"})
      * Assert\NotBlank
+     * @Assert\NotBlank(message= "Ce champs ne peut pas être vide")
      */
     private $firstname;
 
@@ -61,7 +64,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * @Groups({"album_read"})
      * @Groups({"review_read"})
      * @Groups({"user_detail"})
-     * Assert\NotBlank
+     * @Assert\NotBlank(message= "Ce champs ne peut pas être vide")
      */
     private $lastname;
 
@@ -143,7 +146,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     {
         $roles = $this->roles;
         // guarantee every user at least has ROLE_USER
-        $roles[] = 'ROLE_USER';
+        // $roles[] = 'ROLE_USER';
 
         return array_unique($roles);
     }

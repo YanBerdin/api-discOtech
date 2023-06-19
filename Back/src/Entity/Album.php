@@ -40,7 +40,7 @@ class Album
      * @Groups({"review_read"})
      * @Groups({"support_read"})
      * @Groups({"user_detail"})
-     * @Assert\NotBlank
+     * @Assert\NotBlank (message = "Ce champs ne peut pas être vide")
      */
     private $name;
 
@@ -50,17 +50,17 @@ class Album
      * @Groups({"style_read"})
      * @Groups({"support_read"})
      * @Groups({"user_detail"})
-     * @Assert\NotBlank
+     * @Assert\NotBlank(message= "Ce champs ne peut pas être vide")
      */
     private $edition;
 
     /**
-     * @ORM\Column(type="date")
+     * @ORM\Column(type="date", nullable=true)
      * @Groups({"album_browse"})
      * @Groups({"style_read"})
      * @Groups({"favorites_browse"})
      * @Groups({"support_read"})
-     * @Assert\NotBlank
+     * @Assert\NotBlank(message= "Ce champs ne peut pas être vide")
      */
     private $releaseDate;
 
@@ -83,7 +83,7 @@ class Album
      * @ORM\ManyToMany(targetEntity=Style::class, inversedBy="albums")
      * @Groups({"album_browse"})
      * @Groups({"user_detail"})
-     * @Assert\NotBlank
+     * @Assert\NotBlank(message= "Ces champs ne peuvent pas être vide")
      */
     private $style;
 
@@ -91,7 +91,7 @@ class Album
      * @ORM\ManyToMany(targetEntity=Support::class, inversedBy="albums")
      * @Groups({"album_browse"})
      * @Groups({"user_detail"})
-     * @Assert\NotBlank
+     * @Assert\NotBlank(message= "Ce champs ne peuvent pas être vide")
      */
     private $support;
 
@@ -106,7 +106,7 @@ class Album
      * @Groups({"album_browse"})
      * @Groups({"support_read"})
      * @Groups({"user_detail"})
-     * @Assert\NotBlank
+     * @Assert\NotBlank(message= "Ce champs ne peut pas être vide")
      */
     private $artist;
 
@@ -134,7 +134,7 @@ class Album
      * @Groups({"song_browse"})
      * @Groups({"support_read"})
      * @Groups({"favorites_browse"})
-     * @Assert\NotBlank
+     * @Assert\NotBlank(message= "Ce champs ne peut pas être vide")
      */
     private $image;
 
@@ -183,7 +183,7 @@ class Album
         return $this->releaseDate;
     }
 
-    public function setReleaseDate(\DateTimeInterface $releaseDate): self
+    public function setReleaseDate(\DateTimeInterface $releaseDate = null): self
     {
         $this->releaseDate = $releaseDate;
 
