@@ -18,6 +18,7 @@ class Favorites
      * 
      * @Groups({"album_read"})
      * @Groups({"favorite_browse"})
+     * @Groups({"user_detail"})
      */
     private $id;
 
@@ -32,6 +33,7 @@ class Favorites
     /**
      * @ORM\ManyToOne(targetEntity=Album::class, inversedBy="favorites")
      * @Groups({"favorite_browse"})
+     * @Groups({"user_detail"})
      */
     private $album;
 
@@ -40,6 +42,7 @@ class Favorites
      * 
      * @Groups({"album_read"})
      * @Groups({"favorite_browse"})
+     * @Groups({"user_detail"})
      */
     private $createdAt;
 

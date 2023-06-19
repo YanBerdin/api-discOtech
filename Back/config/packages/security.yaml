@@ -46,8 +46,15 @@ security:
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
     access_control:
-        # Login first road ! very important
+        # Login in first ! very important
         - { path: ^/api/login, roles: PUBLIC_ACCESS }
+
+        # Everybody can access to signup form
+        - { path: ^/api/users/signup, roles: PUBLIC_ACCESS }
+
+        # User log only for edit, delete and show profil page
+        - { path: ^/api/users/*, roles: ROLE_USER }
+
         # only the admin profile has access to related URLs starting by "back"
         - { path: ^\/back, roles: ROLE_ADMIN}
         # - { path: ^\/back, roles: ROLE_ADMIN }
