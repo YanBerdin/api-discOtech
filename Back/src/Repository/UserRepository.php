@@ -2,6 +2,7 @@
 
 namespace App\Repository;
 
+use App\Entity\Album;
 use App\Entity\User;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
@@ -66,6 +67,16 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
             ->setParameter('email',$email)
             ->getQuery()
             ->getResult();
+    }
+
+    public function searchIfUserHasFavorite(Album $album) {
+
+        return $this->createQueryBuilder('u')
+            ->join('u.favorites', 'f')
+            ->where('f.album = :albumId')
+            ->setParameter('albumId', $album->getId())
+            ->getQuery()
+            ->getOneOrNullResult();
     }
 
 

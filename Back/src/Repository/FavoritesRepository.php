@@ -39,6 +39,22 @@ class FavoritesRepository extends ServiceEntityRepository
         }
     }
 
+    // /**
+    //  * @return Favorites[] Returns an array of Favorites objects
+    //  */
+    // public function findByUser($user): array
+    // {
+    //     return $this->createQueryBuilder('f')
+    //         ->andWhere('f.userId = :userId')
+    //         ->setParameter('userId', $user->getId())
+    //         ->getQuery()
+    //         ->getResult()
+    //     ;
+    // }
+
+
+
+
 //    /**
 //     * @return Favorites[] Returns an array of Favorites objects
 //     */
