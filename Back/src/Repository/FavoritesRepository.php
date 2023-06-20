@@ -2,6 +2,7 @@
 
 namespace App\Repository;
 
+use App\Entity\Album;
 use App\Entity\Favorites;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
@@ -37,6 +38,19 @@ class FavoritesRepository extends ServiceEntityRepository
         if ($flush) {
             $this->getEntityManager()->flush();
         }
+    }
+
+    public function searchFavoriteWithAlbum($album, $user)
+    {
+        return $this->createQueryBuilder('f') // "f" for favorite
+            ->join('f.user', 'u' )
+            ->join('f.album', 'a')
+            ->where('u.id = :userId')
+            ->setParameter('userId', $user->getId())
+            ->andwhere('a.id = :albumId')
+            ->setParameter('albumId', $album->getId())
+            ->getQuery()
+            ->getResult();
     }
 
     // /**

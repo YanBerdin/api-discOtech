@@ -71,14 +71,15 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
 
     public function searchIfUserHasFavorite(Album $album) {
 
-        return $this->createQueryBuilder('u')
-            ->join('u.favorites', 'f')
+        return $this->createQueryBuilder('u') // "u" for user
+            ->join('u.favorites', 'f') // "f" for favorite
             ->where('f.album = :albumId')
             ->setParameter('albumId', $album->getId())
             ->getQuery()
             ->getOneOrNullResult();
     }
 
+    
 
 
 //    /**

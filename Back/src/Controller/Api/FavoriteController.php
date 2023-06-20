@@ -62,15 +62,14 @@ class FavoriteController extends AbstractController
     public function add(Album $album, AlbumRepository $albumRepository, FavoritesRepository $favoriteRepository, UserRepository $userRepository)
     {
         // * For test Only (use an existing id: check DB) =================
-        $user = $userRepository->find(2);
+        $user = $userRepository->find(1);
         // * ==============================================================
 
         // Select current user
         /** @var User $user */
         //$user = $this->getUser();
 
-        // Select current Album with his Id
-        
+        // Use custom method (into userRepository) to search if favorite already exist in DB for current user
         $alreadyInFavorite = $userRepository->searchIfUserHasFavorite($album);
 
         if($alreadyInFavorite) {
@@ -100,7 +99,7 @@ class FavoriteController extends AbstractController
     }
 
     /**
-     * add favorites for current user account
+     * remove favorites for current user account
      * 
      * @Route("/api/albums/{id}/favorites", name="app_api_favorite_remove", requirements={"id"="\d+"}, methods={"DELETE"})
      */
@@ -114,25 +113,23 @@ class FavoriteController extends AbstractController
         /** @var User $user */
         //$user = $this->getUser();
 
-        // Select current Album with his Id
         $album = $albumRepository->find($id);
 
-        // List all favorites for currrent user
-        $allFavorites = $user->getFavorites();
-        
+        // Use custom method (into userRepository) to search if favorite already exist in DB for current user
+        /** @var Favorites $favorite */
+        $favorite = $favoriteRepository->searchFavoriteWithAlbum($album, $user);
 
+        $favoriteTest = $favorite[0];
+        //dd($favoriteTest);
+
+        $favoriteRepository->remove($favoriteTest, true);
+        
         return $this->json(
             // Data
             ["message" => "L'album a bien été retiré des favoris"],
             // Status code
-            Response::HTTP_NO_CONTENT
+            Response::HTTP_OK
       
         );     
-
     }
-
-
-
-
-
 }
