@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}liste Album{% endblock %}
+
+{% block body %}
+    <h1>Liste des album</h1>
+        <a class="btn btn-success me-2" href="{{ path('app_back_album_new') }}">Créer</a>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Nom</th>
+                        <th>Artistes</th>
+                        <th>Edition</th>
+                        <th>Date de sorti</th>
+                        <th>Mise en ligne</th>
+                        <th>Pochette</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for album in albums %}
+                    <tr>
+                        <td>{{ album.name }}</td>
+                       <td> {{ album.artist.getArtistFullnameInterface() }}</td>
+                        <td>{{ album.edition }}</td>
+                        <td>{{ album.releaseDate ? album.releaseDate|date('d-m-Y') : '' }}</td>
+                        <td>{{ album.createdAt ? album.createdAt|date('d-m-Y') : '' }}</td>
+                        <td>{{ album.image }}</td>
+                        <td>
+                            <a class="btn btn-info me-1" href="{{ path('app_back_album_show', {'id': album.id}) }}">voir plus</a>
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="8">Aucun album disponible</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        
+            <div class="navigation d-flex justify-content-center">
+                {{ knp_pagination_render(albums) }}
+            </div>
+
+{% endblock %}

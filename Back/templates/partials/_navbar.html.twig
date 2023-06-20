@@ -1,0 +1,32 @@
+<!-- Nav -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a href="#" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none header-logo">
+                <img src="{{ asset('../images/logo.png') }}" height="50" alt="Logo DiscO'Tech">
+                <span class="header-logo__title">DiscO'Tech</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active ms-5" href="#"> Accueil Site </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active ms-5" href="{{ path('default')}}"> Accueil Administration </a>
+                    </li>
+                </ul>                 
+                <form class="d-flex" action="#">
+                    <input class="form-control form-control-sm me-2" name="search" type="search" placeholder="Rechercher...">
+                    <button class="btn btn-outline-danger" type="submit"><i class="bi bi-search"></i></button> 
+                </form
+                {% if is_granted("IS_AUTHENTICATED_FULLY")%}
+                    <div class="mb-3">
+                        <a href="{{ path('app_logout') }}"><button type="button" class="btn btn-danger text-right ms-4">Deconnexion</button></a>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </nav>

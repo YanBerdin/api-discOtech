@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste Support{% endblock %}
+
+{% block body %}
+    <h1>Liste des supports</h1>
+    <a class="btn btn-success me-2" href="{{ path('app_back_support_new') }}">Créer</a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for support in supports %}
+            <tr>
+                <td>{{ support.name }}</td>
+                <td>
+                   <a class="btn btn-info me-1" href="{{ path('app_back_support_show', {'id': support.id}) }}">voir plus</a> 
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">Aucun utilisateur disponible</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+        <div class="navigation d-flex justify-content-center">
+            {{ knp_pagination_render(supports) }}
+        </div>
+{% endblock %}

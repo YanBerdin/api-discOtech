@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste musique{% endblock %}
+
+{% block body %}
+        <div class= text-aligne-between>
+            <h1>Liste des musiques</h1>
+            <a class="btn btn-success me-2" style= "justify-content-end" href="{{ path('app_back_song_new') }}">Créer</a>
+        </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>N° de piste</th>
+                <th>Titre</th>
+                <th>Durée</th>
+                <th>Ecoute</th>
+                
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for song in songs %}
+            <tr>
+                <td>{{ song.trackNb }}</td>
+                <td>{{ song.title }}</td>
+                <td>{{ song.duration }}</td>
+                <td>{{ song.preview }}</td>
+                <td>
+                    <a class="btn btn-info me-1" href="{{ path('app_back_song_show', {'id': song.id}) }}">voir plus</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">Aucune musique de disponible</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+        <div class="navigation d-flex justify-content-center">
+            {{ knp_pagination_render(songs) }}
+        </div>
+{% endblock %}

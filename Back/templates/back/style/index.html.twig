@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}List Style{% endblock %}
+
+{% block body %}
+    <h1>Liste des styles</h1>
+    <a class="btn btn-success me-2" href="{{ path('app_back_style_new') }}">Créer</a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Image</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for style in styles %}
+            <tr>
+                <td>{{ style.name }}</td>
+                <td>{{ style.image }}</td>
+                <td>
+                    <a class="btn btn-info me-1" href="{{ path('app_back_style_show', {'id': style.id}) }}">voir plus</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">Aucun style disponible</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+            <div class="navigation d-flex justify-content-center">
+                {{ knp_pagination_render(styles) }}
+            </div>
+{% endblock %}

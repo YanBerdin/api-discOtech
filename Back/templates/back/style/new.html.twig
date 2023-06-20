@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouveau Style{% endblock %}
+
+{% block body %}
+    <h1>Créer un nouveau style</h1>
+
+    {{ include('back/style/_form.html.twig') }}
+
+    <a class="btn btn-secondary me-2" href="{{ path('app_back_style_index') }}">Retour à la liste</a>
+{% endblock %}

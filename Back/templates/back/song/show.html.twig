@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Musique{% endblock %}
+
+{% block body %}
+    <h1>Musique</h1>
+
+    <table class="table">
+        <tbody>
+        <tr>
+                <th>N° de piste</th>
+                <td>{{ song.trackNb }}</td>
+            </tr>
+            <tr>
+                <th>Titre</th>
+                <td>{{ song.title }}</td>
+            </tr>
+            <tr>
+                <th>Durée</th>
+                <td>{{ song.duration }}</td>
+            </tr>
+            <tr>
+                <th>Ecoute</th>
+                <td>{{ song.preview }}</td>
+            </tr>
+            
+        </tbody>
+    </table>
+<div class="d-flex justify-content-between" style="margin-bottom: 5rem; margin-top: 5rem">
+    <a class="btn btn-secondary me-2" href="{{ path('app_back_user_index') }}"> <i class="bi bi-arrow-left"> </i>Retour a la liste</a>
+    <div class="d-flex justify-content-end">
+        <a class="btn btn-warning me-4" href="{{ path('app_back_song_edit', {'id': song.id}) }}">Modifier</a>
+        {{ include('back/song/_delete_form.html.twig') }}
+    </div>
+</div>
+{% endblock %}

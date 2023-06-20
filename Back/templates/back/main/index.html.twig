@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Welcome Backoffice{% endblock %}
+
+{% block body %}
+
+<h1 class="text-decoration-underline" style="padding-top: 2rem">
+    Bienvenue {{app.user.getUserFirstnameInterface()}} 
+</h1>
+
+<div class="container row justify-content-between col" style="margin-top: 5rem">
+ 
+    {% include 'back/partials/_card_link.html.twig' with { 'entity' : 'album' } %}
+    {% include 'back/partials/_card_link.html.twig' with { 'entity' : 'artist' } %}
+    {% include 'back/partials/_card_link.html.twig' with { 'entity' : 'song' } %}
+    {% include 'back/partials/_card_link.html.twig' with { 'entity' : 'style' } %}
+    {% include 'back/partials/_card_link.html.twig' with { 'entity' : 'support' } %}
+{# {% if is_granted('#') %} #}
+    {% include 'back/partials/_card_link.html.twig' with { 'entity' : 'user' }%}
+{# {% endif %} #}
+</div>
+{% endblock %}
