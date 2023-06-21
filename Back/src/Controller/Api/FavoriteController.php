@@ -62,7 +62,7 @@ class FavoriteController extends AbstractController
     public function add(Album $album, AlbumRepository $albumRepository, FavoritesRepository $favoriteRepository, UserRepository $userRepository)
     {
         // * For test Only (use an existing id: check DB) =================
-        $user = $userRepository->find(1);
+        $user = $userRepository->find(2);
         // * ==============================================================
 
         // Select current user
@@ -70,7 +70,7 @@ class FavoriteController extends AbstractController
         //$user = $this->getUser();
 
         // Use custom method (into userRepository) to search if favorite already exist in DB for current user
-        $alreadyInFavorite = $userRepository->searchIfUserHasFavorite($album);
+        $alreadyInFavorite = $userRepository->searchIfUserHasFavorite($album,$user);
 
         if($alreadyInFavorite) {
             return $this->json(
@@ -106,7 +106,7 @@ class FavoriteController extends AbstractController
     public function remove($id, AlbumRepository $albumRepository, FavoritesRepository $favoriteRepository, UserRepository $userRepository)
     {
         // * For test Only (use an existing id: check DB) =================
-        $user = $userRepository->find(2);
+        $user = $userRepository->find(1);
         // * ==============================================================
 
         // Select current user
@@ -116,8 +116,8 @@ class FavoriteController extends AbstractController
         $album = $albumRepository->find($id);
 
         // Use custom method (into userRepository) to search if favorite already exist in DB for current user
-        /** @var Favorites $favorite */
         $favorite = $favoriteRepository->searchFavoriteWithAlbum($album, $user);
+        //dd($favorite);
 
         $favoriteTest = $favorite[0];
         //dd($favoriteTest);

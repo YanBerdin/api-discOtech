@@ -43,8 +43,8 @@ class FavoritesRepository extends ServiceEntityRepository
     public function searchFavoriteWithAlbum($album, $user)
     {
         return $this->createQueryBuilder('f') // "f" for favorite
-            ->join('f.user', 'u' )
-            ->join('f.album', 'a')
+            ->join('f.user', 'u' ) // "u" for user
+            ->join('f.album', 'a') // "a" for album
             ->where('u.id = :userId')
             ->setParameter('userId', $user->getId())
             ->andwhere('a.id = :albumId')
