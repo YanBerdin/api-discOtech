@@ -8,13 +8,12 @@ use App\Entity\User;
 use App\Repository\AlbumRepository;
 use App\Repository\FavoritesRepository;
 use App\Repository\UserRepository;
-use PHPUnit\Util\Json;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\Serializer\SerializerInterface;
+
 
 class FavoriteController extends AbstractController
 {
@@ -27,11 +26,11 @@ class FavoriteController extends AbstractController
     public function browse(FavoritesRepository $favoriteRepository, UserRepository $userRepository): JsonResponse
     {
         // * For test Only (use an existing id: check DB) =================
-        $user = $userRepository->find(2);
+        //$user = $userRepository->find(2);
         // * ==============================================================
         
         /** @var User $user */
-        //$user = $this->getUser();
+        $user = $this->getUser();
 
         // List all favorites for currrent user
         $allFavorites = $user->getFavorites();
@@ -57,17 +56,17 @@ class FavoriteController extends AbstractController
     /**
      * add favorites for current user account
      * 
-     * @Route("/api/albums/{id}/favorites", name="app_api_favorite_add", requirements={"id"="\d+"}, methods={"POST"})
+     * @Route("/api/favorites/albums/{id}", name="app_api_favorite_add", requirements={"id"="\d+"}, methods={"POST"})
      */
     public function add(Album $album, AlbumRepository $albumRepository, FavoritesRepository $favoriteRepository, UserRepository $userRepository)
     {
         // * For test Only (use an existing id: check DB) =================
-        $user = $userRepository->find(2);
+        //$user = $userRepository->find(1);
         // * ==============================================================
 
         // Select current user
         /** @var User $user */
-        //$user = $this->getUser();
+        $user = $this->getUser();
 
         // Use custom method (into userRepository) to search if favorite already exist in DB for current user
         $alreadyInFavorite = $userRepository->searchIfUserHasFavorite($album,$user);
@@ -101,17 +100,17 @@ class FavoriteController extends AbstractController
     /**
      * remove favorites for current user account
      * 
-     * @Route("/api/albums/{id}/favorites", name="app_api_favorite_remove", requirements={"id"="\d+"}, methods={"DELETE"})
+     * @Route("/api/favorites/albums/{id}", name="app_api_favorite_remove", requirements={"id"="\d+"}, methods={"DELETE"})
      */
     public function remove($id, AlbumRepository $albumRepository, FavoritesRepository $favoriteRepository, UserRepository $userRepository)
     {
         // * For test Only (use an existing id: check DB) =================
-        $user = $userRepository->find(1);
+        // $user = $userRepository->find(2);
         // * ==============================================================
 
         // Select current user
         /** @var User $user */
-        //$user = $this->getUser();
+        $user = $this->getUser();
 
         $album = $albumRepository->find($id);
 
