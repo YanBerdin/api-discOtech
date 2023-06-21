@@ -118,10 +118,7 @@ class FavoriteController extends AbstractController
         $favorite = $favoriteRepository->searchFavoriteWithAlbum($album, $user);
         //dd($favorite);
 
-        $favoriteTest = $favorite[0];
-        //dd($favoriteTest);
-
-        $favoriteRepository->remove($favoriteTest, true);
+        $favoriteRepository->remove($favorite, true);
         
         return $this->json(
             // Data

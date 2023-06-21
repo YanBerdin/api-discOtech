@@ -50,7 +50,7 @@ class FavoritesRepository extends ServiceEntityRepository
             ->andwhere('a.id = :albumId')
             ->setParameter('albumId', $album->getId())
             ->getQuery()
-            ->getResult();
+            ->getOneOrNullResult();
     }
 
     // /**
