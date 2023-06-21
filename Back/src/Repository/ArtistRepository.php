@@ -39,6 +39,20 @@ class ArtistRepository extends ServiceEntityRepository
         }
     }
 
+    public function findByArtistOrder($order = 'ASC')
+    {     
+        // Alias 'a' for 'Artist'
+        $select = $this->createQueryBuilder('a');
+
+        if ($order === 'fullnASC') {
+            $select->orderBy('a.fullname', 'ASC');
+        } elseif ($order === 'fullnDESC') {
+            $select->orderBy('a.fullname', 'DESC');
+        }
+
+        return $select->getQuery()->getResult();
+    }
+
 //    /**
 //     * @return Artist[] Returns an array of Artist objects
 //     */

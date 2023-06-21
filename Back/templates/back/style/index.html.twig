@@ -5,10 +5,24 @@
 {% block body %}
     <h1>Liste des styles</h1>
     <a class="btn btn-success me-2" href="{{ path('app_back_style_new') }}">Créer</a>
+
+    <div class="d-flex justify-content-end">
+            <form method="get" action="{{ path('app_back_artist_index') }}">
+                <div class="form-group">
+                    <label for="order">Trier par :</label>
+                    <select id="order" name="order">
+                        <option value="nameASC" {% if order == 'name' %}selected{% endif %}>Nom (A-Z)</option>
+                        <option value="nameDESC" {% if order == 'name' %}selected{% endif %}>Nom (Z-A)</option>
+                    </select>
+                    <button class="btn-primary me-2" type="submit">Trier</button>
+                </div>
+            </form>
+        </div>
+
     <table class="table">
         <thead>
             <tr>
-                <th>Name</th>
+                <th>Nom</th>
                 <th>Image</th>
                 <th></th>
             </tr>

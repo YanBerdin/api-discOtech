@@ -21,11 +21,17 @@ class SupportController extends AbstractController
      */
     public function index(SupportRepository $supportRepository, PaginatorInterface $paginator, Request $request): Response
     {
-        $allSupports = $supportRepository->findAll();
+        $order = $request->query->get('order', 'ASC');
 
-        $allSupports = $paginator->paginate($allSupports, $request->query->getInt('page', 1),20);
+        $supports = $supportRepository->findBySupportOrder($order);
 
-        return $this->render('back/support/index.html.twig', ['supports'=>$allSupports]);
+        $pagination = $paginator->paginate($supports, $request->query->getInt('page', 1),20);
+
+        return $this->render('back/support/index.html.twig', [
+            'supports' =>  $pagination,
+            'order' => $order
+        
+        ]);
     }
 
     /**

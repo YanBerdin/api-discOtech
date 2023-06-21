@@ -184,8 +184,6 @@ class AppFixtures extends Fixture
 
             $newAlbum->setArtist($allArtist[mt_rand(0,count($allArtist)-1)]);
 
-
-
             $manager->persist($newAlbum);
 
             $allAlbum[] = $newAlbum;

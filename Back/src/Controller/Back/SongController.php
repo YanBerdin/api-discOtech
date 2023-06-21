@@ -21,11 +21,17 @@ class SongController extends AbstractController
      */
     public function index(SongRepository $songRepository, PaginatorInterface $paginator, Request $request): Response
     {
-        $allSongs = $songRepository->findAll();
+        $order = $request->query->get('order', 'ASC');
 
-        $allSongs = $paginator->paginate($allSongs, $request->query->getInt('page', 1),20);
+        $songs = $songRepository->findBySongOrder($order);
+        
+        $pagination = $paginator->paginate($songs, $request->query->getInt('page', 1),20);
 
-        return $this->render('back/song/index.html.twig', ['songs'=>$allSongs]);
+        return $this->render('back/song/index.html.twig', [
+            'songs'=>$pagination,
+            'order'=>$order
+        
+        ]);
     }
 
     /**
