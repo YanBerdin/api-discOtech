@@ -19,6 +19,7 @@ class Album
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      * @Groups({"album_browse"})
+     * @Groups({"favorite_browse"})
      * @Groups({"album_read"})
      * @Groups({"song_browse"})
      * @Groups({"style_read"})
@@ -50,6 +51,7 @@ class Album
      * @Groups({"style_read"})
      * @Groups({"support_read"})
      * @Groups({"user_detail"})
+     * @Groups({"favorite_browse"})
      * @Assert\NotBlank(message= "Ce champs ne peut pas être vide")
      */
     private $edition;
@@ -82,6 +84,7 @@ class Album
     /**
      * @ORM\ManyToMany(targetEntity=Style::class, inversedBy="albums")
      * @Groups({"album_browse"})
+     * @Groups({"favorite_browse"})
      * @Groups({"user_detail"})
      * @Assert\NotBlank(message= "Ces champs ne peuvent pas être vide")
      */
@@ -90,6 +93,7 @@ class Album
     /**
      * @ORM\ManyToMany(targetEntity=Support::class, inversedBy="albums")
      * @Groups({"album_browse"})
+     * @Groups({"favorite_browse"})
      * @Groups({"user_detail"})
      * @Assert\NotBlank(message= "Ce champs ne peuvent pas être vide")
      */
@@ -104,6 +108,7 @@ class Album
     /**
      * @ORM\ManyToOne(targetEntity=Artist::class, inversedBy="albums")
      * @Groups({"album_browse"})
+     * @Groups({"favorite_browse"})
      * @Groups({"support_read"})
      * @Groups({"user_detail"})
      * @Assert\NotBlank(message= "Ce champs ne peut pas être vide")
@@ -133,7 +138,7 @@ class Album
      * @Groups({"album_browse"})
      * @Groups({"song_browse"})
      * @Groups({"support_read"})
-     * @Groups({"favorites_browse"})
+     * @Groups({"favorite_browse"})
      * @Assert\NotBlank(message= "Ce champs ne peut pas être vide")
      */
     private $image;

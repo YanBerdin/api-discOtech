@@ -2,25 +2,38 @@
 
 namespace App\Controller\Api;
 
+use App\Entity\Album;
+use App\Entity\Favorites;
+use App\Entity\User;
+use App\Repository\AlbumRepository;
 use App\Repository\FavoritesRepository;
+use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\Serializer\SerializerInterface;
+
 
 class FavoriteController extends AbstractController
 {
+
    /**
-     * Liste all favorites
+     * Liste all favorites for current user
      * 
      * @Route("/api/favorites", name="app_api_favorite_browse", methods={"GET"})
      */
-    public function browse(FavoritesRepository $favoriteRepository): JsonResponse
+    public function browse(FavoritesRepository $favoriteRepository, UserRepository $userRepository): JsonResponse
     {
-        // List all favorites
-        $allFavorites = $favoriteRepository->findAll();
+        // * For test Only (use an existing id: check DB) =================
+        //$user = $userRepository->find(2);
+        // * ==============================================================
+        
+        /** @var User $user */
+        $user = $this->getUser();
+
+        // List all favorites for currrent user
+        $allFavorites = $user->getFavorites();
 
         return $this->json(
             // Data
@@ -41,103 +54,78 @@ class FavoriteController extends AbstractController
     }
 
     /**
-     * Select specific Favorite
-     *
-     * @param int $id
-     * @param FavoritesRepository $favoriteRepository
-     * @return JsonResponse
+     * add favorites for current user account
      * 
-     * @Route("api/favorites/{id}",name="app_api_favorite_read", requirements={"id"="\d+"}, methods={"GET"})
+     * @Route("/api/favorites/albums/{id}", name="app_api_favorite_add", requirements={"id"="\d+"}, methods={"POST"})
      */
-
-     public function read($id,FavoritesRepository $favoriteRepository): JsonResponse
-     {
-         $favorite = $favoriteRepository->find($id);
-         // 404 Managment
-         if ($favorite === null){
-            
-             return $this->json(
-                 // error message
-                 [
-                     "message" => "Ce favoris n'existe pas"
-                 ],
-                 // status code : 404
-                 Response::HTTP_NOT_FOUND
-             );
-         }
-         return $this->json(
-             // Alone favorite data
-             $favorite, 
-             //code return
-             200, 
-             //header HTTP
-             [], 
-             //context of serialization
-             [
-                 "groups" => 
-                 [
-                     "favorite_browse",
-                    
-                 ]
-             ]);
-     }
-
-      /**
-     * Add new favorites
-     * 
-     * @param Request $request 
-     * @param SerializerInterface $serializerInterface
-     * @param FavoritesRepository $favoriteRepository
-     * @return JsonResponse
-     * 
-     * @Route("/api/favorites", name="app_api_favorite_add", methods={"POST"})
-     */
-
-    public function add(Request $request, SerializerInterface $serializerInterface, FavoritesRepository $favoriteRepository)
+    public function add(Album $album, AlbumRepository $albumRepository, FavoritesRepository $favoriteRepository, UserRepository $userRepository)
     {
-        // Select Json content
-        $jsonContent =$request->getContent();
+        // * For test Only (use an existing id: check DB) =================
+        //$user = $userRepository->find(1);
+        // * ==============================================================
 
-        $newFavorite = $serializerInterface->deserialize(
-            // data to transform
-            $jsonContent,
-            // type to object we want to deserialized
-            Favorite::class,
-            // Format
-            "json"
-        );
-        $favoriteRepository->add($newFavorite, true);
+        // Select current user
+        /** @var User $user */
+        $user = $this->getUser();
+
+        // Use custom method (into userRepository) to search if favorite already exist in DB for current user
+        $alreadyInFavorite = $userRepository->searchIfUserHasFavorite($album,$user);
+
+        if($alreadyInFavorite) {
+            return $this->json(
+                ["message" => "L'album est déjà dans les favoris."],
+                Response::HTTP_BAD_REQUEST
+            );
+        }
+
+        // Create new favorite
+        $favorites = new Favorites();
+
+        // Set Id
+        $favorites->setAlbum($album);
+        $favorites->setUser($user);
+
+        // confirm and save into DB
+        $favoriteRepository->add($favorites,true);
+
         return $this->json(
-            // data
-            $newFavorite,
-            // status code
-            Response::HTTP_CREATED,
-            //headers
-            [],
-            //context
-            [
-                "groups"=>
-                [
-                    "favorite_browse"
-                ]
-            ]
-        );
+            // Data
+            ["message" => "L'album a bien été ajouté aux favoris"],
+            // Status code
+            Response::HTTP_CREATED
+      
+        );     
     }
 
     /**
-     * Delete specific favorite
+     * remove favorites for current user account
      * 
-     * @param int $id
-     * @param FavoritesRepository $favoriteRepository
-     * 
-     * @Route("api/favorites/{id}",name="app_api_favorite_delete", requirements={"id"="\d+"}, methods={"DELETE"})
+     * @Route("/api/favorites/albums/{id}", name="app_api_favorite_remove", requirements={"id"="\d+"}, methods={"DELETE"})
      */
+    public function remove($id, AlbumRepository $albumRepository, FavoritesRepository $favoriteRepository, UserRepository $userRepository)
+    {
+        // * For test Only (use an existing id: check DB) =================
+        // $user = $userRepository->find(2);
+        // * ==============================================================
 
-     public function delete ($id, FavoritesRepository $favoriteRepository)
-     {
-        $favorite = $favoriteRepository->find($id);
+        // Select current user
+        /** @var User $user */
+        $user = $this->getUser();
+
+        $album = $albumRepository->find($id);
+
+        // Use custom method (into userRepository) to search if favorite already exist in DB for current user
+        $favorite = $favoriteRepository->searchFavoriteWithAlbum($album, $user);
+        //dd($favorite);
+
         $favoriteRepository->remove($favorite, true);
-
-        return $this->json(null, Response::HTTP_NO_CONTENT);
-     }
+        
+        return $this->json(
+            // Data
+            ["message" => "L'album a bien été retiré des favoris"],
+            // Status code
+            Response::HTTP_OK
+      
+        );     
+    }
 }
