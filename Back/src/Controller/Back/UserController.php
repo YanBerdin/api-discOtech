@@ -23,11 +23,16 @@ class UserController extends AbstractController
      */
     public function index(UserRepository $userRepository, PaginatorInterface $paginator, Request $request): Response
     {
-        $allUsers = $userRepository->findAll();
+        $order = $request->query->get('order', 'ASC');
 
-        $allUsers = $paginator->paginate($allUsers, $request->query->getInt('page', 1),20);
+        $users = $userRepository->findByUserOrder($order);
 
-        return $this->render('back/user/index.html.twig', ['users'=>$allUsers]);
+        $pagination = $paginator->paginate($users, $request->query->getInt('page', 1),20);
+
+        return $this->render('back/user/index.html.twig', [
+            'users' =>  $pagination,
+            'order' => $order,
+        ]);
     }
 
     /**

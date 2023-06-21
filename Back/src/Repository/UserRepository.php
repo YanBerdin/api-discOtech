@@ -68,8 +68,8 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
             ->getQuery()
             ->getResult();
     }
-
-    public function searchIfUserHasFavorite(Album $album, User $user) {
+  
+   public function searchIfUserHasFavorite(Album $album, User $user) {
 
         return $this->createQueryBuilder('u') // "u" for user
             ->join('u.favorites', 'f') // "f" for favorite
@@ -80,8 +80,30 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
             ->getQuery()
             ->getOneOrNullResult();
     }
+  
 
-    
+    public function findByUserOrder($order = 'ASC')
+    {     
+         // Alias 'u' for 'users'
+
+        $select = $this->createQueryBuilder('u');
+
+        if ($order === 'fnameASC') {
+            $select->orderBy('u.firstname', 'ASC');
+        } elseif ($order === 'fnameDESC') {
+            $select->orderBy('u.firstname', 'DESC');
+        } elseif ($order === 'lnameASC') {
+            $select->orderBy('u.lastname', 'ASC');
+        } elseif ($order === 'lname') {
+            $select->orderBy('u.lastname', 'DESC');
+        } elseif ($order === 'rolesASC') {
+            $select->orderBy('u.roles', 'ASC');
+        } elseif ($order === 'rolesDESC') {
+            $select->orderBy('u.roles', 'DESC');
+        }
+
+        return $select->getQuery()->getResult();
+    }
 
 
 //    /**

@@ -21,12 +21,15 @@ class ArtistController extends AbstractController
      */
     public function index(ArtistRepository $artistRepository, PaginatorInterface $paginator, Request $request): Response
     {
-        $allArtists = $artistRepository->findAll();
+        $order = $request->query->get('order', 'ASC');
 
-        $allArtists = $paginator->paginate($allArtists, $request->query->getInt('page', 1),20);
+        $artists= $artistRepository->findByArtistorder($order);
+
+        $pagination = $paginator->paginate($artists, $request->query->getInt('page', 1),20);
 
         return $this->render('back/artist/index.html.twig', [
-            'artists'=> $allArtists
+            'artists'=> $pagination,
+            'order' => $order,
         ]);
     }
 

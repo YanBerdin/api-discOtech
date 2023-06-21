@@ -36,8 +36,23 @@ class SupportRepository extends ServiceEntityRepository
 
         if ($flush) {
             $this->getEntityManager()->flush();
-        }
+        };
     }
+
+    public function findBySupportOrder($order = 'ASC')
+    {     
+        // Alias 's' for 'Supports'
+        $select = $this->createQueryBuilder('s');
+
+        if ($order === 'nameASC') {
+            $select->orderBy('s.name', 'ASC');
+        } elseif ($order === 'nameDESC') {
+            $select->orderBy('s.name', 'DESC');
+        }
+
+        return $select->getQuery()->getResult();
+    }
+
 
 //    /**
 //     * @return Support[] Returns an array of Support objects

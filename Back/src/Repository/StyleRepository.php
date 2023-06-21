@@ -39,6 +39,20 @@ class StyleRepository extends ServiceEntityRepository
         }
     }
 
+    public function findByStyleOrder($order = 'ASC')
+    {     
+        // Alias 's' for 'Styles'
+        $select = $this->createQueryBuilder('s');
+
+        if ($order === 'nameASC') {
+            $select->orderBy('s.name', 'ASC');
+        } elseif ($order === 'nameDESC') {
+            $select->orderBy('s.name', 'DESC');
+        }
+
+        return $select->getQuery()->getResult();
+    }
+
 //    /**
 //     * @return Style[] Returns an array of Style objects
 //     */
