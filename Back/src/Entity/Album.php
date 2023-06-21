@@ -25,7 +25,7 @@ class Album
      * @Groups({"style_read"})
      * @Groups({"support_read"})
      * @Groups({"review_read"})
-     * @Groups({"artist_read"})
+     * @Groups({"artist_browse"})
      * @Groups({"user_detail"})
      * 
      */
@@ -50,6 +50,7 @@ class Album
      * @Groups({"album_browse"})
      * @Groups({"style_read"})
      * @Groups({"support_read"})
+     * @Groups({"artist_browse"})
      * @Groups({"user_detail"})
      * @Groups({"favorite_browse"})
      * @Assert\NotBlank(message= "Ce champs ne peut pas être vide")
@@ -85,6 +86,7 @@ class Album
      * @ORM\ManyToMany(targetEntity=Style::class, inversedBy="albums")
      * @Groups({"album_browse"})
      * @Groups({"favorite_browse"})
+     * @Groups({"artist_browse"})
      * @Groups({"user_detail"})
      * @Assert\NotBlank(message= "Ces champs ne peuvent pas être vide")
      */
@@ -111,6 +113,7 @@ class Album
      * @Groups({"favorite_browse"})
      * @Groups({"support_read"})
      * @Groups({"user_detail"})
+     * @Groups({"style_read"})
      * @Assert\NotBlank(message= "Ce champs ne peut pas être vide")
      */
     private $artist;
@@ -139,6 +142,8 @@ class Album
      * @Groups({"song_browse"})
      * @Groups({"support_read"})
      * @Groups({"favorite_browse"})
+     * @Groups({"style_read"})
+     * @Groups({"artist_browse"})
      * @Assert\NotBlank(message= "Ce champs ne peut pas être vide")
      */
     private $image;

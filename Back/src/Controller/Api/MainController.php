@@ -3,6 +3,7 @@
 namespace App\Controller\Api;
 
 use App\Repository\AlbumRepository;
+use App\Repository\ArtistRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -45,6 +46,38 @@ class MainController extends AbstractController
 
         );
     }
+
+     /**
+     * @Route("/api/artists/search", name="app_api_artist_search")
+     */
+    public function searchArtist(Request $request, ArtistRepository $artistRepository ): JsonResponse
+    {
+        
+        $data = json_decode($request->getContent(), false);
+        //dd($data);
+        $artistSearch = $artistRepository->findBySearch($data->search);
+
+        return $this->json(
+            // Data
+            $artistSearch,
+            // Status code
+            200,
+            // HTTP headers
+            [],
+            // Serialization contexts
+            [
+                "groups" =>
+                [
+                    "artist_browse"
+                ]
+            ]
+
+        );
+    }
+
+
+
+
 
 
 
