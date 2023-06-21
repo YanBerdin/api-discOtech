@@ -21,15 +21,17 @@ class StyleController extends AbstractController
      */
     public function index(StyleRepository $styleRepository, PaginatorInterface $paginator, Request $request): Response
     {
-        $allStyles = $styleRepository->findAll();
 
-        $allStyles = $paginator->paginate(
-            $allStyles, 
-            $request->query->getInt('page', 1),20
-        );
+        $order = $request->query->get('order', 'ASC');
+
+        $styles = $styleRepository->findByStyleOrder($order);
+        
+        $pagination = $paginator->paginate($styles, $request->query->getInt('page', 1),20);
 
         return $this->render('back/style/index.html.twig', [
-            'styles'=>$allStyles
+            'styles'=>$pagination,
+            'order'=>$order
+        
         ]);
     }
 

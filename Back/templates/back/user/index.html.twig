@@ -5,6 +5,26 @@
 {% block body %}
     <h1>Liste des utilisateurs</h1>
     <a class="btn btn-success me-2" href="{{ path('app_back_user_new') }}">Créer</a>
+           
+        <div class="d-flex justify-content-end">
+            <form method="get" action="{{ path('app_back_user_index') }}">
+                <div class="form-group">
+                    <label for="order">Trier par :</label>
+                    <select id="order" name="order">
+                        <option value="fnameASC" {% if order == 'firstname' %}selected{% endif %}>Prénom (A-Z)</option>
+                        <option value="fnameDESC" {% if order == 'firstname' %}selected{% endif %}>Prénom (Z-A)</option>
+
+                        <option value="lnameASC" {% if order == 'lastname' %}selected{% endif %}>Nom (A-Z)</option>
+                        <option value="lnameDESC" {% if order == 'lastname' %}selected{% endif %}>Nom (Z-A)</option>
+
+                        <option value="rolesASC" {% if order == 'roles' %}selected{% endif %}>Role (A-Z)</option>
+                        <option value="rolesDESC" {% if order == 'roles' %}selected{% endif %}>Role (Z-A)</option>
+                    </select>
+                    <button class="btn-primary me-2" type="submit">Trier</button>
+                </div>
+            </form>
+        </div>
+
     <table class="table">
         <thead>
             <tr>
