@@ -21,6 +21,7 @@ class Style
      * @Groups({"style_browse"})
      * @Groups({"album_browse"})
      * @Groups({"album_read"})
+     * @Groups({"artist_browse"})
      * @Groups({"favorite_browse"})
      */
     private $id;
@@ -30,6 +31,7 @@ class Style
      * @Groups({"album_browse"})
      * @Groups({"style_browse"})
      * @Groups({"favorite_browse"})
+     * @Groups({"artist_browse"})
      * @Assert\NotBlank(message= "Ce champs ne peut pas être vide")
      */
     private $name;

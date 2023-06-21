@@ -22,6 +22,7 @@ class Artist
      * @Groups({"album_browse"})
      * @Groups({"album_read"})
      * @Groups({"user_detail"})
+     * @Groups({"style_read"})
      */
     private $id;
 
@@ -32,6 +33,7 @@ class Artist
      * @Groups({"artist_browse"})
      * @Groups({"support_read"})
      * @Groups({"user_detail"})
+     * @Groups({"style_read"})
      * @Assert\NotBlank(message= "Ce champs ne peut pas être vide")
      */
     private $fullname;
