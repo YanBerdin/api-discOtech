@@ -21,6 +21,7 @@ class Style
      * @Groups({"style_browse"})
      * @Groups({"album_browse"})
      * @Groups({"album_read"})
+     * @Groups({"favorite_browse"})
      */
     private $id;
 
@@ -28,6 +29,7 @@ class Style
      * @ORM\Column(type="string", length=255)
      * @Groups({"album_browse"})
      * @Groups({"style_browse"})
+     * @Groups({"favorite_browse"})
      * @Assert\NotBlank(message= "Ce champs ne peut pas être vide")
      */
     private $name;

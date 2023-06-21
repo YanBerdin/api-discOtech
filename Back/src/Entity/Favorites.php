@@ -39,7 +39,6 @@ class Favorites
 
     /**
      * @ORM\Column(type="datetime")
-     * 
      * @Groups({"album_read"})
      * @Groups({"favorite_browse"})
      * @Groups({"user_detail"})

@@ -55,13 +55,16 @@ security:
         # User log only for edit, delete and show profil page
         - { path: ^/api/users/*, roles: ROLE_USER }
 
+        # User log only for edit, delete and show profil page
+        - { path: ^/api/favorites/*, roles: ROLE_USER }
+
         # only the admin profile has access to related URLs starting by "back"
         - { path: ^\/back, roles: ROLE_ADMIN}
         # - { path: ^\/back, roles: ROLE_ADMIN }
         # - { path: ^/profile, roles: ROLE_USER }
 
     role_hierarchy:
-        # le ROLE_ADMIN inclus le ROLE_USER
+        # ROLE_ADMIN include ROLE_USER
         ROLE_ADMIN:   ROLE_USER
 
 

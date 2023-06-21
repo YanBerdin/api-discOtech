@@ -21,6 +21,7 @@ class Support
      * @Groups({"support_browse"})
      * @Groups({"album_browse"})
      * @Groups({"album_read"})
+     * @Groups({"favorite_browse"})
      * @Assert\NotBlank(message= "Ce champs ne peut pas être vide")
      */
     private $id;
@@ -29,6 +30,7 @@ class Support
      * @ORM\Column(type="string", length=255)
      * @Groups({"album_browse"})
      * @Groups({"support_browse"})
+     * @Groups({"favorite_browse"})
      * @Assert\NotBlank
      */
     private $name;
