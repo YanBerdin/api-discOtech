@@ -5,6 +5,19 @@
 {% block body %}
     <h1>Liste des artistes</h1>  
         <a class="btn btn-success me-2" href="{{ path('app_back_artist_new') }}">Créer</a>
+
+        <div class="navigation d-flex justify-content-end">
+            <form method="get" action="{{ path('app_back_artist_index') }}">
+                <div class="form-group">
+                    <label for="order">Trier par :</label>
+                    <select id="order" name="order">
+                        <option value="fullnASC" {% if order == 'fullname' %}selected{% endif %}>Nom (A-Z)</option>
+                        <option value="fullnDESC" {% if order == 'fullname' %}selected{% endif %}>Nom (Z-A)</option>
+                    </select>
+                    <button class="btn-primary me-2" type="submit">Trier</button>
+                </div>
+            </form>
+        </div>
         <table class="table">
             <thead>
                 <tr>

@@ -40,7 +40,7 @@ class AlbumRepository extends ServiceEntityRepository
     }
 
     /**
-     * Find Album by Search 
+     * Find Album by Search
      *
      * @param string $search
      * @return Album[]
@@ -52,28 +52,50 @@ class AlbumRepository extends ServiceEntityRepository
         return $this->createQueryBuilder('a')
             // Where name like <search>
             ->andWhere('a.name LIKE :search')
-            ->setParameter('search','%' .$search. '%')
+            ->setParameter('search', '%' .$search. '%')
             ->orderBy("a.name", "ASC")
             ->getQuery()
             ->getResult();
-            
+
+    }
+
+    public function findByAlbumOrder($order = 'ASC')
+    {     
+        
+        $select = $this->createQueryBuilder('a');
+
+        if ($order === 'nameASC') {
+            $select->orderBy('a.name', 'ASC');
+        } elseif ($order === 'nameDESC') {
+            $select->orderBy('a.name', 'DESC');
+        } elseif ($order === 'relDateASC') {
+            $select->orderBy('a.releaseDate', 'ASC');
+        } elseif ($order === 'relDateDESC') {
+            $select->orderBy('a.releaseDate', 'DESC');
+        } elseif ($order === 'creatAtASC') {
+            $select->orderBy('a.createdAt', 'ASC');
+        } elseif ($order === 'creatAtDESC') {
+            $select->orderBy('a.createdAt', 'DESC');
+        }
+
+        return $select->getQuery()->getResult();
     }
 
 
-//    /**
-//     * @return Album[] Returns an array of Album objects
-//     */
-//    public function findByExampleField($value): array
-//    {
-//        return $this->createQueryBuilder('a')
-//            ->andWhere('a.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->orderBy('a.id', 'ASC')
-//            ->setMaxResults(10)
-//            ->getQuery()
-//            ->getResult()
-//        ;
-//    }
+    // /**
+    // * @return Album[] Returns an array of Album objects
+    // */
+    // public function findByExampleField($value): array
+    // {
+    //     return $this->createQueryBuilder('a')
+    //         ->andWhere('a.exampleField = :val')
+    //         ->setParameter('val', $value)
+    //         ->orderBy('a.id', 'ASC')
+    //         ->setMaxResults(10)
+    //         ->getQuery()
+    //         ->getResult()
+    //     ;
+    // }
 
 //    public function findOneBySomeField($value): ?Album
 //    {

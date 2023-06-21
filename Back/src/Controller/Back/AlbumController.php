@@ -21,12 +21,16 @@ class AlbumController extends AbstractController
      */
     public function index(AlbumRepository $albumRepository, PaginatorInterface $paginator, Request $request): Response
     {
-        $allAlbums = $albumRepository->findAll();
 
-        $allAlbums = $paginator->paginate($allAlbums, $request->query->getInt('page', 1),20);
+        $order = $request->query->get('order', 'ASC');
+
+        $albums = $albumRepository->findByAlbumOrder($order);
+
+        $pagination = $paginator->paginate($albums, $request->query->getInt('page', 1),20 );
 
         return $this->render('back/album/index.html.twig', [
-            'albums'=>$allAlbums
+            'albums' => $pagination,
+            'order' => $order,
         ]);
     }
 

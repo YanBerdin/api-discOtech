@@ -39,6 +39,28 @@ class SongRepository extends ServiceEntityRepository
         }
     }
 
+    public function findBySongOrder($order = 'ASC')
+    {     
+        // Alias 's' for 'Song'
+        $select = $this->createQueryBuilder('s');
+
+        if ($order === 'ttlASC') {
+            $select->orderBy('s.title', 'ASC');
+        } elseif ($order === 'ttlDESC') {
+            $select->orderBy('s.title', 'DESC');
+        } elseif ($order === 'tNbASC') {
+            $select->orderBy('s.trackNb', 'ASC');
+        }elseif ($order === 'tNbDESC') {
+            $select->orderBy('s.trackNb', 'DESC');
+        }elseif ($order === 'drtASC') {
+            $select->orderBy('s.duration', 'ASC');
+        }elseif ($order === 'drtDESC') {
+            $select->orderBy('s.duration', 'DESC');
+        }
+
+        return $select->getQuery()->getResult();
+    }
+
 //    /**
 //     * @return Song[] Returns an array of Song objects
 //     */

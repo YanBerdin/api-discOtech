@@ -7,6 +7,26 @@
             <h1>Liste des musiques</h1>
             <a class="btn btn-success me-2" style= "justify-content-end" href="{{ path('app_back_song_new') }}">Créer</a>
         </div>
+
+        <div class="navigation d-flex justify-content-end">
+            <form method="get" action="{{ path('app_back_song_index') }}">
+                <div class="form-group">
+                    <label for="order">Trier par :</label>
+                    <select id="order" name="order">
+                        <option value="ttlASC" {% if order == 'title' %}selected{% endif %}>Nom (A-Z)</option>
+                        <option value="ttlDESC" {% if order == 'title' %}selected{% endif %}>Nom (Z-A)</option>
+
+                        <option value="tNbASC" {% if order == 'trackNb' %}selected{% endif %}>Piste (1-9)</option>
+                        <option value="tNbDESC" {% if order == 'trackNb' %}selected{% endif %}>Piste (9-1)</option>
+
+                        <option value="drtASC" {% if order == 'duration' %}selected{% endif %}>Durée (plus longue)</option>
+                        <option value="drtDESC" {% if order == 'duration' %}selected{% endif %}>Durée (plus courte)</option>
+                    </select>
+                    <button class="btn-primary me-2" type="submit">Trier</button>
+                </div>
+            </form>
+        </div>
+        
     <table class="table">
         <thead>
             <tr>
