@@ -41,10 +41,8 @@
         {% for style in styles %}
             <tr>
                 <td>{{ style.name }}</td>
-                <td>{{ style.image }}</td>
-                <td>
-                    <a class="btn btn-info me-1" href="{{ path('app_back_style_show', {'id': style.id}) }}">voir plus</a>
-                </td>
+                <td><div class="img-fluid"><img src="{{ style.image }}" alt="Style_cover" style="width: 150px; height: 150px;" ></div></td>
+                <td><a class="btn btn-info me-1" href="{{ path('app_back_style_show', {'id': style.id}) }}">voir plus</a></td>
             </tr>
         {% else %}
             <tr>

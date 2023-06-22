@@ -11,16 +11,14 @@
             <div class="form-group mr-2">
                 <label for="order">Trier par :</label>
                 <select id="order" name="order" class="form-control">
-                        <option value="fnameASC" {% if order == 'fnameASC' %}selected{% endif %}>Prénom (A-Z)</option>
-                        <option value="fnameDESC" {% if order == 'fnameDESC' %}selected{% endif %}>Prénom (Z-A)</option>
-
-                        <option value="lnameASC" {% if order == 'lnameASC' %}selected{% endif %}>Nom (A-Z)</option>
-                        <option value="lnameDESC" {% if order == 'lastnameDESC' %}selected{% endif %}>Nom (Z-A)</option>
-
-                        <option value="rolesASC" {% if order == 'rolesASC' %}selected{% endif %}>Role (A-Z)</option>
-                        <option value="rolesDESC" {% if order == 'rolesDESC' %}selected{% endif %}>Role (Z-A)</option>
-                    </select>
-                    <button class="btn-primary me-2" type="submit">Trier</button>
+                    <option value="fnameASC" {% if order == 'fnameASC' %}selected{% endif %}>Prénom (A-Z)</option>
+                    <option value="fnameDESC" {% if order == 'fnameDESC' %}selected{% endif %}>Prénom (Z-A)</option>
+                    <option value="lnameASC" {% if order == 'lnameASC' %}selected{% endif %}>Nom (A-Z)</option>
+                    <option value="lnameDESC" {% if order == 'lastnameDESC' %}selected{% endif %}>Nom (Z-A)</option>
+                    <option value="rolesASC" {% if order == 'rolesASC' %}selected{% endif %}>Role (A-Z)</option>
+                    <option value="rolesDESC" {% if order == 'rolesDESC' %}selected{% endif %}>Role (Z-A)</option>
+                </select>
+                <button class="btn-primary me-2" type="submit">Trier</button>
                 </div>
             </form>
         </div>
@@ -31,7 +29,7 @@
                         <option value="{{ limit }}" {% if limit == currentLimit %}selected{% endif %}>{{ limit }}</option>
                     {% endfor %}
                 </select>
-                <button class="btn btn-primary ml-2" type="submit">Appliquer</button>
+                <button class="btn-primary ml-2" type="submit">Appliquer</button>
             </div>
         </form>
     </div>
@@ -43,7 +41,7 @@
                 <th>Email</th>
                 <th>Mot de passe</th>
                 <th>Roles</th>
-                <th></th>
+                <th>Avatar</th>
             </tr>
         </thead>
         <tbody>
@@ -54,6 +52,7 @@
                 <td>{{ user.email }}</td>
                 <td>{{ user.password }}</td>
                 <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
+                <td><div class="img-fluid"><img src="{{ user.avatar }}" alt="Avatar" style="width: 150px; height: 150px;" ></div></td>
                 <td>
                     <a class="btn btn-info me-1" href="{{ path('app_back_user_show', {'id': user.id}) }}">voir plus</a>
                 </td>
