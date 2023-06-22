@@ -25,12 +25,17 @@ class StyleController extends AbstractController
         $order = $request->query->get('order', 'ASC');
 
         $styles = $styleRepository->findByStyleOrder($order);
+
+        // Get the limit of items per page from the request, default to 20 if not provided
+        $limit = $request->query->getInt('limit', 20);
         
-        $pagination = $paginator->paginate($styles, $request->query->getInt('page', 1),20);
+        $pagination = $paginator->paginate($styles, $request->query->getInt('page', 1), $limit);
 
         return $this->render('back/style/index.html.twig', [
             'styles'=>$pagination,
-            'order'=>$order
+            'order'=>$order,
+            'limits' => [10, 20, 50], // List of options for the number of items per page
+            'currentLimit' => $limit, // Currently selected value for the number of items per page
         
         ]);
     }
