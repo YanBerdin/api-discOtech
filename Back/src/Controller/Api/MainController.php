@@ -76,6 +76,32 @@ class MainController extends AbstractController
     }
 
 
+    /**
+     * @Route("/api/albums/random", name="app_api_album_random")
+     */
+    public function random(AlbumRepository $albumRepository): JsonResponse
+    {
+
+        $randomAlbum = $albumRepository->displayRandomAlbums(20);
+
+        return $this->json(
+            // Data
+            $randomAlbum,
+            // Status code
+            200,
+            // HTTP headers
+            [],
+            // Serialization contexts
+            [
+                "groups" =>
+                [
+                    "album_browse"
+                ]
+            ]
+
+        );
+    }
+
 
 
 

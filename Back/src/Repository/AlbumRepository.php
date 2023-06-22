@@ -4,6 +4,8 @@ namespace App\Repository;
 
 use App\Entity\Album;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\Query\Expr\Func;
+use Doctrine\ORM\Query\ResultSetMapping;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
@@ -80,6 +82,26 @@ class AlbumRepository extends ServiceEntityRepository
 
         return $select->getQuery()->getResult();
     }
+
+    /**
+     * Return $limit x Albums randomly
+     *
+     * @param int $limit
+     * @return void
+     */
+    public function displayRandomAlbums($limit)
+    {
+        $rsm = new ResultSetMapping();
+
+        $em = $this->getEntityManager();
+
+        $query = $em->createNativeQuery('SELECT * FROM `album` ORDER BY RAND() LIMIT '. $limit , $rsm);
+    
+        $result = $query->getResult();
+
+        return $result;
+    }
+
 
 
     // /**
