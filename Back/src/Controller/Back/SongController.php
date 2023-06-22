@@ -23,13 +23,18 @@ class SongController extends AbstractController
     {
         $order = $request->query->get('order', 'ASC');
 
+        // Get the limit of items per page from the request, default to 20 if not provided
+        $limit = $request->query->getInt('limit', 20);
+
         $songs = $songRepository->findBySongOrder($order);
         
-        $pagination = $paginator->paginate($songs, $request->query->getInt('page', 1),20);
+        $pagination = $paginator->paginate($songs, $request->query->getInt('page', 1), $limit);
 
         return $this->render('back/song/index.html.twig', [
             'songs'=>$pagination,
-            'order'=>$order
+            'order'=>$order,
+            'limits' => [10, 20, 50], // List of options for the number of items per page
+            'currentLimit' => $limit, // Currently selected value for the number of items per page
         
         ]);
     }

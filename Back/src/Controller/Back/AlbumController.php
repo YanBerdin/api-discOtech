@@ -32,7 +32,7 @@ class AlbumController extends AbstractController
     
         // Paginate the albums using the PaginatorInterface
         $pagination = $paginator->paginate($albums, $request->query->getInt('page', 1), $limit);
-    dd($pagination);
+        
         return $this->render('back/album/index.html.twig', [
             'albums' => $pagination,
             'order' => $order,
@@ -43,25 +43,23 @@ class AlbumController extends AbstractController
     /**
      * @Route("/new", name="app_back_album_new", methods={"GET", "POST"})
      */
-public function new(Request $request, AlbumRepository $albumRepository): Response
-{
-    $album = new Album();
-    $form = $this->createForm(AlbumType::class, $album);
-    $form->handleRequest($request);
+    public function new(Request $request, AlbumRepository $albumRepository): Response
+    {
+        $album = new Album();
+        $form = $this->createForm(AlbumType::class, $album);
+        $form->handleRequest($request);
 
-    if ($form->isSubmitted() && $form->isValid()) {
-        // Add the album to the repository and persist it
-        $albumRepository->add($album, true);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $albumRepository->add($album, true);
 
-        // Redirect to the album index page
-        return $this->redirectToRoute('app_back_album_index', [], Response::HTTP_SEE_OTHER);
-    }
+            return $this->redirectToRoute('app_back_album_index', [], Response::HTTP_SEE_OTHER);
+        }
 
         return $this->renderForm('back/album/new.html.twig', [
             'album' => $album,
-        '   form' => $form,
-    ]);
-}
+            'form' => $form,
+        ]);
+    }
 
     /**
      * @Route("/{id}", name="app_back_album_show", methods={"GET"})
