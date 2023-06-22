@@ -4,7 +4,6 @@ namespace App\Repository;
 
 use App\Entity\Album;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
-use Doctrine\ORM\Query\Expr\Func;
 use Doctrine\ORM\Query\ResultSetMapping;
 use Doctrine\Persistence\ManagerRegistry;
 
@@ -83,6 +82,7 @@ class AlbumRepository extends ServiceEntityRepository
         return $select->getQuery()->getResult();
     }
 
+
     /**
      * Return $limit x Albums randomly
      *
@@ -91,16 +91,51 @@ class AlbumRepository extends ServiceEntityRepository
      */
     public function displayRandomAlbums($limit)
     {
-        $rsm = new ResultSetMapping();
+        //? https://github.com/beberlei/DoctrineExtensions
+        //? https://stackoverflow.com/questions/10762538/how-to-select-randomly-with-doctrine/40959512#40959512
 
-        $em = $this->getEntityManager();
+        $query = $this->createQueryBuilder('a')
+        ->orderBy('RAND()')
+        ->setMaxResults($limit)
+        ->getQuery();
 
-        $query = $em->createNativeQuery('SELECT * FROM `album` ORDER BY RAND() LIMIT '. $limit , $rsm);
-    
-        $result = $query->getResult();
+    return $query->getResult();
 
-        return $result;
     }
+
+    // /**
+    //  * Return $limit x Albums randomly
+    //  * 
+    //  *
+    //  * @param int $limit
+    //  * @return void
+    //  */
+    // public function displayRandomAlbumsV2($limit)
+    // {
+    // ! ATTENTION: solution fonctionnel mais difficielemnt maintenanble en cas de modification des entitées !
+
+    //     $rsm = new ResultSetMapping();
+
+    //     $rsm->addEntityResult(Album::class, 'a');
+    //     $rsm->addFieldResult('a', 'id', 'id');
+    //     $rsm->addFieldResult('a', 'name', 'name');
+    //     $rsm->addFieldResult('a', 'release_date', 'releaseDate');
+    //     $rsm->addFieldResult('a', 'edition', 'edition');
+    //     $rsm->addFieldResult('a', 'created_at', 'createdAt');
+    //     $rsm->addFieldResult('a', 'updated_at', 'updatedAt');
+    //     $rsm->addFieldResult('a', 'image', 'image');
+    //     $rsm->addMetaResult('a', 'artist_id', 'artist_id');
+    //     $rsm->addMetaResult('a', 'style_id', 'style_id');
+    //     $rsm->addMetaResult('a', 'support_id', 'support_id');
+
+    //     $em = $this->getEntityManager();
+
+    //     $query = $em->createNativeQuery('SELECT * FROM `album` ORDER BY RAND() LIMIT '. $limit , $rsm);
+    
+    //     $result = $query->getResult();
+
+    //     return $result;
+    // }
 
 
 

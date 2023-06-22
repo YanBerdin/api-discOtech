@@ -2,13 +2,14 @@
 
 namespace App\Controller\Api;
 
+use App\Entity\Album;
 use App\Repository\AlbumRepository;
 use App\Repository\ArtistRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
-
+use Symfony\Component\Serializer\SerializerInterface;
 
 class MainController extends AbstractController
 {
@@ -37,12 +38,7 @@ class MainController extends AbstractController
             // HTTP headers
             [],
             // Serialization contexts
-            [
-                "groups" =>
-                [
-                    "album_browse"
-                ]
-            ]
+            ["groups" =>["album_browse"]]
 
         );
     }
@@ -65,13 +61,7 @@ class MainController extends AbstractController
             // HTTP headers
             [],
             // Serialization contexts
-            [
-                "groups" =>
-                [
-                    "artist_browse"
-                ]
-            ]
-
+            ["groups" =>["artist_browse"]]
         );
     }
 
@@ -79,10 +69,10 @@ class MainController extends AbstractController
     /**
      * @Route("/api/albums/random", name="app_api_album_random")
      */
-    public function random(AlbumRepository $albumRepository): JsonResponse
+    public function random(AlbumRepository $albumRepository, SerializerInterface $serializer): JsonResponse
     {
-
-        $randomAlbum = $albumRepository->displayRandomAlbums(20);
+        // Select random 14 albums for homepage
+        $randomAlbum = $albumRepository->displayRandomAlbums(14);
 
         return $this->json(
             // Data
@@ -92,20 +82,8 @@ class MainController extends AbstractController
             // HTTP headers
             [],
             // Serialization contexts
-            [
-                "groups" =>
-                [
-                    "album_browse"
-                ]
-            ]
-
+            ["groups" =>["album_browse"]]
         );
     }
-
-
-
-
-
-
-    
+  
 }
