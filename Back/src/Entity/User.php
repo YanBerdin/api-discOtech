@@ -2,7 +2,6 @@
 
 namespace App\Entity;
 
-use App\Repository\UserRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
@@ -23,6 +22,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * @Groups({"review_read"})
      * @Groups({"album_read"})
      * @Groups({"user_detail"})
+     * @Groups({"favorite_browse"})
      */
     private $id;
 
@@ -31,6 +31,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * @Groups({"album_read"})
      * @Groups({"review_read"})
      * @Groups({"user_detail"})
+     * @Groups({"favorite_browse"})
      * @Assert\NotBlank(message= "Ce champs ne peut pas être vide")
      * @Assert\Email(message = "l'Email '{{ value }}' n'est pas valide.")
      */
@@ -54,6 +55,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * @Groups({"album_read"})
      * @Groups({"review_read"})
      * @Groups({"user_detail"})
+     * @Groups({"favorite_browse"})
      * Assert\NotBlank
      * @Assert\NotBlank(message= "Ce champs ne peut pas être vide")
      */
@@ -64,6 +66,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * @Groups({"album_read"})
      * @Groups({"review_read"})
      * @Groups({"user_detail"})
+     * @Groups({"favorite_browse"})
      * @Assert\NotBlank(message= "Ce champs ne peut pas être vide")
      */
     private $lastname;

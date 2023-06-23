@@ -190,9 +190,7 @@ class AlbumController extends AbstractController
                     
                 ]
             ]
-
         );
-
     }
 
     /**

@@ -170,7 +170,7 @@ class AppFixtures extends Fixture
         // TODO : make ALBUM (200 albums)
         // =======================================================
 
-        /** @var Album[] $allAlbum */
+           /** @var Album[] $allAlbum */
         $allAlbum = [];
 
         for($i=0; $i < 200 ; $i++){
@@ -229,7 +229,7 @@ class AppFixtures extends Fixture
         }
 
         // =======================================================
-        // TODO : Associate ALBUM with 1 or 2 SUPPORT
+        // TODO : Associate ALBUM with 1 or 3 SUPPORT
         // =======================================================
 
         foreach ($allAlbum as $album)
@@ -244,3 +244,5 @@ class AppFixtures extends Fixture
         $manager->flush();
     }
 }
+
+
