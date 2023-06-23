@@ -8,6 +8,7 @@
 
         <table class="table">
             <tbody>
+
              <tr>
                     <th>Image</th>
                     <td><div class="img-fluid"><img src="{{ album.image }}" alt="Pochette" style="width: 200px; height: 200px; border: 1px"></div>
@@ -50,6 +51,19 @@
                     <th>Mise en ligne</th>
                     <td>{{ album.createdAt ? album.createdAt|date('d-m-Y') : '' }}</td>
                 </tr>
+                <tr>
+                    <th>Musiques</th>
+                    <td>
+                        <ul>
+                            {% for song in album.songs %}
+                                <li style="list-style-type: none">
+                                    {{song.trackNb}} . {{song.title}} ({{song.duration}})
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </td>
+                </tr>
+
             </tbody>
         </table>
 

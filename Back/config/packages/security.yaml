@@ -35,6 +35,7 @@ security:
             logout:
                 path: app_logout
                 # where to redirect after logout
+                # target: app_name_road
                 target: default
 
             # activate different ways to authenticate
