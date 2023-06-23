@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Album;
 use App\Entity\Artist;
+use App\Entity\Song;
 use App\Entity\Style;
 use App\Entity\Support;
 use Doctrine\ORM\EntityRepository;
@@ -15,6 +16,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\Count;
 
+
 class AlbumType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
@@ -23,6 +25,27 @@ class AlbumType extends AbstractType
             ->add('name', TextType::class, [
                 "label" => "Nom de l'album :",
                 "attr" => ["placeholder" => "Nevermind, fantom..."]
+            ])
+
+            ->add('trackNb', EntityType::class, [
+                "mapped" => false,
+                "class" => Song::class,
+                'choice_label' => 'trackNb',
+                "label" => "N° de piste"
+            ])
+
+            ->add('title', EntityType::class, [
+                "mapped" => false,
+                "class" => Song::class,
+                'choice_label' => 'title',
+                "label" => "titre"
+            ])
+
+            ->add('duration', EntityType::class, [
+                "mapped" => false,
+                "class" => Song::class,
+                'choice_label' => 'duration',
+                "label" => "duration"
             ])
 
             ->add('edition', TextType::class, [
@@ -90,6 +113,8 @@ class AlbumType extends AbstractType
                         ->orderBy('artist.fullname', 'ASC');
                     }
             ])
+
+            
         ;
     }
 

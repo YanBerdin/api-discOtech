@@ -110,6 +110,7 @@ class Album
     /**
      * @ORM\ManyToOne(targetEntity=Artist::class, inversedBy="albums")
      * @Groups({"album_browse"})
+     * @Groups({"album_read"})
      * @Groups({"favorite_browse"})
      * @Groups({"support_read"})
      * @Groups({"user_detail"})

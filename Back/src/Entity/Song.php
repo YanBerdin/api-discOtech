@@ -51,6 +51,7 @@ class Song
      * @ORM\ManyToOne(targetEntity=Album::class, inversedBy="songs")
      * @Groups({"song_browse"})
      * @Groups({"song_read"})
+     * @Groups({"album_read"})
      * @Assert\NotBlank(message= "Ce champs ne peut pas être vide")
      */
     private $album;
