@@ -35,7 +35,7 @@ class Song
      * @Groups({"song_browse"})
      * @Groups({"album_browse"})
      * @Groups({"song_read"})
-     * @Assert\NotBlank(message= "Ce champs ne peut pas être vide")
+     * 
      */
     private $duration;
 

@@ -29,9 +29,11 @@ class AlbumType extends AbstractType
             ])
 
             ->add('songs', CollectionType::class, [
+                'by_reference' => false,
                 "entry_type" => SongType::class,
                 "entry_options" => ['label' => false],
                 'allow_add' => true,
+                
 
             ])
 
