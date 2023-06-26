@@ -5,6 +5,7 @@
 {% block body %}
     <h1>Liste des utilisateurs</h1>
     <a class="btn btn-success me-2" href="{{ path('app_back_user_new') }}">Créer</a>
+
 <div class="d-flex justify-content-end">
     <form method="get" action="{{ path('app_back_user_index') }}" class="form-inline">
         <div class="d-flex">
@@ -18,21 +19,21 @@
                     <option value="rolesASC" {% if order == 'rolesASC' %}selected{% endif %}>Role (A-Z)</option>
                     <option value="rolesDESC" {% if order == 'rolesDESC' %}selected{% endif %}>Role (Z-A)</option>
                 </select>
-                <button class="btn-primary me-2" type="submit">Trier</button>
-                </div>
-            </form>
-        </div>
-    <div class="form-group">
+                <button class="btn btn-primary ml-2" type="submit">Trier</button>
+            </div>
+            <div class="form-group">
                 <label for="limit">Afficher :</label>
                 <select id="limit" name="limit" class="form-control">
                     {% for limit in limits %}
                         <option value="{{ limit }}" {% if limit == currentLimit %}selected{% endif %}>{{ limit }}</option>
                     {% endfor %}
                 </select>
-                <button class="btn-primary ml-2" type="submit">Appliquer</button>
+                <button class="btn btn-primary ml-2" type="submit">Appliquer</button>
             </div>
-        </form>
-    </div>
+        </div>
+    </form>
+</div>
+
     <table class="table">
         <thead>
             <tr>
@@ -45,23 +46,23 @@
             </tr>
         </thead>
         <tbody>
-        {% for user in users %}
-            <tr>
-                <td>{{ user.lastname }}</td>
-                <td>{{ user.firstname }}</td>
-                <td>{{ user.email }}</td>
-                <td>{{ user.password }}</td>
-                <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
-                <td><div class="img-fluid"><img src="{{ user.avatar }}" alt="Avatar" style="width: 150px; height: 150px;" ></div></td>
-                <td>
-                    <a class="btn btn-info me-1" href="{{ path('app_back_user_show', {'id': user.id}) }}">voir plus</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="8">Aucun utilisateur disponible</td>
-            </tr>
-        {% endfor %}
+            {% for user in users %}
+                <tr>
+                    <td>{{ user.lastname }}</td>
+                    <td>{{ user.firstname }}</td>
+                    <td>{{ user.email }}</td>
+                    <td>{{ user.password }}</td>
+                    <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
+                    <td><div class="img-fluid"><img src="{{ user.avatar }}" alt="Avatar" style="width: 150px; height: 150px;" ></div></td>
+                    <td>
+                        <a class="btn btn-info me-1" href="{{ path('app_back_user_show', {'id': user.id}) }}">voir plus</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="8">Aucun utilisateur disponible</td>
+                </tr>
+            {% endfor %}
         </tbody>
     </table>
         <div class="navigation d-flex justify-content-center">
