@@ -158,7 +158,6 @@ class Album
         $this->reviews = new ArrayCollection();
     }
 
-
     public function getId(): ?int
     {
         return $this->id;

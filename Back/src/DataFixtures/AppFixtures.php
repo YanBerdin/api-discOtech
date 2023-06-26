@@ -37,7 +37,7 @@ class AppFixtures extends Fixture
         $admin->setRoles(['ROLE_ADMIN']);
         $admin->setFirstname("admin");
         $admin->setLastname("admin");
-        $admin->setAvatar("");
+        $admin->setAvatar("https://media.discordapp.net/attachments/1113101484519866380/1118445749890457661/eva2.png");
 
         $manager->persist($admin);
 
@@ -49,7 +49,7 @@ class AppFixtures extends Fixture
         $user->setRoles(['ROLE_USER']);
         $user->setFirstname("user");
         $user->setLastname("user");
-        $user->setAvatar("");
+        $user->setAvatar("https://media.discordapp.net/attachments/1113101484519866380/1118445361611153529/eva3.png");
 
         $manager->persist($user);
 
@@ -170,7 +170,7 @@ class AppFixtures extends Fixture
         // TODO : make ALBUM (200 albums)
         // =======================================================
 
-        /** @var Album[] $allAlbum */
+           /** @var Album[] $allAlbum */
         $allAlbum = [];
 
         for($i=0; $i < 200 ; $i++){
@@ -229,7 +229,7 @@ class AppFixtures extends Fixture
         }
 
         // =======================================================
-        // TODO : Associate ALBUM with 1 or 2 SUPPORT
+        // TODO : Associate ALBUM with 1 or 3 SUPPORT
         // =======================================================
 
         foreach ($allAlbum as $album)
@@ -244,3 +244,5 @@ class AppFixtures extends Fixture
         $manager->flush();
     }
 }
+
+

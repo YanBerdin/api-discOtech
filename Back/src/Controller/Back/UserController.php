@@ -27,11 +27,16 @@ class UserController extends AbstractController
 
         $users = $userRepository->findByUserOrder($order);
 
-        $pagination = $paginator->paginate($users, $request->query->getInt('page', 1),20);
+        // Get the limit of items per page from the request, default to 20 if not provided
+        $limit = $request->query->getInt('limit', 20);
+
+        $pagination = $paginator->paginate($users, $request->query->getInt('page', 1),$limit);
 
         return $this->render('back/user/index.html.twig', [
             'users' =>  $pagination,
             'order' => $order,
+            'limits' => [10, 20, 50], // List of options for the number of items per page
+            'currentLimit' => $limit, // Currently selected value for the number of items per page
         ]);
     }
 
