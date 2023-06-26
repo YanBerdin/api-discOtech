@@ -103,6 +103,20 @@ class AlbumRepository extends ServiceEntityRepository
 
     }
 
+
+    public function displayLatestAdd($limit)
+    {
+        return $this->createQueryBuilder('a')
+        ->orderBy("a.createdAt", "DESC")
+        ->setMaxResults($limit)
+        ->getQuery()
+        ->getResult();
+
+    }
+
+
+
+
     // /**
     //  * Return $limit x Albums randomly
     //  * 

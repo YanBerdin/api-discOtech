@@ -53,6 +53,10 @@ class FavoritesRepository extends ServiceEntityRepository
             ->getOneOrNullResult();
     }
 
+    
+
+
+
     // /**
     //  * @return Favorites[] Returns an array of Favorites objects
     //  */

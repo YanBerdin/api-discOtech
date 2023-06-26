@@ -9,7 +9,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\Serializer\SerializerInterface;
 
 class MainController extends AbstractController
 {
@@ -65,11 +64,10 @@ class MainController extends AbstractController
         );
     }
 
-
     /**
      * @Route("/api/albums/random", name="app_api_album_random")
      */
-    public function random(AlbumRepository $albumRepository, SerializerInterface $serializer): JsonResponse
+    public function random(AlbumRepository $albumRepository): JsonResponse
     {
         // Select random 14 albums for homepage
         $randomAlbum = $albumRepository->displayRandomAlbums(14);
@@ -86,4 +84,26 @@ class MainController extends AbstractController
         );
     }
   
+    /**
+     * @Route("/api/albums/latestAdd", name="app_api_album_latestAdd")
+     */
+    public function latestAdd(AlbumRepository $albumRepository)
+    {
+        // Select 14 latest albums
+        $lastestAddAlbums = $albumRepository->displayLatestAdd(14);
+
+        return $this->json($lastestAddAlbums,200,[],["groups" => ["album_browse"]]
+        );
+        
+    }
+
+    public function ourFavorites()
+    {
+        
+    }
+
+
+    
+
+
 }
