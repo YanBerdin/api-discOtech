@@ -27,7 +27,7 @@ class AlbumController extends AbstractController
     {
         // List all albums
         $allAlbums = $albumRepository->findAll();
-
+        
         return $this->json(
             // Data
             $allAlbums,
