@@ -13,7 +13,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class MainController extends AbstractController
 {
     /**
-     * @Route("/api/albums/search", name="app_api_album_search", methods={"GET"})
+     * @Route("/api/albums/search", name="app_api_album_search")
      */
     public function searchAlbum(Request $request, AlbumRepository $albumRepository ): JsonResponse
     {
@@ -43,7 +43,7 @@ class MainController extends AbstractController
     }
 
      /**
-     * @Route("/api/artists/search", name="app_api_artist_search", methods={"GET"})
+     * @Route("/api/artists/search", name="app_api_artist_search")
      */
     public function searchArtist(Request $request, ArtistRepository $artistRepository ): JsonResponse
     {
@@ -65,7 +65,7 @@ class MainController extends AbstractController
     }
 
     /**
-     * @Route("/api/albums/random", name="app_api_album_random", methods={"GET"})
+     * @Route("/api/albums/random", name="app_api_album_random")
      */
     public function random(AlbumRepository $albumRepository): JsonResponse
     {
@@ -85,7 +85,7 @@ class MainController extends AbstractController
     }
   
     /**
-     * @Route("/api/albums/latest", name="app_api_album_latestAdd", methods={"GET"})
+     * @Route("/api/albums/latest", name="app_api_album_latestAdd")
      */
     public function latestAdd(AlbumRepository $albumRepository)
     {
@@ -98,7 +98,7 @@ class MainController extends AbstractController
     }
  
     /**
-     * @Route("/api/albums/ourfavorites", name="app_api_album_ourFavorites", methods={"GET"})
+     * @Route("/api/albums/ourfavorites", name="app_api_album_ourFavorites")
      */
     public function ourFavorites(AlbumRepository $albumRepository)
     {
