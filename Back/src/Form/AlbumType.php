@@ -10,6 +10,7 @@ use App\Entity\Support;
 use Doctrine\ORM\EntityRepository;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -27,25 +28,11 @@ class AlbumType extends AbstractType
                 "attr" => ["placeholder" => "Nevermind, fantom..."]
             ])
 
-            ->add('trackNb', EntityType::class, [
-                "mapped" => false,
-                "class" => Song::class,
-                'choice_label' => 'trackNb',
-                "label" => "N° de piste"
-            ])
+            ->add('songs', CollectionType::class, [
+                "entry_type" => SongType::class,
+                "entry_options" => ['label' => false],
+                'allow_add' => true,
 
-            ->add('title', EntityType::class, [
-                "mapped" => false,
-                "class" => Song::class,
-                'choice_label' => 'title',
-                "label" => "titre"
-            ])
-
-            ->add('duration', EntityType::class, [
-                "mapped" => false,
-                "class" => Song::class,
-                'choice_label' => 'duration',
-                "label" => "duration"
             ])
 
             ->add('edition', TextType::class, [

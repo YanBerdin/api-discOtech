@@ -3,10 +3,13 @@
 namespace App\Controller\Back;
 
 use App\Entity\Album;
+use App\Entity\Song;
 use App\Form\AlbumType;
 use App\Repository\AlbumRepository;
+use DateTime;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Form\Extension\Core\Type\TimeType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -46,6 +49,26 @@ class AlbumController extends AbstractController
     public function new(Request $request, AlbumRepository $albumRepository): Response
     {
         $album = new Album();
+
+        // dummy code - add some example tags to the task
+        // (otherwise, the template will render an empty list of tags)
+        $song1 = new Song();
+        $song1->setTrackNb(1);
+        $song1->setTitle('title1');
+        $song1->setDuration(time());
+        $song1->setPreview('song');
+        $album->getSongs()->add($song1);
+
+        $song2 = new Song(); 
+        $song2->setTrackNb(2);
+        $song2->setTitle('title2');
+        $song2->setDuration(time());
+        $song2->setPreview('song2');
+        $album->getSongs()->add($song2);
+
+        // end dummy code
+
+
         $form = $this->createForm(AlbumType::class, $album);
         $form->handleRequest($request);
 

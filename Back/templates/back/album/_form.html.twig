@@ -1,5 +1,16 @@
 {{ form_start(form) }}
     {{ form_widget(form) }}
+    
+    <h3>Songs</h3>
+    <ul class="Songs">
+        {% for song in form.songs %}
+            <li>{{ form_row(song.trackNb) }}</li>
+            <li>{{ form_row(song.title) }}</li>
+            <li>{{ form_row(song.duration) }}</li>
+            <li>{{ form_row(song.preview) }}</li>
+        {% endfor %}
+    </ul>
+
      <div class="d-flex justify-content-end">
         <button class="btn btn-warning me-5">{{ button_label|default('Sauvgarder') }}</button>
     </div>

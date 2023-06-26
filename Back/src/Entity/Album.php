@@ -104,6 +104,7 @@ class Album
     /**
      * @ORM\OneToMany(targetEntity=Song::class, mappedBy="album",orphanRemoval=true)
      * @Groups({"album_browse"})
+     * @Groups({"album_read"})
      */
     private $songs;
 
