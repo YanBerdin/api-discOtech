@@ -48,6 +48,7 @@
         </thead>
         <tbody>
             {% for album in albums %}
+            {% dump(album)%}
                 <tr>
                     <td>{{ album.name }}</td>
                     <td>{{ album.artist.getArtistFullnameInterface() }}</td>

@@ -12,28 +12,27 @@
             <div class="d-flex">
                 <div class="form-group mr-2">
                     <label for="order">Trier par :</label>
-                        <select id="order" name="order" class="form-control">
-                            <option value="ttlASC" {% if order == 'ttlASC' %}selected{% endif %}>Nom (A-Z)</option>
-                            <option value="ttlDESC" {% if order == 'ttlDESC' %}selected{% endif %}>Nom (Z-A)</option>
+                    <select id="order" name="order" class="form-control">
+                        <option value="ttlASC" {% if order == 'ttlASC' %}selected{% endif %}>Nom (A-Z)</option>
+                        <option value="ttlDESC" {% if order == 'ttlDESC' %}selected{% endif %}>Nom (Z-A)</option>
 
-                            <option value="tNbASC" {% if order == 'tNbASC' %}selected{% endif %}>Piste (1-9)</option>
-                            <option value="tNbDESC" {% if order == 'tNbDESC' %}selected{% endif %}>Piste (9-1)</option>
+                        <option value="tNbASC" {% if order == 'tNbASC' %}selected{% endif %}>Piste (1-9)</option>
+                        <option value="tNbDESC" {% if order == 'tNbDESC' %}selected{% endif %}>Piste (9-1)</option>
 
-                            <option value="drtASC" {% if order == 'drtASC' %}selected{% endif %}>Durée (plus courte)</option>
-                            <option value="drtDESC" {% if order == 'drtDESC' %}selected{% endif %}>Durée (plus longue)</option>
-                        </select>
+                        <option value="drtASC" {% if order == 'drtASC' %}selected{% endif %}>Durée (plus courte)</option>
+                        <option value="drtDESC" {% if order == 'drtDESC' %}selected{% endif %}>Durée (plus longue)</option>
+                    </select>
                         <button class="btn-primary mt-2 btn-md" type="submit">Trier</button>
-                    </div>
-                </form>
+                </div>
             </div>
-            <div class="form-group mr-2">
+            <div class="form-group">
                 <label for="limit">Afficher :</label>
                 <select id="limit" name="limit" class="form-control">
                     {% for limit in limits %}
                         <option value="{{ limit }}" {% if limit == currentLimit %}selected{% endif %}>{{ limit }}</option>
                     {% endfor %}
                 </select>
-                <button class="btn btn-primary mt-2 btn-md" type="submit">Appliquer</button>
+                <button class="btn btn-primary ml-2" type="submit">Appliquer</button>
             </div>
         </form>
     </div>
