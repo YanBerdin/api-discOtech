@@ -13,7 +13,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class MainController extends AbstractController
 {
     /**
-     * @Route("/api/albums/search", name="app_api_album_search")
+     * @Route("/api/albums/search", name="app_api_album_search", methods={"GET"})
      */
     public function searchAlbum(Request $request, AlbumRepository $albumRepository ): JsonResponse
     {
@@ -43,7 +43,7 @@ class MainController extends AbstractController
     }
 
      /**
-     * @Route("/api/artists/search", name="app_api_artist_search")
+     * @Route("/api/artists/search", name="app_api_artist_search", methods={"GET"})
      */
     public function searchArtist(Request $request, ArtistRepository $artistRepository ): JsonResponse
     {
@@ -65,7 +65,7 @@ class MainController extends AbstractController
     }
 
     /**
-     * @Route("/api/albums/random", name="app_api_album_random")
+     * @Route("/api/albums/random", name="app_api_album_random", methods={"GET"})
      */
     public function random(AlbumRepository $albumRepository): JsonResponse
     {
@@ -85,7 +85,7 @@ class MainController extends AbstractController
     }
   
     /**
-     * @Route("/api/albums/latestAdd", name="app_api_album_latestAdd")
+     * @Route("/api/albums/latest", name="app_api_album_latestAdd", methods={"GET"})
      */
     public function latestAdd(AlbumRepository $albumRepository)
     {
@@ -96,10 +96,31 @@ class MainController extends AbstractController
         );
         
     }
-
-    public function ourFavorites()
+ 
+    /**
+     * @Route("/api/albums/ourfavorites", name="app_api_album_ourFavorites", methods={"GET"})
+     */
+    public function ourFavorites(AlbumRepository $albumRepository)
     {
-        
+        // ===============================================================
+        //* In this version, this method use a random search but for the next 
+        //* upgrade of this App, we want to integrate a rating system with 
+        //* selection of the best albums by the community
+        // ===============================================================
+
+        // Select random 14 albums for homepage
+        $randomAlbum = $albumRepository->displayRandomAlbums(14);
+
+        return $this->json(
+            // Data
+            $randomAlbum,
+            // Status code
+            200,
+            // HTTP headers
+            [],
+            // Serialization contexts
+            ["groups" =>["album_browse"]]
+        );
     }
 
 

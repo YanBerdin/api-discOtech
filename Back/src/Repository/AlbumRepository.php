@@ -87,7 +87,6 @@ class AlbumRepository extends ServiceEntityRepository
      * Return $limit x Albums randomly
      *
      * @param int $limit
-     * @return void
      */
     public function displayRandomAlbums($limit)
     {
@@ -103,7 +102,11 @@ class AlbumRepository extends ServiceEntityRepository
 
     }
 
-
+    /**
+     * return $limit x albums order by latest add
+     *
+     * @param int $limit
+     */
     public function displayLatestAdd($limit)
     {
         return $this->createQueryBuilder('a')
@@ -113,8 +116,6 @@ class AlbumRepository extends ServiceEntityRepository
         ->getResult();
 
     }
-
-
 
 
     // /**
