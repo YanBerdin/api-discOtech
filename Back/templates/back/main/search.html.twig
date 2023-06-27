@@ -41,61 +41,60 @@
 
 <h3>Liste des Artistes</h3>  
 
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Nom/Pseudo:</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-            {% for artist in artistSearch %}
-                <tr>
-                    <td>{{ artist.fullname }}</td>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nom/Pseudo:</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for artist in artistSearch %}
+            <tr>
+                <td>{{ artist.fullname }}</td>
                     
-                    <td>
-                        <a class="btn btn-info me-1" href="{{ path('app_back_artist_show', {'id': artist.id}) }}">Voir plus</a>
-                    </td>
-                </tr>
-            {% else %}
-                <tr>
-                    <td colspan="3">Aucun ariste de disponible</td>
-                </tr>
-            {% endfor %}
-            </tbody>
-        </table>
+                <td>
+                    <a class="btn btn-info me-1" href="{{ path('app_back_artist_show', {'id': artist.id}) }}">Voir plus</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">Aucun ariste de disponible</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
 
 <h3>Liste des musiques</h3>
         
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>N° de piste</th>
-                    <th>Titre</th>
-                    <th>Album</th>
-                    <th>Durée</th>
-                    <th>Ecoute</th>
-                </tr>
-            </thead>
-            <tbody>
-            {% for song in songSearch %}
-                <tr>
-                    <td>{{ song.trackNb }}</td>
-                    <td>{{ song.title }}</td>
-                    <td>{{ song.album.name }}</td>
-                    <td>{{ song.duration }}</td>
-                    <td>{{ song.preview }}</td>
-                    <td>
-                        <a class="btn btn-info me-1" href="{{ path('app_back_song_show', {'id': song.id}) }}">voir plus</a>
-                    </td>
-                </tr>
-            {% else %}
-                <tr>
-                    <td colspan="6">Aucune musique de disponible</td>
-                </tr>
-            {% endfor %}
-            </tbody>
-        </table>
-
-    
+    <table class="table">
+        <thead>
+            <tr>
+                <th>N° de piste</th>
+                <th>Titre</th>
+                <th>Album</th>
+                <th>Durée</th>
+                <th>Ecoute</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for song in songSearch %}
+            <tr>
+                <td>{{ song.trackNb }}</td>
+                <td>{{ song.title }}</td>
+                <td>{{ song.album.name }}</td>
+                <td>{{ song.duration }}</td>
+                <td>{{ song.preview }}</td>
+                <td>
+                    <a class="btn btn-info me-1" href="{{ path('app_back_song_show', {'id': song.id}) }}">voir plus</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">Aucune musique de disponible</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+ 
 {% endblock %}

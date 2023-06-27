@@ -39,7 +39,6 @@ class MainController extends AbstractController
         $artistSearch = $artistRepository->findBySearch($search);
         $songSearch = $songRepository->findBySearch($search);
 
-
         return $this->render('back/main/search.html.twig',[
             "albumSearch" => $albumSearch,
             "artistSearch" => $artistSearch,
@@ -47,9 +46,4 @@ class MainController extends AbstractController
 
         ]);
     }
-
-
-
-
-
 }
