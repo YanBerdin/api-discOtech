@@ -1,0 +1,101 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Résultat de la recherche{% endblock %}
+
+{% block body %}
+
+<h3>Liste des albums</h3>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Artistes</th>
+                <th>Edition</th>
+                <th>Date de sortie</th>
+                <th>Mise en ligne</th>
+                <th>Pochette</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for album in albumSearch %}
+                <tr>
+                    <td>{{ album.name }}</td>
+                    <td>{{ album.artist.getArtistFullnameInterface() }}</td>
+                    <td>{{ album.edition }}</td>
+                    <td>{{ album.releaseDate ? album.releaseDate|date('d-m-Y') : '' }}</td>
+                    <td>{{ album.createdAt ? album.createdAt|date('d-m-Y') : '' }}</td>
+                    <td><div class="img-fluid"><img src="{{ album.image }}" alt="Pochette" style="width: 150px; height: 150px;" ></div></td>
+                    <td>
+                        <a class="btn btn-info me-1" href="{{ path('app_back_album_show', {'id': album.id}) }}">Voir plus</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="7">Aucun album disponible</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+<h3>Liste des Artistes</h3>  
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Nom/Pseudo:</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for artist in artistSearch %}
+                <tr>
+                    <td>{{ artist.fullname }}</td>
+                    
+                    <td>
+                        <a class="btn btn-info me-1" href="{{ path('app_back_artist_show', {'id': artist.id}) }}">Voir plus</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="3">Aucun ariste de disponible</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+<h3>Liste des musiques</h3>
+        
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>N° de piste</th>
+                    <th>Titre</th>
+                    <th>Album</th>
+                    <th>Durée</th>
+                    <th>Ecoute</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for song in songSearch %}
+                <tr>
+                    <td>{{ song.trackNb }}</td>
+                    <td>{{ song.title }}</td>
+                    <td>{{ song.album.name }}</td>
+                    <td>{{ song.duration }}</td>
+                    <td>{{ song.preview }}</td>
+                    <td>
+                        <a class="btn btn-info me-1" href="{{ path('app_back_song_show', {'id': song.id}) }}">voir plus</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="6">Aucune musique de disponible</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+    
+{% endblock %}

@@ -18,7 +18,7 @@
                         <a class="nav-link active ms-5" href="{{ path('default')}}"> Accueil Administration </a>
                     </li>
                 </ul>                 
-                <form class="d-flex" action="#">
+                <form class="d-flex" action="{{ path ('app_back_search')}}">
                     <input class="form-control form-control-sm me-2" name="search" type="search" placeholder="Rechercher...">
                     <button class="btn btn-outline-danger" type="submit"><i class="bi bi-search"></i></button> 
                 </form

@@ -26,10 +26,8 @@ class UserController extends AbstractController
      */
     public function SignUp(Request $request, UserRepository $userRepository, UserPasswordHasherInterface $passwordHasher)
     {
-
         // Select data from Front form
         $data = json_decode($request->getContent(), true);
-        //dd($data);
      
         $email = $data["email"];
         $password = $data["password"];
@@ -87,12 +85,13 @@ class UserController extends AbstractController
 
      public function read(UserRepository $userRepository): JsonResponse
      {
+        // * For test Only (use an existing id: check DB) =============
+        //$user = $userRepository->find(19);
+        // * ==========================================================
+
         /** @var User $user */
         $user = $this->getUser();
 
-        // * For test Only (use an existing id: check DB) =================
-        //$user = $userRepository->find(19);
-        // * ==========================================================
 
          return $this->json(
              // Alone user data
@@ -227,12 +226,13 @@ class UserController extends AbstractController
      */
     public function editEmail (UserRepository $userRepository, Request $request)
     {
+        // * For test Only (use an existing id: check DB) =============
+        //$user = $userRepository->find(5);
+        // * ==========================================================
+
         /** @var User $user */
         $user = $this->getUser();
 
-        // * For test Only (use an existing id: check DB) =================
-        //$user = $userRepository->find(5);
-        // * ==========================================================
      
         $data = json_decode($request->getContent(), true);
         //dd($data);
@@ -279,12 +279,13 @@ class UserController extends AbstractController
      */
     public function editAvatar (UserRepository $userRepository, Request $request)
     {
+        // * For test Only (use an existing id: check DB) =============
+        //$user = $userRepository->find(19);
+        // * ==========================================================
+
         /** @var User $user */
         $user = $this->getUser();
 
-        // * For test Only (use an existing id: check DB) =================
-        //$user = $userRepository->find(19);
-        // * ==========================================================
      
         $data = json_decode($request->getContent(), true);
         //dd($data);
@@ -332,15 +333,14 @@ class UserController extends AbstractController
      */
     public function editPassword (UserRepository $userRepository, Request $request, UserPasswordHasherInterface $passwordHasher)
     {
+        // * For test Only (use an existing id: check DB) =============
+        //$user = $userRepository->find(19);
+        // * ==========================================================
+
         /** @var User $user */
         $user = $this->getUser();
 
-        // * For test Only (use an existing id: check DB) =================
-        //$user = $userRepository->find(19);
-        // * ==========================================================
-     
         $data = json_decode($request->getContent(), true);
-        //dd($data);
 
         // get new password
         $plaintextNewPassword =  $data["password"];
@@ -377,7 +377,7 @@ class UserController extends AbstractController
         /** @var User $user */
         $user = $this->getUser();
 
-        // * For test Only (use an existing id: check DB) =================
+        // * For test Only (use an existing id: check DB) ==============
         // $user = $userRepository->find(19);
         // *  ==========================================================
 

@@ -93,7 +93,7 @@ class UserController extends AbstractController
     UserPasswordHasherInterface $userPasswordHasherInterface
     ): Response
     {
-        $form = $this->createForm(UserEditType::class, $user);
+        $form = $this->createForm(UserType::class, $user);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) { 

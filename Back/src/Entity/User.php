@@ -47,7 +47,13 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     /**
      * @var string The hashed password
      * @ORM\Column(type="string")
-     * @Assert\NotBlank(message= "Ce champs ne peut pas être vide")
+     * 
+     * @Assert\Regex(
+     * pattern = "/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/",
+     * match=true,
+     * message= "Le mot de passe doit contenir au minimum 8 caractères, une majuscule, un chiffre et un caractère spécial"
+     * )
+     * 
      */
     private $password;
 
@@ -57,7 +63,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * @Groups({"review_read"})
      * @Groups({"user_detail"})
      * @Groups({"favorite_browse"})
-     * Assert\NotBlank
      * @Assert\NotBlank(message= "Ce champs ne peut pas être vide")
      */
     private $firstname;
