@@ -1,16 +1,18 @@
 {% set songWidget = form_widget(form.songs.vars.prototype)|e('html_attr') %}
 
 {{ form_start(form) }}
+
+<div class= "container background-color: primary" >
     {{ form_row(form.name) }}
-    
     <h3>Songs</h3>
     {{ form_row(form.songs) }}
-    <template class="songs" data-index="{{ form.songs|length > 0 ? form.songs|last.vars.name + 1 : 0 }}"
+    <ul class="songs" data-index="{{ form.songs|length > 0 ? form.songs|last.vars.name + 1 : 0 }}"
             data-prototype="{{ songWidget|raw }}">
-    </template>
+    </ul>
 
 
-    <button type="button" class="add_item_link" data-collection-holder-class="songs">Add a song</button>
+    <button type="button" class="add_item_link" data-collection-holder-class="songs">+</button>
+</div>
 
     {{ form_widget(form) }}
     <div class="d-flex justify-content-end">
