@@ -1,18 +1,18 @@
 # Project DiscO'Tech - BackEnd
 
-## About
+## :man_dancing: About
 
 The project consists in creating an online platform allowing the referencing of all musical genres
 
 The main goal is to provide users with a friendly and attractive interface to explore music discs.
 
-## Deploy
+## :gear: Deploy
 
 - Launch VM Cloud by [kourou](https://kourou.oclock.io/ressources/vm-cloud/) and wait for starting
 - Copy your SSH command `ssh student@xxxxxxxxxxxxxxxx-server.eddi.cloud`
 - Open new BASH, paste and execute your SSH command
 
-## Checklist Deploy
+## :heavy_check_mark: Checklist Deploy
 
 - Place you in the folder HTML and clone this repository
 
@@ -36,7 +36,7 @@ composer install
 ```bash
 nano .env.local
 ```
-### Configuration
+### :hammer: Configuration
 **Warning**: You need to use your `LOGIN` and `PASSWORD` who they have all permission on the database and modify this URL (without { })
 
 ```bash

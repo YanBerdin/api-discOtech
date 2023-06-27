@@ -61,6 +61,29 @@ class SongRepository extends ServiceEntityRepository
         return $select->getQuery()->getResult();
     }
 
+    /**
+     * Find Song by Search
+     *
+     * @param string $search
+     * @return Song[]
+     */
+    public function findBySearch($search): array
+    {
+        // Alias 's' for 'Song'
+        //dd($search);
+        return $this->createQueryBuilder('s')
+            // Where name like <search>
+            ->andWhere('s.title LIKE :search')
+            ->setParameter('search', '%' .$search. '%')
+            ->orderBy("s.title", "ASC")
+            ->getQuery()
+            ->getResult();
+
+    }
+
+
+
+
 //    /**
 //     * @return Song[] Returns an array of Song objects
 //     */
