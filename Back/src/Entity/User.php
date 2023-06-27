@@ -10,9 +10,12 @@ use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Serializer\Annotation\Groups;
 use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
+ * @Vich\Uploadable
  */
 class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
@@ -48,6 +51,12 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * @var string The hashed password
      * @ORM\Column(type="string")
      * @Assert\NotBlank(message= "Ce champs ne peut pas être vide")
+     * @Assert\Regex(
+     * pattern = "/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/",
+     * match=true,
+     * message= "Le mot de passe doit contenir au minimum 8 caractères, une majuscule, un chiffre et un caractère spécial"
+     * )
+     * 
      */
     private $password;
 
@@ -57,7 +66,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * @Groups({"review_read"})
      * @Groups({"user_detail"})
      * @Groups({"favorite_browse"})
-     * Assert\NotBlank
      * @Assert\NotBlank(message= "Ce champs ne peut pas être vide")
      */
     private $firstname;
@@ -80,7 +88,22 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     private $avatar;
 
-        /**
+    /**
+     * NOTE: This is not a mapped field of entity metadata, just a simple property.
+     * 
+     * @Vich\UploadableField(mapping="profil_images", fileNameProperty="avatar")
+     * 
+     * @var File|null
+     */
+    private $imageFile;
+
+     /**
+     * @ORM\Column(nullable="true")
+     */
+    private ?\DateTimeImmutable $updatedAt = null;
+
+
+    /**
      * @ORM\OneToMany(targetEntity=Album::class, mappedBy="user")
      * @Groups({"user_detail"})
      * 
@@ -99,6 +122,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * @Groups({"favorite_browse"})
      */
     private $reviews;
+
 
     public function __construct()
     {
@@ -252,6 +276,32 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
+     /**
+     * If manually uploading a file (i.e. not using Symfony Form) ensure an instance
+     * of 'UploadedFile' is injected into this setter to trigger the update. If this
+     * bundle's configuration parameter 'inject_on_load' is set to 'true' this setter
+     * must be able to accept an instance of 'File' as the bundle will inject one here
+     * during Doctrine hydration.
+     *
+     * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile|null $imageFile
+     */
+    public function setImageFile(?File $imageFile = null): void
+    {
+        $this->imageFile = $imageFile;
+
+
+        if (null !== $imageFile) {
+            // It is required that at least one field changes if you are using doctrine
+            // otherwise the event listeners won't be called and the file is lost
+            $this->updatedAt = new \DateTimeImmutable();
+        }
+    }
+
+    public function getImageFile(): ?File
+    {
+        return $this->imageFile;
+    }
+ 
 
     /**
      * @return Collection<int, Album>

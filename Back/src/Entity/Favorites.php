@@ -82,7 +82,7 @@ class Favorites
 
     public function getCreatedAt(): ?\DateTimeInterface
     {
-        $this->createdAt = new \DateTime("now");
+        $this->createdAt;
         return $this->createdAt;
     }
 

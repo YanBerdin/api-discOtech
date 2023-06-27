@@ -1,6 +1,42 @@
+{% set songWidget = form_widget(form.songs.vars.prototype)|e('html_attr') %}
+
 {{ form_start(form) }}
+
+<div class= "container background-color: #C0c0c0" >
+    {{ form_row(form.name) }}
+    <h3>Songs</h3>
+    {{ form_row(form.songs) }}
+    <ul class="songs" data-index="{{ form.songs|length > 0 ? form.songs|last.vars.name + 1 : 0 }}"
+            data-prototype="{{ songWidget|raw }}">
+    </ul>
+
+
+    <button type="button" class="add_item_link" data-collection-holder-class="songs">+</button>
+</div>
+
     {{ form_widget(form) }}
+
      <div class="d-flex justify-content-end">
         <button class="btn btn-warning me-5">{{ button_label|default('Sauvegarder') }}</button>
     </div>
 {{ form_end(form) }}
+
+<script> 
+const addFormToCollection = (e) => {
+const collectionHolder = document.querySelector('.' + e.currentTarget.dataset.collectionHolderClass);
+  const item = document.createElement('fieldset');
+  item.className = "mb-3"
+  item.innerHTML = collectionHolder
+    .dataset
+    .prototype
+    .replace(
+      /__name__/g,
+      collectionHolder.dataset.index
+    );
+
+  document.querySelector("#album_songs").appendChild(item);
+
+  collectionHolder.dataset.index++;
+};
+document.querySelectorAll('.add_item_link').forEach(btn => {btn.addEventListener("click", addFormToCollection)}); 
+</script>

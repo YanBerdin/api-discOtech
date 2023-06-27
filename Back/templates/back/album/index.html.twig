@@ -14,10 +14,10 @@
                 <select id="order" name="order" class="form-control">
                     <option value="nameASC" {% if order == 'nameASC' %}selected{% endif %}>Nom (A-Z)</option>
                     <option value="nameDESC" {% if order == 'nameDESC' %}selected{% endif %}>Nom (Z-A)</option>
-                    <option value="relDateASC" {% if order == 'relDateASC' %}selected{% endif %}>Sortie plus récente</option>
-                    <option value="relDateDESC" {% if order == 'relDateDESC' %}selected{% endif %}>Sortie moins récente</option>
-                    <option value="creatAtASC" {% if order == 'creatAtASC' %}selected{% endif %}>Publié plus récent</option>
-                    <option value="creatAtDESC" {% if order == 'creatAtDESC' %}selected{% endif %}>Publié moins récent</option>
+                    <option value="relDateDESC" {% if order == 'relDateDESC' %}selected{% endif %}>Sortie plus récente</option>
+                    <option value="relDateASC" {% if order == 'relDateASC' %}selected{% endif %}>Sortie moins récente</option>
+                    <option value="creatAtDESC" {% if order == 'creatAtDESC' %}selected{% endif %}>Publié plus récent</option>
+                    <option value="creatAtASC" {% if order == 'creatAtASC' %}selected{% endif %}>Publié moins récent</option>
                 </select>
                 <button class="btn btn-primary ml-2" type="submit">Trier</button>
             </div>
@@ -54,7 +54,7 @@
                     <td>{{ album.edition }}</td>
                     <td>{{ album.releaseDate ? album.releaseDate|date('d-m-Y') : '' }}</td>
                     <td>{{ album.createdAt ? album.createdAt|date('d-m-Y') : '' }}</td>
-                    <td><div class="img-fluid"><img src="{{ album.image }}" alt="Pochette" style="width: 150px; height: 150px;" ></div></td>
+                    <td><div class="img-fluid"><img src="{{asset(album.image) }}" alt="Pochette" style="width: 150px; height: 150px;" ></div></td>
                     <td>
                         <a class="btn btn-info me-1" href="{{ path('app_back_album_show', {'id': album.id}) }}">Voir plus</a>
                     </td>

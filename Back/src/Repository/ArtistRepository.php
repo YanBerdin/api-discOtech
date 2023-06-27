@@ -57,7 +57,7 @@ class ArtistRepository extends ServiceEntityRepository
      * Find Artist by Search
      *
      * @param string $search
-     * @return Album[]
+     * @return Artist[]
      */
     public function findBySearch($search): array
     {

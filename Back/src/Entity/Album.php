@@ -9,6 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
 use Symfony\Component\Validator\Constraints as Assert;
 
+
 /**
  * @ORM\Entity(repositoryClass=AlbumRepository::class)
  */
@@ -27,7 +28,7 @@ class Album
      * @Groups({"review_read"})
      * @Groups({"artist_browse"})
      * @Groups({"user_detail"})
-     * 
+     *
      */
     private $id;
 
@@ -102,14 +103,16 @@ class Album
     private $support;
 
     /**
-     * @ORM\OneToMany(targetEntity=Song::class, mappedBy="album",orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity=Song::class, mappedBy="album",cascade={"persist"}, orphanRemoval=true)
      * @Groups({"album_browse"})
+     * @Groups({"album_read"})
      */
     private $songs;
 
     /**
      * @ORM\ManyToOne(targetEntity=Artist::class, inversedBy="albums")
      * @Groups({"album_browse"})
+     * @Groups({"album_read"})
      * @Groups({"favorite_browse"})
      * @Groups({"support_read"})
      * @Groups({"user_detail"})
@@ -201,7 +204,7 @@ class Album
 
     public function getCreatedAt(): ?\DateTimeInterface
     {
-        $this->createdAt = new \DateTime("now");
+        $this->createdAt;
         return $this->createdAt;
     }
 
@@ -249,7 +252,7 @@ class Album
         return $this;
     }
 
-    
+
 
     /**
      * @return Collection<int, Support>
@@ -317,7 +320,7 @@ class Album
         return $this;
     }
 
-    
+
     public function getUser(): ?User
     {
         return $this->user;
@@ -401,6 +404,4 @@ class Album
 
         return $this;
     }
-
-    
 }

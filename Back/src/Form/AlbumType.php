@@ -4,16 +4,19 @@ namespace App\Form;
 
 use App\Entity\Album;
 use App\Entity\Artist;
+use App\Entity\Song;
 use App\Entity\Style;
 use App\Entity\Support;
 use Doctrine\ORM\EntityRepository;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\Count;
+
 
 class AlbumType extends AbstractType
 {
@@ -23,6 +26,14 @@ class AlbumType extends AbstractType
             ->add('name', TextType::class, [
                 "label" => "Nom de l'album :",
                 "attr" => ["placeholder" => "Nevermind, fantom..."]
+            ])
+
+            ->add('songs', CollectionType::class, [
+                'by_reference' => false,
+                "entry_type" => SongType::class,
+                "entry_options" => ['label' => false],
+                'allow_add' => true,
+                "label" => false,
             ])
 
             ->add('edition', TextType::class, [
@@ -37,10 +48,12 @@ class AlbumType extends AbstractType
                 
             ])
 
+
             ->add('image', TextType::class, [
-                "label" => "Pochette de l'album :",
-                "attr" => ["placeholder" => "www.google.com/url?sa=i&url=https%3A%2F%2Ftwitter.com%2FOclock_io&"]
-            ])
+                "label" => "lien de la pochette",
+                "attr" => ["placeholder" => "www.google.com/url?sa=i&url=https%3A%2F%2Ftwitter.com%2FOclock_io&"],
+                ])
+    
 
 
             ->add('style', EntityType::class, [
@@ -90,6 +103,8 @@ class AlbumType extends AbstractType
                         ->orderBy('artist.fullname', 'ASC');
                     }
             ])
+
+            
         ;
     }
 

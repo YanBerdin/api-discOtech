@@ -61,7 +61,7 @@ class SupportController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="app_back_support_show", methods={"GET"})
+     * @Route("/{id}", name="app_back_support_show", requirements={"id"="\d+"}, methods={"GET"})
      */
     public function show(Support $support): Response
     {
@@ -71,7 +71,7 @@ class SupportController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="app_back_support_edit", methods={"GET", "POST"})
+     * @Route("/{id}/edit", name="app_back_support_edit", requirements={"id"="\d+"}, methods={"GET", "POST"})
      */
     public function edit(Request $request, Support $support, SupportRepository $supportRepository): Response
     {
@@ -91,7 +91,7 @@ class SupportController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="app_back_support_delete", methods={"POST"})
+     * @Route("/{id}", name="app_back_support_delete", requirements={"id"="\d+"}, methods={"POST"})
      */
     public function delete(Request $request, Support $support, SupportRepository $supportRepository): Response
     {
