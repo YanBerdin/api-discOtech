@@ -90,7 +90,7 @@ class AlbumType extends AbstractType
                     }
             ])
 
-            ->add('artist', TextType::class, [
+            ->add('artist', EntityType::class, [
                 "label" => "Artiste :",
                 "multiple" => false,
                 "expanded" => false, 
