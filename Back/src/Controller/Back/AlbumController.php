@@ -52,19 +52,13 @@ class AlbumController extends AbstractController
 
         // dummy code - add some example tags to the task
         // (otherwise, the template will render an empty list of tags)
-        $song1 = new Song();
-        $song1->setTrackNb(1);
-        $song1->setTitle('title1');
-        $song1->setDuration(180);
-        $song1->setPreview('song');
-        $album->getSongs()->add($song1);
+        // $song1 = new Song();
+        // $song1->setTrackNb(1);
+        // $song1->setTitle('title');
+        // $song1->setDuration(time());
+        // $song1->setPreview('link');
+        // $album->getSongs()->add($song1);
 
-        $song2 = new Song(); 
-        $song2->setTrackNb(2);
-        $song2->setTitle('title2');
-        $song2->setDuration(180);
-        $song2->setPreview('song2');
-        $album->getSongs()->add($song2);
 
         // end dummy code
 

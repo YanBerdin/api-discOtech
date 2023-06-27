@@ -26,7 +26,7 @@ class ArtistController extends AbstractController
         // Get the limit of items per page from the request, default to 20 if not provided
         $limit = $request->query->getInt('limit', 20);
 
-        $artists= $artistRepository->findByArtistorder($order);
+        $artists= $artistRepository->findByArtistOrder($order);
 
         $pagination = $paginator->paginate($artists, $request->query->getInt('page', 1), $limit);
 

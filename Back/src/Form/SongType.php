@@ -36,7 +36,7 @@ class SongType extends AbstractType
             ])
  
             ->add('preview', TextType::class, [
-                "label" => "lien Youtube, spotify, dezer, etc:",
+                "label" => "lien Youtube, spotify, deezer, etc:",
                 "attr" => ["placeholder" => "youtube.com/watch?v=rlarCLhzfoU"],
             ])
 
