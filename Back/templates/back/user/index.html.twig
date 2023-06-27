@@ -46,23 +46,24 @@
             </tr>
         </thead>
         <tbody>
-            {% for user in users %}
-                <tr>
-                    <td>{{ user.lastname }}</td>
-                    <td>{{ user.firstname }}</td>
-                    <td>{{ user.email }}</td>
-                    <td>{{ user.password }}</td>
-                    <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
-                    <td><div class="img-fluid"><img src="{{ user.avatar }}" alt="Avatar" style="width: 150px; height: 150px;" ></div></td>
-                    <td>
-                        <a class="btn btn-info me-1" href="{{ path('app_back_user_show', {'id': user.id}) }}">voir plus</a>
-                    </td>
-                </tr>
-            {% else %}
-                <tr>
-                    <td colspan="8">Aucun utilisateur disponible</td>
-                </tr>
-            {% endfor %}
+
+        {% for user in users %}
+            <tr>
+                <td>{{ user.lastname }}</td>
+                <td>{{ user.firstname }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.password }}</td>
+                <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
+                <td><div class="img-fluid"><img src="{{vich_uploader_asset(user, 'imageFile')}}" alt="Avatar" style="width: 150px; height: 150px;" ></div></td>
+                <td>
+                    <a class="btn btn-info me-1" href="{{ path('app_back_user_show', {'id': user.id}) }}">voir plus</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">Aucun utilisateur disponible</td>
+            </tr>
+        {% endfor %}
         </tbody>
     </table>
         <div class="navigation d-flex justify-content-center">

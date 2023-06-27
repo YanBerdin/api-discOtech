@@ -39,7 +39,7 @@ class ArtistController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="app_back_artist_new", methods={"GET", "POST"})
+     * @Route("/new", name="app_back_artist_new", methods={"POST"})
      */
     public function new(Request $request, ArtistRepository $artistRepository): Response
     {
@@ -70,7 +70,7 @@ class ArtistController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="app_back_artist_edit", methods={"GET", "POST"})
+     * @Route("/{id}/edit", name="app_back_artist_edit", methods={"PUT", "PATCH"})
      */
     public function edit(Request $request, Artist $artist, ArtistRepository $artistRepository): Response
     {
@@ -90,7 +90,7 @@ class ArtistController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="app_back_artist_delete", methods={"POST"})
+     * @Route("/{id}", name="app_back_artist_delete", methods={"DELETE"})
      */
     public function delete(Request $request, Artist $artist, ArtistRepository $artistRepository): Response
     {

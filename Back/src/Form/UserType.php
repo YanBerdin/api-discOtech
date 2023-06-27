@@ -13,8 +13,8 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\FormEvent;
 use Symfony\Component\Form\FormEvents;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\Validator\Constraints\Regex;
+use Vich\UploaderBundle\Form\Type\VichFileType;
 
 class UserType extends AbstractType
 {
@@ -44,6 +44,7 @@ class UserType extends AbstractType
             // On récupère le user mappé sur le form depuis l'event
             /** @var User $user */
             $user = $event->getData();
+
 
             // On conditionne le champ "password"
             // Si user existant, il a id non null
@@ -85,6 +86,7 @@ class UserType extends AbstractType
             }
         })
 
+
         ->add('roles', ChoiceType::class, [
             "multiple" => true,
             "expanded" => true,
@@ -94,11 +96,10 @@ class UserType extends AbstractType
             ],
         ])
             
-        //TODO Why out an Image?
-        ->add('avatar', TextType::class, [
-            "label" => "Photo de profil",
-            "attr" => ["placeholder" => "www.google.com/url?sa=i&url=https%3A%2F%2Ftwitter.com%2FOclock_io&"],
-            ]);
+         ->add('imageFile', VichFileType::class, [
+            'required' => false,
+            'mapped' => true,
+         ]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void
