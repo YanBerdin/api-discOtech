@@ -33,8 +33,7 @@ class AlbumType extends AbstractType
                 "entry_type" => SongType::class,
                 "entry_options" => ['label' => false],
                 'allow_add' => true,
-                
-
+                "label" => false,
             ])
 
             ->add('edition', TextType::class, [

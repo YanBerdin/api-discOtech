@@ -102,7 +102,7 @@ class Album
     private $support;
 
     /**
-     * @ORM\OneToMany(targetEntity=Song::class, mappedBy="album",orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity=Song::class, mappedBy="album",cascade={"persist"}, orphanRemoval=true)
      * @Groups({"album_browse"})
      * @Groups({"album_read"})
      */

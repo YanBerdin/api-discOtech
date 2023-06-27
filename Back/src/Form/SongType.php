@@ -40,16 +40,16 @@ class SongType extends AbstractType
                 "attr" => ["placeholder" => "youtube.com/watch?v=rlarCLhzfoU"],
             ])
 
-            ->add('album', EntityType::class, [
-                "multiple" => false,
-                "expanded" => false, // dropdown
-                "class" => Album::class,
-                "choice_label" => "name",
-                "query_builder" => function(EntityRepository $entityrepository){
-                    return $entityrepository->createQueryBuilder('a')
-                        ->orderBy('a.name', 'ASC');
-                }
-            ])
+            // ->add('album', EntityType::class, [
+            //     "multiple" => false,
+            //     "expanded" => false, // dropdown
+            //     "class" => Album::class,
+            //     "choice_label" => "name",
+            //     "query_builder" => function(EntityRepository $entityrepository){
+            //         return $entityrepository->createQueryBuilder('a')
+            //             ->orderBy('a.name', 'ASC');
+            //     }
+            // ])
         ;
     }
 
