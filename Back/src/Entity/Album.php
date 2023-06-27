@@ -20,8 +20,8 @@ class Album
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      * @Groups({"album_browse"})
-     * @Groups({"favorite_browse"})
      * @Groups({"album_read"})
+     * @Groups({"favorite_browse"})
      * @Groups({"song_browse"})
      * @Groups({"style_read"})
      * @Groups({"support_read"})

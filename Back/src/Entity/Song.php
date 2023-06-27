@@ -51,7 +51,6 @@ class Song
      * @ORM\ManyToOne(targetEntity=Album::class, inversedBy="songs")
      * @Groups({"song_browse"})
      * @Groups({"song_read"})
-     * @Groups({"album_read"})
      */
     private $album;
 
