@@ -40,7 +40,7 @@ class SongController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="app_back_song_new", methods={"GET", "POST"})
+     * @Route("/new", name="app_back_song_new", methods={"POST"})
      */
     public function new(Request $request, SongRepository $songRepository): Response
     {
@@ -71,7 +71,7 @@ class SongController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="app_back_song_edit", methods={"GET", "POST"})
+     * @Route("/{id}/edit", name="app_back_song_edit", methods={"PUT", "PATCH"})
      */
     public function edit(Request $request, Song $song, SongRepository $songRepository): Response
     {
@@ -91,7 +91,7 @@ class SongController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="app_back_song_delete", methods={"POST"})
+     * @Route("/{id}", name="app_back_song_delete", methods={"DELETE"})
      */
     public function delete(Request $request, Song $song, SongRepository $songRepository): Response
     {

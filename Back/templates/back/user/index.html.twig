@@ -52,7 +52,7 @@
                 <td>{{ user.email }}</td>
                 <td>{{ user.password }}</td>
                 <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
-                <td><div class="img-fluid"><img src="{{ user.avatar }}" alt="Avatar" style="width: 150px; height: 150px;" ></div></td>
+                <td><div class="img-fluid"><img src="{{vich_uploader_asset(user, 'imageFile')}}" alt="Avatar" style="width: 150px; height: 150px;" ></div></td>
                 <td>
                     <a class="btn btn-info me-1" href="{{ path('app_back_user_show', {'id': user.id}) }}">voir plus</a>
                 </td>

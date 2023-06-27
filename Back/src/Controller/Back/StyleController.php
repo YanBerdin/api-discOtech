@@ -41,7 +41,7 @@ class StyleController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="app_back_style_new", methods={"GET", "POST"})
+     * @Route("/new", name="app_back_style_new", methods={"POST"})
      */
     public function new(Request $request, StyleRepository $styleRepository): Response
     {
@@ -72,7 +72,7 @@ class StyleController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="app_back_style_edit", methods={"GET", "POST"})
+     * @Route("/{id}/edit", name="app_back_style_edit", methods={"PUT", "PATCH"})
      */
     public function edit(Request $request, Style $style, StyleRepository $styleRepository): Response
     {
@@ -92,7 +92,7 @@ class StyleController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="app_back_style_delete", methods={"POST"})
+     * @Route("/{id}", name="app_back_style_delete", methods={"DELETE"})
      */
     public function delete(Request $request, Style $style, StyleRepository $styleRepository): Response
     {
