@@ -54,7 +54,7 @@
                     <td>{{ album.edition }}</td>
                     <td>{{ album.releaseDate ? album.releaseDate|date('d-m-Y') : '' }}</td>
                     <td>{{ album.createdAt ? album.createdAt|date('d-m-Y') : '' }}</td>
-                    <td><div class="img-fluid"><img src="{{ album.image }}" alt="Pochette" style="width: 150px; height: 150px;" ></div></td>
+                    <td><div class="img-fluid"><img src="{{vich_uploader_asset(album, 'imageFile') }}" alt="Pochette" style="width: 150px; height: 150px;" ></div></td>
                     <td>
                         <a class="btn btn-info me-1" href="{{ path('app_back_album_show', {'id': album.id}) }}">Voir plus</a>
                     </td>
