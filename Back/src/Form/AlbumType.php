@@ -90,16 +90,9 @@ class AlbumType extends AbstractType
                     }
             ])
 
-            ->add('artist', EntityType::class, [
+            ->add('artist', TextType::class, [
                 "label" => "Artiste :",
-                "multiple" => false,
-                "expanded" => false, 
                 "class" => Artist::class,
-                'choice_label' => 'fullname',
-                "query_builder" => function(EntityRepository $entityrepository){
-                    return $entityrepository->createQueryBuilder('artist')
-                        ->orderBy('artist.fullname', 'ASC');
-                    }
             ])
 
             

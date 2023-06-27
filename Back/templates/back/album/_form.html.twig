@@ -2,7 +2,7 @@
 
 {{ form_start(form) }}
 
-<div class= "container background-color: primary" >
+<div class= "container background-color: #C0c0c0" >
     {{ form_row(form.name) }}
     <h3>Songs</h3>
     {{ form_row(form.songs) }}
@@ -15,7 +15,8 @@
 </div>
 
     {{ form_widget(form) }}
-    <div class="d-flex justify-content-end">
+
+     <div class="d-flex justify-content-end">
         <button class="btn btn-warning me-5">{{ button_label|default('Sauvegarder') }}</button>
     </div>
 {{ form_end(form) }}
