@@ -28,29 +28,17 @@ class SongType extends AbstractType
                 "attr" => ["placeholder" => "Si Tu Te Vas"],
             ])
 
-            ->add('duration', TimeType::class, [
-                "label" => "Durée: Heures, Minutes, Secondes",
-                'input'  => 'timestamp',
-                'widget' => 'single_text',
-                'with_seconds' => true
+            ->add('duration', IntegerType::class, [
+                "label" => "Durée: Secondes",
+
+                
             ])
  
             ->add('preview', TextType::class, [
                 "label" => "lien Youtube, spotify, deezer, etc:",
                 "attr" => ["placeholder" => "youtube.com/watch?v=rlarCLhzfoU"],
-            ])
+            ]);
 
-            // ->add('album', EntityType::class, [
-            //     "multiple" => false,
-            //     "expanded" => false, // dropdown
-            //     "class" => Album::class,
-            //     "choice_label" => "name",
-            //     "query_builder" => function(EntityRepository $entityrepository){
-            //         return $entityrepository->createQueryBuilder('a')
-            //             ->orderBy('a.name', 'ASC');
-            //     }
-            // ])
-        ;
     }
 
     public function configureOptions(OptionsResolver $resolver): void

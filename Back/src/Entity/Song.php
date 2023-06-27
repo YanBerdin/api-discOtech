@@ -31,8 +31,8 @@ class Song
     private $title;
 
     /**
-     * @ORM\Column(type="string", nullable=true)
-     * @Groups({"song_browse"})
+     * @ORM\Column(type="integer", nullable=true)
+     * @Groups({"song_browse"})bin/console cache:clear
      * @Groups({"album_browse"})
      * @Groups({"song_read"})
      * 
@@ -52,7 +52,6 @@ class Song
      * @Groups({"song_browse"})
      * @Groups({"song_read"})
      * @Groups({"album_read"})
-     * @Assert\NotBlank(message= "Ce champs ne peut pas être vide")
      */
     private $album;
 
@@ -82,17 +81,18 @@ class Song
         return $this;
     }
 
-    public function getDuration(): ?string
+   public function getDuration(): ?int
     {
         return $this->duration;
     }
 
-    public function setDuration(?string $duration = null): self
+    public function setDuration(int $duration): self
     {
         $this->duration = $duration;
 
         return $this;
     }
+
 
     public function getPreview(): ?string
     {

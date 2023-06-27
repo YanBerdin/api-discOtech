@@ -7,13 +7,14 @@ use Doctrine\ORM\EntityRepository;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\FormEvent;
 use Symfony\Component\Form\FormEvents;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\Validator\Constraints\Regex;
+use Vich\UploaderBundle\Form\Type\VichFileType;
 
 class UserType extends AbstractType
 {
@@ -51,7 +52,6 @@ class UserType extends AbstractType
                     $builder->add('password', PasswordType::class, [
                         // je ne veux pas que le formulaire mettes automatiquement à jour la valeur
                         // je désactive la mise à jour automatique de mon objet par le formulaire
-                        // ? https://symfony.com/doc/5.4/reference/forms/types/form.html#mapped
                         "mapped" => false,
                         "label" => "le mot de passe",
                         "attr" => [
@@ -67,7 +67,7 @@ class UserType extends AbstractType
                     ]);
                 } else {
                     // * mode Création : New
-                    $builder->add('password', null, [
+                    $builder->add('password', PasswordType::class, [
                         // En cas d'erreur du type
                         // Expected argument of type "string", "null" given at property path "password".
                         // (notamment à l'edit en cas de passage d'une valeur existante à vide)
@@ -92,10 +92,9 @@ class UserType extends AbstractType
                 ],
             ])
             
-            //TODO Why out an Image?
-            ->add('avatar', TextType::class, [
-            "label" => "Photo de profil",
-            "attr" => ["placeholder" => "www.google.com/url?sa=i&url=https%3A%2F%2Ftwitter.com%2FOclock_io&"],
+            ->add('imageFile', VichFileType::class, [
+                'required' => false,
+                'mapped' => true,
             ]);
     }
 

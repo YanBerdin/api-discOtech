@@ -9,6 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
 use Symfony\Component\Validator\Constraints as Assert;
 
+
 /**
  * @ORM\Entity(repositoryClass=AlbumRepository::class)
  */
@@ -27,7 +28,7 @@ class Album
      * @Groups({"review_read"})
      * @Groups({"artist_browse"})
      * @Groups({"user_detail"})
-     * 
+     *
      */
     private $id;
 
@@ -251,7 +252,7 @@ class Album
         return $this;
     }
 
-    
+
 
     /**
      * @return Collection<int, Support>
@@ -319,7 +320,7 @@ class Album
         return $this;
     }
 
-    
+
     public function getUser(): ?User
     {
         return $this->user;
@@ -403,6 +404,4 @@ class Album
 
         return $this;
     }
-
-    
 }

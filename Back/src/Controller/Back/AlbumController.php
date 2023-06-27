@@ -79,7 +79,7 @@ class AlbumController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="app_back_album_show", methods={"GET"})
+     * @Route("/{id}", name="app_back_album_show", requirements={"id"="\d+"}, methods={"GET"})
      */
     public function show(Album $album): Response
     {
@@ -89,7 +89,7 @@ class AlbumController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="app_back_album_edit", methods={"GET", "POST"})
+     * @Route("/{id}/edit", name="app_back_album_edit", requirements={"id"="\d+"}, methods={"GET", "POST"})
      */
     public function edit(Request $request, Album $album, AlbumRepository $albumRepository): Response
     {
@@ -114,7 +114,7 @@ class AlbumController extends AbstractController
     
 
     /**
-     * @Route("/{id}", name="app_back_album_delete", methods={"POST"})
+     * @Route("/{id}", name="app_back_album_delete", requirements={"id"="\d+"}, methods={"POST"})
      */
     public function delete(Request $request, Album $album, AlbumRepository $albumRepository): Response
     {

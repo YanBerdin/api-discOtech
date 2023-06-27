@@ -48,10 +48,12 @@ class AlbumType extends AbstractType
                 
             ])
 
+
             ->add('image', TextType::class, [
-                "label" => "Pochette de l'album :",
-                "attr" => ["placeholder" => "www.google.com/url?sa=i&url=https%3A%2F%2Ftwitter.com%2FOclock_io&"]
-            ])
+                "label" => "lien de la pochette",
+                "attr" => ["placeholder" => "www.google.com/url?sa=i&url=https%3A%2F%2Ftwitter.com%2FOclock_io&"],
+                ])
+    
 
 
             ->add('style', EntityType::class, [
