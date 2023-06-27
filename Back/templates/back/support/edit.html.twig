@@ -5,9 +5,10 @@
 {% block body %}
     <h1>Modifier un Support</h1>
 
+    
     {{ include('back/support/_form.html.twig', {'button_label': 'Update'}) }}
 
-    <a "btn btn-secondary me-2" href="{{ path('app_back_support_index') }}"> <i class="bi bi-arrow-left"></i> Retour à la liste</a>
+    <a class="btn btn-secondary me-2" href="{{ path('app_back_support_index') }}"> <i class="bi bi-arrow-left"></i> Retour à la liste</a>
 
     {{ include('back/support/_delete_form.html.twig') }}
 {% endblock %}

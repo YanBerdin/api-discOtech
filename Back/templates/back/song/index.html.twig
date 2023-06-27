@@ -5,35 +5,34 @@
 {% block body %}
     <div class= text-aligne-between>
         <h1>Liste des musiques</h1>
-        <a class="btn btn-success me-2" style= "justify-content-end" href="{{ path('app_back_song_new') }}">Créer</a>
+        <a class="btn btn-success me-2" href="{{ path('app_back_song_new') }}">Créer</a>
     </div>
     <div class="d-flex justify-content-end">
         <form method="get" action="{{ path('app_back_song_index') }}" class="form-inline">
             <div class="d-flex">
                 <div class="form-group mr-2">
                     <label for="order">Trier par :</label>
-                        <select id="order" name="order" class="form-control">
-                            <option value="ttlASC" {% if order == 'ttlASC' %}selected{% endif %}>Nom (A-Z)</option>
-                            <option value="ttlDESC" {% if order == 'ttlDESC' %}selected{% endif %}>Nom (Z-A)</option>
+                    <select id="order" name="order" class="form-control">
+                        <option value="ttlASC" {% if order == 'ttlASC' %}selected{% endif %}>Nom (A-Z)</option>
+                        <option value="ttlDESC" {% if order == 'ttlDESC' %}selected{% endif %}>Nom (Z-A)</option>
 
-                            <option value="tNbASC" {% if order == 'tNbASC' %}selected{% endif %}>Piste (1-9)</option>
-                            <option value="tNbDESC" {% if order == 'tNbDESC' %}selected{% endif %}>Piste (9-1)</option>
+                        <option value="tNbASC" {% if order == 'tNbASC' %}selected{% endif %}>Piste (1-9)</option>
+                        <option value="tNbDESC" {% if order == 'tNbDESC' %}selected{% endif %}>Piste (9-1)</option>
 
-                            <option value="drtASC" {% if order == 'drtASC' %}selected{% endif %}>Durée (plus courte)</option>
-                            <option value="drtDESC" {% if order == 'drtDESC' %}selected{% endif %}>Durée (plus longue)</option>
-                        </select>
-                        <button class="btn-primary mt-2 btn-md" type="submit">Trier</button>
-                    </div>
-                </form>
+                        <option value="drtASC" {% if order == 'drtASC' %}selected{% endif %}>Durée (plus courte)</option>
+                        <option value="drtDESC" {% if order == 'drtDESC' %}selected{% endif %}>Durée (plus longue)</option>
+                    </select>
+                <button class="btn btn-primary ml-2" type="submit">Trier</button>
             </div>
-            <div class="form-group mr-2">
-                <label for="limit">Afficher :</label>
-                <select id="limit" name="limit" class="form-control">
-                    {% for limit in limits %}
-                        <option value="{{ limit }}" {% if limit == currentLimit %}selected{% endif %}>{{ limit }}</option>
-                    {% endfor %}
-                </select>
-                <button class="btn btn-primary mt-2 btn-md" type="submit">Appliquer</button>
+                <div class="form-group">
+                    <label for="limit">Afficher :</label>
+                    <select id="limit" name="limit" class="form-control">
+                        {% for limit in limits %}
+                            <option value="{{ limit }}" {% if limit == currentLimit %}selected{% endif %}>{{ limit }}</option>
+                        {% endfor %}
+                    </select>
+                    <button class="btn btn-primary ml-2" type="submit">Appliquer</button>
+                </div>
             </div>
         </form>
     </div>

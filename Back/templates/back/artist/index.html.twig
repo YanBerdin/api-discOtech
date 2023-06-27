@@ -14,12 +14,10 @@
                 <select id="order" name="order" class="form-control">
                     <option value="fullnASC" {% if order == 'fullnASC' %}selected{% endif %}>Nom (A-Z)</option>
                     <option value="fullnDESC" {% if order == 'fullnDESC' %}selected{% endif %}>Nom (Z-A)</option>
-                    </select>
-                    <button class="btn-primary me-2" type="submit">Trier</button>
-                </div>
-            </form>
-        </div>
-        <div class="form-group">
+                </select>
+                    <button class="btn btn-primary ml-2" type="submit">Trier</button>
+            </div>
+            <div class="form-group">
                 <label for="limit">Afficher :</label>
                 <select id="limit" name="limit" class="form-control">
                     {% for limit in limits %}
@@ -28,7 +26,8 @@
                 </select>
                 <button class="btn btn-primary ml-2" type="submit">Appliquer</button>
             </div>
-        </form>
+        </div>
+    </form>
     </div>
         <table class="table">
             <thead>
