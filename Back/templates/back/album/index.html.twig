@@ -14,10 +14,10 @@
                 <select id="order" name="order" class="form-control">
                     <option value="nameASC" {% if order == 'nameASC' %}selected{% endif %}>Nom (A-Z)</option>
                     <option value="nameDESC" {% if order == 'nameDESC' %}selected{% endif %}>Nom (Z-A)</option>
-                    <option value="relDateASC" {% if order == 'relDateASC' %}selected{% endif %}>Sortie plus récente</option>
-                    <option value="relDateDESC" {% if order == 'relDateDESC' %}selected{% endif %}>Sortie moins récente</option>
-                    <option value="creatAtASC" {% if order == 'creatAtASC' %}selected{% endif %}>Publié plus récent</option>
-                    <option value="creatAtDESC" {% if order == 'creatAtDESC' %}selected{% endif %}>Publié moins récent</option>
+                    <option value="relDateDESC" {% if order == 'relDateDESC' %}selected{% endif %}>Sortie plus récente</option>
+                    <option value="relDateASC" {% if order == 'relDateASC' %}selected{% endif %}>Sortie moins récente</option>
+                    <option value="creatAtDESC" {% if order == 'creatAtDESC' %}selected{% endif %}>Publié plus récent</option>
+                    <option value="creatAtASC" {% if order == 'creatAtASC' %}selected{% endif %}>Publié moins récent</option>
                 </select>
                 <button class="btn btn-primary ml-2" type="submit">Trier</button>
             </div>

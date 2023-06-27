@@ -74,7 +74,7 @@ class UserController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="app_back_user_show", methods={"GET"})
+     * @Route("/{id}", name="app_back_user_show", requirements={"id"="\d+"}, methods={"GET"})
      */
     public function show(User $user): Response
     {
@@ -84,7 +84,7 @@ class UserController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="app_back_user_edit", methods={"GET", "POST"})
+     * @Route("/{id}/edit", name="app_back_user_edit", requirements={"id"="\d+"}, methods={"GET", "POST"})
      */
     public function edit(
     Request $request, 
@@ -122,7 +122,7 @@ class UserController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="app_back_user_delete", methods={"POST"})
+     * @Route("/{id}", name="app_back_user_delete", requirements={"id"="\d+"}, methods={"POST"})
      */
     public function delete(Request $request, User $user, UserRepository $userRepository): Response
     {

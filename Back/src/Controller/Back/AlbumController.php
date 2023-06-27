@@ -3,10 +3,13 @@
 namespace App\Controller\Back;
 
 use App\Entity\Album;
+use App\Entity\Song;
 use App\Form\AlbumType;
 use App\Repository\AlbumRepository;
+use DateTime;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Form\Extension\Core\Type\TimeType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -46,6 +49,20 @@ class AlbumController extends AbstractController
     public function new(Request $request, AlbumRepository $albumRepository): Response
     {
         $album = new Album();
+
+        // dummy code - add some example tags to the task
+        // (otherwise, the template will render an empty list of tags)
+        // $song1 = new Song();
+        // $song1->setTrackNb(1);
+        // $song1->setTitle('title');
+        // $song1->setDuration(time());
+        // $song1->setPreview('link');
+        // $album->getSongs()->add($song1);
+
+
+        // end dummy code
+
+
         $form = $this->createForm(AlbumType::class, $album);
         $form->handleRequest($request);
 
@@ -62,7 +79,7 @@ class AlbumController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="app_back_album_show", methods={"GET"})
+     * @Route("/{id}", name="app_back_album_show", requirements={"id"="\d+"}, methods={"GET"})
      */
     public function show(Album $album): Response
     {
@@ -72,7 +89,7 @@ class AlbumController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="app_back_album_edit", methods={"GET", "POST"})
+     * @Route("/{id}/edit", name="app_back_album_edit", requirements={"id"="\d+"}, methods={"GET", "POST"})
      */
     public function edit(Request $request, Album $album, AlbumRepository $albumRepository): Response
     {
@@ -97,7 +114,7 @@ class AlbumController extends AbstractController
     
 
     /**
-     * @Route("/{id}", name="app_back_album_delete", methods={"POST"})
+     * @Route("/{id}", name="app_back_album_delete", requirements={"id"="\d+"}, methods={"POST"})
      */
     public function delete(Request $request, Album $album, AlbumRepository $albumRepository): Response
     {

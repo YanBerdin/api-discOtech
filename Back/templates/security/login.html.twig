@@ -16,7 +16,7 @@
                     <div class="mb-3">
                         Vous êtes connecté en tant que: {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Deconnexion</a>
                     </div>
-                {% endif %}
+
 
                 <h1 class="h3 mb-3 font-weight-normal">Merci de vous connecter :</h1>
                 <label for="inputEmail">Email</label>
@@ -33,6 +33,22 @@
                 </button>
             </form>
         </div>
+    {% endif %}
+
+    <h1 class="h3 mb-3 font-weight-normal">Merci de Vous connecter :</h1>
+    <label for="inputEmail">Email</label>
+    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" novalidate="novalidate">
+    <label for="inputPassword">Password</label>
+    <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password">
+
+    <input type="hidden" name="_csrf_token"
+           value="{{ csrf_token('authenticate') }}"
+>
+
+    <button class="btn btn-lg btn-primary" type="submit">
+        Connexion
+    </button>
+        </form>
     </div>
 </div>
 {% endblock %}

@@ -32,10 +32,10 @@ class Song
 
     /**
      * @ORM\Column(type="integer", nullable=true)
-     * @Groups({"song_browse"})
+     * @Groups({"song_browse"})bin/console cache:clear
      * @Groups({"album_browse"})
      * @Groups({"song_read"})
-     * @Assert\NotBlank(message= "Ce champs ne peut pas être vide")
+     * 
      */
     private $duration;
 
@@ -51,7 +51,7 @@ class Song
      * @ORM\ManyToOne(targetEntity=Album::class, inversedBy="songs")
      * @Groups({"song_browse"})
      * @Groups({"song_read"})
-     * @Assert\NotBlank(message= "Ce champs ne peut pas être vide")
+     * @Groups({"album_read"})
      */
     private $album;
 
@@ -81,17 +81,18 @@ class Song
         return $this;
     }
 
-    public function getDuration(): ?int
+   public function getDuration(): ?int
     {
         return $this->duration;
     }
 
-    public function setDuration(int $duration = null): self
+    public function setDuration(int $duration): self
     {
         $this->duration = $duration;
 
         return $this;
     }
+
 
     public function getPreview(): ?string
     {

@@ -103,14 +103,16 @@ class Album
     private $support;
 
     /**
-     * @ORM\OneToMany(targetEntity=Song::class, mappedBy="album",orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity=Song::class, mappedBy="album",cascade={"persist"}, orphanRemoval=true)
      * @Groups({"album_browse"})
+     * @Groups({"album_read"})
      */
     private $songs;
 
     /**
      * @ORM\ManyToOne(targetEntity=Artist::class, inversedBy="albums")
      * @Groups({"album_browse"})
+     * @Groups({"album_read"})
      * @Groups({"favorite_browse"})
      * @Groups({"support_read"})
      * @Groups({"user_detail"})

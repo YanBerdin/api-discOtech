@@ -26,7 +26,7 @@ class ArtistController extends AbstractController
         // Get the limit of items per page from the request, default to 20 if not provided
         $limit = $request->query->getInt('limit', 20);
 
-        $artists= $artistRepository->findByArtistorder($order);
+        $artists= $artistRepository->findByArtistOrder($order);
 
         $pagination = $paginator->paginate($artists, $request->query->getInt('page', 1), $limit);
 
@@ -39,7 +39,7 @@ class ArtistController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="app_back_artist_new", methods={"POST"})
+     * @Route("/new", name="app_back_artist_new", methods={"GET", "POST"})
      */
     public function new(Request $request, ArtistRepository $artistRepository): Response
     {
@@ -60,7 +60,7 @@ class ArtistController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="app_back_artist_show", methods={"GET"})
+     * @Route("/{id}", name="app_back_artist_show", requirements={"id"="\d+"}, methods={"GET"})
      */
     public function show(Artist $artist): Response
     {
@@ -70,7 +70,7 @@ class ArtistController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="app_back_artist_edit", methods={"PUT", "PATCH"})
+     * @Route("/{id}/edit", name="app_back_artist_edit", requirements={"id"="\d+"}, methods={"GET", "POST"})
      */
     public function edit(Request $request, Artist $artist, ArtistRepository $artistRepository): Response
     {
@@ -90,7 +90,7 @@ class ArtistController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="app_back_artist_delete", methods={"DELETE"})
+     * @Route("/{id}", name="app_back_artist_delete", requirements={"id"="\d+"}, methods={"POST"})
      */
     public function delete(Request $request, Artist $artist, ArtistRepository $artistRepository): Response
     {
