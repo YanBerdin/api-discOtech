@@ -201,7 +201,7 @@ class AppFixtures extends Fixture
                     $newSong = new Song();
 
                     $newSong->setTitle($faker->sentence(4,true));
-                    $newSong->setDuration(mt_rand(10, 360));
+                    $newSong->setDuration(mt_rand(120, 520));
                     $newSong->setTrackNb($j);
 
                     $newSong->setAlbum($allAlbum[mt_rand(0,count($allAlbum)-1)]);

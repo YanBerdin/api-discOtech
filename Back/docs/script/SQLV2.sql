@@ -17,7 +17,8 @@ INSERT INTO `album` (`id`, `artist_id`, `user_id`, `name`, `edition`, `release_d
 (408,	409,	NULL,	'Thriller',	'Epic',	'1982-11-30',	'2023-06-23 10:57:31',	NULL,	'https://media.senscritique.com/media/000019302809/300/thriller.jpg'),
 (409,	410,	NULL,	'Pet Sounds',	'Capitol Records',	'1966-05-16',	'2023-06-23 11:01:15',	NULL,	'https://media.senscritique.com/media/000004841561/300/pet_sounds.jpg'),
 (410,	411,	NULL,	'Abbey Road',	'Apple Records',	'1969-09-26',	'2023-06-23 11:07:24',	NULL,	'https://media.senscritique.com/media/000006055988/300/abbey_road.jpg'),
-(411,	411,	NULL,	'Sgt. Pepper’s Lonely Hearts Club Band',	'Parlophone',	'1967-06-01',	'2023-06-23 11:17:31',	NULL,	'https://media.senscritique.com/media/000004795054/300/sgt_peppers_lonely_hearts_club_band.jpg');
+(411,	411,	NULL,	'Sgt. Pepper’s Lonely Hearts Club Band',	'Parlophone',	'1967-06-01',	'2023-06-23 11:17:31',	NULL,	'https://media.senscritique.com/media/000004795054/300/sgt_peppers_lonely_hearts_club_band.jpg'),
+(412,	403,	NULL,	'test latest',	'raf',	'2020-02-15',	'2023-06-26 11:58:42',	NULL,	'https://wpformation.com/wp-content/uploads/2016/07/Fotolia_113370842_S.jpg');
 
 INSERT INTO `album_style` (`album_id`, `style_id`) VALUES
 (402,	23),
@@ -85,6 +86,10 @@ INSERT INTO `artist` (`id`, `fullname`) VALUES
 INSERT INTO `doctrine_migration_versions` (`version`, `executed_at`, `execution_time`) VALUES
 ('DoctrineMigrations\\Version20230620074226',	'2023-06-20 09:42:33',	247);
 
+INSERT INTO `favorites` (`id`, `user_id`, `album_id`, `created_at`) VALUES
+(25,	4,	402,	'2023-06-23 14:43:24'),
+(26,	4,	403,	'2023-06-23 14:43:30'),
+(27,	4,	404,	'2023-06-23 14:43:35');
 
 
 
@@ -203,6 +208,11 @@ INSERT INTO `support` (`id`, `name`) VALUES
 INSERT INTO `user` (`id`, `email`, `roles`, `password`, `firstname`, `lastname`, `avatar`) VALUES
 (3,	'admin@admin.com',	'[\"ROLE_ADMIN\"]',	'$2y$13$ZdKTqUsVIggw9REUVSBTn.nwh.YjS8TKqlTme3sTi96HhziHxOfhO',	'admin',	'admin',	'https://media.discordapp.net/attachments/1113101484519866380/1118445749890457661/eva2.png'),
 (4,	'user@user.com',	'[\"ROLE_USER\"]',	'$2y$13$LU7xmAHYLxg9cWqkshuUHOJUBZH7vDHKA/wENstwKu8rtwyUJgBRy',	'user',	'user',	'https://media.discordapp.net/attachments/1113101484519866380/1118445361611153529/eva3.png'),
-(5,	'romain@oclock.bob',	'[\"ROLE_USER\"]',	'$2y$13$TBctyml753TdjAh39JB3..fFRdzB216kLKrebhHckjL099ZJRhFH2',	'romain',	'gradelet',	'https://wpformation.com/wp-content/uploads/2016/07/Fotolia_113370842_S.jpg');
+(5,	'romain@oclock.bob',	'[\"ROLE_USER\"]',	'$2y$13$TBctyml753TdjAh39JB3..fFRdzB216kLKrebhHckjL099ZJRhFH2',	'romain',	'gradelet',	'https://wpformation.com/wp-content/uploads/2016/07/Fotolia_113370842_S.jpg'),
+(6,	'romain@oclock.school',	'[\"ROLE_USER\"]',	'$2y$13$addzyT3TRg/2AlSrUbZBRuNleXnhkBf9HEDF5pFXA12eD7lDVwFeC',	'romain',	'gradelet',	'https://wpformation.com/wp-content/uploads/2016/07/Fotolia_113370842_S.jpg'),
+(7,	'romain@test.com',	'[\"ROLE_ADMIN\",\"ROLE_USER\"]',	'$2y$13$VO38UNpuwVelnrrxaTe.6Oev5pbe6sQOh5kLSNTSde2InhbvP1snK',	'Romain',	'Gradelet',	NULL),
+(8,	'r@r.com',	'[\"ROLE_ADMIN\",\"ROLE_USER\"]',	'$2y$13$jwQgf4I9LHReLqRuK5BKtO00yEA29IHQPDAfq7/Ddenzkh.5n20HC',	'test',	'test',	NULL),
+(9,	'a@a.com',	'[\"ROLE_ADMIN\",\"ROLE_USER\"]',	'$2y$13$KAa1Jq3/Yfpmp2HVGKXJWuAtKszdQNg3o4QqPSeFmCShNiTCFZIji',	'a',	'a',	NULL),
+(10,	'b@b.com',	'[\"ROLE_ADMIN\",\"ROLE_USER\"]',	'$2y$13$XbVFdaPE/J925P/VrrIJW.QU2QqtOLdCf.0HAA2tj6Pw2WTgUCVRW',	'a',	'a',	NULL);
 
--- 2023-06-23 09:22:21
+-- 2023-06-27 15:11:52
