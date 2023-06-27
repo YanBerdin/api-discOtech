@@ -14,7 +14,6 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\Count;
-use Vich\UploaderBundle\Form\Type\VichFileType;
 
 class AlbumType extends AbstractType
 {
@@ -38,10 +37,11 @@ class AlbumType extends AbstractType
                 
             ])
 
-            ->add('imageFile', VichFileType::class, [
-            'required' => false,
-            'mapped' => true,
-            ])
+
+            ->add('image', TextType::class, [
+                "label" => "lien de la pochette",
+                "attr" => ["placeholder" => "www.google.com/url?sa=i&url=https%3A%2F%2Ftwitter.com%2FOclock_io&"],
+                ])
     
 
 
