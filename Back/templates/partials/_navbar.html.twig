@@ -13,25 +13,43 @@
                 <ul class="navbar-nav me-auto mb-lg-0">
                 
                     <li class="nav-item">
-                        <a class="nav-link ms-5 {{ app.request.get('_route') == 'default' ? 'active' : '' }}" href="{{ path('default')}}"> ACCUEIL </a>
+                        <a class="nav-link ms-5 {{ app.request.get('_route') == 'default' ? 'active' : '' }}" href="{{ path('default')}}">ACCUEIL</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link ms-5 {{ app.request.get('_route') == 'app_back_album_index' ? 'active' : '' }}" href="{{ path('app_back_album_index')}}"> Albums </a>
+                        <span class="nav-link ms-2"> | </span>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link ms-5 {{ app.request.get('_route') == 'app_back_artist_index' ? 'active' : '' }}" href="{{ path('app_back_artist_index')}}"> Artistes </a>
+                        <a class="nav-link ms-2 {{ app.request.get('_route') == 'app_back_album_index' ? 'active' : '' }}" href="{{ path('app_back_album_index')}}"> Albums </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link ms-5 {{ app.request.get('_route') == 'app_back_song_index' ? 'active' : '' }}" href="{{ path('app_back_song_index')}}"> Musiques </a>
+                        <span class="nav-link ms-2"> | </span>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link ms-5 {{ app.request.get('_route') == 'app_back_style_index' ? 'active' : '' }}" href="{{ path('app_back_style_index')}}"> Styles </a>
+                        <a class="nav-link ms-2{{ app.request.get('_route') == 'app_back_artist_index' ? 'active' : '' }}" href="{{ path('app_back_artist_index')}}"> Artistes </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link ms-5 {{ app.request.get('_route') == 'app_back_support_index' ? 'active' : '' }}" href="{{ path('app_back_support_index')}}"> Supports </a>
+                        <span class="nav-link ms-2"> | </span>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link ms-5 {{ app.request.get('_route') == 'app_back_user_index' ? 'active' : '' }}" href="{{ path('app_back_user_index')}}"> Utilisateurs </a>
+                        <a class="nav-link ms-2 {{ app.request.get('_route') == 'app_back_song_index' ? 'active' : '' }}" href="{{ path('app_back_song_index')}}"> Musiques </a>
+                    </li>
+                    <li class="nav-item">
+                        <span class="nav-link ms-2"> | </span>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link ms-2 {{ app.request.get('_route') == 'app_back_style_index' ? 'active' : '' }}" href="{{ path('app_back_style_index')}}"> Styles </a>
+                    </li>
+                    <li class="nav-item">
+                        <span class="nav-link ms-2"> | </span>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link ms-2{{ app.request.get('_route') == 'app_back_support_index' ? 'active' : '' }}" href="{{ path('app_back_support_index')}}"> Supports </a>
+                    </li>
+                    <li class="nav-item">
+                        <span class="nav-link ms-2"> | </span>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link ms-2{{ app.request.get('_route') == 'app_back_user_index' ? 'active' : '' }}" href="{{ path('app_back_user_index')}}"> Utilisateurs </a>
                     </li>
 
                 </ul>                 
