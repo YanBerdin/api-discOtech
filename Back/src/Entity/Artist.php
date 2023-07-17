@@ -39,7 +39,7 @@ class Artist
     private $fullname;
 
     /**
-     * @ORM\OneToMany(targetEntity=Album::class, mappedBy="artist")
+     * @ORM\OneToMany(targetEntity=Album::class, mappedBy="artist", orphanRemoval=true)
      * @Groups({"artist_browse"})
      */
     private $albums;
