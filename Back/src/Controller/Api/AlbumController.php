@@ -19,7 +19,7 @@ use Symfony\Component\Validator\Validator\ValidatorInterface;
 class AlbumController extends AbstractController
 {
     /**
-     * Liste all albums
+     * List all albums
      * 
      * @Route("/api/albums", name="app_api_album_browse", methods={"GET"})
      */
