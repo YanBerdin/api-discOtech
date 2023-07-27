@@ -94,7 +94,7 @@ class AlbumController extends AbstractController
         // Select Json content
         $jsonContent = $request->getContent();
 
-        // Ddeserialization of JSON format into Doctrine Entity Album
+        // Deserialization of JSON format into Doctrine Entity Album
         try { // try to deserialize
             $newAlbum = $serializerInterface->deserialize(
                 // data to transform

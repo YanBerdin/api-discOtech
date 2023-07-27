@@ -53,10 +53,10 @@ security:
         # Everybody can access to signup form
         - { path: ^/api/users/signup, roles: PUBLIC_ACCESS }
 
-        # User log only for edit, delete and show profil page
+        # User logged only for edit, delete and view profil page
         - { path: ^/api/users/*, roles: ROLE_USER }
 
-        # User log only for edit, delete and show profil page
+        # User logged only for add, delete and view favorites
         - { path: ^/api/favorites/*, roles: ROLE_USER }
 
         # only the admin profile has access to related URLs starting by "back"

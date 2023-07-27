@@ -83,7 +83,80 @@ Now you can try the connection with the server:
   * Write your password when it's required (you can find your password on [kourou](https://kourou.oclock.io/ressources/vm-cloud/))
 
 ***
+### Apache Config
 
+- Enable rewrite module: `sudo a2enmod rewrite`
+
+```bash
+Enabling module rewrite.
+To activate the new configuration, you need to run:
+  systemctl restart apache2
+```
+
+it asks us to restart the apache server
+
+```bash
+systemctl restart apache2
+==== AUTHENTICATING FOR org.freedesktop.systemd1.manage-units ===
+Authentication is required to restart 'apache2.service'.
+Multiple identities can be used for authentication:
+ 1.  Ubuntu (ubuntu)
+ 2.  aurelien
+ 3.  spada
+ 4.  hdg
+ 5.  christophe
+ 6.  student
+Choose identity to authenticate as (1-6): 6
+Password:
+==== AUTHENTICATION COMPLETE ===
+```
+
+- We are going to tell him to authorize the reading of .htaccess files
+
+```bash
+sudo nano /etc/apache2/apache2.conf
+```
+
+We scroll to `<Directory /var/www/>` (7 times page down) and modify that:
+
+```bash
+<Directory /var/www/>
+        Options Indexes FollowSymLinks
+        AllowOverride None
+        Require all granted
+</Directory>
+```
+
+by:
+
+```bash
+ <Directory /var/www/>
+        Options Indexes FollowSymLinks
+        AllowOverride all
+        Require all granted
+</Directory>
+```
+and then: `ctrl + X`, response `y` and if it's ok for you and press `enter`
+
+- Restart the apache server
+
+```bash
+systemctl restart apache2
+==== AUTHENTICATING FOR org.freedesktop.systemd1.manage-units ===
+Authentication is required to restart 'apache2.service'.
+Multiple identities can be used for authentication:
+ 1.  Ubuntu (ubuntu)
+ 2.  aurelien
+ 3.  spada
+ 4.  hdg
+ 5.  christophe
+ 6.  student
+Choose identity to authenticate as (1-6): 6
+Password:
+==== AUTHENTICATION COMPLETE ===
+```
+
+***
 To finish, don't forget to modify the base URL in the .env file in your front repository.
 
 That's all, enjoy :)
