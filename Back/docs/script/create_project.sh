@@ -1,6 +1,5 @@
 # Création du projet
 
-
 ## création du projet symfony avec composer
 composer create-project symfony/skeleton:"^5.4" my_project_directory 
 
