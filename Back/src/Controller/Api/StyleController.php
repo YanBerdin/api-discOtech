@@ -153,7 +153,6 @@ class StyleController extends AbstractController
         );
 
     }
-
     
     /**
      * Delete specific style

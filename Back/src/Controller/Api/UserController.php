@@ -82,9 +82,8 @@ class UserController extends AbstractController
      * 
      * @Route("api/users/detail",name="app_api_user_read", methods={"GET"})
      */
-
-     public function read(UserRepository $userRepository): JsonResponse
-     {
+    public function read(UserRepository $userRepository): JsonResponse
+    {
         // * For test Only (use an existing id: check DB) =============
         //$user = $userRepository->find(19);
         // * ==========================================================
@@ -93,21 +92,21 @@ class UserController extends AbstractController
         $user = $this->getUser();
 
 
-         return $this->json(
-             // Alone user data
-             $user, 
-             //code return
-             200, 
-             //header HTTP
-             [], 
-             //context of serialization
-             [
-                 "groups" => 
-                 [
-                     "user_detail" 
-                 ]
-             ]);
-     }
+        return $this->json(
+            // Alone user data
+            $user, 
+            //code return
+            200, 
+            //header HTTP
+            [], 
+            //context of serialization
+            [
+                "groups" => 
+                [
+                    "user_detail" 
+                ]
+            ]);
+    }
 
     /**
      * Function for editing user firstname
@@ -390,5 +389,4 @@ class UserController extends AbstractController
             Response::HTTP_NO_CONTENT,
         );
     }
-
 }

@@ -42,7 +42,7 @@ class MainController extends AbstractController
         );
     }
 
-     /**
+    /**
      * @Route("/api/artists/search", name="app_api_artist_search")
      */
     public function searchArtist(Request $request, ArtistRepository $artistRepository ): JsonResponse
@@ -122,9 +122,4 @@ class MainController extends AbstractController
             ["groups" =>["album_browse"]]
         );
     }
-
-
-    
-
-
 }

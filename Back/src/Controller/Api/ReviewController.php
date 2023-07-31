@@ -22,7 +22,6 @@ class ReviewController extends AbstractController
      * 
      * @Route("api/reviews/{id}",name="app_api_review_read", requirements={"id"="\d+"}, methods={"GET"})
      */
-
      public function read($id,ReviewRepository $reviewRepository): JsonResponse
      {
          $review = $reviewRepository->find($id);
@@ -55,7 +54,7 @@ class ReviewController extends AbstractController
              ]);
      }
 
-      /**
+    /**
      * Add new reviews
      * 
      * @param Request $request 
@@ -65,7 +64,6 @@ class ReviewController extends AbstractController
      * 
      * @Route("/api/reviews", name="app_api_review_add", methods={"POST"})
      */
-
     public function add(Request $request, SerializerInterface $serializerInterface, ReviewRepository $reviewRepository)
     {
         // Select Json content
@@ -105,7 +103,6 @@ class ReviewController extends AbstractController
      * 
      * @Route("api/reviews/{id}",name="app_api_review_delete", requirements={"id"="\d+"}, methods={"DELETE"})
      */
-
      public function delete ($id, ReviewRepository $reviewRepository)
      {
         $review = $reviewRepository->find($id);
