@@ -22,7 +22,6 @@ class SongController extends AbstractController
      * @param SongRepository $songRepository
      * @return JsonResponse
      */
-
     public function browse(SongRepository $songRepository): JsonResponse
     {
         //list Of all songs
@@ -52,7 +51,6 @@ class SongController extends AbstractController
      * 
      * @Route("api/songs/{id}",name="app_api_song_read", requirements={"id"="\d+"}, methods={"GET"})
      */
-
     public function read($id,SongRepository $songRepository): JsonResponse
     {
         $song = $songRepository->find($id);

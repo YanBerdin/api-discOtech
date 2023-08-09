@@ -19,7 +19,7 @@ use Symfony\Component\Validator\Validator\ValidatorInterface;
 class AlbumController extends AbstractController
 {
     /**
-     * Liste all albums
+     * List all albums
      * 
      * @Route("/api/albums", name="app_api_album_browse", methods={"GET"})
      */
@@ -94,7 +94,7 @@ class AlbumController extends AbstractController
         // Select Json content
         $jsonContent = $request->getContent();
 
-        // Ddeserialization of JSON format into Doctrine Entity Album
+        // Deserialization of JSON format into Doctrine Entity Album
         try { // try to deserialize
             $newAlbum = $serializerInterface->deserialize(
                 // data to transform

@@ -208,7 +208,6 @@ class AppFixtures extends Fixture
 
                     $manager->persist($newSong);
 
-
                     $allSong[] = $newSong;
                 }
 

@@ -76,7 +76,7 @@ class UserType extends AbstractType
                     'empty_data' => '',
                     // On déplace les contraintes de l'entité vers le form d'ajout
                     'constraints' => [
-                        new NotBlank(),
+                        // new NotBlank(),
                     //     new Regex(
                     //         "/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/",
                     //         "Le mot de passe doit contenir au minimum 8 caractères, une majuscule, un chiffre et un caractère spécial"
