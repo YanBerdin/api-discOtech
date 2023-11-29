@@ -48,7 +48,8 @@
         "symfony/yaml": "5.4.*",
         "twig/extra-bundle": "^2.12|^3.0",
         "twig/twig": "^2.12|^3.0",
-        "vich/uploader-bundle": "^1.16"
+        "vich/uploader-bundle": "^1.16",
+        "heroku/heroku-buildpack-php": "*"
     },
     "config": {
         "allow-plugins": {
