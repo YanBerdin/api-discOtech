@@ -1,6 +1,0 @@
-# contributed by https://github.com/TommyChris
-vich_uploader:
-    form_label:
-         delete_confirm: Korábban feltöltött fájl törlése?
-    link:
-         download: Jelenlegi fájl letöltése
