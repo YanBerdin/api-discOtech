@@ -6,7 +6,7 @@
 /config/secrets/prod/prod.decrypt.private.php
 /public/bundles/
 /var/
-# /vendor/
+/vendor/
 ###< symfony/framework-bundle ###
 
 ###> phpunit/phpunit ###
@@ -24,3 +24,6 @@
 ###< lexik/jwt-authentication-bundle ###
 /uploads/profil
 /vendor/
+
+/public/*
+!/public/.htaccess
