@@ -7,11 +7,13 @@
         "php": ">=7.2.5",
         "ext-ctype": "*",
         "ext-iconv": "*",
+        "ext-sodium": "*",
         "beberlei/doctrineextensions": "dev-master",
         "doctrine/doctrine-bundle": "^2.10",
         "doctrine/doctrine-migrations-bundle": "^3.2",
         "doctrine/orm": "^2.15",
         "fakerphp/faker": "^1.23",
+        "heroku/heroku-buildpack-php": "*",
         "knplabs/knp-paginator-bundle": "^5.9",
         "lexik/jwt-authentication-bundle": "^2.19",
         "nelmio/cors-bundle": "^2.3",
@@ -48,9 +50,7 @@
         "symfony/yaml": "5.4.*",
         "twig/extra-bundle": "^2.12|^3.0",
         "twig/twig": "^2.12|^3.0",
-        "vich/uploader-bundle": "^1.16",
-        "heroku/heroku-buildpack-php": "*",
-        "ext-sodium": "*"
+        "vich/uploader-bundle": "^1.16"
     },
     "config": {
         "allow-plugins": {
