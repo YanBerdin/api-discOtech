@@ -24,6 +24,3 @@
 ###< lexik/jwt-authentication-bundle ###
 /uploads/profil
 /vendor/
-
-/public/*
-!/public/.htaccess
