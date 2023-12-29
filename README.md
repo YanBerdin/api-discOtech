@@ -1,5 +1,5 @@
 # Project DiscO'Tech - BackEnd
-
+## https://api-discotech-v2-8ef81b7469dd.herokuapp.com/login
 ## :man_dancing: About
 
 The project consists in creating an online platform allowing the referencing of all musical genres
@@ -8,7 +8,7 @@ The main goal is to provide users with a friendly and attractive interface to ex
 
 ## :gear: Deploy
 
-- Launch VM Cloud by [kourou](https://kourou.oclock.io/ressources/vm-cloud/) and wait for starting
+- Launch VM Cloud by Scholl Server and wait for starting
 - Copy your SSH command `ssh student@xxxxxxxxxxxxxxxx-server.eddi.cloud`
 - Open new BASH, paste and execute your SSH command
 
